@@ -2,6 +2,7 @@ dist: xenial
 language: bash
 
 before_install:
+  - sudo apt update
   - sudo apt install pandoc
   - sudo apt install nodejs npm
   - npm install -g decktape
