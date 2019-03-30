@@ -23,5 +23,5 @@ OPT+=(-t revealjs -V theme:white -V slideNumber:true)
 for doc in "${DOCS[@]}"; do
    echo "Processing $doc ..."
    pandoc "${OPT[@]}" -o "$doc".html "$doc".md
-   decktape --size 1600x900 automatic "$doc".html "$doc".pdf
+   #decktape --size 1600x900 automatic "$doc".html "$doc".pdf
 done
