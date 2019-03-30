@@ -8,6 +8,7 @@ before_install:
   - sudo bash nodesource_setup.sh
   - sudo apt-get install nodejs
   - sudo npm install --unsafe-perm -g decktape
+  - ldd chrome | grep not
 
 install:
   - ./build --pdf # generate slides (HTML & PDF)
