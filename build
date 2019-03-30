@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e
+set -o pipefail
+
+# Markdown Documents
+DOCS=()
+for file in *.md; do
+    doc="${file%.*}"
+    if [ "$doc" != "README" ]; then
+        DOCS+=("$doc")
+    fi
+done
+
+# Output Directory
+mkdir -p output
+
+# Options
+OPT=(--standalone)
+OPT+=(-V lang=fr)
+OPT+=(-t revealjs -V theme:white -V slideNumber:true)
+
+# PDF Output
+for doc in "${DOCS[@]}"; do
+   echo "Processing $doc ..."
+   pandoc "${OPT[@]}" -o "$doc".html "$doc".md
+   decktape --size 1600x900 automatic "$doc".html "$doc".pdf
+done
