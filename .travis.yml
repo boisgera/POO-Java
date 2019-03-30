@@ -10,7 +10,7 @@ before_install:
   - sudo npm install --unsafe-perm -g decktape
 
 install:
-  - ./build # generate slides (HTML & PDF)
+  - ./build --pdf # generate slides (HTML & PDF)
   - mv .gitignore .gitignore.bak # for deployment to gh-pages
 
 deploy:
