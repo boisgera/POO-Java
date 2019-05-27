@@ -213,15 +213,64 @@ Exemple: Fractions
 
 --------------------------------------------------------------------------------
 
-<i class="fab fa-python"></i> Python:
+<i class="fab fa-python"></i> En Python:
 
   - Le caractère privé des données ou méthodes est indiqué par une convention:
-    l'identifiant commence par un caractère de soulignement.
+    l'identifiant commence par un caractère de soulignement.  
+    Seules les méthodes de l'objet doivent accéder 
+    au champ `_num` ou appeler la méthode `_simplify`.
+  
+--------------------------------------------------------------------------------
 
   - Vous pouvez décider de ne pas vous conformer à cette indication
     **à vos risque et périls**
     (["We are all consenting adults"](https://python-guide-chinese.readthedocs.io/zh_CN/latest/writing/style.html#we-are-all-consenting-adults))
 
+Par exemple:
+
+    >>> f = Fraction(4, 6)
+    >>> f._num = 7
+    >>> f 
+    ???
+
+
+
+--------------------------------------------------------------------------------
+
+<i class="fab fa-java"></i> En Java:
+
+  - Les mots-clés  
+    
+        public, protected, private   
+
+    contrôlent l'accès aux attributs et méthodes des objets.
+
+--------------------------------------------------------------------------------
+
+  - Selon le langage, l'accès aux données peut être rendu 
+    possible -- de façon controllée -- 
+    par des **accesseurs** (méthodes) et/ou des **propriétés.**
+
+--------------------------------------------------------------------------------
+
+<i class="fab fa-python"></i> En Python (lecture seule ou "getter"):
+
+    def get_numerator(self):
+        return self._num
+
+et optionnellement:
+
+    numerator = property(get_numerator)
+
+--------------------------------------------------------------------------------
+    
+Usage:
+
+    >>> f = Fraction(2, 3)
+    >>> f.get_numerator()
+    2
+    >>> f.numerator
+    2
 
 Liaison dynamique (ou tardive)
 ================================================================================
