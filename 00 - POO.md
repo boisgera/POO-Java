@@ -36,7 +36,7 @@ Envoi de Messages
 Les "objets" communiquent par envoi de messages.
 
 
-Modèle Acteur
+Objet = Acteur
 --------------------------------------------------------------------------------
 
 "(...) considère des acteurs comme les seules fonctions primitives nécessaires 
