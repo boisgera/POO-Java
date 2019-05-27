@@ -142,25 +142,49 @@ Encapsulation
     afin de s’assurer que l’utilisateur ne contourne pas l’interface qui lui 
     est destinée." 
     
-  - "L’ensemble se considère alors comme une **boîte noire** ayant un comportement 
-    et des propriétés spécifiés." 
+  - "L’ensemble se considère alors comme une **boîte noire** 
+    ayant un comportement et des propriétés spécifiés." 
+
+Exemple: Fractions
+--------------------------------------------------------------------------------
+
+<i class="fab fa-python"></i> Spécification (boîte noire):
+
+    >>> Fraction(7)
+    7
+    >>> Fraction(2, 3)
+    2/3
+    >>> Fraction(1, 3) + Fraction(1, 6)
+    1/2
+    ...
+
 
 --------------------------------------------------------------------------------
 
-<i class="fab fa-python"></i> Python
+
+<i class="fab fa-python"></i> Constructeur
 
     class Fraction:
         def __init__(self, num, den=None):
             self._num = num
             self._den = den if den is not None else 1
-            self.simplify()
+            self._simplify()
 
 --------------------------------------------------------------------------------
 
-        def simplify(self):
-            ...
+<i class="fab fa-python"></i> Méthode utilitaire
+
+        def _simplify(self):
+            gcd = math.gcd(self.num, self.denom)
+            self.num = self.num / gcd
+            self.denom = self.denom / gcd
+            if self.denom < 0:
+                self.num = - self.num
+                self.denom = - self.denom
 
 --------------------------------------------------------------------------------
+
+<i class="fab fa-python"></i> Méthode d'addition
 
         def __add__(self, other):
             other = Fraction(other)
@@ -171,15 +195,32 @@ Encapsulation
 
 --------------------------------------------------------------------------------
 
-        def __repr__(self):
-            return f"{self._num}/{self._den}"
+<i class="fab fa-python"></i> Méthode de représentation
 
+        def __repr__(self):
+            if self.den == 1:
+                return f"{self._num}"
+            else:
+                return f"{self._num}/{self._den}"
+
+--------------------------------------------------------------------------------
+
+  - Les données des fractions sont stockées dans les **attributs** 
+   (ou **champs**) `_num` et `_den`, 
+
+  - Les **méthodes** `__init__`, `simplify`, `__add__`, ... 
+    permettent de les manipuler.
 
 --------------------------------------------------------------------------------
 
 <i class="fab fa-python"></i> Python:
 
-["We are all consenting adults"](https://python-guide-chinese.readthedocs.io/zh_CN/latest/writing/style.html#we-are-all-consenting-adults)
+  - Le caractère privé des données ou méthodes est indiqué par une convention:
+    l'identifiant commence par un caractère de soulignement.
+
+  - Vous pouvez décider de ne pas vous conformer à cette indication
+    **à vos risque et périls**
+    (["We are all consenting adults"](https://python-guide-chinese.readthedocs.io/zh_CN/latest/writing/style.html#we-are-all-consenting-adults))
 
 
 Liaison dynamique (ou tardive)
