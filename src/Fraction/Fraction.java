@@ -1,8 +1,8 @@
 import java.math.BigInteger;
 
 public class Fraction {
-  public int numerator;
-  public int denominator;
+  protected int numerator;
+  protected int denominator;
 
   public Fraction(int numerator, int denominator) {
     this.numerator = numerator;
