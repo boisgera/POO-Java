@@ -336,7 +336,7 @@ La classe `list`
 
     class List(list):
         def __repr__(self):
-            list_repr = list(self)
+            list_repr = repr(list(self))
             return f"List({list_repr})"
 
 
