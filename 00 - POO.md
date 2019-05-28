@@ -20,6 +20,19 @@ Propriétés -- Vue d'Ensemble
 
 --------------------------------------------------------------------------------
 
+  - Envoi de Messages
+
+  - Encapsulation
+
+  - Extensibilité
+
+--------------------------------------------------------------------------------
+
+Dynamic dispatch, late binding, inheritance, polymorphism, classes, objects,
+abstraction, composition, héritage, délégation, 
+
+--------------------------------------------------------------------------------
+
   > “OOP to me means only messaging, local retention and protection 
   > and hiding of state-process, and extreme late-binding of all things.”
   > Alan Kay
@@ -165,9 +178,9 @@ Exemple: Fractions
 <i class="fab fa-python"></i> Constructeur
 
     class Fraction:
-        def __init__(self, num, den=None):
+        def __init__(self, num, den=1):
             self._num = num
-            self._den = den if den is not None else 1
+            self._den = den
             self._simplify()
 
 --------------------------------------------------------------------------------
@@ -187,7 +200,6 @@ Exemple: Fractions
 <i class="fab fa-python"></i> Méthode d'addition
 
         def __add__(self, other):
-            other = Fraction(other)
             num = self._num + other._den + \
                   other._num * self._den
             den = self._den * other._den
@@ -198,7 +210,7 @@ Exemple: Fractions
 <i class="fab fa-python"></i> Méthode de représentation
 
         def __repr__(self):
-            if self.den == 1:
+            if self._den == 1:
                 return f"{self._num}"
             else:
                 return f"{self._num}/{self._den}"
@@ -272,19 +284,80 @@ Usage:
     >>> f.numerator
     2
 
+Encapsulation -- Bénéfices
+--------------------------------------------------------------------------------
+
+  - **Architecture.** Le logiciel est structuré en composants en interaction
+    pour maîtriser la complexité de l'ensemble.
+
+  - **Abstraction.** Ce que fait un objet (son **interface**)
+    est plus important que comment il le fait (son **implémentation**); 
+    cette "ignorance sélective" contribue également à abaisser la
+    complexité de l'ensemble.
+
 Liaison dynamique (ou tardive)
 ================================================================================
 
 
-Héritage
+Extensibilité
 ================================================================================
 
-Fondamental ?
+--------------------------------------------------------------------------------
+
+  - Class-based vs prototype
+
+  - Inheritance vs composition (& délégation)
+
+  - Polymorphism, late binding
+
+
+Héritage Fondamental ?
 --------------------------------------------------------------------------------
 
   - Smalltalk-72 ne permet pas l'héritage.
 
 [What does Alan Kay think about inheritance in object-oriented programming?](What does Alan Kay think about inheritance in object-oriented programming?)
+
+Classes
+--------------------------------------------------------------------------------
+
+La classe `list`
+--------------------------------------------------------------------------------
+
+<i class="fab fa-python"></i>
+
+    >>> [1, 2, 3]
+    [1, 2, 3]
+    >>> type([1, 2, 3])
+    <class 'list'>
+    >>> repr([1, 2, 3])
+    '[1, 2, 3]'
+    >>> sum([1, 2, 3])
+    6
+
+
+--------------------------------------------------------------------------------
+
+    class List(list):
+        def __repr__(self):
+            list_repr = list(self)
+            return f"List({list_repr})"
+
+
+--------------------------------------------------------------------------------
+
+    >>> l = List([1, 2, 3]); l
+    List([1, 2, 3])
+    >>> type(l)
+    <class 'List'>
+    >>> repr(l)
+    'List([1, 2, 3])'
+    >>> sum(l)
+    6
+
+Prototypes
+--------------------------------------------------------------------------------
+
 
 <style>
 
