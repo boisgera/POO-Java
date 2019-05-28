@@ -295,10 +295,6 @@ Encapsulation -- Bénéfices
     cette "ignorance sélective" contribue également à abaisser la
     complexité de l'ensemble.
 
-Liaison dynamique (ou tardive)
-================================================================================
-
-
 Extensibilité
 ================================================================================
 
@@ -308,7 +304,7 @@ Extensibilité
 
   - Inheritance vs composition (& délégation)
 
-  - Polymorphism, late binding
+  - Polymorphism, late binding / liaison dynamique
 
 
 Héritage Fondamental ?
