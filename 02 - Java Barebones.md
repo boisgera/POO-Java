@@ -166,6 +166,10 @@ Class Path
     $ javac App.java
     $ ls
     App.class  App.java  printer.jar
+
+<i class="fas fa-cog"></i> Execution
+--------------------------------------------------------------------------------
+
     $ export CLASSPATH=".:*"
     $ java App 
     Hello, World!
