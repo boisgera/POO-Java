@@ -117,7 +117,58 @@ Dans le répertoire contenant le fichier `app.jar`:
 3 - Distribuer une bibliothèque
 ================================================================================
 
+
+<i class="far fa-file-code"></i> `printer/Printer.java`
 --------------------------------------------------------------------------------
+
+    package printer;
+
+    public class Printer {
+      public static void call(String text) {
+        System.out.println(text);
+      }
+    }
+
+<i class="fas fa-terminal"></i>
+--------------------------------------------------------------------------------
+
+    $ javac printer/Printer.java
+    $ jar cf printer.jar printer
+
+
+Class Path
+--------------------------------------------------------------------------------
+
+  - Pour utiliser la bibliothèque contenue dans l'archive `printer.par`, 
+    il faudra indiquer à `java` d'explorer ce fichier au moyen de la
+    variable `CLASSPATH`
+
+  - Par exemple: ajoutez `*` au class path pour que java prenne en compte 
+    tous les fichiers jar contenus dans le répertoire courant.
+
+  - Voir ausi [Setting the class path](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html)
+
+
+<i class="far fa-file-code"></i> `App.java`
+--------------------------------------------------------------------------------
+
+    import printer.Printer;
+
+    public class App {
+      public static void main(String[] args) {
+        Printer.call("Hello, World!");
+      }
+    }
+
+<i class="fas fa-terminal"></i>
+--------------------------------------------------------------------------------
+
+    $ javac App.java
+    $ ls
+    App.class  App.java  printer.jar
+    $ export CLASSPATH=".:*"
+    $ java App 
+    Hello, World!
 
 <style>
 
