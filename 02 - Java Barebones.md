@@ -1,4 +1,4 @@
-% Java sans BlueJ
+% Java "Barebones"
 
 1 -- Application minimale
 ================================================================================
