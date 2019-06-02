@@ -141,7 +141,7 @@ Class Path
 
   - Pour utiliser la bibliothèque contenue dans l'archive `printer.par`, 
     il faudra indiquer à `java` d'explorer ce fichier au moyen de la
-    variable `CLASSPATH`
+    variable `CLASSPATH`.
 
   - Par exemple: ajoutez `*` au class path pour que java prenne en compte 
     tous les fichiers jar contenus dans le répertoire courant.
