@@ -1,5 +1,22 @@
 % Java "Barebones"
 
+Introduction
+================================================================================
+
+Objectifs
+--------------------------------------------------------------------------------
+
+Une introduction aux phases de
+
+  - Compilation, 
+  
+  - Packaging, 
+  
+  - Execution,
+
+**SANS** BlueJ, Visual Studio Code, Eclipse, etc.
+
+
 1 -- Application minimale
 ================================================================================
 
