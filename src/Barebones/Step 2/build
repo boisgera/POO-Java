@@ -2,4 +2,5 @@
 
 mkdir -p output
 javac App.java
-cp App.class output/.
+jar cfm app.jar Manifest.txt *.class
+cp app.jar output/.

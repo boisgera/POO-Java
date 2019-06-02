@@ -57,7 +57,64 @@ Dans le répertoire contenant le fichier `App.class`:
     $ java App   
     Hello, World!
 
-Etape 2
+2 - Distribuer une archive
+================================================================================
+
+
+<i class="far fa-file-code"></i> `App.java`
+--------------------------------------------------------------------------------
+
+    public class App {
+      public static void main(String[] args) {
+        Printer.call("Hello, World!");
+      }
+    }
+
+
+<i class="far fa-file-code"></i> `Printer.java`
+--------------------------------------------------------------------------------
+
+    public class Printer {
+      public static void call(String text) {
+        System.out.println(text);
+      }
+    }
+
+
+<i class="far fa-file-code"></i> `Manifest.txt`
+--------------------------------------------------------------------------------
+
+    Main-Class: App
+
+Archivage
+--------------------------------------------------------------------------------
+
+  - nécessite la commande `jar` (Java Archive Tool).
+
+  - elle est fournie par [Java Development Kit (JDK)](https://en.wikipedia.org/wiki/Java_Development_Kit).
+
+
+<i class="fas fa-terminal"></i>
+--------------------------------------------------------------------------------
+
+Après compilation, dans le répertoire contenant les fichiers `*.class`:
+
+    $ jar cfm app.jar Manifest.txt *.class   
+
+
+Voir aussi: [Packaging Programs in JAR Files](https://docs.oracle.com/javase/tutorial/deployment/jar/index.html)
+
+
+
+<i class="fas fa-cog"></i> Execution
+--------------------------------------------------------------------------------
+
+Dans le répertoire contenant le fichier `app.jar`:
+
+    $ java -jar app.jar   
+    Hello, World!
+
+3 - Distribuer une bibliothèque
 ================================================================================
 
 --------------------------------------------------------------------------------
