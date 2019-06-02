@@ -11,7 +11,7 @@ Application
 
         public static void main(String[] args)
 
-   - Le tableau `args` contient les arguments passé à l'application lors de
+   - Le tableau `args` contient les arguments passés à l'application lors de
      son invocation.
 
 
