@@ -20,9 +20,9 @@ Propriétés -- Vue d'Ensemble
 
 --------------------------------------------------------------------------------
 
-  - Envoi de Messages
-
   - Encapsulation
+
+  - Envoi de Messages
 
   - Extensibilité
 
@@ -39,108 +39,6 @@ abstraction, composition, héritage, délégation,
 
 Autrement dit, envoi de messages, encapsulation et 
 liaison dynamique ou tardive.
-
-Envoi de Messages
-================================================================================
-
-<i class="far fa-paper-plane"></i>
---------------------------------------------------------------------------------
-
-Les "objets" communiquent par envoi de messages.
-
-
-Objet = Acteur
---------------------------------------------------------------------------------
-
-"(...) considère des acteurs comme les seules fonctions primitives nécessaires 
-pour la **programmation concurrente**.   
-Les acteurs communiquent par échange de messages. 
-En réponse à un message, un acteur peut effectuer un traitement local, 
-créer d'autres acteurs, ou envoyer d'autres messages." 
-
-<i class="fab fa-wikipedia-w"></i> [Modèle Acteur](https://fr.wikipedia.org/wiki/Mod%C3%A8le_d%27acteur)
-
---------------------------------------------------------------------------------
-
-"Actors systems research was based on the assumption that massively parallel, 
-distributed, computer systems could become prevalent, and therefore a 
-convenient and efficient way to structure a computation was as a large 
-number of **self contained processes**, called **actors**, communicating by sending 
-messages to each other."
-
-  [Smalltalk wiki](http://wiki.c2.com/?MessagePassing)
-
---------------------------------------------------------------------------------
-
-"I realised that Erlang was the only true OO language   
--- **the big thing about OO is message passing** --   
-Java/C++ are not OO."
-
-Joe Armstrong [<i class="fab fa-twitter"></i>](https://twitter.com/joeerl/status/877609897730256901)
-
-See also [Why OO Sucks](http://harmful.cat-v.org/software/OO_programming/why_oo_sucks)
-
---------------------------------------------------------------------------------
-
-S'inscrivent dans cette philosophie:
-
-Smalltalk, Erlang, Ruby, Elixir, etc.
-
---------------------------------------------------------------------------------
-
-<i class="far fa-gem"></i> Ruby
-
-    > 1 + 2
-    => 3
-
-L'opérateur `+` calcul la somme des valeurs `1` et `2`.
-
---------------------------------------------------------------------------------
-
-<i class="far fa-gem"></i> Ruby
-
-    > 1.+ 2
-    => 3
-
-Le calcul est délégué à la méthode `+` de l'objet `1`.
-
---------------------------------------------------------------------------------
-
-<i class="far fa-gem"></i> Ruby
-
-    > 1.send(:+, 2)
-    => 3
-
-L'addition est la réponse à un message  
--- contenant le symbole `+` et l'objet `2` --  
-adressé à l'objet `1`.
-
-
-Références
---------------------------------------------------------------------------------
-
-  - [Ruby is a Message-Oriented Language](http://brisruby.org/message-oriented-language)
-
-  - [Do your understand Ruby's Objects, Message and Blocks?](http://rubylearning.com/blog/2010/11/03/do-you-understand-rubys-objects-messages-and-blocks/)
-
-
-Par extension ...
---------------------------------------------------------------------------------
-
-On peut interpréter: 
-
-<i class="fab fa-java"></i> Java
-
-     myDictionary.put(key, value);
-
-comme
-
-  - l'envoi du message `"put"`, 
-
-  - contenant les informations `key` et `value`,
-
-  - à l'objet `myDictionary`.
-
 
 Encapsulation
 ================================================================================
@@ -294,6 +192,110 @@ Encapsulation -- Bénéfices
     est plus important que comment il le fait (son **implémentation**); 
     cette "ignorance sélective" contribue également à abaisser la
     complexité de l'ensemble.
+
+
+Envoi de Messages
+================================================================================
+
+<i class="far fa-paper-plane"></i>
+--------------------------------------------------------------------------------
+
+Les "objets" communiquent par envoi de messages.
+
+
+Objet = Acteur
+--------------------------------------------------------------------------------
+
+"(...) considère des acteurs comme les seules fonctions primitives nécessaires 
+pour la **programmation concurrente**.   
+Les acteurs communiquent par échange de messages. 
+En réponse à un message, un acteur peut effectuer un traitement local, 
+créer d'autres acteurs, ou envoyer d'autres messages." 
+
+<i class="fab fa-wikipedia-w"></i> [Modèle Acteur](https://fr.wikipedia.org/wiki/Mod%C3%A8le_d%27acteur)
+
+--------------------------------------------------------------------------------
+
+"Actors systems research was based on the assumption that massively parallel, 
+distributed, computer systems could become prevalent, and therefore a 
+convenient and efficient way to structure a computation was as a large 
+number of **self contained processes**, called **actors**, communicating by sending 
+messages to each other."
+
+  [Smalltalk wiki](http://wiki.c2.com/?MessagePassing)
+
+--------------------------------------------------------------------------------
+
+"I realised that Erlang was the only true OO language   
+-- **the big thing about OO is message passing** --   
+Java/C++ are not OO."
+
+Joe Armstrong [<i class="fab fa-twitter"></i>](https://twitter.com/joeerl/status/877609897730256901)
+
+See also [Why OO Sucks](http://harmful.cat-v.org/software/OO_programming/why_oo_sucks)
+
+--------------------------------------------------------------------------------
+
+S'inscrivent dans cette philosophie:
+
+Smalltalk, Erlang, Ruby, Elixir, etc.
+
+--------------------------------------------------------------------------------
+
+<i class="far fa-gem"></i> Ruby
+
+    > 1 + 2
+    => 3
+
+L'opérateur `+` calcul la somme des valeurs `1` et `2`.
+
+--------------------------------------------------------------------------------
+
+<i class="far fa-gem"></i> Ruby
+
+    > 1.+ 2
+    => 3
+
+Le calcul est délégué à la méthode `+` de l'objet `1`.
+
+--------------------------------------------------------------------------------
+
+<i class="far fa-gem"></i> Ruby
+
+    > 1.send(:+, 2)
+    => 3
+
+L'addition est la réponse à un message  
+-- contenant le symbole `+` et l'objet `2` --  
+adressé à l'objet `1`.
+
+
+Références
+--------------------------------------------------------------------------------
+
+  - [Ruby is a Message-Oriented Language](http://brisruby.org/message-oriented-language)
+
+  - [Do your understand Ruby's Objects, Message and Blocks?](http://rubylearning.com/blog/2010/11/03/do-you-understand-rubys-objects-messages-and-blocks/)
+
+
+Par extension ...
+--------------------------------------------------------------------------------
+
+On peut interpréter: 
+
+<i class="fab fa-java"></i> Java
+
+     myDictionary.put(key, value);
+
+comme
+
+  - l'envoi du message `"put"`, 
+
+  - contenant les informations `key` et `value`,
+
+  - à l'objet `myDictionary`.
+
+
 
 Extensibilité
 ================================================================================
