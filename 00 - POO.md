@@ -1,11 +1,47 @@
 % Programmation Orientée Objet
 
-Introduction
+Un peu d'Histoire
 ================================================================================
 
+--------------------------------------------------------------------------------
 
-Histoire
-================================================================================
+(a propos du système [Oberon](https://pdfs.semanticscholar.org/d48b/ecdaf5c3d962e2778f804e8c64d292de408b.pdf))
+
+"A lot of the developers and managers at Apple were gathered around watching a 
+presentation from someone about some *wonderful* new product that would save 
+the world. 
+All through the presentation, he had been stating that the product was 
+**object-oriented** while he blathered on."
+
+--------------------------------------------------------------------------------
+
+Finally, someone at the back of the room piped up:
+
+  - "So, this product doesn't support **inheritance**, right?"
+  
+  - "that's right". 
+  
+  - "And it doesn't support **polymorphism**, right?"
+  
+  - "that's right" 
+  
+  - "And it doesn't support **encapsulation**, right?"
+
+  - "that's correct". 
+
+  - "So, it doesn't seem to me like it's **object-oriented**". 
+
+--------------------------------------------------------------------------------
+
+To which the presenter huffily responded,
+
+  - "Well, who's to say what's object-oriented and what's not?" 
+
+At this point the person replied,
+
+  - **"I am. I'm Alan Kay and I invented the term."** 
+
+(Source: ["He invented the term"](http://wiki.c2.com/?HeInventedTheTerm))
 
 --------------------------------------------------------------------------------
 
@@ -86,12 +122,12 @@ Exemple: Fractions
 <i class="fab fa-python"></i> Méthode utilitaire
 
         def _simplify(self):
-            gcd = math.gcd(self.num, self.denom)
-            self.num = self.num / gcd
-            self.denom = self.denom / gcd
-            if self.denom < 0:
-                self.num = - self.num
-                self.denom = - self.denom
+            gcd = math.gcd(self._num, self._den)
+            self._num = self._num / gcd
+            self._den = self._den / gcd
+            if self._den < 0:
+                self._num = - self._num
+                self._denom = - self._denom
 
 --------------------------------------------------------------------------------
 
@@ -127,7 +163,7 @@ Exemple: Fractions
 
   - Le caractère privé des données ou méthodes est indiqué par une convention:
     l'identifiant commence par un caractère de soulignement.  
-    Seules les méthodes de l'objet doivent accéder 
+    Seules les méthodes de l'objet devraient accéder 
     au champ `_num` ou appeler la méthode `_simplify`.
   
 --------------------------------------------------------------------------------
@@ -185,13 +221,14 @@ Usage:
 Encapsulation -- Bénéfices
 --------------------------------------------------------------------------------
 
-  - **Architecture.** Le logiciel est structuré en composants en interaction
-    pour maîtriser la complexité de l'ensemble.
+  - **Architecture.** Le logiciel est réalisé par assemblage de composants
+    -- plus ou moins autonomes  -- 
+    pour réduire la complexité de l'ensemble.
 
   - **Abstraction.** Ce que fait un objet (son **interface**)
     est plus important que comment il le fait (son **implémentation**); 
-    cette "ignorance sélective" contribue également à abaisser la
-    complexité de l'ensemble.
+    cette "ignorance sélective" contribue à abaisser la
+    complexité (visible) de chaque composant.
 
 
 Envoi de Messages
@@ -200,14 +237,16 @@ Envoi de Messages
 <i class="far fa-paper-plane"></i>
 --------------------------------------------------------------------------------
 
+**Assemblage / Architecture**
+
 Les "objets" communiquent par envoi de messages.
 
 
-Objet = Acteur
+Objet = "Acteur"
 --------------------------------------------------------------------------------
 
-"(...) considère des acteurs comme les seules fonctions primitives nécessaires 
-pour la **programmation concurrente**.   
+"(...) considère les **acteurs** comme les seules fonctions primitives 
+nécessaires pour la **programmation concurrente**.   
 Les acteurs communiquent par échange de messages. 
 En réponse à un message, un acteur peut effectuer un traitement local, 
 créer d'autres acteurs, ou envoyer d'autres messages." 
@@ -253,7 +292,7 @@ L'opérateur `+` calcul la somme des valeurs `1` et `2`.
 
 <i class="far fa-gem"></i> Ruby
 
-    > 1.+ 2
+    > 1.+(2)
     => 3
 
 Le calcul est délégué à la méthode `+` de l'objet `1`.
@@ -291,7 +330,7 @@ comme
 
   - l'envoi du message `"put"`, 
 
-  - contenant les informations `key` et `value`,
+  - contenant les données `key` et `value` (*payload*),
 
   - à l'objet `myDictionary`.
 
