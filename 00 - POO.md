@@ -134,7 +134,7 @@ Exemple: Fractions
 <i class="fab fa-python"></i> Méthode d'addition
 
         def __add__(self, other):
-            num = self._num + other._den + \
+            num = self._num * other._den + \
                   other._num * self._den
             den = self._den * other._den
             return Fraction(num, den)
