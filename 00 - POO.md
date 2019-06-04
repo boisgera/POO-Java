@@ -339,8 +339,57 @@ Usage: Javascript, [Lua](https://www.lua.org/).
     > point.distance()
     2.23606797749979
 
+<i class="fab fa-java" style="font-weight:normal;"></i> Java
+--------------------------------------------------------------------------------
+
+    public class Point {
+      double x, y;
+      public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+      }
+      public double distance() {
+        return Math.sqrt(x*x + y*y);
+      }
+    }
+
+<i class="fab fa-java" style="font-weight:normal;"></i> Avec les outils Java
+--------------------------------------------------------------------------------
+
+    class Main {
+      public static void main(String[] args) {
+        Point point = new Point(1.0, 2.0);
+        System.out.println(point);
+        double distance = point.distance();
+        System.out.println(distance);
+      }
+    }
 
 
+--------------------------------------------------------------------------------
+
+    $ javac *.java
+    $ java Main
+    Point@6fffcba5
+    2.23606797749979
+
+
+<i class="fab fa-java" style="font-weight:normal;"></i> Avec le "Code Pad" de BlueJ
+--------------------------------------------------------------------------------
+
+    > Point point = new Point(1.0, 2.0);
+    > point
+    <object reference> (Point)
+    > point.distance()
+    2.23606797749979 (double)
+
+<i class="fab fa-java" style="font-weight:normal;"></i> / <i class="fab fa-python" style="font-weight:normal;"></i> Avec Jython
+--------------------------------------------------------------------------------
+
+    >>> import Point
+    >>> point = Point(1.0, 2.0)
+    >>> point.distance()
+    2.23606797749979
 
 Envoi de Messages
 ================================================================================
