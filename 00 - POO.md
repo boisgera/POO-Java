@@ -396,6 +396,21 @@ Prototypes
 --------------------------------------------------------------------------------
 
 
+<i class="fas fa-duck"></i> Duck Typing
+--------------------------------------------------------------------------------
+
+![](images/duck.jpg)
+
+(<a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=4084391">Link</a>)
+
+--------------------------------------------------------------------------------
+
+Pass the [duck test](https://en.wikipedia.org/wiki/Duck_test):
+
+
+> "If it looks like a duck, swims like a duck, and quacks like a duck, 
+> then it probably is a duck." 
+
 <style>
 
 .reveal section img {
