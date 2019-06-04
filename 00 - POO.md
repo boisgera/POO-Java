@@ -230,6 +230,117 @@ Encapsulation -- Bénéfices
     cette "ignorance sélective" contribue à abaisser la
     complexité (visible) de chaque composant.
 
+Classes
+--------------------------------------------------------------------------------
+
+<i class="fas fa-industry fa-3x" style="margin-right:1em;"></i> 
+<i class="fas fa-long-arrow-alt-right fa-3x" style="margin-right:1em;"></i>
+<i class="fas fa-car fa-3x"></i>
+
+<i class="fab fa-python" style="font-weight:normal;"></i> Python
+--------------------------------------------------------------------------------
+
+    class Point:
+        def __init__(self, x, y):
+            self.x = x; self.y = y
+        def distance(self):
+            return math.sqrt(self.x**2 + self.y**2)
+
+--------------------------------------------------------------------------------
+
+    >>> point = Point(1.0, 2.0)
+    >>> point.distance()
+    2.23606797749979
+
+
+<i class="far fa-gem" style="font-weight:normal;"></i> Ruby
+--------------------------------------------------------------------------------
+
+    class Point
+      def initialize(x, y)
+        @x = x; @y = y
+      end
+      def distance 
+        Math.sqrt(@x**2 + @y**2)
+      end
+    end
+
+--------------------------------------------------------------------------------
+
+    irb> point = Point.new 1.0, 2.0
+    => #<Point @x=1.0, @y=2.0>
+    irb> point.distance
+    => 2.23606797749979
+
+
+<i class="fab fa-js" style="font-weight:normal;"></i> Javascript (prototype)
+--------------------------------------------------------------------------------
+
+    function Point (x, y) {
+      this.x = x;
+      this.y = y;
+    }
+
+    Point.prototype.distance = function () {
+      return Math.sqrt(this.x**2 + this.y**2);
+    }
+
+--------------------------------------------------------------------------------
+
+    > point = new Point(1.0, 2.0)
+    Point { x: 1, y: 2 }
+    > point.distance()
+    2.23606797749979
+
+Prototypes
+--------------------------------------------------------------------------------
+
+<i class="fas fa-car-alt fa-3x" style="margin-right:1em;"></i> 
+<i class="fas fa-long-arrow-alt-right fa-3x" style="margin-right:1em;"></i>
+<i class="fas fa-car fa-3x"></i>
+
+Usage: Javascript, [Lua](https://www.lua.org/).
+
+<i class="fab fa-js" style="font-weight:normal;"></i> Coffeescript
+--------------------------------------------------------------------------------
+
+    class Point
+      constructor: (@x, @y) ->
+
+      distance: ->
+        Math.sqrt(@x**2 + @y**2)
+
+
+--------------------------------------------------------------------------------
+
+    coffee> point = new Point 1.0, 2.0
+    Point { x: 1, y: 2 }
+    coffee> point.distance()
+    2.23606797749979
+
+
+<i class="fab fa-js" style="font-weight:normal;"></i> Javascript (classe)
+--------------------------------------------------------------------------------
+
+    class Point {
+      constructor(x, y) {
+        this.x = x; this.y = y;
+      }
+      distance() {
+        return Math.sqrt(this.x**2 + this.y**2);
+      }
+    }
+
+
+--------------------------------------------------------------------------------
+
+    > point = new Point(1.0, 2.0)
+    Point { x: 1, y: 2 }
+    > point.distance()
+    2.23606797749979
+
+
+
 
 Envoi de Messages
 ================================================================================
