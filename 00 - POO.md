@@ -231,11 +231,23 @@ Encapsulation -- Bénéfices
     complexité (visible) de chaque composant.
 
 Classes
+================================================================================
+
+Classes <i class="fas fa-long-arrow-alt-right" style="margin-right:1em;margin-left:1em;"></i> Instances
 --------------------------------------------------------------------------------
 
 <i class="fas fa-industry fa-3x" style="margin-right:1em;"></i> 
 <i class="fas fa-long-arrow-alt-right fa-3x" style="margin-right:1em;"></i>
 <i class="fas fa-car fa-3x"></i>
+
+Exemple -- La classe `Point`
+--------------------------------------------------------------------------------
+
+  - 2 champs: `x` et `y` (valeurs numériques)
+
+  - 1 méthode "spéciale": le constructeur
+
+  - 1 méthode "normale": `distance` (à l'origine)
 
 <i class="fab fa-python" style="font-weight:normal;"></i> Python
 --------------------------------------------------------------------------------
@@ -276,7 +288,7 @@ Classes
 <i class="fab fa-js" style="font-weight:normal;"></i> Javascript (prototype)
 --------------------------------------------------------------------------------
 
-    function Point (x, y) {
+    function Point(x, y) {
       this.x = x;
       this.y = y;
     }
@@ -300,6 +312,8 @@ Prototypes
 <i class="fas fa-car fa-3x"></i>
 
 Usage: Javascript, [Lua](https://www.lua.org/).
+
+Voir aussi: [Prototypes in JavaScript](https://hackernoon.com/prototypes-in-javascript-5bba2990e04b)
 
 <i class="fab fa-js" style="font-weight:normal;"></i> Coffeescript
 --------------------------------------------------------------------------------
