@@ -1,8 +1,48 @@
 % Programmation Orientée Objet
 
-Un peu d'Histoire
+Contexte
 ================================================================================
 
+--------------------------------------------------------------------------------
+
+La programmation **orientée-objet** est un **paradigme** de programmation
+(un "style" de conception de programmes)
+au même titre que
+
+  - la programmation impérative (/structurée/procédurale),
+
+  - la programmation fonctionnelle, 
+
+  - la programmation logique,
+
+  - ...
+
+Exemples
+--------------------------------------------------------------------------------
+
+  - **impératif:** C, Fortran, Assembleur, ...
+
+  - **fonctionnel:** Haskell, F#, Reason, Scheme, ...
+
+  - **objet:** Java, C#, Ruby, ...
+
+  - **multi-paradigmes:** Scala, C++, OCaml, Python, ...
+
+Un unique paradigme objet ?
+--------------------------------------------------------------------------------
+
+Non ! De **multiples** modèles objets déterminés par
+
+  - une collection de traits distincts,
+
+  - mais des emphases/variantes significatives,
+
+  - et une dimension culturelle/historique forte ...
+
+**Pas de consensus universel, 
+mais des caractéristiques communes !**
+
+Un peu d'histoire
 --------------------------------------------------------------------------------
 
 (a propos du système [Oberon](https://pdfs.semanticscholar.org/d48b/ecdaf5c3d962e2778f804e8c64d292de408b.pdf))
@@ -29,9 +69,10 @@ Finally, someone at the back of the room piped up:
 
   - "that's correct". 
 
-  - "So, it doesn't seem to me like it's **object-oriented**". 
 
 --------------------------------------------------------------------------------
+
+  - "So, it doesn't seem to me like it's **object-oriented**". 
 
 To which the presenter huffily responded,
 
@@ -45,36 +86,43 @@ At this point the person replied,
 
 --------------------------------------------------------------------------------
 
-[The Forgotten History of OOP](https://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f)
+  - Alan Kay, créateur du langage [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk) (1972).
 
-> “I made up the term ‘object-oriented’, 
->  and I can tell you I didn’t have C++ in mind.”  
->  Alan Kay, OOPSLA ‘97
+  - inspiré par le langage [Simula](https://en.wikipedia.org/wiki/Simula) (1960s),  
+    le "premier langage orienté objet".
 
-Propriétés -- Vue d'Ensemble
+  - Bjarne Stroustrup (créateur de C++) et James Gosling (créateur de Java)
+    ont également reconnu l'influence majeure de Simula.
+
+Voir: [The Early History of Smalltalk](https://web.archive.org/web/20080710144930/http://gagne.homedns.org/~tgagne/contrib/EarlyHistoryST.html)
+
+--------------------------------------------------------------------------------
+
+
+- “I made up the term ‘object-oriented’,  
+  and I can tell you I didn’t have C++ in mind.”   
+  Alan Kay, OOPSLA ‘97
+
+Source: [The Forgotten History of OOP](https://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f)
+
+
+Caractéristiques
 ================================================================================
 
---------------------------------------------------------------------------------
-
-  - Encapsulation
-
-  - Envoi de Messages
-
-  - Extensibilité
 
 --------------------------------------------------------------------------------
 
-Dynamic dispatch, late binding, inheritance, polymorphism, classes, objects,
-abstraction, composition, héritage, délégation, 
+"OOP to me means only **messaging**, **local retention and protection 
+and hiding of state-process**, and **extreme late-binding of all things**." 
 
+Alan Kay.
+
+"Bestiaire"
 --------------------------------------------------------------------------------
 
-  > “OOP to me means only messaging, local retention and protection 
-  > and hiding of state-process, and extreme late-binding of all things.”
-  > Alan Kay
-
-Autrement dit, envoi de messages, encapsulation et 
-liaison dynamique ou tardive.
+**Termes fréquents:** envoi de messages, encapsulation, attachement dynamique,
+classes, instances, champs, méthodes, héritage, polymorphisme, composition, 
+délégation, ...
 
 Encapsulation
 ================================================================================
@@ -508,26 +556,20 @@ comme
 
   - à l'objet `myDictionary`.
 
-
-
-Extensibilité
+Héritage et Polymorphisme
 ================================================================================
 
+Un concept fondamental ?
 --------------------------------------------------------------------------------
 
-  - Class-based vs prototype
+"Unfortunately, **inheritance** -- though an incredibly powerful technique --
+has turned out to be very difficult for novices (and even professionals) 
+to deal with."   
+Alan Kay
 
-  - Inheritance vs composition (& délégation)
+(Smalltalk-72 n'a pas d'héritage)
 
-  - Polymorphism, late binding / liaison dynamique
-
-
-Héritage Fondamental ?
---------------------------------------------------------------------------------
-
-  - Smalltalk-72 ne permet pas l'héritage.
-
-[What does Alan Kay think about inheritance in object-oriented programming?](What does Alan Kay think about inheritance in object-oriented programming?)
+[What does Alan Kay think about inheritance in object-oriented programming?](https://www.quora.com/What-does-Alan-Kay-think-about-inheritance-in-object-oriented-programming)
 
 Classes
 --------------------------------------------------------------------------------
@@ -565,9 +607,6 @@ La classe `list`
     'List([1, 2, 3])'
     >>> sum(l)
     6
-
-Prototypes
---------------------------------------------------------------------------------
 
 
 <i class="fas fa-duck"></i> Duck Typing
