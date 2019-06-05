@@ -571,42 +571,55 @@ Alan Kay
 
 [What does Alan Kay think about inheritance in object-oriented programming?](https://www.quora.com/What-does-Alan-Kay-think-about-inheritance-in-object-oriented-programming)
 
-Classes
---------------------------------------------------------------------------------
 
 La classe `list`
 --------------------------------------------------------------------------------
 
 <i class="fab fa-python"></i>
 
-    >>> [1, 2, 3]
+    >>> l = [1, 2, 3]
+    >>> l
     [1, 2, 3]
-    >>> type([1, 2, 3])
+    >>> type(l)
     <class 'list'>
-    >>> repr([1, 2, 3])
-    '[1, 2, 3]'
-    >>> sum([1, 2, 3])
+    >>> sum(l)
     6
 
 
+Ma classe `List` (usage)
+--------------------------------------------------------------------------------
+
+    >>> l = List([1, 2, 3])
+    >>> l
+    <[1, 2, 3]>
+    >>> type(l)
+    <class 'List'>
+    >>> sum(l)
+    6
+
+--------------------------------------------------------------------------------
+
+  - la représentation de ma liste a changé,
+
+  - ainsi que son type, `List` et non `list`,
+
+  - mais pas le reste des fonctionnalités.
+
+--------------------------------------------------------------------------------
+
+  - en héritant de la class `list`, on peut réutiliser ses fonctionnalités,
+
+  - on peut également enrichir ou modifier (surcharger) ses comportements.
+
+
+Ma classe `List` (implementation)
 --------------------------------------------------------------------------------
 
     class List(list):
         def __repr__(self):
-            list_repr = repr(list(self))
-            return f"List({list_repr})"
+            return "<" + super().__repr__() + ">"
 
 
---------------------------------------------------------------------------------
-
-    >>> l = List([1, 2, 3]); l
-    List([1, 2, 3])
-    >>> type(l)
-    <class 'List'>
-    >>> repr(l)
-    'List([1, 2, 3])'
-    >>> sum(l)
-    6
 
 
 <i class="fas fa-duck"></i> Duck Typing
