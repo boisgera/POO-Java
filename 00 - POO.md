@@ -619,20 +619,50 @@ Ma classe `List` (implementation)
         def __repr__(self):
             return "<" + super().__repr__() + ">"
 
-
-
-TODO
+Polymorphisme
 --------------------------------------------------------------------------------
 
-  - Polymorphism, Late Binding
+    def display(item):
+        print("L'objet item est:" + repr(item))
 
-  - Python: duck typing. Java: interfaces & classes
+(`repr` appelle la méthode `__repr__` de `item`)
 
-  - Reuse: Composition, delegation.
+--------------------------------------------------------------------------------
+
+  - le code de `display` ne permet pas de dire 
+    quelle implémentation de `__repr__` 
+    va être utilisée (**attachement dynamique/tardif**).
+
+  - le "contrat moral" est d'utiliser comment argument un objet 
+    **représentable**.
+
+  - tous les types d'objets respectant cette contrainte 
+    peuvent être utilisés comme argument (**polymorphisme**).
+
+--------------------------------------------------------------------------------
+
+  - En l'absence de méthode `__repr__` spécifique dans votre classe,
+    Python va se tourner vers les classes dont elle hérite (`object`
+    par défaut).
+
+--------------------------------------------------------------------------------
+
+    >>> class NoRepr:
+    ...     pass
+    >>> nr = NoRepr()
+    >>> nr
+    <__main__.NoRepr object at 0x7f0a620cb588>
+
+--------------------------------------------------------------------------------
+
+    >>> class List(list):
+    ...     pass
+    >>> l = List()
+    >>> l
+    []
 
 
-
-<i class="fas fa-duck"></i> Duck Typing
+<i class="fas fa-duck"></i> "Duck Typing"
 --------------------------------------------------------------------------------
 
 ![](images/duck.jpg)
@@ -641,11 +671,53 @@ TODO
 
 --------------------------------------------------------------------------------
 
-Pass the [duck test](https://en.wikipedia.org/wiki/Duck_test):
+  - L'argument doit passer le [test du canard](https://en.wikipedia.org/wiki/Duck_test):
 
+    "If it looks like a duck, swims like a duck, and quacks like a duck, 
+    then it probably is a duck." 
 
-> "If it looks like a duck, swims like a duck, and quacks like a duck, 
-> then it probably is a duck." 
+  - S'il échoue, une exception se produit (elle peut être gérée par le
+    programme). 
+
+<i class="fab fa-java"></i> En Java
+--------------------------------------------------------------------------------
+
+  - Pas de "contrat moral" ou "duck typing",
+
+  - Les obligations sont vérifiées par le compilateur,
+
+  - Suppose l'usage de **classes** ou d'**interfaces**.
+
+Bénéfices de l'Héritage
+--------------------------------------------------------------------------------
+
+  - réutilisation (sans *modification*) de code existant,
+
+  - flexibilité (polymorphisme & attachement tardif).
+
+Alternatives: Composition
+--------------------------------------------------------------------------------
+
+    class List:
+        def __init__(self, items):
+            self.l = list(items)
+
+C'est **avoir** une liste (et non pas **être** une liste).
+
+Delegation
+--------------------------------------------------------------------------------
+
+On "être une liste" sans hériter de `list`:
+
+    class List:
+        def __init__(self, items):
+            self.l = list(items)
+        def __repr__(self):
+            return self.l.__repr__()
+        def __iter__(self):
+            return self.l.__iter__()
+        ...
+
 
 <style>
 
