@@ -796,7 +796,7 @@ Alternatives à l'Héritage: Composition
 
 C'est **avoir** une liste (et non pas **être** une liste).
 
-Delegation
+Délegation
 --------------------------------------------------------------------------------
 
 On peut "être une liste" sans hériter de `list`:
