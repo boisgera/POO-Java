@@ -13,5 +13,5 @@ Programmation Orientée Objet avec Java
 
   - ...
 
-  - Java "Barebones" ([HTML](https://boisgera.github.io/POO-Java/Java Barebones.html), 
-    [PDF](https://boisgera.github.io/POO-Java/Java Barebones.pdf))
+  - Java "Barebones" ([HTML](https://boisgera.github.io/POO-Java/Java%20Barebones.html), 
+    [PDF](https://boisgera.github.io/POO-Java/Java%20Barebones.pdf))
