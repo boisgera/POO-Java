@@ -18,3 +18,4 @@ Programmation Orientée Objet avec Java
 
 ### Ressources Externes
 
+  - [Java™ Platform, Standard Edition 8, API Specification](https://docs.oracle.com/javase/8/docs/api/overview-summary.html)
