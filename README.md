@@ -1,4 +1,4 @@
-![](https://api.travis-ci.org/boisgera/POO-Java.svg?branch=master)
+[![Build Status](https://travis-ci.org/boisgera/POO-Java.svg?branch=master)](https://travis-ci.org/boisgera/POO-Java)
 
 Programmation Orientée Objet avec Java
 ================================================================================
