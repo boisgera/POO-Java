@@ -688,14 +688,106 @@ Polymorphisme
 
   - Suppose l'usage de **classes** ou d'**interfaces**.
 
+--------------------------------------------------------------------------------
+
+Hériter de -- ou **étendre** -- `LinkedList`, **une classe**:
+
+    import java.util.LinkedList;
+    public class MyList extends LinkedList<Integer> {
+      public String toString() {
+          return "<" + super.toString() + ">";
+      }
+    }
+
+Permet de réutiliser son implémentation.
+
+--------------------------------------------------------------------------------
+
+    class Main {
+      public static void main(String[] arg) {
+        MyList list = new MyList();
+        list.add(1);
+        list.add(2);
+        System.out.println(list);
+      }
+    }
+
+Exécution
+--------------------------------------------------------------------------------
+
+    $ java Main
+    <[1, 2]>
+
+"Refactoring"
+--------------------------------------------------------------------------------
+
+    class Main {
+      public static void main(String[] arg) {
+        MyList list = new MyList();
+        Main.addOneTwo(list);
+      }
+    ...
+
+--------------------------------------------------------------------------------
+
+    ...
+      public static void addOneTwo(MyList list) {
+        list.add(1);
+        list.add(2);
+        System.out.println(list);
+      }
+    }
+
+--------------------------------------------------------------------------------
+
+Mais la fonction `addOneTwo` ne peut être utilisée qu'avec les instances
+de `MyList` (ou qui en dérivent). 
+
+Son usage est donc (trop) limité ...
+
+Alternative -- Interfaces
+--------------------------------------------------------------------------------
+
+  - La classe `LinkedList` **implémente** de nombreuses interfaces 
+    (ou "contrats" vérifiés par le compilateur):
+
+    `Serializable`, `Cloneable`, ..., `Deque`, **`List`**, `Queue`
+
+  - En implémentant [`List<E>`](https://docs.oracle.com/javase/8/docs/api/java/util/List.html),
+    la classe `LinkedList<E>` garantit qu'elle implémente la méthode `add`:
+
+        boolean add(E e)
+
+--------------------------------------------------------------------------------
+
+    import java.util.List;
+    ...
+      public static void addOneTwo(List<Integer> list) {
+        list.add(1);
+        list.add(2);
+        System.out.println(list);
+      }
+    }
+
+Polymorphisme
+--------------------------------------------------------------------------------
+
+Toutes les classes implémentant `List` sont désormais susceptibles d'utiliser
+`addOneTwo`:
+
+`MyList`, `LinkedList<Integer>`, `Vector<Integer>`, etc.
+
+
 Bénéfices de l'Héritage
 --------------------------------------------------------------------------------
+
+  - aggrégation de données,
 
   - réutilisation (sans *modification*) de code existant,
 
   - flexibilité (polymorphisme & attachement tardif).
 
-Alternatives: Composition
+Alternatives à l'Héritage: Composition
 --------------------------------------------------------------------------------
 
     class List:
@@ -707,7 +799,7 @@ C'est **avoir** une liste (et non pas **être** une liste).
 Delegation
 --------------------------------------------------------------------------------
 
-On "être une liste" sans hériter de `list`:
+On peut "être une liste" sans hériter de `list`:
 
     class List:
         def __init__(self, items):
