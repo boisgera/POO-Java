@@ -621,6 +621,16 @@ Ma classe `List` (implementation)
 
 
 
+TODO
+--------------------------------------------------------------------------------
+
+  - Polymorphism, Late Binding
+
+  - Python: duck typing. Java: interfaces & classes
+
+  - Reuse: Composition, delegation.
+
+
 
 <i class="fas fa-duck"></i> Duck Typing
 --------------------------------------------------------------------------------
