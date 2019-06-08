@@ -18,6 +18,7 @@ Programmation Orientée Objet avec Java
 
   - [Java™ Platform, Standard Edition 8, API Specification](https://docs.oracle.com/javase/8/docs/api/overview-summary.html)
 
-  - [BlueJ](https://www.bluej.org/)
+  - L'environnement de développement [BlueJ](https://www.bluej.org/)
 
-  - Scalable Vector Graphics: sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)[documentation Mozilla](https://developer.mozilla.org/en-US/docs/Web/SVG)
+  - Scalable Vector Graphics: sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics),
+    et la [documentation Mozilla](https://developer.mozilla.org/en-US/docs/Web/SVG)
