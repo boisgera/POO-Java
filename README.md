@@ -3,7 +3,7 @@
 Programmation Orientée Objet avec Java
 ================================================================================
 
-### Documents
+### Documents Supports
 
   - **Programmation Orientée Objet** ([HTML](https://boisgera.github.io/POO-Java/POO.html), 
     [PDF](https://boisgera.github.io/POO-Java/POO.pdf))
