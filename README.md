@@ -18,6 +18,8 @@ Programmation Orientée Objet avec Java
 
   - [Java™ Platform, Standard Edition 8, API Specification](https://docs.oracle.com/javase/8/docs/api/overview-summary.html)
 
+  - "Read-Eval-Print-Loop" en ligne (Java, Python, etc.) avec [repl.it](https://repl.it)
+  
   - L'environnement de développement [BlueJ](https://www.bluej.org/)
 
   - Scalable Vector Graphics: sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics),
