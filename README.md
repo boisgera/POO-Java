@@ -11,8 +11,6 @@ Programmation Orientée Objet avec Java
   - **Introduction à BlueJ** ([HTML](https://boisgera.github.io/POO-Java/BlueJ.html), 
     [PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
 
-  - ...
-
   - **Java "Barebones"** ([HTML](https://boisgera.github.io/POO-Java/Java%20Barebones.html), 
     [PDF](https://boisgera.github.io/POO-Java/Java%20Barebones.pdf))
 
@@ -21,3 +19,5 @@ Programmation Orientée Objet avec Java
   - [Java™ Platform, Standard Edition 8, API Specification](https://docs.oracle.com/javase/8/docs/api/overview-summary.html)
 
   - [BlueJ](https://www.bluej.org/)
+
+  - Scalable Vector Graphics: sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)[documentation Mozilla](https://developer.mozilla.org/en-US/docs/Web/SVG)
