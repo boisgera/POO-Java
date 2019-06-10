@@ -283,7 +283,7 @@ Les chaînes de caractères Java sont immuables :
 
   - Il n'existe aucun moyen de modifier le contenu d'une chaîne.
 
-  - L'opération *chaine = " Hello World bis " revient à placer une **nouvelle** chaîne de caractères dans la variable chaine.
+  - L'opération **chaine = \"Hello World bis\"** revient à placer une **nouvelle** chaîne de caractères dans la variable chaine.
 
   - Autre exemple : la méthode **concat** ne modifie pas la chaîne initiale. 
 
@@ -314,7 +314,7 @@ Déclaration / Affectation
   - Affectation : avec le signe **=** 
 
         s = "Hello" ;
-        s = new String("Hello") // Création de l'objet String avec new
+        s = new String("Hello"); // Création de l'objet String avec new
 
   - Combinaison déclaration/affectation  :
 
@@ -549,16 +549,112 @@ Exercice
 La structure d'une application Java
 =====================================
 
-La fonction =ain()
+Retour sur le tutoriel BlueJ
+-------------------
+
+  - Deux fichiers sources .java
+
+  - Les versions compilées sont les .class
+
+  - *Cat.java* décrit le fonctionnement de la classe **Cat**
+
+  - Comment faire pour **créer un programme exécutable** ?
+
+    
+La fonction Main
 ---------------------------
 
+Il est possible "d'exécuter" une classe si et seulement si celle-ci contient une fonction **main** dont la signature est la suivante :
+
+    public static void main(String[] args) ;
+
+-------------------------
+
+  - **public** : la méthode est publique (peut être appelée depuis une autre classe)
+
+  - *(**static** : la méthode est statique. C'est une méthode de classe qui ne nécessite pas d'instance de l'objet.)*
+
+  - **void** : la méthode ne retourne rien. 
+
+  - **String[] args** : l'argument de main est un tableau de String.
 
 
+Pourquoi String[] args?
+---------------------------
+
+  - Identification des arguments lors d'une commande textuelle dans un terminal
+ 
+        $ ls -l *.java     (unix)
+        $ dir *.java       (windows)
+
+Liste tous les fichiers avec l'extension java et les présente sous forme de liste
+
+Récupérer les arguments 
+-------------------------
+
+    $ ls -l *.java
+    
+ - Exemple avec la ligne de commande unix  
+   
+   - **ls** : nom de la commande 
+   
+   - **-l** : premier argument
+   
+   - ***.java** : deuxième argument
+
+  - Du point de vue de Main : 
+  
+    - args[0] = \"-l\"  
+  
+    - args[1] = "*.java"
+
+Règle d'usage pour Main
+--------------------------
+
+En général, il est préférable de définir une classe particulière qui contient le Main. Il est rarement approprié de définir cette fonction dans une classe normale. 
+
+Pour exécuter
+------------------------
+
+Se mettre dans le répertoire contenant le fichier .class (ex. MainClass.class) issu de la compilation à l'aide de la commande **cd**.
+
+    $ java MainClass argument1 argument2....
 
 
+Une classe MainClass pour les chats
+-------------------------
+ 
+   - Arguments autorisés : listen, happy?, feed, adopt_another
+
+   - Être robuste à un utilisateur maladroit... 
+
+   - Ajouter une méthode publique **getName()** à **Cat** pour que Main puisse accéder au nom du chat
 
 
+<i class="fas fa-terminal"></i>
+-------------------------
 
 
+      $ java MainClass
+      You adopt a tabby cat named Bob
+      
+      $ java MainClass happy? listen feed listen adopt_another happy? mauvaisArgument feed happy?
+      You adopt a white cat named Cole
+      Cole is not happy
+      Cole meows at you.
+      Cole purrs.
+      You abandon Cole
+      You adopt a white cat named Marmalade
+      Marmalade is not happy 
+      My name is Groot!
+      Marmalade is happy 
+
+ *Note : opérateur new pour initialiser un objet (cf tuto)*
 
 
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"> 
+
+<!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+ -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
