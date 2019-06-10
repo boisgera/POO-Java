@@ -400,20 +400,151 @@ Les instructions **if/else**
 Les boucles **for**
 -----------------
 
+    for (initialisation ; conditionFin ; increment){
+      instructions;
+    }
+    instructionsSuivante ;
+
+  - Réaliser des opérations un nombre défini de fois
+  
+  - Parcourir un tableau / une liste
+
+  - Une fois la condition de fin réalisée, **instructionsSuivante** est exécutée
+
+-----------------
+
+    for (int i=0 ; i < = 10 ; i++){
+      System.out.println("On affiche le nombre "+i);
+    }
+    System.out.println("On a compté jusqu'à 10")
+
+    
+    for (int i=10 ; i > = 10 ; i--){
+      System.out.println("On affiche le nombre "+i);
+    }
+    System.out.println("Fin du compte à rebours !")
+
+
+    for ( ; ;){
+      // Boucle infinie
+    }
 
 Les boucles **while**
 --------------------
+     while (expressionTest) {
+       instructions;
+     }
+     instructionsSuivantes
+
+  - Réaliser des opérations tant qu'une condition est réalisée
+  
+  - Si **expressionTest** vaut **false** lors de sa première évaluation, on passe à **instructionsSuivantes**
+
+  - **while(true)** $\longrightarrow$ boucle infinie
+
+  - Une fois que **expressionTest** est faux, **instructionsSuivantes** est exécutée
 
 
 Les boucles **do while**
 --------------------
 
+     do {
+       instructions;
+     }while (expressionTest);
+     instructionsSuivantes ; 
+
+  - Similaire à **while**
+  
+  - Mais garantie que le bloc **instructions** est exécuté **au moins une fois**. 
+
+  - Une fois que **expressionTest** est faux, **instructionsSuivante** est exécutée
+
+
+
 Le mot clé **break**
 --------------------
+
+Permet de sortir d'un bloc d'instruction **for**, **while** ou **do while** prématurément et d'exécuter les instructions suivantes.
+    
+    String chaine = "Hello World" ;
+    // Recherche de la présence du caractère 'W'
+
+    boolean wPresent = false ;
+    for (int i = 0 ; i< chaine.length() ; i++){
+      if (chaine.charAt(i) == 'W'){
+        wPresent = true ;
+        break ; // Il n'est plus utile de continuer le for
+      }
+    }
+
+Le mot clé **continue**
+-----------------------------
+
+Permet de "**sauter**" l'itération courante d'un bloc d'instruction **for**, **while** ou **do while**.
+
+    String chaine = "Hello world" ;
+    // Comptage du nombre de 'l'
+
+    int nb = 0 ;
+    for (int i = 0 ; i< chaine.length() ; i++){
+        if (chaine.charAt(i)!='l')
+          continue ; // On passe à i+1
+
+        // On traite le caractère 
+        nb++;  
+    }
 
 
 L'instruction **switch**
 --------------------
+Permet de placer le "control flow" a un endroit spécifique en fonction de la valeur d'une variable parmi un ensemble donné
+
+    public String giveDay(int dayNumber){
+      String dayString ;
+      switch(dayNumber){
+        case 1 : dayString = "Monday" ;
+        case 2 : dayString = "Tuesday";
+        case 3 : dayString = "Wednesday";
+        case 4 : dayString = "Thursday";
+        case 5 : dayString = "Friday";
+        case 6 : dayString = "Saturday";
+        case 7 : dayString = "Sunday";
+      }
+      return dayString ;
+    }
+
+Exercice
+-------------
+
+  - Créer une classe TestSwitch implémentant cette fonction.
+  
+  - Que dit le compilateur ? Corriger et tester la fonction.
+  
+  - Que se passe-t-il quand on donne un nombre en dehors de la plage 1-7 ?
+
+  - Comment rendre la fonction opérationnelle ?
+
+------------------------
+
+    public String giveDay(int dayNumber){
+       String dayString ; 
+       // Plus besoin d'initialiser grâce au default.
+       switch(dayNumber){
+        case 1 : dayString = "Monday" ; break ;
+        case 2 : dayString = "Tuesday"; break ;
+        case 3 : dayString = "Wednesday"; break ;
+        case 4 : dayString = "Thursday"; break ;
+        case 5 : dayString = "Friday"; break ;
+        case 6 : dayString = "Saturday"; break ;
+        case 7 : dayString = "Sunday"; break ;
+        default: dayString = "I am Groot";
+      }
+      return dayString ;
+    }
+
+  - Penser aux **break** et **default** 
+
+  - Ne fonctionne qu'avec les **int** (et dérivés) et les **String**
 
 La structure d'une application Java
 =====================================
