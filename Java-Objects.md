@@ -20,7 +20,7 @@ Exemple de la classe Point
 Les attributs
 --------------
 
-Ici $x$ et $y$. Ce sont les variables internes associées à la classe. 
+Ici **x** et **y**. Ce sont les variables internes associées à la classe. 
 
 Les méthodes "classiques"
 ---------------
@@ -222,6 +222,50 @@ Grâce au mot clé **extends**
         
     }
 
+Constructeur de classe fille
+--------------------------
+
+La première instruction du constructeur doit être un appel à un autre constructeur de la classe ou de la classe parente. Sinon, le compilateur appelle le constructeur par défaut de la classe parente.
+
+Cela peut provoquer une erreur de compilation si celui-ci n'existe pas.
+
+
+Redéfinition de méthode 
+------------------------
+
+
+Une classe fille peut éventuellement **redéfinir une méthode**.
+
+Dans ce cas, elle a **le même prototype** que la méthode de la classe parente.
+
+Visibilité des attributs et méthodes
+==================
+
+---------------------
+
+Devant un attribut ou une méthode :
+
+  - **private** : accessible uniquement par la classe
+
+  - **protected** : accessible par tout descendant de la classe et les classes appartenant au même *package*
+
+  - **sans mot clé** : accessible par la classe et les classes appartenant au même *package*
+
+  - **public** : accessible par toute les classes
+
+
+Règles usuelles:
+----------------
+
+Éviter autant que possible l'utilisation de **public**, en particulier sur les variables internes.
+
+Utiliser des fonctions **getter** et **setter** pour accéder et éventuellement modifier les attributs appropriés.
+
+
+La classe Object
+================
+
+----------
 
 
 <style>
