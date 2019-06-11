@@ -59,6 +59,8 @@ Pour référencer à nouveau l'attribut : le mot clé **this**
 
 ------------------
 
+Voir la différence entre
+
     public double distance2() {
         int x = 0 ;
         int y = x+1 ;
@@ -115,6 +117,18 @@ Règles de nommage
 
   - **classes** : commencent par une majuscules puis une majuscule sur les mots suivants accolés
     - ex. : Cat, Point, MainClass,...
+
+
+Exercice fil rouge
+------------------
+
+Dans un nouveau projet, définir les classes **Square**, **Circle** avec des attributs pertinents.
+
+Y implémenter des méthodes **moveTo**, **translate**, **scale**
+
+S'inspirer de la doc SVG pour déduire une façon adéquate de représentation. 
+
+Ajouter des méthodes de calcul de **bounding box** (retourne un tableau de 4 **double**)
 
 
 La surcharge de méthodes
@@ -183,25 +197,24 @@ Trouver un lien naturel entre deux classes :
   - On n'implémente que les nouvelles fonctionnalités
 
   
-Implémentation de l'héritage : 
+Implémentation 
 --------------------
 
 Grâce au mot clé **extends**
 
     public class Disque2 extends Point{
-        double r ;
+        // Attributs nouveaux
+
         public Disque2(double x,double y)
         {
-            this.x = x ; this.y = y ;
-        }
-        public double area(){
-            return r*r*Math.PI ;
-        }
-        public double perimeter(){
-            return 2*r*Math.PI ;
+            // Définir un constructeur
         }
         
+        // Méthodes nouvelles
+        
     }
+
+Montrer qu'on peut créer un tableau avec un **Point** et un **Disque2**.
 
 ---------------------
 
@@ -212,6 +225,7 @@ Grâce au mot clé **extends**
         public Disque2(double x,double y)
         {
             super(x,y);
+            r = 2 ;
         }
         public double area(){
             return r*r*Math.PI ;
@@ -228,6 +242,37 @@ Constructeur de classe fille
 La première instruction du constructeur doit être un appel à un autre constructeur de la classe ou de la classe parente. Sinon, le compilateur appelle le constructeur par défaut de la classe parente.
 
 Cela peut provoquer une erreur de compilation si celui-ci n'existe pas.
+
+
+Autre utilité de super
+------------------------
+
+**super** permet également l'appel à une méthode de la classe mère. 
+
+    super.longeur() ;
+
+
+
+Mot clé instanceOf
+-------------------
+
+Permet de tester si une instance est une certaine classe. Utile pour utiliser des méthodes de la classe initiale lorsqu'un objet est utilisé sous le type parent. 
+
+    class SuperClass{...}
+    class SubClass extends SuperClass{...}
+
+    SubClass a = new SubClass();
+    SuperClass b = new SubClass();
+    
+    SuperClass[] tab = new SuperClass[2] ;
+    tab[0] = a ; tab[1] = b ;
+
+    for (int i=0 ; i<2 ;i++){
+      if (tab[i] instanceOf SubClass){
+         ((SubClass)tab[i]).subClassMethod();
+      }
+    }
+
 
 
 Redéfinition de méthode 
@@ -261,53 +306,216 @@ Règles usuelles:
 
 Utiliser des fonctions **getter** et **setter** pour accéder et éventuellement modifier les attributs appropriés.
 
+Variables et méthodes de classe
+========================
+
+-------------------------
+
+Il s'agit de variables et méthodes qui sont partagées par toutes les instances de la classe.
+
+Utilisation du mot clé **static**
+
+On peut y faire appel directement en accolant le nom à la classe :
+    
+    static int variableStatique = 3 ;
+    static void methodeStatique();
+
+    NomClasse.variableStatique ;
+    NomClasse.methodeStatique() ;
+
+
+
+-----------------
+
+Exemple : compteur de nombre d'instances. 
+
+    public class TestStatic
+    {
+        public static int i= 0 ;
+        
+        TestStatic(){
+          i++;
+        } 
+    }
+
+
+------------------
+
+Exemple : méthode main d'une classe
+
+    public static void main()
+
+
+**Une méthode statique ne peut faire appel à des variables d'instances (non statiques)**
+
+
+Retour sur le fil rouge
+------------------------
+
+  - Si ce n'est déjà fait, mettre à jour de façon cohérente la visibilité des méthodes et des attributs. 
+
+  - Faire en sorte que chaque objet instancié ait un identifiant de type **int** différent (numéro d'instance).
+
+  - Définir la fonction **descr** pour qu'elle retourne une chaine de caractères avec le nom de l'objet ainsi que le numéro d'instance.
+
+
+
 
 La classe Object
 ================
 
 ----------
 
+En Java, tous les objets **dérivent de la classe Object**
 
-<style>
+Ils ont héritent donc d'un certain nombre de méthodes dont certaines sont intéressantes à surcharger ou redéfinir.
 
-.reveal section img {
-  border:0;
-  height:50vh;
-  width:auto;
 
-}
+toString()
+-----------
 
-.reveal section img.medium {
-  border:0;
-  max-width:50vh;
-}
+Il s'agit de la méthode retournant une représentation de l'instance sous forme d'une chaîne de caractère.
 
-.reveal section img.icon {
-  display:inline;
-  border:0;
-  width:1em;
-  margin:0em;
-  box-shadow:none;
-  vertical-align:-10%;
-}
+Ainsi, pour tout objet **obj**,
 
-.reveal code {
-  font-family: Inconsolata, monospace;
-}
+    System.out.prinln(obj) ;
 
-.reveal pre code {
-  font-size: 1.5em;
-  line-height: 1.5em;
-  /* max-height: 80wh; won't work, overriden */
-}
+renvoie
 
-input {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-size: 42px;
-  line-height: 54.6px;
-}
+    System.out.println(obj.toString());
 
-</style>
+
+equals(Object obj)
+---------------
+Permet de tester l'égalité entre deux objets. 
+
+Différent de l'opérateur **==** qui vaut **true** lorsque deux objets pointent vers la même référence
+
+Exemple typique : les chaînes de caractère.
+
+*Attention : **redéfinir** equals() pour des classes personnalisées implique de redéfinir la méthode **hashCode()*** 
+
+clone()
+----------------
+Méthode **protected** permet de cloner un objet. 
+
+La classe doit **implémenter l'interface Cloneable** 
+
+    public class Test implements Cloneable{
+      double x,y,z
+      // Constructeur(s) + autres méthodes
+      public Test clone() throws 
+      CloneNotSupportedException{
+          return (Test)(super.clone());
+      }
+    }
+
+----------------
+
+    public class Test implements Cloneable{
+      double x,y,z
+      // Constructeur(s) + autres méthodes
+      public Test clone(){ 
+        try{
+          return (Test)(super.clone());
+        }catch(Exception CloneNotSupportedException){
+          System.out.println("Warning");
+          return new Test() ; 
+        }
+      }
+    }
+
+
+Retour sur le fil rouge
+------------------------
+
+  - Faire en sorte que la description soit donnée automatiquement avec "System.out.prinln()"
+
+  - Définir la fonction **toXml** qui retourne la chaîne de caractères XML permettant d'encoder le SVG.
+
+
+Classes abstraites et interfaces
+===============================
+
+Classes abstraite
+-------------------
+
+Une classe abstraite est une classe dont on **interdit la création d'une instance**
+
+Ses classes dérivées peuvent en revanche créer des instances
+
+Elle est déclarée grâce au mot-clé **abstract**
+
+--------------------
+
+Une méthode abstraite est une méthode dont on ne donne pas d'implémentation. Seul son **prototype est fourni** :
+
+    abstract protected String methodeAbstraite(int i) ;
+
+La méthode peut ou non être implémentée dans une des classes filles.
+
+**Une classe qui contient au moins une méthode abstraite est forcément abstraite.**
+
+
+
+Exemple :
+---------------------------
+ 
+  - Imaginons une classe **dog** qui serait très similaire à la classe **cat** mais dont quelques méthodes diffèrent (un chat ne ronronne pas).
+
+  - On peut imaginer une superclass **animal** qui regroupe des attributs communs et des méthodes communes(**name**, **fed**,...)
+
+  - La méthode **listen()** va exister pour **Cat** et **Dog**, mais leur implémentation différera. 
+
+
+Interface
+--------------------------
+
+Une interface est **similaire à une classe abstraite** à l'exception qu'elle ne **contient que des méthodes abstraites**
+
+    public Interface MonInterface{
+      abstract void methode1() ;
+      abstract String methode2(int i) ;
+      //....
+    }
+
+------------------
+
+On dit d'une classe qu'elle **implémente une interface**
+
+    public class A extends SuperClass implements MonInterface{
+        // La classe doit fournir le code de methode1 et methode2
+        void methode1(){
+            // Quelques opérations
+        }
+        String methode2(int i){
+          return Integer(i).toString();
+        }
+    }
+
+
+Utilisation
+---------------------
+
+  - Une interface est vue comme un type.
+
+  - Un objet implémentant une interface donnée peut être utilisé dans n'importe quel contexte où le type de l'interface est demandé
+
+  - Compatible avec le mot clé **instanceOf**
+
+  - **Une classe peut implémenter plusieurs interfaces** (permet en quelque sorte l'héritage multiple) 
+
+
+Retour sur le fil rouge
+-----------------------
+
+S'inspirer de ces exemples pour complexifier le design :
+
+  - Se donner la possibilité d'avoir plusieurs formes
+
+  - Plusieurs solutions possibles... Classes abstraites, interface...
+
+
 
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"> 
 
