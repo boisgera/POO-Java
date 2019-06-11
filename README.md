@@ -30,4 +30,5 @@ Programmation Orientée Objet avec Java
 
   - Scalable Vector Graphics: sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics),
     et la [documentation Mozilla](https://developer.mozilla.org/en-US/docs/Web/SVG)
-    (en particulier, le [tutoriel](https://developer.mozilla.org/fr/docs/Web/SVG/Tutoriel))
+    (en particulier, le [tutoriel](https://developer.mozilla.org/fr/docs/Web/SVG/Tutoriel)).
+    Logiciel associé: [Inkscape](https://inkscape.org/).
