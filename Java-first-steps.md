@@ -12,7 +12,7 @@ Java a été développé dans les années 1990 par des ingénieurs de Sun Micros
 
   - Nécessité de nettoyer soi-même la mémoire en désallouant explicitement les objets : pas de ramasse-miettes (garbage collector en anglais)
 
-  - Non original : oak (chêne)
+  - Nom original : oak (chêne)
 
 
 -----------------------------------------
@@ -128,7 +128,7 @@ Les entiers littéraux
     long k = 10_000_000_000L
     byte b = 128 ; // On tente d'affecter 128 à un byte
     byte b2 = 127 ;
-    b2 = b2+1 ;  // Que se passe-t-il ?
+    b2 = b2++ ;  // Que se passe-t-il ?
     b2
 
 Les différentes bases d'entiers 
@@ -350,9 +350,34 @@ Tests et logique booléenne
 
         Boolean a = !true ; // a = false donc...
 
-  - Le ET et OU logique **&&** / **||**
+  - Le ET et OU logique : **&&** et **||**
 
         Boolean b = true && false ; // false !
+
+
+Opérateur ternaire ?
+----------------------
+
+Si la condition vaut **true**, alors on retourne val1, sinon on retourne val2.
+
+    condition ? val1 : val2 ;
+
+Exemple
+
+    int note = 15 ;
+    char grade = (note >= 16) ? 'A':'B'; 
+
+Excercice
+------------------------
+
+Écrire en **une instruction** une fonction qui prend en entrée une note entre 0 et 20 et qui renvoie la lettre associée (**char**) en fonction de la répartition suivante :
+
+  - [20 , 16] : A  \ \ \ \ \ \ \ \    ]16 , 14] : B
+
+  - ]14 , 11] : C  \ \ \ \ \ \ \ \   ]11, 8]   : D
+
+  - ]8 , 5]   : E  \ \ \ \ \ \ \ \ \ \ \ \ \  ]5, 0]    : F
+
 
 
 Le Flow Control en Java
@@ -497,9 +522,35 @@ Permet de "**sauter**" l'itération courante d'un bloc d'instruction **for**, **
 
 L'instruction **switch**
 --------------------
-Permet de placer le "control flow" a un endroit spécifique en fonction de la valeur d'une variable parmi un ensemble donné
+Permet de placer le "control flow" à un endroit spécifique en fonction de la valeur d'une variable parmi un ensemble donné : 
 
-    public String giveDay(int dayNumber){
+    switch(variable){
+      case valeur1 : instr1 ; instr2 ; //...
+      case valeur2 : instr3 ; instr4 ; //...
+      case valeur3 : instr5 ; instr6 ; //...
+    }
+
+Dès qu'une des conditions est vérifiée, le code exécute **toutes les instructions suivantes**
+
+Si variable = valeur2 alors instr3 $\longrightarrow$ instr4 $\longrightarrow$ instr5 $\longrightarrow$ instr6
+
+
+Exercice
+-------------
+   Créer une classe TestSwitch implémentant cette la fonction suivante :
+
+  - prototype : *String* **getDay**(*int* i) 
+
+  - Retourne la chaîne de caractères associées au i<sup>ème</sup> jour de la semaine
+  
+  - Robuste à un utilisateur malicieux
+
+
+---------------------------
+
+  Cette version ne compilera pas (dayString potentiellement non initialisée) et est sémantiquement incorrecte (manque **break**)
+
+    public String getDayBAD(int dayNumber){
       String dayString ;
       switch(dayNumber){
         case 1 : dayString = "Monday" ;
@@ -513,20 +564,9 @@ Permet de placer le "control flow" a un endroit spécifique en fonction de la va
       return dayString ;
     }
 
-Exercice
--------------
-
-  - Créer une classe TestSwitch implémentant cette fonction.
-  
-  - Que dit le compilateur ? Corriger et tester la fonction.
-  
-  - Que se passe-t-il quand on donne un nombre en dehors de la plage 1-7 ?
-
-  - Comment rendre la fonction opérationnelle ?
-
 ------------------------
 
-    public String giveDay(int dayNumber){
+    public String getDay(int dayNumber){
        String dayString ; 
        // Plus besoin d'initialiser grâce au default.
        switch(dayNumber){
@@ -544,7 +584,8 @@ Exercice
 
   - Penser aux **break** et **default** 
 
-  - Ne fonctionne qu'avec les **int** (et dérivés) et les **String**
+  - Ne fonctionne qu'avec les **int** (et dérivés) et les **String**. Les valeurs testées doivent être constantes
+
 
 La structure d'une application Java
 =====================================
