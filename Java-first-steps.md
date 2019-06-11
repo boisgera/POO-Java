@@ -266,7 +266,7 @@ La classe **String**
 
 La classe **String** permet de manipuler les chaînes de caractère.
 
-    String chaine = Hello World "; // Déclaration et initialisation
+    String chaine = "Hello World"; // Déclaration et initialisation
 
 Méthodes utiles...
 ------------------
