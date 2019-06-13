@@ -5,10 +5,6 @@ Contexte
 
 --------------------------------------------------------------------------------
 
-<!--
-[<i class="fab fa-wikipedia-w"></i> Encapsulation](https://fr.wikipedia.org/wiki/Encapsulation_(programmation))
--->
-
 La plate-forme Java a été développé par:
   
   - James Gosling dans les années 1990,
@@ -16,10 +12,10 @@ La plate-forme Java a été développé par:
   - pour [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems)  
     (OpenOffice, VirtualBox, Solaris, NFS, etc.).
 
-API Java
+Bibliothèques & API Java
 --------------------------------------------------------------------------------
 
-**Application Programming Interfaces**   
+**Application Programming Interfaces:**   
 Interfaces des Bibliothèques
 
   - **Standard Edition (Java SE)**   
@@ -40,7 +36,7 @@ En 2010, **Oracle Corporation** rachète Sun Microsystems:
 
   - <https://en.wikipedia.org/wiki/Sun_acquisition_by_Oracle>
 
-Oracle Corp. est une entreprise "profit-driven" ...
+Oracle est une entreprise "profit-driven" ...
 
 
 Java Standard Edition
@@ -77,19 +73,19 @@ Java est-il encore gratuit ?
     "If you stay up to date on news from the Java community, you may have heard that Oracle have changed their support model for Java.  
     Some news is even suggesting that we now have to pay to use Java – this is not true!"
 
-Java Mobile Edition
+Java Micro Edition
 ================================================================================
 
 --------------------------------------------------------------------------------
 
-  - Oubliez Java "Mobile Edition" ...
+  - Oubliez Java "Micro Edition" pour les mobiles ...
 
   - Bienvenue à [Android](https://en.wikipedia.org/wiki/Android_(operating_system)) !
 
-Android
+Android "est du Java"
 --------------------------------------------------------------------------------
 
-  - basé initialement sur "Java-le-language" mais ...
+  - Basé initialement sur "Java-le-language" mais ...
 
   - [Kotlin est désormais le langage préféré de Google pour Android](https://techcrunch.com/2019/05/07/kotlin-is-now-googles-preferred-language-for-android-app-development/)
     (mai 2019).
@@ -175,7 +171,6 @@ Java Enterprise Edition
 
   - [**It’s Java just, not as we know it: Oracle-Jakarta name talks fail**](https://devclass.com/2019/05/07/java-eclipse-oracle-jakarta-name-talks-fail/)
 
---------------------------------------------------------------------------------
 
 <style>
 
