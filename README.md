@@ -17,6 +17,9 @@ Programmation Orientée Objet avec Java
   - **Les objets en Java** ([HTML](https://boisgera.github.io/POO-Java/Java-Objects.html),
     [PDF](https://boisgera.github.io/POO-Java/Java-Objects.pdf))
 
+  - **Java aujourd'hui** ([HTML](https://boisgera.github.io/POO-Java/Java aujourd'hui.html), 
+    [PDF](https://boisgera.github.io/POO-Java/Java aujourd'hui.pdf))
+
   - **Java "Barebones"** ([HTML](https://boisgera.github.io/POO-Java/Java%20Barebones.html), 
     [PDF](https://boisgera.github.io/POO-Java/Java%20Barebones.pdf))
 
