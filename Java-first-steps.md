@@ -12,7 +12,7 @@ Java a été développé dans les années 1990 par des ingénieurs de Sun Micros
 
   - Nécessité de nettoyer soi-même la mémoire en désallouant explicitement les objets : pas de ramasse-miettes (garbage collector en anglais)
 
-  - Non original : oak (chêne)
+  - Nom original : oak (chêne)
 
 
 -----------------------------------------
@@ -128,7 +128,7 @@ Les entiers littéraux
     long k = 10_000_000_000L
     byte b = 128 ; // On tente d'affecter 128 à un byte
     byte b2 = 127 ;
-    b2 = b2+1 ;  // Que se passe-t-il ?
+    b2 = b2++ ;  // Que se passe-t-il ?
     b2
 
 Les différentes bases d'entiers 
@@ -266,7 +266,7 @@ La classe **String**
 
 La classe **String** permet de manipuler les chaînes de caractère.
 
-    String chaine = Hello World "; // Déclaration et initialisation
+    String chaine = "Hello World"; // Déclaration et initialisation
 
 Méthodes utiles...
 ------------------
@@ -283,7 +283,7 @@ Les chaînes de caractères Java sont immuables :
 
   - Il n'existe aucun moyen de modifier le contenu d'une chaîne.
 
-  - L'opération *chaine = " Hello World bis " revient à placer une **nouvelle** chaîne de caractères dans la variable chaine.
+  - L'opération **chaine = \"Hello World bis\"** revient à placer une **nouvelle** chaîne de caractères dans la variable chaine.
 
   - Autre exemple : la méthode **concat** ne modifie pas la chaîne initiale. 
 
@@ -314,7 +314,7 @@ Déclaration / Affectation
   - Affectation : avec le signe **=** 
 
         s = "Hello" ;
-        s = new String("Hello") // Création de l'objet String avec new
+        s = new String("Hello"); // Création de l'objet String avec new
 
   - Combinaison déclaration/affectation  :
 
@@ -350,9 +350,34 @@ Tests et logique booléenne
 
         Boolean a = !true ; // a = false donc...
 
-  - Le ET et OU logique **&&** / **||**
+  - Le ET et OU logique : **&&** et **||**
 
         Boolean b = true && false ; // false !
+
+
+Opérateur ternaire ?
+----------------------
+
+Si la condition vaut **true**, alors on retourne val1, sinon on retourne val2.
+
+    condition ? val1 : val2 ;
+
+Exemple
+
+    int note = 15 ;
+    char grade = (note >= 16) ? 'A':'B'; 
+
+Excercice
+------------------------
+
+Écrire en **une instruction** une fonction qui prend en entrée une note entre 0 et 20 et qui renvoie la lettre associée (**char**) en fonction de la répartition suivante :
+
+  - [20 , 16] : A  \ \ \ \ \ \ \ \    ]16 , 14] : B
+
+  - ]14 , 11] : C  \ \ \ \ \ \ \ \   ]11, 8]   : D
+
+  - ]8 , 5]   : E  \ \ \ \ \ \ \ \ \ \ \ \ \  ]5, 0]    : F
+
 
 
 Le Flow Control en Java
@@ -400,34 +425,277 @@ Les instructions **if/else**
 Les boucles **for**
 -----------------
 
+    for (initialisation ; conditionFin ; increment){
+      instructions;
+    }
+    instructionsSuivante ;
+
+  - Réaliser des opérations un nombre défini de fois
+  
+  - Parcourir un tableau / une liste
+
+  - Une fois la condition de fin réalisée, **instructionsSuivante** est exécutée
+
+-----------------
+
+    for (int i=0 ; i < = 10 ; i++){
+      System.out.println("On affiche le nombre "+i);
+    }
+    System.out.println("On a compté jusqu'à 10")
+
+    
+    for (int i=10 ; i > = 10 ; i--){
+      System.out.println("On affiche le nombre "+i);
+    }
+    System.out.println("Fin du compte à rebours !")
+
+
+    for ( ; ;){
+      // Boucle infinie
+    }
 
 Les boucles **while**
 --------------------
+     while (expressionTest) {
+       instructions;
+     }
+     instructionsSuivantes
+
+  - Réaliser des opérations tant qu'une condition est réalisée
+  
+  - Si **expressionTest** vaut **false** lors de sa première évaluation, on passe à **instructionsSuivantes**
+
+  - **while(true)** $\longrightarrow$ boucle infinie
+
+  - Une fois que **expressionTest** est faux, **instructionsSuivantes** est exécutée
 
 
 Les boucles **do while**
 --------------------
 
+     do {
+       instructions;
+     }while (expressionTest);
+     instructionsSuivantes ; 
+
+  - Similaire à **while**
+  
+  - Mais garantie que le bloc **instructions** est exécuté **au moins une fois**. 
+
+  - Une fois que **expressionTest** est faux, **instructionsSuivante** est exécutée
+
+
+
 Le mot clé **break**
 --------------------
+
+Permet de sortir d'un bloc d'instruction **for**, **while** ou **do while** prématurément et d'exécuter les instructions suivantes.
+    
+    String chaine = "Hello World" ;
+    // Recherche de la présence du caractère 'W'
+
+    boolean wPresent = false ;
+    for (int i = 0 ; i< chaine.length() ; i++){
+      if (chaine.charAt(i) == 'W'){
+        wPresent = true ;
+        break ; // Il n'est plus utile de continuer le for
+      }
+    }
+
+Le mot clé **continue**
+-----------------------------
+
+Permet de "**sauter**" l'itération courante d'un bloc d'instruction **for**, **while** ou **do while**.
+
+    String chaine = "Hello world" ;
+    // Comptage du nombre de 'l'
+
+    int nb = 0 ;
+    for (int i = 0 ; i< chaine.length() ; i++){
+        if (chaine.charAt(i)!='l')
+          continue ; // On passe à i+1
+
+        // On traite le caractère 
+        nb++;  
+    }
 
 
 L'instruction **switch**
 --------------------
+Permet de placer le "control flow" à un endroit spécifique en fonction de la valeur d'une variable parmi un ensemble donné : 
+
+    switch(variable){
+      case valeur1 : instr1 ; instr2 ; //...
+      case valeur2 : instr3 ; instr4 ; //...
+      case valeur3 : instr5 ; instr6 ; //...
+    }
+
+Dès qu'une des conditions est vérifiée, le code exécute **toutes les instructions suivantes**
+
+Si variable = valeur2 alors instr3 $\longrightarrow$ instr4 $\longrightarrow$ instr5 $\longrightarrow$ instr6
+
+
+Exercice
+-------------
+   Créer une classe TestSwitch implémentant cette la fonction suivante :
+
+  - prototype : *String* **getDay**(*int* i) 
+
+  - Retourne la chaîne de caractères associées au i<sup>ème</sup> jour de la semaine
+  
+  - Robuste à un utilisateur malicieux
+
+
+---------------------------
+
+  Cette version ne compilera pas (dayString potentiellement non initialisée) et est sémantiquement incorrecte (manque **break**)
+
+    public String getDayBAD(int dayNumber){
+      String dayString ;
+      switch(dayNumber){
+        case 1 : dayString = "Monday" ;
+        case 2 : dayString = "Tuesday";
+        case 3 : dayString = "Wednesday";
+        case 4 : dayString = "Thursday";
+        case 5 : dayString = "Friday";
+        case 6 : dayString = "Saturday";
+        case 7 : dayString = "Sunday";
+      }
+      return dayString ;
+    }
+
+------------------------
+
+    public String getDay(int dayNumber){
+       String dayString ; 
+       // Plus besoin d'initialiser grâce au default.
+       switch(dayNumber){
+        case 1 : dayString = "Monday" ; break ;
+        case 2 : dayString = "Tuesday"; break ;
+        case 3 : dayString = "Wednesday"; break ;
+        case 4 : dayString = "Thursday"; break ;
+        case 5 : dayString = "Friday"; break ;
+        case 6 : dayString = "Saturday"; break ;
+        case 7 : dayString = "Sunday"; break ;
+        default: dayString = "I am Groot";
+      }
+      return dayString ;
+    }
+
+  - Penser aux **break** et **default** 
+
+  - Ne fonctionne qu'avec les **int** (et dérivés) et les **String**. Les valeurs testées doivent être constantes
+
 
 La structure d'une application Java
 =====================================
 
-La fonction =ain()
+Retour sur le tutoriel BlueJ
+-------------------
+
+  - Deux fichiers sources .java
+
+  - Les versions compilées sont les .class
+
+  - *Cat.java* décrit le fonctionnement de la classe **Cat**
+
+  - Comment faire pour **créer un programme exécutable** ?
+
+    
+La fonction Main
 ---------------------------
 
+Il est possible "d'exécuter" une classe si et seulement si celle-ci contient une fonction **main** dont la signature est la suivante :
+
+    public static void main(String[] args) ;
+
+-------------------------
+
+  - **public** : la méthode est publique (peut être appelée depuis une autre classe)
+
+  - *(**static** : la méthode est statique. C'est une méthode de classe qui ne nécessite pas d'instance de l'objet.)*
+
+  - **void** : la méthode ne retourne rien. 
+
+  - **String[] args** : l'argument de main est un tableau de String.
 
 
+Pourquoi String[] args?
+---------------------------
+
+  - Identification des arguments lors d'une commande textuelle dans un terminal
+ 
+        $ ls -l *.java     (unix)
+        $ dir *.java       (windows)
+
+Liste tous les fichiers avec l'extension java et les présente sous forme de liste
+
+Récupérer les arguments 
+-------------------------
+
+    $ ls -l *.java
+    
+ - Exemple avec la ligne de commande unix  
+   
+   - **ls** : nom de la commande 
+   
+   - **-l** : premier argument
+   
+   - ***.java** : deuxième argument
+
+  - Du point de vue de Main : 
+  
+    - args[0] = \"-l\"  
+  
+    - args[1] = "*.java"
+
+Règle d'usage pour Main
+--------------------------
+
+En général, il est préférable de définir une classe particulière qui contient le Main. Il est rarement approprié de définir cette fonction dans une classe normale. 
+
+Pour exécuter
+------------------------
+
+Se mettre dans le répertoire contenant le fichier .class (ex. MainClass.class) issu de la compilation à l'aide de la commande **cd**.
+
+    $ java MainClass argument1 argument2....
 
 
+Une classe MainClass pour les chats
+-------------------------
+ 
+   - Arguments autorisés : listen, happy?, feed, adopt_another
+
+   - Être robuste à un utilisateur maladroit... 
+
+   - Ajouter une méthode publique **getName()** à **Cat** pour que Main puisse accéder au nom du chat
 
 
+<i class="fas fa-terminal"></i>
+-------------------------
 
 
+      $ java MainClass
+      You adopt a tabby cat named Bob
+      
+      $ java MainClass happy? listen feed listen adopt_another happy? mauvaisArgument feed happy?
+      You adopt a white cat named Cole
+      Cole is not happy
+      Cole meows at you.
+      Cole purrs.
+      You abandon Cole
+      You adopt a white cat named Marmalade
+      Marmalade is not happy 
+      My name is Groot!
+      Marmalade is happy 
+
+ *Note : opérateur new pour initialiser un objet (cf tuto)*
 
 
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"> 
+
+<!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+ -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">

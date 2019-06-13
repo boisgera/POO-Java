@@ -781,7 +781,7 @@ Toutes les classes implémentant `List` sont désormais susceptibles d'utiliser
 Bénéfices de l'Héritage
 --------------------------------------------------------------------------------
 
-  - aggrégation de données,
+  - aggrégation de données et de code,
 
   - réutilisation (sans *modification*) de code existant,
 
