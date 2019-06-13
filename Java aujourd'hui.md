@@ -43,14 +43,41 @@ En 2010, **Oracle Corporation** rachète Sun Microsystems:
 Oracle Corp. est une entreprise "profit-driven" ...
 
 
-Java est encore "free" ?
+Java Standard Edition
 ================================================================================
+
+
+Java est-il encore gratuit ?
+--------------------------------------------------------------------------------
+
+  - **[Oracle Will Charge for Java Starting in 2019](https://www.aspera.com/en/blog/oracle-will-charge-for-java-starting-in-2019/)**
+
+    "Oracle has announced that, effective January 2019, Java SE 8 public updates will no longer be available for 'Business, Commercial or Production use' without a commercial license."
+
+    [Annonce](https://java.com/en/download/release_notice.jsp>), [FAQ](https://www.oracle.com/technetwork/java/javase/overview/oracle-jdk-faqs.html)
+
 
 --------------------------------------------------------------------------------
 
-...
+  - **[Java is Still Free 2.0.3](https://medium.com/@javachampions/java-is-still-free-2-0-0-6b9aa8d6d244)**
 
-Java sur les mobiles
+
+    **Short Version:**
+
+    You can still get the Oracle OpenJDK builds and OpenJDK 
+    [**by other providers**](https://www.tomaszezula.com/2018/11/19/openjdk-providers-comparison/)
+    for free under an open source license, 
+    and the Oracle JDK remains free **in some circumstances**. 
+
+--------------------------------------------------------------------------------
+
+  - [**Using Java 11 In Production:  
+    Important Things To Know**](https://blog.jetbrains.com/idea/2018/09/using-java-11-in-production-important-things-to-know/)
+
+    "If you stay up to date on news from the Java community, you may have heard that Oracle have changed their support model for Java.  
+    Some news is even suggesting that we now have to pay to use Java – this is not true!"
+
+Java Mobile Edition
 ================================================================================
 
 --------------------------------------------------------------------------------
@@ -63,7 +90,7 @@ Android
 --------------------------------------------------------------------------------
 
   - basé initialement sur "Java-le-language" mais ...
-  
+
   - [Kotlin est désormais le langage préféré de Google pour Android](https://techcrunch.com/2019/05/07/kotlin-is-now-googles-preferred-language-for-android-app-development/)
     (mai 2019).
 
@@ -99,7 +126,7 @@ Oracle America, Inc. v. Google, Inc.
 
   - Actuellement en appel auprès de la Cour Suprême des Etats-Unis.
 
-Java "Enterprise Edition"
+Java Enterprise Edition
 ================================================================================
 
 --------------------------------------------------------------------------------
