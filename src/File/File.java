@@ -7,8 +7,7 @@ public class File {
       fileWriter.write(text);
       fileWriter.close();
     } 
-    catch (IOException error)
-    {
+    catch (IOException error) {
       throw new RuntimeException("IOException");
     }
   }
