@@ -63,7 +63,7 @@ public class Circle
     
     public String toXML()
     {
-        return "<circ cx=\""
+        return "<circle cx=\""
                 + (new Double(this.x)).toString()
                 + "\" cy=\""
                 + (new Double(this.y)).toString()
