@@ -1,11 +1,4 @@
-
-/**
- * Write a description of class Rectangle here.
- *
- * @author 3MS5T
- * @version 3.14
- */
-public class Rectangle
+public class Rectangle extends Node
 {
     // Attributs
     private double x;
@@ -14,61 +7,42 @@ public class Rectangle
     private double ry;
     private double height;
     private double width;
-    private String style;
 
-
-    public Rectangle(double x, double y, double haut, double larg, double arrondiX, double arrondiY)
+    public Rectangle(double x, double y, double height, double width, double rx, double ry, String style)
     {
-        System.out.println("Constructeur complet");
         this.x = x;
         this.y = y;
-        this.rx = arrondiX;
-        this.ry = arrondiY;
-        this.height = haut;
-        this.width = larg;
-        this.style = "fill:red;";
+        this.height = height;
+        this.width = width;
+        this.rx = rx;
+        this.ry = ry;
+        this.style = style;
     }
     
-    public Rectangle(double x, double y, double haut, double larg)
+    public Rectangle()
     {
-        System.out.println("Constructeur partiel");
-        this.x = x;
-        this.y = y;
-        this.rx = 0.0;
-        this.ry = 0.0;
-        this.height = haut;
-        this.width = larg;
-        this.style = "fill:red;";
+        this(0.0, 0.0, 1.0, 1.0, 0.0, 0.0, "");
     }
 
-    public void moveTo(double nouveauX, double nouveauY)
+    public void moveTo(double x, double y)
     {
-        this.x = nouveauX;
-        this.y = nouveauY;
+        this.x = x;
+        this.y = y;
     }
     
-    public void translate(double bougerX, double bougerY)
+    public void translate(double dx, double dy)
     {
-        this.x += bougerX; // this.x = this.x + bougerX ;
-        this.y += bougerY;
+        this.x += dx;
+        this.y += dy;
     }
     
         
-    public void scale(double facteur)
+    public void scale(double factor)
     {
-        this.height *= facteur;
-        this.width  *= facteur;
+        this.height *= factor;
+        this.width  *= factor;
     }
-    
-    public double[] boundingBox()
-    {
-        double tab[] = {this.x,
-                        this.y,
-                        this.x + this.width,
-                        this.y + this.height};
-        return tab;
-    }
-    
+        
     public String toString()
     {
         return  "Rectangle : ("
@@ -94,7 +68,8 @@ public class Rectangle
                 + "\" rx=\""
                 + (new Double(this.rx)).toString()
                 + "\" ry=\""
-                + (new Double(this.ry)).toString()
-                + "\" />";
+                + (new Double(this.ry)).toString() + "\" " 
+                +  "style=\"" + this.style + "\" "
+                + "/>";
     }
 }

@@ -1,74 +1,66 @@
-
-/**
- * Write a description of class Circle here.
- *
- * @author 3MS5T
- * @version 3.14
- */
-public class Circle
+public class Circle extends Node
 {
     // Attributs
-    private double x;
-    private double y;
+    private double cx;
+    private double cy;
     private double r;
-    private String style;
 
-
-    
-    public Circle(double x, double y, double r)
+    public Circle(double cx, double cy, double r, String style)
     {
-        System.out.println("Constructeur partiel");
-        this.x = x;
-        this.y = y;
-        this.r=r;
-        this.style = "fill:red;";
+        this.cx = cx;
+        this.cy = cy;
+        this.r = r;
+        this.style = style;
     }
 
-    public void moveTo(double nouveauX, double nouveauY)
+    public Circle(double cx, double cy, double r)
     {
-        this.x = nouveauX;
-        this.y = nouveauY;
+        this(cx, cy, r, "");
+    }
+
+    public Circle(double cx, double cy)
+    {
+        this(cx, cy, 1.0);
+    }
+
+    public Circle() 
+    {
+        this(0.0, 0.0);
+    }
+
+    public void moveTo(double x, double y)
+    {
+        this.cx = x;
+        this.cy = y;
     }
     
-    public void translate(double bougerX, double bougerY)
+    public void translate(double dx, double dy)
     {
-        this.x += bougerX; // this.x = this.x + bougerX ;
-        this.y += bougerY;
+        this.moveTo(this.cx + dx, this.cy + dy);
     }
     
         
-    public void scale(double facteur)
+    public void scale(double factor)
     {
-        this.r *= facteur;
+        this.r *= factor;
     }
-    
-    public double[] boundingBox()
-    {
-        double tab[] = {this.x-r,
-                        this.y-r,
-                        this.x + r,
-                        this.y + r};
-        return tab;
-    }
-    
+        
     public String toString()
     {
-        return  "Circle : ("
-                + (new Double(this.x)).toString()
-                + " , "
-                + (new Double(this.y)).toString()
-                + ")  rayon : "
-                + (new Double(this.r)).toString();
+        return "Circle(" + this.cx + ","
+                         + this.cy + "," 
+                         + this.r + ","
+                         + "\"" + this.style + "\"" 
+                         + ")";
     }
     
     public String toXML()
     {
-        return "<circ cx=\""
-                + (new Double(this.x)).toString()
-                + "\" cy=\""
-                + (new Double(this.y)).toString()
-                + "\" r=\""
-                + (new Double(this.r)).toString()
-                + "\" />";
+        return "<circle " 
+                 + "cx=\"" + this.cx + "\" "
+                 + "cy=\"" + this.cy + "\" "
+                 + "r=\"" + this.r + "\" "
+                 + "style=\"" + this.style + "\" "
+                 + "/>";
     }
 }
