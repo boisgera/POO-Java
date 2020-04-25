@@ -1,1 +1,2 @@
-run = "echo 'run command not available'"
+run = "echo 'run command not available.'"
+language = "java"
