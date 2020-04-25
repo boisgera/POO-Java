@@ -1,7 +1,9 @@
-[![Build Status](https://travis-ci.org/boisgera/POO-Java.svg?branch=master)](https://travis-ci.org/boisgera/POO-Java)
 
 Programmation Orientée Objet avec Java
 ================================================================================
+
+[![Build Status](https://travis-ci.org/boisgera/POO-Java.svg?branch=master)](https://travis-ci.org/boisgera/POO-Java)
+[![Gitter chat](https://badges.gitter.im/boisgera/python-pandoc.svg)](https://gitter.im/POO-Java/community#)
 
 ### Documents Supports
 
