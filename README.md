@@ -5,7 +5,7 @@ Programmation Orientée Objet avec Java
 [![Gitter chat](https://badges.gitter.im/boisgera/python-pandoc.svg)](https://gitter.im/POO-Java/community#)
 [![Run on Repl.it](https://repl.it/badge/github/boisgera/POO-Java)](https://repl.it/github/boisgera/POO-Java)
 
-### Documents Supports [![Build Status](https://travis-ci.org/boisgera/POO-Java.svg?branch=master)](https://travis-ci.org/boisgera/POO-Java)
+## Documents Supports [![Build Status](https://travis-ci.org/boisgera/POO-Java.svg?branch=master)](https://travis-ci.org/boisgera/POO-Java)
 
   - **Programmation Orientée Objet** ([HTML](https://boisgera.github.io/POO-Java/POO.html), 
     [PDF](https://boisgera.github.io/POO-Java/POO.pdf))
@@ -25,9 +25,9 @@ Programmation Orientée Objet avec Java
   - **Java "Barebones"** ([HTML](https://boisgera.github.io/POO-Java/Java%20Barebones.html), 
     [PDF](https://boisgera.github.io/POO-Java/Java%20Barebones.pdf))
 
-### Ressources Externes
+## Ressources Externes
 
-#### Documentation 
+### Documentation 
 
   - Documentation officielle (Oracle, en anglais) :
    
@@ -42,7 +42,7 @@ Programmation Orientée Objet avec Java
     
     - [Le livre (PDF)](http://jmdoudoux.fr/java/dej/dej_2_20.pdf).
 
-#### Environnements de développement
+### Environnements de développement
 
   - En ligne : [repl.it](https://repl.it) ([documentation](https://docs.repl.it/))
   
@@ -50,7 +50,7 @@ Programmation Orientée Objet avec Java
 
   - Pour le développement de projets : [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java)).
 
-#### Pour le mini-projet Java / SVG
+### Pour le mini-projet Java / SVG
 
   - Scalable Vector Graphics sur [Wikipedia](https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics),
 
