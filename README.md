@@ -34,14 +34,14 @@ Programmation Orientée Objet avec Java
    
       - [Java Development Kit (version 14)](https://docs.oracle.com/en/java/javase/14/),
 
-      - [Les tutoriels Java](https://docs.oracle.com/javase/tutorial/.)
+      - [Les tutoriels Java](https://docs.oracle.com/javase/tutorial/).
 
 
   - "Développons en Java" par J.-M. Doudoux (en français) :
   
-    - [lecture en ligne](http://www.jmdoudoux.fr/java/dej/index.htm), 
+    - [Lecture en ligne](http://www.jmdoudoux.fr/java/dej/index.htm), 
     
-    - [document pdf](http://jmdoudoux.fr/java/dej/dej_2_20.pdf).
+    - [Le livre (PDF)](http://jmdoudoux.fr/java/dej/dej_2_20.pdf).
 
 ### Environnements de développement
 
@@ -51,7 +51,7 @@ Programmation Orientée Objet avec Java
 
   - Pour le développement : [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java)).
 
-### Pour le projet Java / Scalable Vector Graphics:
+### Pour le projet Java / SVG
 
   - Scalable Vector Graphics sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics),
 
