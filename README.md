@@ -48,7 +48,7 @@ Programmation Orientée Objet avec Java
   
   - Pour la phase d'apprentissage : [BlueJ](https://www.bluej.org/)
 
-  - Pour le développement : [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java)).
+  - Pour le développement de projets : [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java)).
 
 #### Pour le projet Java / SVG
 
