@@ -28,19 +28,34 @@ Programmation Orientée Objet avec Java
 
 ### Ressources Externes
 
-  - [Java™ Platform, Standard Edition 8, API Specification](https://docs.oracle.com/javase/8/docs/api/overview-summary.html)
+#### Documentation 
 
-  - En français : "Développons en Java" par J.-M. Doudoux, [lecture en ligne](http://www.jmdoudoux.fr/java/dej/index.htm) ou [document pdf](http://jmdoudoux.fr/java/dej/dej_2_20.pdf)
+  - Documenation officielle (Oracle, en anglais) :
+   
+      - [Java Development Kit (version 14)](https://docs.oracle.com/en/java/javase/14/),
 
-  - "Read-Eval-Print-Loop" en ligne (Java, Python, etc.) avec [repl.it](https://repl.it)
+      - [Les tutoriels Java](https://docs.oracle.com/javase/tutorial/.)
+
+
+  - "Développons en Java" par J.-M. Doudoux (en français) :
   
-  - L'environnement de développement [BlueJ](https://www.bluej.org/)
+    - [lecture en ligne](http://www.jmdoudoux.fr/java/dej/index.htm), 
+    
+    - [document pdf](http://jmdoudoux.fr/java/dej/dej_2_20.pdf).
 
+### Environnements de développement
 
+  - En ligne : [repl.it](https://repl.it) ([documentation](https://docs.repl.it/))
+  
+  - Pour la phase d'apprentissage : [BlueJ](https://www.bluej.org/)
 
-Pour le projet :
+  - Pour le développement : [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java)).
 
-  - Scalable Vector Graphics: sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics),
-    et la [documentation Mozilla](https://developer.mozilla.org/en-US/docs/Web/SVG)
+### Pour le projet Java / Scalable Vector Graphics:
+
+  - Scalable Vector Graphics sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics),
+
+  - La [documentation Mozilla](https://developer.mozilla.org/en-US/docs/Web/SVG)
     (en particulier, le [tutoriel](https://developer.mozilla.org/fr/docs/Web/SVG/Tutoriel)).
-    Logiciel associé: [Inkscape](https://inkscape.org/).
+  
+  - Logiciel d'édition de SVG : [Inkscape](https://inkscape.org/).
