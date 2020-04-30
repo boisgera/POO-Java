@@ -43,7 +43,7 @@ Programmation Orientée Objet avec Java
     
     - [Le livre (PDF)](http://jmdoudoux.fr/java/dej/dej_2_20.pdf).
 
-### Environnements de développement
+#### Environnements de développement
 
   - En ligne : [repl.it](https://repl.it) ([documentation](https://docs.repl.it/))
   
@@ -51,7 +51,7 @@ Programmation Orientée Objet avec Java
 
   - Pour le développement : [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java)).
 
-### Pour le projet Java / SVG
+#### Pour le projet Java / SVG
 
   - Scalable Vector Graphics sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics),
 
