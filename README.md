@@ -50,7 +50,7 @@ Programmation Orientée Objet avec Java
 
   - Pour le développement de projets : [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java)).
 
-#### Pour le projet Java / SVG
+#### Pour le mini-projet Java / SVG
 
   - Scalable Vector Graphics sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics),
 
