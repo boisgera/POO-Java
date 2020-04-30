@@ -34,7 +34,7 @@ Programmation Orientée Objet avec Java
    
       - [Java Development Kit (version 14)](https://docs.oracle.com/en/java/javase/14/),
 
-      - [Les tutoriels Java](https://docs.oracle.com/javase/tutorial/).
+      - [The Java tutorials](https://docs.oracle.com/javase/tutorial/).
 
 
   - "Développons en Java" par J.-M. Doudoux (en français) :
