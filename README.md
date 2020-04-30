@@ -30,9 +30,15 @@ Programmation Orientée Objet avec Java
 
   - [Java™ Platform, Standard Edition 8, API Specification](https://docs.oracle.com/javase/8/docs/api/overview-summary.html)
 
+  - En français : "Développons en Java" par J.-M. Doudoux, [lecture en ligne](http://www.jmdoudoux.fr/java/dej/index.htm) ou [document pdf](http://jmdoudoux.fr/java/dej/dej_2_20.pdf)
+
   - "Read-Eval-Print-Loop" en ligne (Java, Python, etc.) avec [repl.it](https://repl.it)
   
   - L'environnement de développement [BlueJ](https://www.bluej.org/)
+
+
+
+Pour le projet :
 
   - Scalable Vector Graphics: sur [Wikipedia](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics),
     et la [documentation Mozilla](https://developer.mozilla.org/en-US/docs/Web/SVG)
