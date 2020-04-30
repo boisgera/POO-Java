@@ -1,2 +1,2 @@
-run = "echo 'run command not available.'"
+run = "echo 'bouton Run désactivé ; tapez ./run dans le terminal.'"
 language = "java"
