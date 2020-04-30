@@ -30,7 +30,7 @@ Programmation Orientée Objet avec Java
 
 #### Documentation 
 
-  - Documenation officielle (Oracle, en anglais) :
+  - Documentation officielle (Oracle, en anglais) :
    
       - [Java Development Kit (version 14)](https://docs.oracle.com/en/java/javase/14/),
 
