@@ -42,6 +42,9 @@ Programmation Orientée Objet avec Java
     
     - [Le livre (PDF)](http://jmdoudoux.fr/java/dej/dej_2_20.pdf).
 
+  - ["Apprenez à programmer en Java" par cysboy (PDF)](http://user.oc-static.com/pdf/10601-apprenez-a-programmer-en-java.pdf)
+  
+
 ### Environnements de développement
 
   - En ligne : [repl.it](https://repl.it) ([documentation](https://docs.repl.it/))
