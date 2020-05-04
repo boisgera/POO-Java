@@ -5,23 +5,130 @@
 
 --------------------------------------------------------------------------------
 
-<i class="fab fa-github"></i> <https://github.com/>
+  - <i class="fab fa-github"></i> <https://github.com/>
 
+  - Hébergement de dépôts git,
+
+  - Identification (gitter et repl.it).
+
+Checklist 1/2
 --------------------------------------------------------------------------------
+
+  1. Localiser le site [GitHub POO-Java](https://github.com/boisgera/POO-Java)
+
+  2. Identifier ses ressources :
+
+     - Présentations POO-Java (HTML et PDF),
+
+     - Ressources externes,
+
+     - Connections (badges) Gitter et Repl.it,
+
+
+Checklist 2/2
+--------------------------------------------------------------------------------
+
+  1. Créer un compte GitHub,
+
+  2. Se connecter,
+
+  3. (optionnel) "Forker" POO-Java
+
 
 <i class="fab fa-gitter"></i> Gitter
 ================================================================================
 
 --------------------------------------------------------------------------------
 
-<i class="fab fa-gitter"></i> <https://gitter.im/>
+  - <i class="fab fa-gitter"></i> <https://gitter.im/>
+
+  - Chat "developer-friendly"
+
+Checklist 1/3
+--------------------------------------------------------------------------------
+
+  1. Se rendre sur le chat gitter de [POO-Java](https://github.com/boisgera/POO-Java),
+
+  2. Se connecter avec GitHub.
+
+Checklist 2/3 -- <i class="far fa-comment-alt"></i> Messages
+--------------------------------------------------------------------------------
+
+  1. Envoyer un message court dans le fil principal,
+
+  2. Tester les modes "chat" et "composition",
+
+  3. Tester les chats privés,
+
+  4. Créer un fil auxiliaire de discussion,
+
+  5. Mentionner un interlocuteur.
+
+Checklist 3/3 -- <i class="fab fa-markdown"></i> Markdown
+--------------------------------------------------------------------------------
+
+  1. Lire l'aide markdown de gitter,
+
+  2. Rédiger un message comportant un lien,
+
+  3. Insérer un fragment de code dans une ligne de texte,
+
+  4. Envoyez un code de plusieurs lignes,
+
+  5. (optionnel) Se documenter sur [Markdown](https://commonmark.org/).
+
+  
 
 <i class="fas fa-terminal"></i> Repl.it
 ================================================================================
 
 --------------------------------------------------------------------------------
 
-<i class="fas fa-terminal"></i> <https://repl.it>
+  - <i class="fas fa-terminal"></i> <https://repl.it>
+
+  - Environnement de développement en ligne
+
+Checklist 1/4
+--------------------------------------------------------------------------------
+
+  1. Se rendre sur repl.it,
+
+  2. Se connecter avec GitHub.
+
+Checklist 2/4
+--------------------------------------------------------------------------------
+
+  1. Créer un nouveau projet Java,
+
+  2. Utilisez le bouton "run",
+
+  3. Editez `Main.java`, recommencez.
+
+Checklist 3/4 -- Fichiers
+--------------------------------------------------------------------------------
+
+  1. Créez un fichier Markdown (`.md`),
+
+  2. Modifiez-le, visualisez-le, puis effacez-le,
+
+  3. Créez un nouveau répertoire `images`,
+
+  4. Y uploader [le tigre SVG](https://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg) ; visualisez cette image,
+
+  5. Renommez l'image `tiger.xml` et lisez ce fichier,
+
+  5. Télécharger l'ensemble du projet (zip).
+
+Checklist 4/4 -- Terminal
+--------------------------------------------------------------------------------
+
+  1. Tester les commandes `ls`, `cd`, `more`, etc.
+
+  2. Examiner les commandes associées au bouton "run",
+
+  3. Effacez les fichiers `*.class` depuis le terminal,
+
+  3. Compilez et exécutez `Main.java` "à la main".
 
 
 <!-- Styling ------------------------------------------------------------------>

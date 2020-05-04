@@ -10,7 +10,6 @@ Programmation Orientée Objet avec Java
   - **Environnement** ([HTML](https://boisgera.github.io/POO-Java/Environnement.html), 
     [PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
 
-
   - **Programmation Orientée Objet** ([HTML](https://boisgera.github.io/POO-Java/POO.html), 
     [PDF](https://boisgera.github.io/POO-Java/POO.pdf))
 
