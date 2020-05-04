@@ -88,14 +88,14 @@ Checklist 3/3 -- <i class="fab fa-markdown"></i> Markdown
 
   - Environnement de développement en ligne
 
-Checklist 1/4
+Checklist 1/5
 --------------------------------------------------------------------------------
 
   1. Se rendre sur repl.it,
 
   2. Se connecter avec GitHub.
 
-Checklist 2/4
+Checklist 2/5
 --------------------------------------------------------------------------------
 
   1. Créer un nouveau projet Java,
@@ -104,7 +104,7 @@ Checklist 2/4
 
   3. Editez `Main.java`, recommencez.
 
-Checklist 3/4 -- Fichiers
+Checklist 3/5 -- Fichiers
 --------------------------------------------------------------------------------
 
   1. Créez un fichier Markdown (`.md`),
@@ -119,7 +119,7 @@ Checklist 3/4 -- Fichiers
 
   5. Télécharger l'ensemble du projet (zip).
 
-Checklist 4/4 -- Terminal
+Checklist 4/5 -- Terminal
 --------------------------------------------------------------------------------
 
   1. Tester les commandes `ls`, `cd`, `more`, etc.
@@ -130,6 +130,20 @@ Checklist 4/4 -- Terminal
 
   3. Compilez et exécutez `Main.java` "à la main".
 
+Checklist 5/5 -- Import GitHub
+--------------------------------------------------------------------------------
+
+  1. Importez [POO-Java](https://github.com/boisgera/POO-Java) dans repl.it,
+
+  2. (optionnel) Renommez le projet repl.it associé,
+
+  3. Allez dans le répertoire `/exercices` (terminal),
+
+  4. Trouvez l'exercice `Hello World`,
+
+  5. Lisez ses instructions (`README.md`),
+
+  6. Résolvez ce premier exercice !
 
 <!-- Styling ------------------------------------------------------------------>
 
@@ -178,6 +192,6 @@ input {
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"> 
 
 <!--
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/font-awesome.css" rel="stylesheet">
  -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
