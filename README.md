@@ -9,7 +9,6 @@ Programmation Orientée Objet avec Java
 
   - **Environnement de développement** ([HTML](https://boisgera.github.io/POO-Java/Environnement.html), 
     [PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
-
   - **Programmation Orientée Objet** ([HTML](https://boisgera.github.io/POO-Java/POO.html), 
     [PDF](https://boisgera.github.io/POO-Java/POO.pdf))
 
@@ -45,7 +44,7 @@ Programmation Orientée Objet avec Java
     
     - [Le livre (PDF)](http://jmdoudoux.fr/java/dej/dej_2_20.pdf).
 
-  - ["Apprenez à programmer en Java" par cysboy (PDF)](http://user.oc-static.com/pdf/10601-apprenez-a-programmer-en-java.pdf)
+  - ["Apprenez à programmer en Java"](http://user.oc-static.com/pdf/10601-apprenez-a-programmer-en-java.pdf)  par cysboy (PDF)
   
 
 ### Environnements de développement
