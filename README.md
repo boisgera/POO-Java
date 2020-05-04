@@ -7,7 +7,7 @@ Programmation Orientée Objet avec Java
 
 ## Documents [![Build Status](https://travis-ci.org/boisgera/POO-Java.svg?branch=master)](https://travis-ci.org/boisgera/POO-Java)
 
-  - **Environnement** ([HTML](https://boisgera.github.io/POO-Java/Environnement.html), 
+  - **Environnement de développement** ([HTML](https://boisgera.github.io/POO-Java/Environnement.html), 
     [PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
 
   - **Programmation Orientée Objet** ([HTML](https://boisgera.github.io/POO-Java/POO.html), 
