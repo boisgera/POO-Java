@@ -10,5 +10,5 @@ Solution
 --------------------------------------------------------------------------------
 
 La compilation des sources java du programme `App.java` n'est pas prise en
-charge par le script. Ajoutez ` la commande `javac App.java` avant d'exécutez 
+charge par le script. Ajoutez la commande `javac App.java` avant d'exécutez 
 le programme.
