@@ -2,6 +2,7 @@ import xml.Element;
 
 
 // TODO. Study a builder pattern ? See e.g. <https://dzone.com/articles/design-patterns-the-builder-pattern>
+// And (tag-specific) factories to avoid the "new"s ?
 
 public class Main {
   public static void main(String[] args) {
