@@ -1,0 +1,11 @@
+# clean
+rm -rf *.class
+
+# compile
+echo "---- Compilation --------------------------------------------------------"
+javac App.java
+
+# run
+echo "---- Execution ----------------------------------------------------------"
+java App
+

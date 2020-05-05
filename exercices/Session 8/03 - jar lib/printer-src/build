@@ -1,0 +1,2 @@
+javac printer/Printer.java
+jar cf printer.jar printer
