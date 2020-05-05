@@ -2,15 +2,6 @@
 Exercice
 --------------------------------------------------------------------------------
 
-  1. Modifiez le script `run` afin de packager l'application `App` 
-    en un fichier `app.jar` qui puisse être distribué aux clients,
-    
-  2. Modifiez le script `run` pour exécuter l'application contenu 
-     dans cette archive.
-
-Solution
---------------------------------------------------------------------------------
-
  1. Créer une archive `printer.jar` pour les sources de la bibliothèque
     du répertoire `printer-src` (package `printer`) puis la copiez dans
     le répertoire racine.
