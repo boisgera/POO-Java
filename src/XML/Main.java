@@ -10,8 +10,9 @@ public class Main {
     Element body = new Element("body", "content with \"quotes\" & other stuff.");
     Element[] children = {head, body};
     Element html = new Element("html", children);
+
     System.out.println(html);
     System.out.println();
-    System.out.println(html.toString(0, " "));
+    System.out.println(html.toString(" "));
   }
 }

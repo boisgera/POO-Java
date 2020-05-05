@@ -72,10 +72,14 @@ public class Element {
   }
 
   public String toString() {
-    return this.toString(0, null);
+    return this.toString(null);
   }
 
-  public String toString(int depth, String tab) {
+  public String toString(String tab) {
+    return this.toString(0, tab);
+  }
+
+  private String toString(int depth, String tab) {
     String string = "";
     if (tab != null) {
         string += tab.repeat(depth);
