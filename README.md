@@ -24,8 +24,8 @@ Programmation Orientée Objet avec Java
   - **Java aujourd'hui** ([HTML](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html), 
     [PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
 
-  - **Java "Barebones"** ([HTML](https://boisgera.github.io/POO-Java/Java%20Barebones.html), 
-    [PDF](https://boisgera.github.io/POO-Java/Java%20Barebones.pdf))
+  - **Déploiement"** ([HTML](https://boisgera.github.io/POO-Java/Déploiement.html), 
+    [PDF](https://boisgera.github.io/POO-Java/Déploiement.pdf))
 
 ## Ressources Externes
 
