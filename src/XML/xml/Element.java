@@ -14,6 +14,10 @@ public class Element {
 
 // TODO : support varargs for Elements ?
 
+// TODO : differentiate "" text and tail and null text and tail (i.e. not set,
+// i.e. I don't care what the content is as long as it's whitespace).
+// That would be smart, indeed.
+
   public Element(String tag, Element[] children, String[][] attrib, String text, String tail)
   {
     this.tag = tag; // Mmm null tag would be invalid.
