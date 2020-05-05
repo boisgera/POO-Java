@@ -17,6 +17,6 @@ public class Main {
 
     System.out.println(html);
     System.out.println();
-    System.out.println(html.toString(" "));
+    System.out.println(html.toString("  "));
   }
 }

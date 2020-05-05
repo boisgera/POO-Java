@@ -20,10 +20,9 @@ public class Element {
 
   public Element(String tag, Element[] children, String[][] attrib, String text, String tail)
   {
-    this.tag = tag; // Mmm null tag would be invalid.
-    if (text == null) {
-      text = "";
-    }
+    assert tag != null;
+    this.tag = tag;
+    this.text = text;
     this.text = text;
     this.children = new ArrayList<Element>();
     if (children == null) {
@@ -40,9 +39,6 @@ public class Element {
       String key = kv[0];
       String value = kv[1];
       this.attrib.put(key, value);
-    }
-    if (tail == null) {
-      tail = "";
     }
     this.tail = tail;
   }
@@ -80,12 +76,16 @@ public class Element {
   }
 
   public String toString(String tab) {
-    return this.toString(0, tab);
+    return this.toString(0, tab, null);
   }
 
-  private String toString(int depth, String tab) {
+  private String toString(int depth, String tab, boolean[] mayIndentNext) {
+    if (mayIndentNext == null) {
+      mayIndentNext = new boolean[1];
+      mayIndentNext[0] = true;
+    }
     String string = "";
-    if (tab != null) {
+    if (tab != null && mayIndentNext[0]) {
         string += tab.repeat(depth);
     } 
     string += "<" + tag;
@@ -93,20 +93,30 @@ public class Element {
       string += " " + entry.getKey() + "=" + "\"" + XML.escape(entry.getValue()) + "\""; 
     }
     string += ">";
-    if (text.equals("") && tab != null) {
-      string += "\n";
+    if (text == null) {
+      if (tab != null) {
+          string += "\n";
+      }
+      mayIndentNext[0] = true;
     } else {
       string += XML.escape(text);
+      mayIndentNext[0] = false;
     }
     for (Element elt : children) { // should not indent the first if text != ""
-      string += elt.toString(depth+1, tab);
+      string += elt.toString(depth+1, tab, mayIndentNext);
     }
+    if (tab != null && mayIndentNext[0]) {
+      string += tab.repeat(depth);
+  } 
     string += "</" + tag + ">";  
-    if (tail.equals("") && tab != null) {
+    if (tail == null) {
+      if (tab != null) {
         string += "\n";
+      }
+      mayIndentNext[0] = true;
     } else {
-      string += XML.escape(tail); // Arf and the extra indent are an issue too.
-      // we would need an extra flag in the toString method to handle that.
+      string += XML.escape(tail); 
+      mayIndentNext[0] = false;
     }
     return string;
   }
