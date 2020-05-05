@@ -5,21 +5,21 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Arrays;
 
-// TODO: here everything is generic and changeable at runtime.
-//       Which means that we cannot have say a fixed "Group" Element.
-
-class Element {
+public class Element {
   public String tag;
   public Map<String, String> attrib; 
   public List<Element> children;
   public String text;
   public String tail;
 
-  // TODO : constructors. With tag only, etc.
+// TODO : support varargs for Elements ?
 
   public Element(String tag, Element[] children, String[][] attrib, String text, String tail)
   {
-    this.tag = tag;
+    this.tag = tag; // Mmm null tag would be invalid.
+    if (text == null) {
+      text = "";
+    }
     this.text = text;
     this.children = new ArrayList<Element>();
     if (children == null) {
@@ -37,30 +37,56 @@ class Element {
       String value = kv[1];
       this.attrib.put(key, value);
     }
+    if (tail == null) {
+      tail = "";
+    }
     this.tail = tail;
   }
+  public Element(String tag, Element[] children, String[][] attrib)
+  {
+    this(tag, children, attrib, null, null);
+  }
 
+  public Element(String tag, String[][] attrib, String text)
+  {
+    this(tag, null, attrib, text, null);
+  }
+  
+  public Element(String tag, Element[] children)
+  {
+    this(tag, children, null, null, null);
+  }
+  
+  public Element(String tag, String[][] attrib)
+  {
+    this(tag, null, attrib, null, null);
+  }
+  
+  public Element(String tag, String text)
+  {
+    this(tag, null, null, text, null);
+  }
+  
   public Element(String tag) {
-    // Element[] children = {};
-    // String[][] attrib = {};
-    // this(tag, null, children, attrib, null);
     this(tag, null, null, null, null);
-
   }
 
   public String toString() {
-    String str;
-    str = "<" + tag + ">"; // TODO: insert attrib here.
-    if (text != null) {
-      str.concat(text);
+    String string;
+    string = "<" + tag;
+    for (Map.Entry<String, String> entry : attrib.entrySet()) { 
+      string += " " + entry.getKey() + "=" + "\"" + XML.escape(entry.getValue()) + "\""; 
     }
+    string += ">";
+    string += XML.escape(text);
     for (Element elt : children) {
-      str.concat(elt.toString());
+      string += elt.toString();
     }
+    string += "</" + tag + ">";  
     if (tail != null) {
-      str.concat(tail);
+      string += XML.escape(tail);
     }
-    return str;
+    return string;
   }
 
 }
