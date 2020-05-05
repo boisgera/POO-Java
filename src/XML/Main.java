@@ -11,5 +11,7 @@ public class Main {
     Element[] children = {head, body};
     Element html = new Element("html", children);
     System.out.println(html);
+    System.out.println();
+    System.out.println(html.toString(0, " "));
   }
 }

@@ -72,21 +72,38 @@ public class Element {
   }
 
   public String toString() {
-    String string;
-    string = "<" + tag;
+    return this.toString(0, null);
+  }
+
+  public String toString(int depth, String tab) {
+    String string = "";
+    if (tab != null) {
+        string += tab.repeat(depth);
+    } 
+    string += "<" + tag;
     for (Map.Entry<String, String> entry : attrib.entrySet()) { 
       string += " " + entry.getKey() + "=" + "\"" + XML.escape(entry.getValue()) + "\""; 
     }
     string += ">";
-    string += XML.escape(text);
-    for (Element elt : children) {
-      string += elt.toString();
+    if (text.equals("") && tab != null) {
+      string += "\n";
+    } else {
+      string += XML.escape(text);
+    }
+    for (Element elt : children) { // should not indent the first if text != ""
+      string += elt.toString(depth+1, tab);
     }
     string += "</" + tag + ">";  
-    if (tail != null) {
-      string += XML.escape(tail);
+    if (tail.equals("") && tab != null) {
+        string += "\n";
+    } else {
+      string += XML.escape(tail); // Arf and the extra indent are an issue too.
+      // we would need an extra flag in the toString method to handle that.
     }
     return string;
   }
+
+
+
 
 }
