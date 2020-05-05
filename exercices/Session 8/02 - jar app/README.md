@@ -7,18 +7,3 @@ Exercice
     
   2. Modifiez le script `run` pour exécuter l'application contenue 
      dans cette archive.
-
-Solution
---------------------------------------------------------------------------------
-
-Créez le manifeste associé au programme :
-
-    echo "Main-Class: App" > Manifest.txt
-
-puis archivez-le avec les fichiers `.class` du projet dans `app.jar` :
-
-    jar cfm app.jar Manifest.txt *.class
-
-Pour exécuter l'application contenue dans l'archive :
-
-    java -jar app.jar
