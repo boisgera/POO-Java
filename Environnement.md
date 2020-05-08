@@ -98,11 +98,14 @@ Checklist 1/5
 Checklist 2/5
 --------------------------------------------------------------------------------
 
-  1. Créer un nouveau projet Java,
+  1. Créer un nouveau projet Java (public),
 
   2. Utilisez le bouton "run",
 
   3. Editez `Main.java`, recommencez.
+
+  4. Partagez votre projet en donnant son URL : `https://repl.it/@votre-login/nom-du-repl`
+     
 
 Checklist 3/5 -- Fichiers
 --------------------------------------------------------------------------------
