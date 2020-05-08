@@ -6,7 +6,7 @@ import java.nio.file.Files;
 
 public class Main {
   public static String template = "<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n" +
-    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>\n" +
+    "<svg xmlns='http://www.w3.org/2000/svg' height='100' width='100' viewBox='0 0 100 100'>\n" +
     "  <rect y='0' x='0' height='100' width='100' style='fill:${COLOR}'>\n"+
     "  </rect>\n"+
     "</svg>";  
@@ -22,10 +22,20 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    Color color = new Color(255, 0, 0);
-    String svg = template.replace("${COLOR}", color.toString());
-    System.out.println(color.toString());
+    String svg;
+
+    Color red = new Color(255, 0, 0);
+    Color green = new Color(0, 255, 0);
+    Color blue = new Color(0, 0, 255);
+
+    svg = template.replace("${COLOR}", red.toString());
     writeTo("red.svg", svg);
+    
+    svg = template.replace("${COLOR}", green.toString());
+    writeTo("green.svg", svg);
+    
+    svg = template.replace("${COLOR}", blue.toString());
+    writeTo("blue.svg", svg);
   }
 
 }
