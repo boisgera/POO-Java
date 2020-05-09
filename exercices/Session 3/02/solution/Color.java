@@ -1,15 +1,16 @@
 import java.lang.Math;
 
 public class Color {
-  public Integer R;
-  public Integer G;
-  public Integer B;
+  private Integer R;
+  private Integer G;
+  private Integer B;
 
   public Color(int R, int G, int B) {
-    this.R = R;
-    this.G = G;
-    this.B = B;
+    this.R = Math.min(255, Math.max(R, 0));
+    this.G = Math.min(255, Math.max(G, 0));
+    this.B = Math.min(255, Math.max(B, 0));
   }
+}
 
   public String toString() {
     return "rgb(" + R.toString() + ", " + G.toString() + ", " + B.toString() + ")";
