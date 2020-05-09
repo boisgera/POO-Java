@@ -6,9 +6,9 @@ public class Color {
   private Integer B;
 
   public Color(int R, int G, int B) {
-    this.R = Math.min(0, Math.max(R, 255));
-    this.G = Math.min(0, Math.max(G, 255));
-    this.B = Math.min(0, Math.max(B, 255));
+    this.R = Math.min(255, Math.max(R, 0));
+    this.G = Math.min(255, Math.max(G, 0));
+    this.B = Math.min(255, Math.max(B, 0));
   }
 
   public String toString() {
