@@ -43,8 +43,8 @@ les valeurs dans cet intervalle
 
 Une alternative, plus stricte, consisterait à détecter une valeur en dehors 
 de l'intervalle admissible et à lever une exception pour éviter d'avoir à
-instancier `Color`. Cette approche supposerait des tests de la forme suivante
-dans le constructeur :
+instancier `Color`. Cette approche supposerait des fragment de code 
+de la forme suivante dans le constructeur de `Color`:
 
     if (R < 0) || (R > 0) {
       throw new IllegalArgumentException("Valeur du canal R invalide.");
