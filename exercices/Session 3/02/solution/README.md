@@ -41,7 +41,7 @@ les valeurs dans cet intervalle
       }
     }
 
-Une alternative -- plus stricte -- consisterait à détecter une valeur en dehors 
+Une alternative, plus stricte, consisterait à détecter une valeur en dehors 
 de l'intervalle admissible et à lever une exception pour éviter d'avoir à
 instancier `Color`. Cette approche supposerait des tests de la forme suivante
 dans le constructeur :
