@@ -1,5 +1,5 @@
 
-Exercice -- Encapsulation
+Exercice - Encapsulation
 --------------------------------------------------------------------------------
 
 La class `Color` ci-joint qui répond au problème précédent est malheureusement 
