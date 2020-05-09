@@ -7,7 +7,7 @@ autre représentation des couleurs : au lieu de `"rgb(255,0,0)"` pour représent
 la couleur rouge, ils préfèrent la chaine hexadécimale `"#ff0000"` 
 (se reporter par exemple [à la documentation Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/Type_color)).
 
-Il souhaiteraient désormais que vous aujoutiez une méthode `toHexString` à 
+Ils souhaiteraient désormais que vous aujoutiez une méthode `toHexString` à 
 la classe `Color` et que vous utilisiez cette représentation des les document SVG
 qui sont générés.
 
