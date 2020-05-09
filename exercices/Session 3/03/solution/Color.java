@@ -11,6 +11,18 @@ public class Color {
     this.B = Math.min(255, Math.max(B, 0));
   }
 
+  public static String channelToHex(Integer integer) {
+    String string = Integer.toHexString(integer);
+    if (string.length() == 1) {
+      string = "0" + string;
+    }
+    return string;
+  }
+
+  public String toHexString() {
+      return "#" + channelToHex(this.R) + channelToHex(this.G) + channelToHex(this.B);
+  }
+
   public String toString() {
     return "rgb(" + R.toString() + ", " + G.toString() + ", " + B.toString() + ")";
   }
