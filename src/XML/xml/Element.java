@@ -12,18 +12,28 @@ public class Element {
   public String text;
   public String tail;
 
+// TODO : implement String.repeat
+
 // TODO : support varargs for Elements ?
 
 // TODO : differentiate "" text and tail and null text and tail (i.e. not set,
 // i.e. I don't care what the content is as long as it's whitespace).
 // That would be smart, indeed.
 
+  static private String repeat(String string, int num) {
+    String out = "";
+    for (int i=0; i<num; i++) {
+      out += string;
+    }
+    return out;
+  }
+
   public Element(String tag, Element[] children, String[][] attrib, String text, String tail)
   {
     assert tag != null;
     this.tag = tag;
     this.text = text;
-    this.text = text;
+    this.tail = tail;
     this.children = new ArrayList<Element>();
     if (children == null) {
       children = new Element[0];
@@ -86,7 +96,7 @@ public class Element {
     }
     String string = "";
     if (tab != null && mayIndentNext[0]) {
-        string += tab.repeat(depth);
+        string += repeat(tab, depth);
     } 
     string += "<" + tag;
     for (Map.Entry<String, String> entry : attrib.entrySet()) { 
@@ -106,7 +116,7 @@ public class Element {
       string += elt.toString(depth+1, tab, mayIndentNext);
     }
     if (tab != null && mayIndentNext[0]) {
-      string += tab.repeat(depth);
+      string += repeat(tab, depth);
   } 
     string += "</" + tag + ">";  
     if (tail == null) {
@@ -122,6 +132,39 @@ public class Element {
   }
 
 
+  static public Element E(String tag) {
+    return new Element(tag);
+  }
+
+  public Element attr(String key, String value) {
+    attrib.put(key, value);
+    return this;
+  }
+
+
+
+  public Element sub(Element ... elts) {
+    for (Element elt_: elts) {
+      children.add(elt_);
+    }
+    return this;
+  }
+
+  public Element text(String string) {
+    if (text == null) {
+      text = "";
+    }
+    text += string;
+    return this;
+  }
+
+  public Element tail(String string) {
+    if (tail== null) {
+      tail = "";
+    }
+    tail += string;
+    return this;
+  }
 
 
 }

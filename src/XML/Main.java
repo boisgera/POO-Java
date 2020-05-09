@@ -1,4 +1,5 @@
 import xml.Element;
+import static xml.Element.E;
 
 
 // TODO. Study a builder pattern ? See e.g. <https://dzone.com/articles/design-patterns-the-builder-pattern>
@@ -18,5 +19,22 @@ public class Main {
     System.out.println(html);
     System.out.println();
     System.out.println(html.toString("  "));
+
+    Element root = E("html").sub(
+      E("head").sub(
+        E("meta").attr("charset", "utf-8")
+      ),
+      E("body").sub(
+        E("p").text("content with \"quotes\" & other stuff."),
+        E("p").text("another paragraph with").sub(
+          E("b").text("bold statements !").tail(" indeed.")
+        )
+      )
+    );
+    
+    System.out.println(root);
+    System.out.println();
+    System.out.println(root.toString("  "));
   }
+
 }
