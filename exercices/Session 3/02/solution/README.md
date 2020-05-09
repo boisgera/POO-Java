@@ -8,8 +8,9 @@ dans des états invalides, avec des des composantes RGB qui ne sont pas des
 entiers compris entre 0 et 255. La fonction `main` de la class `Main` présente 
 deux exemples de tels usages dangereux (impropres ?) de la classe.
 
-Pouvez-vous sécuriser la classe `Color` pour que ces erreurs se manifestent
-dès qu'elles sont faites et non lorsque l'on appelle la méthode `toString` ? 
+Pouvez-vous sécuriser la classe `Color` pour que les erreurs éventuelles
+se manifestent dès qu'elles sont faites et non tardivement,
+lorsque l'on appelle la méthode `toString` ? 
 Les autres fonctionnalités de `Color` doivent rester inchangées.
 
 Solution
