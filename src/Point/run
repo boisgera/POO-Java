@@ -1,1 +1,2 @@
 javac *.java
+java Main

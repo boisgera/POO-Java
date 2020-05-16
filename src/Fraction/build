@@ -1,2 +1,0 @@
-#!/bin/bash
-javac *.java

@@ -1,11 +1,14 @@
 import java.math.BigInteger;
 
 public class Fraction {
-  protected int numerator;
-  protected int denominator;
+  private int numerator;
+  private int denominator;
 
   public Fraction(int numerator, int denominator) {
     this.numerator = numerator;
+    if (denominator == 0) {
+      throw new IllegalArgumentException("dénominateur nul.");
+    }
     this.denominator = denominator;
     this.simplify();
   }
@@ -32,11 +35,18 @@ public class Fraction {
     return new Fraction(num, den);
   }
 
+  public Fraction multiply(Fraction other) {
+    int num, den;
+    num = this.numerator * other.numerator;
+    den = this.denominator * other.denominator;
+    return new Fraction(num, den);
+  }
+
   public String toString() {
     if (this.denominator == 1) {
-        return (new Integer(this.numerator)).toString();
+        return Integer.valueOf(this.numerator).toString();
     } else {
-      return (new Integer(this.numerator)).toString() + "/" + (new Integer(this.denominator)).toString();
+      return Integer.valueOf(this.numerator).toString() + "/" + Integer.valueOf(this.denominator).toString();
     }
   }
 }

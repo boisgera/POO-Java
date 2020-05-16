@@ -24,7 +24,7 @@ Exemples
 
   - **fonctionnel:** Haskell, F#, Reason, Scheme, ...
 
-  - **objet:** Java, C#, Ruby, ...
+  - **objet:** Java, C#, Ruby, Smalltalk, ...
 
   - **multi-paradigmes:** Scala, C++, OCaml, Python, ...
 
@@ -124,159 +124,6 @@ Alan Kay.
 classes, instances, champs, méthodes, héritage, polymorphisme, composition, 
 délégation, ...
 
-Encapsulation
-================================================================================
-
-[<i class="fab fa-wikipedia-w"></i> Encapsulation](https://fr.wikipedia.org/wiki/Encapsulation_(programmation))
---------------------------------------------------------------------------------
-
-  - "désigne le principe de **regrouper des données brutes avec un ensemble de 
-     routines** permettant de les lire ou de les manipuler." 
-     
-  - "(...) souvent accompagné du **masquage de ces données brutes** 
-    afin de s’assurer que l’utilisateur ne contourne pas l’interface qui lui 
-    est destinée." 
-    
-  - "L’ensemble se considère alors comme une **boîte noire** 
-    ayant un comportement et des propriétés spécifiés." 
-
-Exemple: Fractions
---------------------------------------------------------------------------------
-
-<i class="fab fa-python"></i> Spécification (boîte noire):
-
-    >>> Fraction(7)
-    7
-    >>> Fraction(2, 3)
-    2/3
-    >>> Fraction(1, 3) + Fraction(1, 6)
-    1/2
-    ...
-
-
---------------------------------------------------------------------------------
-
-
-<i class="fab fa-python"></i> Constructeur
-
-    class Fraction:
-        def __init__(self, num, den=1):
-            self._num = num
-            self._den = den
-            self._simplify()
-
---------------------------------------------------------------------------------
-
-<i class="fab fa-python"></i> Méthode utilitaire
-
-        def _simplify(self):
-            gcd = math.gcd(self._num, self._den)
-            self._num = self._num / gcd
-            self._den = self._den / gcd
-            if self._den < 0:
-                self._num = - self._num
-                self._denom = - self._denom
-
---------------------------------------------------------------------------------
-
-<i class="fab fa-python"></i> Méthode d'addition
-
-        def __add__(self, other):
-            num = self._num * other._den + \
-                  other._num * self._den
-            den = self._den * other._den
-            return Fraction(num, den)
-
---------------------------------------------------------------------------------
-
-<i class="fab fa-python"></i> Méthode de représentation
-
-        def __repr__(self):
-            if self._den == 1:
-                return f"{self._num}"
-            else:
-                return f"{self._num}/{self._den}"
-
---------------------------------------------------------------------------------
-
-  - Les données des fractions sont stockées dans les **attributs** 
-   (ou **champs**) `_num` et `_den`, 
-
-  - Les **méthodes** `__init__`, `simplify`, `__add__`, ... 
-    permettent de les manipuler.
-
---------------------------------------------------------------------------------
-
-<i class="fab fa-python"></i> En Python:
-
-  - Le caractère privé des données ou méthodes est indiqué par une convention:
-    l'identifiant commence par un caractère de soulignement.  
-    Seules les méthodes de l'objet devraient accéder 
-    au champ `_num` ou appeler la méthode `_simplify`.
-  
---------------------------------------------------------------------------------
-
-  - Vous pouvez décider de ne pas vous conformer à cette indication
-    **à vos risque et périls**
-    (["We are all consenting adults"](https://python-guide-chinese.readthedocs.io/zh_CN/latest/writing/style.html#we-are-all-consenting-adults))
-
-Par exemple:
-
-    >>> f = Fraction(4, 6)
-    >>> f._num = 7
-    >>> f 
-    ???
-
-
-
---------------------------------------------------------------------------------
-
-<i class="fab fa-java"></i> En Java:
-
-  - Les mots-clés  
-    
-        public, protected, private   
-
-    contrôlent l'accès aux attributs et méthodes des objets.
-
---------------------------------------------------------------------------------
-
-  - Selon le langage, l'accès aux données peut être rendu 
-    possible -- de façon controllée -- 
-    par des **accesseurs** (méthodes) et/ou des **propriétés.**
-
---------------------------------------------------------------------------------
-
-<i class="fab fa-python"></i> En Python (lecture seule ou "getter"):
-
-    def get_numerator(self):
-        return self._num
-
-et optionnellement:
-
-    numerator = property(get_numerator)
-
---------------------------------------------------------------------------------
-    
-Usage:
-
-    >>> f = Fraction(2, 3)
-    >>> f.get_numerator()
-    2
-    >>> f.numerator
-    2
-
-Encapsulation -- Bénéfices
---------------------------------------------------------------------------------
-
-  - **Architecture.** Le logiciel est réalisé par assemblage de composants
-    -- plus ou moins autonomes  -- 
-    pour réduire la complexité de l'ensemble.
-
-  - **Abstraction.** Ce que fait un objet (son **interface**)
-    est plus important que comment il le fait (son **implémentation**); 
-    cette "ignorance sélective" contribue à abaisser la
-    complexité (visible) de chaque composant.
 
 Classes
 ================================================================================
@@ -288,14 +135,102 @@ Classes <i class="fas fa-long-arrow-alt-right" style="margin-right:1em;margin-le
 <i class="fas fa-long-arrow-alt-right fa-3x" style="margin-right:1em;"></i>
 <i class="fas fa-car fa-3x"></i>
 
-Exemple -- La classe `Point`
+Exemple -- La classe `Point` (2D)
 --------------------------------------------------------------------------------
 
-  - 2 champs: `x` et `y` (valeurs numériques)
+  - 2 champs : `x` et `y` (valeurs numériques)
 
   - 1 méthode "spéciale": le constructeur
 
   - 1 méthode "normale": `distance` (à l'origine)
+
+
+<i class="fab fa-java" style="font-weight:normal;"></i> Champs (attributs)
+--------------------------------------------------------------------------------
+
+    public class Point {
+      double x, y;
+      ...
+    }
+
+<i class="fab fa-java" style="font-weight:normal;"></i> Constructeur
+--------------------------------------------------------------------------------
+
+    public class Point {
+      ...
+      public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+      }
+      ...
+    }
+
+<i class="fab fa-java" style="font-weight:normal;"></i> Méthode
+--------------------------------------------------------------------------------
+
+    public class Point {
+      ...
+      public double distance() {
+        return Math.sqrt(x*x + y*y);
+      }
+    }
+
+<i class="fab fa-java" style="font-weight:normal;"></i> Exploitation (Boilerplate)
+--------------------------------------------------------------------------------
+
+    class Main {
+      public static void main(String[] args) {
+        ...
+      }
+    }
+
+<i class="fab fa-java" style="font-weight:normal;"></i> Exploitation
+--------------------------------------------------------------------------------
+
+Instanciation :
+
+    Point point = new Point(1.0, 2.0); 
+    System.out.println(point);
+
+--------------------------------------------------------------------------------
+
+Accès au champs de l'objet :
+
+    System.out.println(point.x);
+    System.out.println(point.y);
+
+--------------------------------------------------------------------------------
+
+Appel de méthode :
+
+    double distance = point.distance();
+    System.out.println(distance);
+
+--------------------------------------------------------------------------------
+
+    $ ./run # javac *.java && java Main
+    Point@2f0e140b
+    1.0
+    2.0
+    2.23606797749979
+
+
+<i class="fab fa-java" style="font-weight:normal;"></i> Avec le "Code Pad" de BlueJ
+--------------------------------------------------------------------------------
+
+    > Point point = new Point(1.0, 2.0);
+    > point
+    <object reference> (Point)
+    > point.distance()
+    2.23606797749979 (double)
+
+<i class="fab fa-java" style="font-weight:normal;"></i> / <i class="fab fa-python" style="font-weight:normal;"></i> Avec Jython
+--------------------------------------------------------------------------------
+
+    >>> import Point
+    >>> point = Point(1.0, 2.0)
+    >>> point.distance()
+    2.23606797749979
 
 <i class="fab fa-python" style="font-weight:normal;"></i> Python
 --------------------------------------------------------------------------------
@@ -401,57 +336,164 @@ Voir aussi: [Prototypes in JavaScript](https://hackernoon.com/prototypes-in-java
     > point.distance()
     2.23606797749979
 
-<i class="fab fa-java" style="font-weight:normal;"></i> Java
+
+
+
+Encapsulation
+================================================================================
+
+[<i class="fab fa-wikipedia-w"></i> Encapsulation](https://fr.wikipedia.org/wiki/Encapsulation_(programmation))
 --------------------------------------------------------------------------------
 
-    public class Point {
-      double x, y;
-      public Point(double x, double y) {
-        this.x = x;
-        this.y = y;
-      }
-      public double distance() {
-        return Math.sqrt(x*x + y*y);
-      }
-    }
+  - "désigne le principe de **regrouper des données brutes avec un ensemble de 
+     routines** permettant de les lire ou de les manipuler." 
+     
+  - "(...) souvent accompagné du **masquage de ces données brutes** 
+    afin de s’assurer que l’utilisateur ne contourne pas l’interface qui lui 
+    est destinée." 
+    
+  - "L’ensemble se considère alors comme une **boîte noire** 
+    ayant un comportement et des propriétés spécifiés." 
 
-<i class="fab fa-java" style="font-weight:normal;"></i> Avec les outils Java
+
+Encapsulation -- Bénéfices
 --------------------------------------------------------------------------------
 
-    class Main {
-      public static void main(String[] args) {
-        Point point = new Point(1.0, 2.0);
-        System.out.println(point);
-        double distance = point.distance();
-        System.out.println(distance);
-      }
-    }
+  - **Architecture.** Le logiciel est réalisé par assemblage de composants
+    -- plus ou moins autonomes  -- 
+    pour réduire la complexité de l'ensemble.
+
+  - **Abstraction & Découplage.** Ce que fait un objet (son **interface**)
+    est plus important que comment il le fait (son **implémentation**); 
+    cette "ignorance sélective" contribue à abaisser la
+    complexité (visible) de chaque composant.
 
 
 --------------------------------------------------------------------------------
 
-    $ javac *.java
-    $ java Main
-    Point@6fffcba5
-    2.23606797749979
+<i class="fab fa-java"></i> En Java:
 
+  - Les mots-clés  
+    
+        public, protected, private   
 
-<i class="fab fa-java" style="font-weight:normal;"></i> Avec le "Code Pad" de BlueJ
+    contrôlent l'accès aux attributs et méthodes des objets.
+
 --------------------------------------------------------------------------------
 
-    > Point point = new Point(1.0, 2.0);
-    > point
-    <object reference> (Point)
-    > point.distance()
-    2.23606797749979 (double)
-
-<i class="fab fa-java" style="font-weight:normal;"></i> / <i class="fab fa-python" style="font-weight:normal;"></i> Avec Jython
+Exemple en Python : Fractions
 --------------------------------------------------------------------------------
 
-    >>> import Point
-    >>> point = Point(1.0, 2.0)
-    >>> point.distance()
-    2.23606797749979
+<i class="fab fa-python"></i> Spécification (boîte noire):
+
+    >>> Fraction(7)
+    7
+    >>> Fraction(2, 3)
+    2/3
+    >>> Fraction(1, 3) + Fraction(1, 6)
+    1/2
+    ...
+
+
+--------------------------------------------------------------------------------
+
+
+<i class="fab fa-python"></i> Constructeur
+
+    class Fraction:
+        def __init__(self, num, den=1):
+            self._num = num
+            self._den = den
+            self._simplify()
+
+--------------------------------------------------------------------------------
+
+<i class="fab fa-python"></i> Méthode utilitaire
+
+        def _simplify(self):
+            gcd = math.gcd(self._num, self._den)
+            self._num = self._num / gcd
+            self._den = self._den / gcd
+            if self._den < 0:
+                self._num = - self._num
+                self._denom = - self._denom
+
+--------------------------------------------------------------------------------
+
+<i class="fab fa-python"></i> Méthode d'addition
+
+        def __add__(self, other):
+            num = self._num * other._den + \
+                  other._num * self._den
+            den = self._den * other._den
+            return Fraction(num, den)
+
+--------------------------------------------------------------------------------
+
+<i class="fab fa-python"></i> Méthode de représentation
+
+        def __repr__(self):
+            if self._den == 1:
+                return f"{self._num}"
+            else:
+                return f"{self._num}/{self._den}"
+
+--------------------------------------------------------------------------------
+
+  - Les données des fractions sont stockées dans les **attributs** 
+   (ou **champs**) `_num` et `_den`, 
+
+  - Les **méthodes** `__init__`, `simplify`, `__add__`, ... 
+    permettent de les manipuler.
+
+--------------------------------------------------------------------------------
+
+<i class="fab fa-python"></i> En Python:
+
+  - Le caractère privé des données ou méthodes est indiqué par une convention:
+    l'identifiant commence par un caractère de soulignement.  
+    Seules les méthodes de l'objet devraient accéder 
+    au champ `_num` ou appeler la méthode `_simplify`.
+  
+--------------------------------------------------------------------------------
+
+  - Vous pouvez décider de ne pas vous conformer à cette indication
+    **à vos risque et périls**
+    (["We are all consenting adults"](https://python-guide-chinese.readthedocs.io/zh_CN/latest/writing/style.html#we-are-all-consenting-adults))
+
+Par exemple:
+
+    >>> f = Fraction(4, 6)
+    >>> f._num = 7
+    >>> f 
+    ???
+
+--------------------------------------------------------------------------------
+
+  - Selon le langage, l'accès aux données peut être rendu 
+    possible -- de façon controllée -- 
+    par des **accesseurs** (méthodes) et/ou des **propriétés.**
+
+--------------------------------------------------------------------------------
+
+<i class="fab fa-python"></i> En Python (lecture seule ou "getter"):
+
+    def get_numerator(self):
+        return self._num
+
+et optionnellement:
+
+    numerator = property(get_numerator)
+
+--------------------------------------------------------------------------------
+    
+Usage:
+
+    >>> f = Fraction(2, 3)
+    >>> f.get_numerator()
+    2
+    >>> f.numerator
+    2
 
 Envoi de Messages
 ================================================================================
