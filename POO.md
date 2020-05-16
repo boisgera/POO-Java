@@ -125,7 +125,7 @@ classes, instances, champs, méthodes, héritage, polymorphisme, composition,
 délégation, ...
 
 
-Classes
+Les classes en Java
 ================================================================================
 
 Classes <i class="fas fa-long-arrow-alt-right" style="margin-right:1em;margin-left:1em;"></i> Instances
@@ -148,7 +148,7 @@ Exemple -- La classe `Point` (2D)
 <i class="fab fa-java" style="font-weight:normal;"></i> Champs (attributs)
 --------------------------------------------------------------------------------
 
-    public class Point {
+    class Point {
       double x, y;
       ...
     }
@@ -156,9 +156,9 @@ Exemple -- La classe `Point` (2D)
 <i class="fab fa-java" style="font-weight:normal;"></i> Constructeur
 --------------------------------------------------------------------------------
 
-    public class Point {
+    class Point {
       ...
-      public Point(double x, double y) {
+      Point(double x, double y) {
         this.x = x;
         this.y = y;
       }
@@ -168,9 +168,9 @@ Exemple -- La classe `Point` (2D)
 <i class="fab fa-java" style="font-weight:normal;"></i> Méthode
 --------------------------------------------------------------------------------
 
-    public class Point {
+    class Point {
       ...
-      public double distance() {
+      double distance() {
         return Math.sqrt(x*x + y*y);
       }
     }
@@ -179,33 +179,30 @@ Exemple -- La classe `Point` (2D)
 --------------------------------------------------------------------------------
 
     class Main {
-      public static void main(String[] args) {
-        ...
-      }
+        public static void main(String[] args) {
+            ...
+        }
     }
 
-<i class="fab fa-java" style="font-weight:normal;"></i> Exploitation
+<i class="fab fa-java" style="font-weight:normal;"></i> Instanciation
 --------------------------------------------------------------------------------
-
-Instanciation :
 
     Point point = new Point(1.0, 2.0); 
     System.out.println(point);
 
+<i class="fab fa-java" style="font-weight:normal;"></i> Accès au champs
 --------------------------------------------------------------------------------
-
-Accès au champs de l'objet :
 
     System.out.println(point.x);
     System.out.println(point.y);
 
+<i class="fab fa-java" style="font-weight:normal;"></i> Appel de méthode
 --------------------------------------------------------------------------------
-
-Appel de méthode :
 
     double distance = point.distance();
     System.out.println(distance);
 
+<i class="fab fa-java" style="font-weight:normal;"></i> Exécution
 --------------------------------------------------------------------------------
 
     $ ./run # javac *.java && java Main
@@ -213,6 +210,17 @@ Appel de méthode :
     1.0
     2.0
     2.23606797749979
+
+<i class="fab fa-java" style="font-weight:normal;"></i> Avec JShell (Java 9+)
+--------------------------------------------------------------------------------
+
+    jshell> /open Point.java
+    jshell> Point point = new Point(1.0, 2.0)
+    point ==> Point@238e0d81
+    jshell> point.x
+    $1 ==> 1.0
+    jshell> point.distance()
+    $2 ==> 2.23606797749979
 
 
 <i class="fab fa-java" style="font-weight:normal;"></i> Avec le "Code Pad" de BlueJ
@@ -232,6 +240,12 @@ Appel de méthode :
     >>> point.distance()
     2.23606797749979
 
+
+Les classes à travers les langages
+================================================================================
+
+
+
 <i class="fab fa-python" style="font-weight:normal;"></i> Python
 --------------------------------------------------------------------------------
 
@@ -244,6 +258,8 @@ Appel de méthode :
 --------------------------------------------------------------------------------
 
     >>> point = Point(1.0, 2.0)
+    >>> point.x
+    1.0
     >>> point.distance()
     2.23606797749979
 
@@ -264,6 +280,8 @@ Appel de méthode :
 
     irb> point = Point.new 1.0, 2.0
     => #<Point @x=1.0, @y=2.0>
+    irb> point.x
+    NoMethodError: undefined method `x' for #<Point:0x00000001223ef8 @x=1.0, @y=2.0>
     irb> point.distance
     => 2.23606797749979
 
@@ -284,6 +302,8 @@ Appel de méthode :
 
     > point = new Point(1.0, 2.0)
     Point { x: 1, y: 2 }
+    > point.x
+    1
     > point.distance()
     2.23606797749979
 
@@ -312,6 +332,8 @@ Voir aussi: [Prototypes in JavaScript](https://hackernoon.com/prototypes-in-java
 
     coffee> point = new Point 1.0, 2.0
     Point { x: 1, y: 2 }
+    coffee> point.x
+    1
     coffee> point.distance()
     2.23606797749979
 
@@ -333,6 +355,8 @@ Voir aussi: [Prototypes in JavaScript](https://hackernoon.com/prototypes-in-java
 
     > point = new Point(1.0, 2.0)
     Point { x: 1, y: 2 }
+    > point.x
+    1
     > point.distance()
     2.23606797749979
 
@@ -364,7 +388,7 @@ Encapsulation -- Bénéfices
     pour réduire la complexité de l'ensemble.
 
   - **Abstraction & Découplage.** Ce que fait un objet (son **interface**)
-    est plus important que comment il le fait (son **implémentation**); 
+    est plus important que comment il le fait (son **implémentation**) ; 
     cette "ignorance sélective" contribue à abaisser la
     complexité (visible) de chaque composant.
 
@@ -378,6 +402,10 @@ Encapsulation -- Bénéfices
         public, protected, private   
 
     contrôlent l'accès aux attributs et méthodes des objets.
+
+--------------------------------------------------------------------------------
+
+**TODO:** accesseurs "classiques" et get / set.
 
 --------------------------------------------------------------------------------
 
