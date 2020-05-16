@@ -392,20 +392,26 @@ Encapsulation -- Bénéfices
     cette "ignorance sélective" contribue à abaisser la
     complexité (visible) de chaque composant.
 
-
+<i class="fab fa-java"></i> 
 --------------------------------------------------------------------------------
 
-<i class="fab fa-java"></i> En Java:
-
-  - Les mots-clés  
+Les mots-clés  
     
-        public, protected, private   
+    public, protected, private   
 
-    contrôlent l'accès aux attributs et méthodes des objets.
+contrôlent l'accès aux attributs et méthodes.
 
+<i class="fab fa-java"></i> 
 --------------------------------------------------------------------------------
 
-**TODO:** accesseurs "classiques" et get / set.
+En cas de champ `XXX` non-public, on peut permettre son accès **contrôlé** à
+travers de fonctions (accesseurs).
+
+Par exemple :
+
+    private XXX xxx;
+    public XXX getXXX() { ... };
+    public void setXXX(XXX xxx) { ... };
 
 --------------------------------------------------------------------------------
 
@@ -476,9 +482,9 @@ Exemple en Python : Fractions
 
 --------------------------------------------------------------------------------
 
-<i class="fab fa-python"></i> En Python:
+<i class="fab fa-python"></i> En Python :
 
-  - Le caractère privé des données ou méthodes est indiqué par une convention:
+  - Le caractère privé des données ou méthodes est indiqué par une convention :
     l'identifiant commence par un caractère de soulignement.  
     Seules les méthodes de l'objet devraient accéder 
     au champ `_num` ou appeler la méthode `_simplify`.
@@ -609,22 +615,18 @@ Références
   - [Do your understand Ruby's Objects, Message and Blocks?](http://rubylearning.com/blog/2010/11/03/do-you-understand-rubys-objects-messages-and-blocks/)
 
 
-Par extension ...
+<i class="fab fa-java"></i> Interprétation en Java
 --------------------------------------------------------------------------------
 
-On peut interpréter: 
-
-<i class="fab fa-java"></i> Java
-
-     myDictionary.put(key, value);
-
-comme
+Interpréter `oldVal = dict.put(key, val)` comme :
 
   - l'envoi du message `"put"`, 
 
   - contenant les données `key` et `value` (*payload*),
 
-  - à l'objet `myDictionary`.
+  - à l'objet `dict`,
+
+  - qui répond `oldValue`.
 
 Héritage et Polymorphisme
 ================================================================================
