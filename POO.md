@@ -643,25 +643,25 @@ Alan Kay
 
 [What does Alan Kay think about inheritance in object-oriented programming?](https://www.quora.com/What-does-Alan-Kay-think-about-inheritance-in-object-oriented-programming)
 
-
-<i class="fab fa-java"></i> En Java
---------------------------------------------------------------------------------
-
-  - Pas de "contrat moral" ou "duck typing",
-
-  - Les obligations sont vérifiées par le compilateur,
-
-  - Suppose l'usage de **classes** ou d'**interfaces**.
-
-
 Bénéfices de l'Héritage
 --------------------------------------------------------------------------------
 
-  - aggrégation de données et de code,
+  - Compatible avec le modèle objet 
+    (aggrégation/encapsulation de données et de code),
 
-  - réutilisation (sans *modification*) de code existant,
+  - Réutilisation/Extension (sans *modification*) de code,
 
-  - flexibilité (polymorphisme & attachement tardif).
+  - Flexibilité (polymorphisme & attachement dynamique).
+
+
+<i class="fab fa-java"></i> L'héritage en Java
+--------------------------------------------------------------------------------
+
+  - Il repose sur les **classes** et les **interfaces**,
+
+  - Les obligations du programmeur sont vérifiées par le compilateur
+    (en partie).
+
 
 Retour au `Point`
 --------------------------------------------------------------------------------
@@ -730,7 +730,7 @@ Le `extends Object` est implicite si votre classe n'utilise pas `extends`.
 
 --------------------------------------------------------------------------------
 
-Les instances de `Point` disposent donc gratuitement des méthodes
+Les instances de `Point` disposent donc gratuitement (*héritent*) des méthodes
 implémentées par `Object` :
 
   - String toString()
@@ -738,10 +738,6 @@ implémentées par `Object` :
   - boolean equals(Object object)
 
   - Object clone()
-
-  - int hashCode()
-
-  - Class<?> getClass()
 
   - ...
 
@@ -780,8 +776,16 @@ Surcharger `toString`
 
 ([documentation](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html))
 
-Acceptant les instances d'`Object`, il acceptera toute instance de classe
-qui en dérive, donc les `Point`.
+--------------------------------------------------------------------------------
+
+`System.out.println`: 
+
+  - accepte les instances d'`Object`, donc accepte toute instance dérivée, 
+    donc les `Point`s (*polymorphisme d'héritage*).
+
+  - ignore lorsqu'il invoque `x.toString()` quelle méthode est 
+    effectivement exécutée, celle d'`Object` ou d'une classe dérivée
+    (*liaison dynamique*).
 
 --------------------------------------------------------------------------------
 
@@ -796,9 +800,15 @@ Equivalent à :
     Object point_as_object = (Object)point;
     System.out.println(point_as_object); // --> Point(1.0, 2.0)
 
+
+Contraintes liées à l'héritage
 --------------------------------------------------------------------------------
 
-TODO : faire sa propre dérivation ? En exercice ?
+Stricto sensu, Java ne permet pas l'héritage multiple : une seule classe parent. 
+Les hiérarchies de classes sont linéaires.
+
+Mais les **interfaces**, similaires aux classes par certains aspects,
+permettent de contourner cette limitation.
 
 --------------------------------------------------------------------------------
 
@@ -866,9 +876,8 @@ TODO : cast vers une interface (use case ?). Similarité avec les classes,
 mais pas d'implémentation (sauf défaut ...), "héritage multiple possible".
 
 
-La Liste Java
-================================================================================
-
+Classe ou Interface ?
+--------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 
