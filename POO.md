@@ -796,6 +796,73 @@ Equivalent à :
     Object point_as_object = (Object)point;
     System.out.println(point_as_object); // --> Point(1.0, 2.0)
 
+--------------------------------------------------------------------------------
+
+TODO : faire sa propre dérivation ? En exercice ?
+
+--------------------------------------------------------------------------------
+
+Interfaces
+--------------------------------------------------------------------------------
+
+Les interfaces sont des "contrats", des engagements que votre classe s'engage
+à tenir.
+
+--------------------------------------------------------------------------------
+
+Par exemple, une classe implémentant l'interface
+
+    // fichier XML.java
+    interface XML {
+      public String toXMLString();
+    }
+
+s'engage à fournir une méthode `toXMLString` donnant la représentation de ses 
+instances comme chaîne de caractérère XML.
+
+--------------------------------------------------------------------------------
+
+Le compilateur Java va vérifier que vous remplissez votre contrat : compiler
+
+    public class Point implements XML { 
+      // sans la méthode toXMLSTring
+    }
+
+produit
+
+    error: Point is not abstract and does not override abstract method toXMLString() in XML
+
+<i class="fas fa-exclamation-triangle"></i>
+--------------------------------------------------------------------------------
+
+  - Par contre, il ne va pas s'opposer à ce que votre fonction retourne une 
+chaîne de caractères qui ne serait pas du XML !
+
+  - Seule la partie vérifiable du contrat est prise en charge par la compilateur.
+Attention au "contrat moral" qui peut venir en plus ; 
+**il est important de bien lire la documentation des interfaces !**
+
+
+--------------------------------------------------------------------------------
+
+    public class Point implements XML {
+      ...
+      public String toXMLString() {
+        return "<Point " +
+               + "x='" + x + "' " 
+               + "y='" + y + "'" 
+               + "></Point>";
+      ...
+    }
+
+--------------------------------------------------------------------------------
+
+    System.out.println(point.toXMLString()); 
+    //  --> <Point x='1.0' y='2.0'></Point>
+
+--------------------------------------------------------------------------------
+
+TODO : cast vers une interface (use case ?)
 
 
 La Liste Java
