@@ -862,7 +862,8 @@ Attention au "contrat moral" qui peut venir en plus ;
 
 --------------------------------------------------------------------------------
 
-TODO : cast vers une interface (use case ?)
+TODO : cast vers une interface (use case ?). Similarité avec les classes,
+mais pas d'implémentation (sauf défaut ...), "héritage multiple possible".
 
 
 La Liste Java
