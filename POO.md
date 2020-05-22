@@ -644,6 +644,259 @@ Alan Kay
 [What does Alan Kay think about inheritance in object-oriented programming?](https://www.quora.com/What-does-Alan-Kay-think-about-inheritance-in-object-oriented-programming)
 
 
+<i class="fab fa-java"></i> En Java
+--------------------------------------------------------------------------------
+
+  - Pas de "contrat moral" ou "duck typing",
+
+  - Les obligations sont vérifiées par le compilateur,
+
+  - Suppose l'usage de **classes** ou d'**interfaces**.
+
+
+Bénéfices de l'Héritage
+--------------------------------------------------------------------------------
+
+  - aggrégation de données et de code,
+
+  - réutilisation (sans *modification*) de code existant,
+
+  - flexibilité (polymorphisme & attachement tardif).
+
+Retour au `Point`
+--------------------------------------------------------------------------------
+
+    public class Point {
+      private double x;
+      private double y;
+      public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+      }
+      ...
+    }
+
+Affichage des points
+--------------------------------------------------------------------------------
+
+Le code
+
+    Point point = new Point(1.0, 2.0); 
+    System.out.println(point); 
+    
+affiche 
+
+    Point@76ed5528
+
+D'où cette fonctionnalité "gratuite" vient-elle ? 
+
+--------------------------------------------------------------------------------
+
+Le code est équivalent à
+
+    Point point = new Point(1.0, 2.0);
+    String string = point.toString(); 
+    System.out.println(string);
+
+  - Tous les objets Java peuvent être convertis en une chaîne de caractères,
+
+  - Il existe une implémentation par défaut de cette méthode,
+
+  - Elle est **héritée** de la classe `Object`.
+
+`Object`
+--------------------------------------------------------------------------------
+
+    Object object = new Object();
+    String string = object.toString();
+    System.out.println(string)
+    --> java.lang.Object@2c7b84de
+
+([Documentation `Object`](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html).)
+
+Toute classe dérive d'`Object`
+--------------------------------------------------------------------------------
+
+Notre classe `Point` aurait pu être définie comme
+
+    public class Point extends Object {
+      ...
+    }
+
+Le `extends Object` est implicite si votre classe n'utilise pas `extends`.
+
+    Point point = new Point(1.0, 2.0);
+    point instanceof Object // --> true
+
+--------------------------------------------------------------------------------
+
+Les instances de `Point` disposent donc gratuitement des méthodes
+implémentées par `Object` :
+
+  - String toString()
+
+  - boolean equals(Object object)
+
+  - Object clone()
+
+  - int hashCode()
+
+  - Class<?> getClass()
+
+  - ...
+
+API : <https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>
+
+--------------------------------------------------------------------------------
+
+Dans `Object`, `toString` est implémentée comme
+
+    String toString() {
+      String className = this.getClass().getName();
+      String hexString = Integer.toHexString();
+      return className + "@" + hexString;
+    }
+
+Surcharger `toString`
+--------------------------------------------------------------------------------
+
+    public class Point extends Object {
+      ...
+      public String toString() {
+        return "Point(" + x + ", " + y + ")";
+      }
+      ...
+    }
+
+--------------------------------------------------------------------------------
+
+`System.out` est un `PrintStream`, avec les méthodes :
+
+  - `println(String x)`
+
+  - `println(Object x)`
+
+  - ...
+
+([documentation](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html))
+
+Acceptant les instances d'`Object`, il acceptera toute instance de classe
+qui en dérive, donc les `Point`.
+
+--------------------------------------------------------------------------------
+
+Les méthodes Java sont *virtuelles* : à l'exécution, les appels de fonctions 
+sont déléguées aux classes dérivées quand les méthodes sont définies :
+
+    Point point = new Point(1.0, 2.0);
+    System.out.println(point);  // --> Point(1.0, 2.0)
+
+Equivalent à :
+
+    Object point_as_object = (Object)point;
+    System.out.println(point_as_object); // --> Point(1.0, 2.0)
+
+
+
+La Liste Java
+================================================================================
+
+
+--------------------------------------------------------------------------------
+
+Hériter de -- ou **étendre** -- `LinkedList`, **une classe**:
+
+    import java.util.LinkedList;
+    public class MyList extends LinkedList<Integer> {
+      public String toString() {
+          return "<" + super.toString() + ">";
+      }
+    }
+
+Permet de réutiliser son implémentation.
+
+--------------------------------------------------------------------------------
+
+    class Main {
+      public static void main(String[] arg) {
+        MyList list = new MyList();
+        list.add(1);
+        list.add(2);
+        System.out.println(list);
+      }
+    }
+
+Exécution
+--------------------------------------------------------------------------------
+
+    $ java Main
+    <[1, 2]>
+
+"Refactoring"
+--------------------------------------------------------------------------------
+
+    class Main {
+      public static void main(String[] arg) {
+        MyList list = new MyList();
+        Main.addOneTwo(list);
+      }
+    ...
+
+--------------------------------------------------------------------------------
+
+    ...
+      public static void addOneTwo(MyList list) {
+        list.add(1);
+        list.add(2);
+        System.out.println(list);
+      }
+    }
+
+--------------------------------------------------------------------------------
+
+Mais la fonction `addOneTwo` ne peut être utilisée qu'avec les instances
+de `MyList` (ou qui en dérivent). 
+
+Son usage est donc (trop) limité ...
+
+Alternative -- Interfaces
+--------------------------------------------------------------------------------
+
+  - La classe `LinkedList` **implémente** de nombreuses interfaces 
+    (ou "contrats" vérifiés par le compilateur):
+
+    `Serializable`, `Cloneable`, ..., `Deque`, **`List`**, `Queue`
+
+  - En implémentant [`List<E>`](https://docs.oracle.com/javase/8/docs/api/java/util/List.html),
+    la classe `LinkedList<E>` garantit qu'elle implémente la méthode `add`:
+
+        boolean add(E e)
+
+--------------------------------------------------------------------------------
+
+    import java.util.List;
+    ...
+      public static void addOneTwo(List<Integer> list) {
+        list.add(1);
+        list.add(2);
+        System.out.println(list);
+      }
+    }
+
+Polymorphisme
+--------------------------------------------------------------------------------
+
+Toutes les classes implémentant `List` sont désormais susceptibles d'utiliser
+`addOneTwo`:
+
+`MyList`, `LinkedList<Integer>`, `Vector<Integer>`, etc.
+
+
+En Python
+================================================================================
+
+
+
 La classe `list`
 --------------------------------------------------------------------------------
 
@@ -750,114 +1003,6 @@ Polymorphisme
 
   - S'il échoue, une exception se produit (elle peut être gérée par le
     programme). 
-
-<i class="fab fa-java"></i> En Java
---------------------------------------------------------------------------------
-
-  - Pas de "contrat moral" ou "duck typing",
-
-  - Les obligations sont vérifiées par le compilateur,
-
-  - Suppose l'usage de **classes** ou d'**interfaces**.
-
---------------------------------------------------------------------------------
-
-Hériter de -- ou **étendre** -- `LinkedList`, **une classe**:
-
-    import java.util.LinkedList;
-    public class MyList extends LinkedList<Integer> {
-      public String toString() {
-          return "<" + super.toString() + ">";
-      }
-    }
-
-Permet de réutiliser son implémentation.
-
---------------------------------------------------------------------------------
-
-    class Main {
-      public static void main(String[] arg) {
-        MyList list = new MyList();
-        list.add(1);
-        list.add(2);
-        System.out.println(list);
-      }
-    }
-
-Exécution
---------------------------------------------------------------------------------
-
-    $ java Main
-    <[1, 2]>
-
-"Refactoring"
---------------------------------------------------------------------------------
-
-    class Main {
-      public static void main(String[] arg) {
-        MyList list = new MyList();
-        Main.addOneTwo(list);
-      }
-    ...
-
---------------------------------------------------------------------------------
-
-    ...
-      public static void addOneTwo(MyList list) {
-        list.add(1);
-        list.add(2);
-        System.out.println(list);
-      }
-    }
-
---------------------------------------------------------------------------------
-
-Mais la fonction `addOneTwo` ne peut être utilisée qu'avec les instances
-de `MyList` (ou qui en dérivent). 
-
-Son usage est donc (trop) limité ...
-
-Alternative -- Interfaces
---------------------------------------------------------------------------------
-
-  - La classe `LinkedList` **implémente** de nombreuses interfaces 
-    (ou "contrats" vérifiés par le compilateur):
-
-    `Serializable`, `Cloneable`, ..., `Deque`, **`List`**, `Queue`
-
-  - En implémentant [`List<E>`](https://docs.oracle.com/javase/8/docs/api/java/util/List.html),
-    la classe `LinkedList<E>` garantit qu'elle implémente la méthode `add`:
-
-        boolean add(E e)
-
---------------------------------------------------------------------------------
-
-    import java.util.List;
-    ...
-      public static void addOneTwo(List<Integer> list) {
-        list.add(1);
-        list.add(2);
-        System.out.println(list);
-      }
-    }
-
-Polymorphisme
---------------------------------------------------------------------------------
-
-Toutes les classes implémentant `List` sont désormais susceptibles d'utiliser
-`addOneTwo`:
-
-`MyList`, `LinkedList<Integer>`, `Vector<Integer>`, etc.
-
-
-Bénéfices de l'Héritage
---------------------------------------------------------------------------------
-
-  - aggrégation de données et de code,
-
-  - réutilisation (sans *modification*) de code existant,
-
-  - flexibilité (polymorphisme & attachement tardif).
 
 Alternatives à l'Héritage: Composition
 --------------------------------------------------------------------------------
