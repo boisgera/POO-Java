@@ -17,7 +17,7 @@ Solution
 --------------------------------------------------------------------------------
 
 Le phénomène s'explique parce que la méthode `equals` qui est invoquée est
-celle héritée de la classe `Object` dont `Point` dérivé implicitement.
+celle héritée de la classe `Object` dont `Point` dérive implicitement.
 [La documentation Java de `Object`](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-) nous informe que c'est l'identité des deux objets qui est comparée.
 Or ici `point1` et `point2` contiennent les mêmes informations, mais à des
 emplacements différents en mémoire, ils sont distincts (`point1 != point2`).
