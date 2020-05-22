@@ -7,7 +7,7 @@ par défaut, deux points dont les coordonnées sont égales ne sont pas nécessa
 égaux (ce que nous souhaiterions).
 
 Expliquez ce comportement (chercher sur le Web les informations nécessaires) ;
-puis, modifiez la classe Point pour corriger ce phénomène.
+puis, modifiez la classe `Point` pour corriger ce phénomène.
 
 **Bonus:** regardez la documentation des méthodes `equals` et `hashCode` de
 Object et faites en sorte que la nouvelle fonctionnalité de `Point` soit
