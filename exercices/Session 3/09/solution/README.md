@@ -38,7 +38,7 @@ avec un minimum de code l'affichage des messages
 Solution
 --------------------------------------------------------------------------------
 
-La méthode `schedule` de `TaskQueue` accept des `Runnable`, une interface
+La méthode `schedule` de `TaskQueue` accepte des `Runnable`, une interface
 standard Java qui demande que soit implémentée une fonction
 
     void run()
