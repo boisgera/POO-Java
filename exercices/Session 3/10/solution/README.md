@@ -2,7 +2,7 @@
 Exercice
 --------------------------------------------------------------------------------
 
-Pour faciliter le débogage de notre class `Point`, on nous suggère d'en
+Pour faciliter le débogage de notre classe `Point`, on nous suggère d'en
 faire une classe implémentant l'interface `Debuggable` :
 
         import java.io.PrintStream;
