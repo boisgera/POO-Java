@@ -797,7 +797,7 @@ sont déléguées aux classes dérivées quand les méthodes sont définies :
 
 Equivalent à :
 
-    Object point_as_object = (Object)point;
+    Object point_as_object = point;
     System.out.println(point_as_object); // --> Point(1.0, 2.0)
 
 
@@ -870,11 +870,45 @@ Attention au "contrat moral" qui peut venir en plus ;
     System.out.println(point.toXMLString()); 
     //  --> <Point x='1.0' y='2.0'></Point>
 
+Similarité des interfaces avec les classes
 --------------------------------------------------------------------------------
 
-TODO : cast vers une interface (use case ?). Similarité avec les classes,
-mais pas d'implémentation (sauf défaut ...), "héritage multiple possible".
+  - **Hiérarchie** de classes et d'interface avec `extends` : 
+    deux hiérarchies parallèles.
 
+  - **Conversions** avec des mécanismes similaires :
+
+        Classe c = instanceClasseDerivée;
+        Interface i = instanceInterfaceDerivee
+        Interface j = instanceClasseImplementantInterface
+
+Différences et complémentarité
+--------------------------------------------------------------------------------
+
+  - On n'instancie pas directement une interface :
+
+        Interface x = new Interface(); // non !
+
+  - Il faut créer une classe qui implémente l'interface
+
+        class C implements Interface { ... }
+        Interface x = new C();
+
+Autres différences
+--------------------------------------------------------------------------------
+
+  - déclaration de méthodes uniquement  
+    *(hors champs `public static final`)*
+
+  - les méthodes sont toutes publiques,
+
+  - pas d'implémentation
+    *(hors méthodes `default`)*
+
+  - héritage/implémentations d'interfaces multiples :
+
+        interface I1 extends I2, I3 { ... }
+        class C implements I2, I3 { ... }
 
 Classe ou Interface ?
 --------------------------------------------------------------------------------
