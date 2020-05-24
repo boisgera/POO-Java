@@ -34,31 +34,3 @@ avec un minimum de code l'affichage des messages
         Message 1
         Message 2
         Message 3
-
-Solution
---------------------------------------------------------------------------------
-
-La méthode `schedule` de `TaskQueue` accept des `Runnable`, une interface
-standard Java qui demande que soit implémentée une fonction
-
-    void run()
-
-Il suffit donc de déclarer que `PrintAction` implémente `Runnable`, puis de
-définir une méthode `run` qui va invoquer l'action d'affichage :
-
-    public class PrintAction implements Runnable {
-        ...
-        public void run() {
-            print();
-        }
-    }
-
-Pour programmer l'affichage trois fois de suite des messages 1, 2 et 3, 
-comme ils sont déjà programmés dans `queue`, il suffit de programmer
-`queue` elle-même trois fois dans une nouvelle queue, plus de l'exécuter :
-
-    TaskQueue newQueue = new TaskQueue();
-    newQueue.schedule(queue);
-    newQueue.schedule(queue);
-    newQueue.schedule(queue);
-    newQueue.run();
