@@ -8,8 +8,8 @@ faire une classe implémentant l'interface `Debuggable` :
         import java.io.PrintStream;
 
         interface Debuggable {
-        void setPrintStream(PrintStream stream);
-        void setDebug(boolean debug);
+            void setPrintStream(PrintStream stream);
+            void setDebug(boolean debug);
         }
 
 avec les instructions suivantes : il s'agit, si `debug` a été setté à `true` et
