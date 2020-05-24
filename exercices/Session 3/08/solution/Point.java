@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 class Point implements JSON {
   private double x;
   private double y;
