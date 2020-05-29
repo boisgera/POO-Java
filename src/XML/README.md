@@ -1,4 +1,4 @@
-XML -- Extensible Markup Language
+XML - Extensible Markup Language
 ================================================================================
 
 Ce projet fournit un paquetage `xml` minimaliste qui peut simplifier la
