@@ -1,10 +1,6 @@
 import xml.Element;
 import static xml.Element.E;
 
-
-// TODO. Study a builder pattern ? See e.g. <https://dzone.com/articles/design-patterns-the-builder-pattern>
-// And (tag-specific) factories to avoid the "new"s ?
-
 public class Main {
   public static void main(String[] args) {
     String[][] metaAttrib = {{"charset", "utf-8"}};
@@ -35,6 +31,37 @@ public class Main {
     System.out.println(root);
     System.out.println();
     System.out.println(root.toString("  "));
+    System.out.println();
+
+    Element svg = 
+      E("svg")
+        .attr("version", "1.1")
+        .attr("baseProfile", "full")
+        .attr("xmlns", "http://www.w3.org/2000/svg")
+        .sub(
+          E("rect")
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("fill", "red"),
+          E("circle")
+            .attr("cs", "150")
+            .attr("cy", "100")
+            .attr("r", "80")
+            .attr("fill", "red"),
+          E("text")
+            .attr("x", "150")
+            .attr("y", "125")
+            .attr("font-size", "60")
+            .attr("text-anchor", "middle")
+            .attr("fill", "red")
+            .text("SVG")
+    );
+
+    System.out.println(svg);
+    System.out.println();
+    System.out.println(svg.toString("  "));
+    System.out.println();
+
   }
 
 }

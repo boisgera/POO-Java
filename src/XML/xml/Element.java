@@ -12,14 +12,6 @@ public class Element {
   public String text;
   public String tail;
 
-// TODO : implement String.repeat
-
-// TODO : support varargs for Elements ?
-
-// TODO : differentiate "" text and tail and null text and tail (i.e. not set,
-// i.e. I don't care what the content is as long as it's whitespace).
-// That would be smart, indeed.
-
   static private String repeat(String string, int num) {
     String out = "";
     for (int i=0; i<num; i++) {

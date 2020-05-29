@@ -1,15 +1,6 @@
 package xml;
 
 class XML {
-/*
-TODO: wrap "root" Element.
-
-has a toString method ;
-
-static helper methods : escape (a single one)
-
-*/
-
   static String escape(String string) {
     string = string.replace("&", "&amp;");
     string = string.replace("\"", "&quot;");
