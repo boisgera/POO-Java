@@ -12,7 +12,7 @@ vous être utile.
 Anatomie d'un document XML/SVG
 --------------------------------------------------------------------------------
 
-Un exemple de document SVG, (issu de la documentation Mozilla](https://developer.mozilla.org/fr/docs/Web/SVG/Tutoriel/Premiers_pas):
+Un exemple de document SVG, [issu de la documentation Mozilla](https://developer.mozilla.org/fr/docs/Web/SVG/Tutoriel/Premiers_pas) :
 
     <svg version="1.1"
         baseProfile="full"
