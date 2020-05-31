@@ -753,7 +753,7 @@ Dans `Object`, `toString` est implémentée comme
       return className + "@" + hexString;
     }
 
-Surcharger `toString`
+Redéfinir `toString`
 --------------------------------------------------------------------------------
 
     public class Point extends Object {
@@ -881,6 +881,18 @@ Similarité des interfaces avec les classes
         Classe c = instanceClasseDerivée;
         Interface i = instanceInterfaceDerivee
         Interface j = instanceClasseImplementantInterface
+
+<i class="fas fa-exclamation-triangle"></i> Conversions
+--------------------------------------------------------------------------------
+
+Si les **upcasts** peuvent être implicites, les **downcasts** doivent 
+être explicites (du type général vers le type spécifique) et peuvent 
+échouer à l'exécution.
+
+    Object object =  "Hello world!";  
+    String string = (String) object; // OK
+    object = 1; // Integer
+    string = (String) object; // !!! erreur 
 
 Différences et complémentarité
 --------------------------------------------------------------------------------
@@ -1045,7 +1057,7 @@ Ma classe `List` (usage)
 
   - en héritant de la class `list`, on peut réutiliser ses fonctionnalités,
 
-  - on peut également enrichir ou modifier (surcharger) ses comportements.
+  - on peut également enrichir ou modifier (redéfinir) ses comportements.
 
 
 Ma classe `List` (implementation)
