@@ -13,7 +13,7 @@ faire une classe implémentant l'interface `Debuggable` :
         }
 
 avec les instructions suivantes : il s'agit, si `debug` a été setté à `true` et
-seulement dans ce cas, d'écrire sur le `stream` qui a été donnée des 
+seulement dans ce cas, d'écrire sur le `stream` qui a été donné des 
 informations sur les méthodes appelées et les valeurs renvoyées, par exemple,
 pour la séquence d'appels
 
