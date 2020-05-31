@@ -1,6 +1,5 @@
 # clean
 rm -rf *.class
-rm -rf library/*.class
 
 # compile
 echo "---- Compilation --------------------------------------------------------"
