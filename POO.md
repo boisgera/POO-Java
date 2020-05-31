@@ -828,7 +828,7 @@ Par exemple, une classe implémentant l'interface
     }
 
 s'engage à fournir une méthode `toXMLString` donnant la représentation de ses 
-instances comme chaîne de caractérère XML.
+instances comme chaîne de caractères XML.
 
 --------------------------------------------------------------------------------
 
