@@ -73,7 +73,18 @@ Java est-il encore gratuit ?
     "If you stay up to date on news from the Java community, you may have heard that Oracle have changed their support model for Java.  
     Some news is even suggesting that we now have to pay to use Java – this is not true!"
 
-Java Micro Edition
+En 2020
+--------------------------------------------------------------------------------
+
+  - **Java SE 14** publié en mars 2020,
+  
+  - **Java SE 15** prévu en septembre 2020,
+
+  - ...
+
+  - **Java SE 8 (LTS)** supporté jusqu'en 2030 !
+
+Java Mobile
 ================================================================================
 
 --------------------------------------------------------------------------------
@@ -93,6 +104,10 @@ Android "est du Java"
   - [Kotlin](https://kotlinlang.org/) (2011) "modernise" le langage Java;
     il est également une option pour programmer avec des bibliothèques
     Java sur le bureau ou le serveur.
+
+        fun main() {
+          println("Hello World")
+        }
 
 --------------------------------------------------------------------------------
 
@@ -120,7 +135,27 @@ Oracle America, Inc. v. Google, Inc.
 
   - [**The Case That Never Ends: Oracle Wins Latest Round vs. Google**](https://www.wired.com/story/the-case-that-never-ends-oracle-wins-latest-round-vs-google/) (mars 2018)
 
-  - Actuellement en appel auprès de la Cour Suprême des Etats-Unis.
+En 2020
+--------------------------------------------------------------------------------
+
+  - Appel auprès de la Cour Suprême des Etats-Unis,
+
+  - Traitement repoussé à 2020-2021 (contexte COVID-19).
+
+
+Kotlin en 2020
+--------------------------------------------------------------------------------
+
+  - Kotlin 26eme popularité parmi les langages (Java 2nd) (TIOBE index mai 2020),
+    ... mais en très forte croissance (4eme croissance en 2020) !
+
+  - Langages les plus aimés : Rust, Typescript, Python, **Kotlin**, Go, Julia, ... 
+    (enquête Stack Overflow 2020). Les plus craints : VBA, Objective-C, Perl,
+    Assembly, C, PHP, Ruby, C++, **Java**, R, ...
+
+  - Second language sur la JVM (popularité, enquête JVM annuelle).
+
+
 
 Java Enterprise Edition
 ================================================================================
@@ -153,8 +188,6 @@ Java Enterprise Edition
   - [**Java EE renamed 'Jakarta EE' after Big Red brand spat.**](https://www.theregister.co.uk/2018/03/04/java_ee_is_now_jakarta_ee/)
     "Oracle released the code, but not the name, so now devs have to make sure package names make sense"
 
-
-
     "One important argument for allowing the libre version to keep the Java name was compatibility, 
     but that didn't sway Oracle. [...] while **javax** package names and namespaces would remain for compatibility, new API technologies would need to adopt the new name."
 
@@ -170,6 +203,15 @@ Java Enterprise Edition
   - [**Negotiations Failed: How Oracle killed Java EE.**](https://headcrashing.wordpress.com/2019/05/03/negotiations-failed-how-oracle-killed-java-ee/)
 
   - [**It’s Java just, not as we know it: Oracle-Jakarta name talks fail**](https://devclass.com/2019/05/07/java-eclipse-oracle-jakarta-name-talks-fail/)
+
+2020
+--------------------------------------------------------------------------------
+
+Pas de changement majeur :
+
+  - Existence sous le nom Jakarta EE,
+
+  - Gouvernance du projet par la fondation Eclipse.
 
 
 <style>
