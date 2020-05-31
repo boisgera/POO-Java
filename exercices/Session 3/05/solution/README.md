@@ -32,18 +32,18 @@ Solution
 Pour limiter l'accès aux champs `x` et `y`, on peut les déclarer privés,
 et définit des fonctions d'accès (lecture uniquement) à ces données :
 
-class Point {
-  private double x, y;
-  ...
-  public double getX() {
-    return x;
-  }
-  public double getY() {
-    return y;
-  }
-  ...
+    class Point {
+      private double x, y;
+      ...
+      public double getX() {
+        return x;
+      }
+      public double getY() {
+        return y;
+      }
+      ...
 
-}
+    }
 
 Pour le bonus de l'exercice, on peut utiliser :
 
