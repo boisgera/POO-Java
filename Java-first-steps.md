@@ -67,6 +67,8 @@ Java : les promesses
 Objectifs de cette session : 
 -----------------------------------------
 
+  - Les impératifs dans un fichier Java
+  
   - Introduction aux différents **types** en Java
 
   - Introduction aux opérations de base
@@ -74,6 +76,108 @@ Objectifs de cette session :
   - Introduction aux instructions de **flow control**
 
   - Introduction à la fonction main
+
+
+Créer un fichier Java
+=======================================
+
+Retour sur le "Hello World" 
+--------------------------------------
+
+Fichier **Main.java**:
+```java
+import library.Message;
+
+public class Main {
+  public static void main(String[] args) {
+      System.out.println(Message.content);
+  }
+}
+```
+
+---------------------------
+
+Fichier **Main.java**:
+```java
+import library.Message;
+
+public class Main {
+  public static void main(String[] args) {
+      System.out.println(Message.content);
+  }
+}
+```
+
+  - Correspondance nom de classe / nom de fichier
+
+  - Premières lignes : les importations de bibliothèques
+
+  - ```public class Main```: on crée une classe appelée `Main``
+
+
+
+Définition d'une méthode
+---------------------------
+
+```java
+  public static void main(String[] args) {
+      System.out.println(Message.content);
+  }
+```
+
+  - `public static` : indique certaines propriétés de la méthode
+
+  - `void` : type de retour (obligatoire)
+
+  - `main` : nom de la fonction
+
+  - `String[] args` : type et nom des arguments
+
+---------------------------
+
+
+  ```java
+  TYPE_DE_RETOUR nom(TYPE1 arg1, TYPE2, arg2,...){
+    Instruction1 ;
+    Instruction2 ;
+    ...
+  }
+  ```
+  - Corps de la fonction entre les accolades
+
+  - Une fonction ne peut retourner qu'un seul objet 
+  
+  - ou rien (type `void`)
+
+---------------------------
+
+```java
+System.out.println(Message.content)
+```
+
+  - `System.out.println` : instruction pour afficher quelque chose dans le terminal
+
+  - `Message.content` : argument de la fonction (ici une chaîne de caractères)
+
+  - `System.out.println` peut prendre n'importe quoi comme argument pour l'afficher dans la console !
+
+
+Quelques règles sur les instructions :
+---------------------------
+
+```java
+  Instruction ; // Ceci est un commentaire
+  /*
+  Ceci est un bloc de commentaires
+  Qui peut s'étendre sur plusieurs lignes
+  */
+  Instruction_suivante ;
+```
+
+  - Se termine toujours par un point-virgule 
+
+  - Les commentaires sont avec les symboles `//` (commentaire simple) ou `/* ...*/` (bloc)
+
 
 Les types Java 
 =======================================
@@ -115,7 +219,7 @@ Les entiers littéraux
 
   - Possibilité d'ajouter des underscores "_" pour la lisibilité (ex. : 1_100) 
 
-
+<!---
 À essayer dans l'interpréteur BlueJ
 ------------------------------------
 *Note : sans point-virgule, on récupère directement le résultat* 
@@ -130,6 +234,7 @@ Les entiers littéraux
     byte b2 = 127 ;
     b2 = b2++ ;  // Que se passe-t-il ?
     b2
+--->
 
 Les différentes bases d'entiers 
 ----------------------------------
@@ -164,13 +269,14 @@ Attention aux expressions littérales
 
     double d = 3/2 ; // Que se passe-t-il ?
 
-
+<!-----
 Les booléens
 -----------------------------------
 
   - **boolean** : ne peut valoir que **true** or **false**
 
   - "*Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.*"
+------>
 
 Les caractères
 -----------------------------------
@@ -179,32 +285,47 @@ Les caractères
 
   - Va de *\\u0000* à *\\uFFFF* 
 
-  Exemple dans BlueJ : 
+  Exemple : 
 
-      char a = 0 ;
-      a 
+      char a = 0 ; 
       char capitalC = 'C' ;
-      C
       (int)capitalC  // Conversion de capitalC en entier (code unicode)
+
+Les objets
+-----------------------------------
+
+  - Tous les autres types sont des objets
+
+  - ex. : Chaînes de caractères, tableaux, listes,...
+
+  - Un objet : des attributs et des méthodes : on y accède à l'aide de l'opérateur "`.`" 
+
+  - On crée une nouvelle instance d'un objet grâce au mot clé `new` 
+
 
 Le pendant Objet des entiers et flottants
 -----------------------------------
 
 Il s'agit des classes **Byte**, **Short**, **Integer**, **Long**, **Float**, **Double**
 
-Exemple :
-
+    Integer a ;
     a = new Integer(3) ;
 
-    Integer (4) // Puis exporter dans le "Object bench"
+  - On déclare une variable `a` de type `Integer`
+
+  - On crée une nouvelle instance grâce à `new` puis le constructeur.
+
+  - Ex. : [doc Java Integer](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html)
 
 
+<!--------
 Exercice 
 --------------------
 
   - Essayer de voir avec BlueJ le nom du champ qui contient la valeur d'un entier dans **Integer**.
   - Essayer de lire cette valeur à l'aide de l'interpréteur
   - Trouver la méthode permettant de réaliser cette opération.
+-->
 
 Les tableaux 
 --------------------
@@ -240,8 +361,7 @@ Comment connaître la taille d'un tableau ?
   - Rappel : le type d'un tableau d'entier est int[] : la taille n'est pas mentionnée. 
 
   - **length** : attribut qui stocke la longueur du tableau. Accessible de façon publique. Il s'agit d'une valeur immuable pour un tableau.
-
- 
+  
         System.out.println(tableauInt.length) ; // afficher la taille dans le terminal
 
 ------------------------
@@ -250,15 +370,11 @@ Il est possible de créer des tableaux sur plusieurs dimensions. Il s'agit alors
 
     int[][] tableau2dim = {{1 , 2 , 3},{4 , 5 , 6}} ;
 
-Exercice :
+Accès aux dimensions :
 
-  - Que vaut alors **tableau2dim.length**?
+  - Première dimension **tableau2dim.length**?
 
-  - Vérifier avec l'interpréteur BlueJ
-
-  - Que vaut **tableau2dim[1][0]** ?
-
-  - Vérifier avec l'interpréteur BlueJ 
+  - Deuxième dimension **tableau2dim[1][0]** ?
 
     
 La classe **String**
@@ -268,14 +384,17 @@ La classe **String** permet de manipuler les chaînes de caractère.
 
     String chaine = "Hello World"; // Déclaration et initialisation
 
-Méthodes utiles...
 ------------------
+
+Méthodes utiles...
 
   - *int* **length**() : donne la longueur de la chaîne
 
   - *char* **charAt**(*int* i) : retourne la caractère à l'emplacement i 
 
   - *String* **concat**(*String* str) : retourne une **nouvelle** chaîne correspondant à la concaténation de l'instance en cours et de l'argument str.
+
+  - Opérateur **+** : permet de concaténer deux chaînes 
 
 ------------------
 
@@ -289,17 +408,16 @@ Les chaînes de caractères Java sont immuables :
 
 ----------------
 
-Avec l'interpréteur BlueJ
+Exemples
 
     String s1 = " Hello " ;
-    s1.at(1) = 'B' ; // Voir ce que cela donne
+    char c = s1.charAt(0) // C vaut 'H'
 
-    s1.concat("World")  // Sans le point-virgule
+    String s2 = s1.concat("World"); // Hello World
 
-    String s2 = s1 + " World " ; 
-    s2 // sans le point-virgule
-
-    " World ".replace("Wor","Bo")
+    String s3 = s1 + " World " ;  // Hello World
+  
+    String s4 =  " World ".replace("Wor","Bo") ; // Bold
 
 Les instructions de base en Java
 ===========================
@@ -367,6 +485,7 @@ Exemple
     int note = 15 ;
     char grade = (note >= 16) ? 'A':'B'; 
 
+<!-----
 Excercice
 ------------------------
 
@@ -377,10 +496,10 @@ Excercice
   - ]14 , 11] : C  \ \ \ \ \ \ \ \   ]11, 8]   : D
 
   - ]8 , 5]   : E  \ \ \ \ \ \ \ \ \ \ \ \ \  ]5, 0]    : F
+-->
 
 
-
-Le Flow Control en Java
+Le Contrôle de Flux en Java
 ========================
 
  
@@ -522,7 +641,7 @@ Permet de "**sauter**" l'itération courante d'un bloc d'instruction **for**, **
 
 L'instruction **switch**
 --------------------
-Permet de placer le "control flow" à un endroit spécifique en fonction de la valeur d'une variable parmi un ensemble donné : 
+Permet de placer le contrôle de flux à un endroit spécifique en fonction de la valeur d'une variable parmi un ensemble donné : 
 
     switch(variable){
       case valeur1 : instr1 ; instr2 ; //...
@@ -534,7 +653,19 @@ Dès qu'une des conditions est vérifiée, le code exécute **toutes les instruc
 
 Si variable = valeur2 alors instr3 $\longrightarrow$ instr4 $\longrightarrow$ instr5 $\longrightarrow$ instr6
 
+----------------
 
+Penser à l'instruction  **break** et à l'instruction **default** 
+
+switch(variable){
+      case valeur1 : instr1 ; instr2 ; break //...
+      case valeur2 : instr3 ; instr4 ; break //...
+      case valeur3 : instr5 ; instr6 ; break //...
+      ...
+      default: instrDefault;
+    }
+
+<!---
 Exercice
 -------------
    Créer une classe TestSwitch implémentant cette la fonction suivante :
@@ -586,11 +717,196 @@ Exercice
 
   - Ne fonctionne qu'avec les **int** (et dérivés) et les **String**. Les valeurs testées doivent être constantes
 
+--->
+
+Les exceptions
+==================
+
+But
+------------
+
+  - Lors de la compilation, le compilateur vérifie surtout le respects de **contrats** (signature des fonctions).
+    - ex. : on passe les bons types en arguments
+
+  - Il ne vérifie pas la cohérence des valeurs
+
+  - Le but des exceptions est de "signaler" les problèmes
+
+  - Représente un cas particulier de contrôle de flux.
+
+
+Exemple 
+--------------
+
+    public class Main {
+      public static void main(String[] args) {
+          System.out.println(1/0);
+      }
+    }
+
+On n'a pas l'affichage voulu mais :
+
+    Exception in thread "main" java.lang.ArithmeticException: / by zero at Main.main(Main.java:3)
+
+Que se passe-t-il ?
+--------------
+
+  - Je réalise une division par zéro avec des entiers
+
+  - Il s'agit d'une erreur arithmétique détectée par la fonction qui encode la division des entiers
+
+  - Cette fonction **lève une exception** et la transmet à la méthode appelante (ici **main**)
+
+  - **main** reçoit cette exception. Par défaut, l'exécution de **main** s'arrête et le texte descriptif de l'exception s'affiche dans la console
+
+Principe exceptions ?
+---------------
+
+  - C'est une mesure de protection pour éviter des comportements non prévus
+
+  - Lorsqu'une exception est levée, la méthode appelante la reçoit. Si elle n'est pas traitée, l'exécution de la méthode est interrompue et l'exception remontre à la méthode appelante
+
+  - Si l'exception n'est toujours pas traitée par la méthode principale (**main**), alors le programme s'arrête et le contenu de la pile d'exécution est affichée (on voit toutes les fonctions appelées)
+
+Comment traiter les exceptions ?
+-------------------
+
+Il faut essayer !
+
+    public class Main {
+      public static void main(String[] args) {
+          try{
+            System.out.println(1/0);
+          }catch(Exception e){
+            System.out.println("Ce n'est pas très bien !");
+          }
+      }
+    }
+
+----------------
+
+    catch(Exception e)
+
+  - **J'attrappe** l'exception **e** 
+  
+  - **Exception** est une classe Java. **e** est donc un objet avec des méthodes et attributs 
+
+-----------------
+
+Attraper une exception spécifique 
+
+    public class Main {
+      public static void main(String[] args) {
+          try{
+            System.out.println(1/0);
+          }catch(ArithmeticException e){
+            System.out.println("Ce n'est pas très bien !");
+          }
+      }
+    }
+
+On ne traite que les exceptions de type **ArithmeticException**
+
+---------------
+
+Traiter plusieurs exceptions
+
+    public class Main {
+      public static void main(String[] args) {
+          try{
+            System.out.println(1/0);
+          }catch(ArithmeticException e){
+            System.out.println("C'est une exception arithm!");
+          }catch(Exception e){
+            System.out.println("C'est une autre exception !");
+          }
+      }
+    }
+
+--------------
+
+Deux méthodes intéressantes sur les exceptions 
+-----------------
+
+  - *String* getMessage() : permet de récupérer le message
+
+  - *void* printStackTrace() : permet d'afficher la pile d'exécution 
+
+
+Le mot-clé "throws"
+--------------------
+
+  - Par défaut, les exceptions sont vérifiées par le compilateur
+
+  - Si votre méthode est susceptible de ne pas traiter un type d'exception et de le renvoyer, il faut en principe le déclarer dans la signature.
+
+        public static void main(String[] args) throws ArithmeticException {
+          System.out.println(1/0);
+        }
+        
+------------------
+
+  - Certaines exception étant très communes, les déclarer via **throws** est superflu. C'est le cas de *ArithmeticException*
+
+  - Pour d'autres exceptions (ex. *IOException*), il faut les déclarer via **throws** sous peine d'erreur de compilation.
+
+  - [Liste des exceptions par défaut ](https://programming.guide/java/list-of-java-exceptions.html)
+
+Lever une exception
+----------------
+
+Utiliser le mot clé **throw** 
+
+    public void printAge(int i){
+      if (i<0){
+        throw(new IllegalArgumentException("Age >0 !"))
+      }else{
+        System.out.println("Vous avez "+i+" ans !");
+      }
+    } 
+
+Créer une exception personnalisée
+-------------------
+
+  - Exemple : type **SaisieErroneeException**
+
+  - Dans le fichier **SaisieErroneeException.java**
+
+        public class SaisieErroneeException extends Exception {
+
+          public SaisieErroneeException() {
+            super();
+          }
+        
+          public SaisieErroneeException(String s) { 
+            super(s);
+          }
+        }
+
+-------------------
+
+    public void printAge(int i) throws SaisieErroneeException{
+      if (i<0){
+        throw(new SaisieErroneeException("Age >0 !"))
+      }else{
+        System.out.println("Vous avez "+i+" ans !");
+      }
+    } 
+
 
 La structure d'une application Java
 =====================================
+    
 
-Retour sur le tutoriel BlueJ
+La fonction Main
+---------------------------
+
+Il est possible "d'exécuter" une classe si et seulement si celle-ci contient une fonction **main** dont la signature est la suivante :
+
+    public static void main(String[] args) ;
+
+<!---
+Retour sur le tutoriel BlueJ (slide précédente)
 -------------------
 
   - Deux fichiers sources .java
@@ -600,20 +916,15 @@ Retour sur le tutoriel BlueJ
   - *Cat.java* décrit le fonctionnement de la classe **Cat**
 
   - Comment faire pour **créer un programme exécutable** ?
+---->
 
-    
-La fonction Main
----------------------------
 
-Il est possible "d'exécuter" une classe si et seulement si celle-ci contient une fonction **main** dont la signature est la suivante :
-
-    public static void main(String[] args) ;
 
 -------------------------
 
   - **public** : la méthode est publique (peut être appelée depuis une autre classe)
 
-  - *(**static** : la méthode est statique. C'est une méthode de classe qui ne nécessite pas d'instance de l'objet.)*
+  - **static** : la méthode est statique. C'est une méthode de classe qui ne nécessite pas d'instance de l'objet.
 
   - **void** : la méthode ne retourne rien. 
 
@@ -661,7 +972,7 @@ Se mettre dans le répertoire contenant le fichier .class (ex. MainClass.class) 
 
     $ java MainClass argument1 argument2....
 
-
+<!---
 Une classe MainClass pour les chats
 -------------------------
  
@@ -691,7 +1002,7 @@ Une classe MainClass pour les chats
       Marmalade is happy 
 
  *Note : opérateur new pour initialiser un objet (cf tuto)*
-
+----->
 
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"> 
 
