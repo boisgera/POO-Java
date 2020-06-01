@@ -1,5 +1,9 @@
 public class SquareRoot {
-    public static void printSquareRoot(double x){
-        System.out.println(Math.sqrt(x));
+    public static void printResult(double x){
+        if (x>=0 && x != 1){
+          double y = Math.sqrt(x)/(x-1);
+          System.out.println(y);
+        }else
+          System.out.println("Résultat non calculable");
     }
 }
