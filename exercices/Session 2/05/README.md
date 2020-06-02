@@ -11,6 +11,13 @@ exécutez dans le terminal la commande :
 Exercice
 --------------------------------------------------------------------------------
 
-On a créé une fonction `testEquality(a,b)` dans `library/TestInteger.java` qui teste si deux entiers (de classe `Integer`) ont la même valeur. Il see trouve que le résultat renvoyé n'est pas toujours ce qui est attendu. 
+Dans le fichier `Main.java` qui contient le programme principal, on fait appel à la fonction `max` de la classe `TestArray` dont le but est de donner la valeur maximale d'un tableau de `double`.
 
-Pouvez-vous trouver une façon de modifier `testEquality` qui permette de passer tous les tests ? Indice : on pourra chercher dans la liste des méthodes de la classe `Integer`.
+On vous demande cette fois-ci d'ajouter le fichier manquant sur la base des premiers exercices vus précédemment. 
+
+Note : si le tableau est de longueur nulle, on renverra "-l'infini". Il s'agit d'une valeur représentable, tout comme l'est "+l'infini". Ces valeurs respectent une arithmétique particulière (ex. inf + inf = inf ; inf + 3 = inf ; inf - inf = "not a number" ; inf*0 = "not a number").
+
+Pour affecter une variable `x` de type `double` à "-l'infini", on écrit :
+```java
+x = Double.NEGATIVE_INFINITY ;
+```

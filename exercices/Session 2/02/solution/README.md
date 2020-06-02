@@ -11,21 +11,26 @@ exécutez dans le terminal la commande :
 Exercice
 --------------------------------------------------------------------------------
 
-On a ajouté une nouvelle constante de `ConvertByte`. Celle-ci devrait être égale au nombre d'octets dans un To. Mais il semble y avoir un problème.
+Dans le fichier `Main.java` qui contient le programme principal, on fait appel à la fonction `printResult` de la classe `SquareRoot` dont le but est d'afficher dans le terminal le résultat d'une fonction dépendant de l'argument. Ce résultat vaut **racine carrée de x divisée par (x-1)**. La fonction devra afficher dans le terminal le résultat si celui-ci existe, sinon, elle produira le message `Résultat non calculable` dans le terminal.
 
-Pouvez-vous modifier le fichier `library/ConvertByte.java` pour que le résultat attendu soit correct ?
+Pouvez-vous compléter le fichier `SquareRoot.java` avec la fonction `printResult` de sorte à ce qu'on ait le comportement voulu ? 
+
+Quelques indices :
+  - Ici, vous aurez à définit entièrement une fonction, de son prototype au corps de la fonction. À vous de bien identifier les types d'entrées et de sortie.
+  - Pour que la fonction soit "appelable", il faut ajouter les mots clés ```public static``` devant le prototype de la fonction. On verra plus tard leur signification.
+  - Pour la racine carrée, vous pouvez jeter un oeil au package `Math`.
 
 Solution
 --------------------------------------------------------------------------------
 
-Le problème est dans cette ligne :
+  La fonction proposée est la suivante :
 ```java
-  public static long  teraByte2 = 1_000_000*1_000_000;
+public static void printResult(double x){
+    if (x>=0 && x != 1){
+      double y = Math.sqrt(x)/(x-1);
+      System.out.println(y);
+    }else
+      System.out.println("Résultat non calculable");
+}
 ```
-Bien que `teraByte2` soit déclaré `long`, les littéraux `1_000_000` sont par défaut des `int` simples. Ainsi, leur multiplication donnera un résultat `int`, qui sera converti ensuite en `double`. Le problème est que  `1_000_000*1_000_000` dépasse la capacité des entiers simples, ce qui provoque un débordement. Ainsi, `2_147_483_647+1` donnera `-2_147_483_648` dans l'arithmétique des entiers. 
-
-Si une expression (littérale ou non) fait apparaître des entiers et des longs, les calculs seront fait en convertissant tous les entiers en long. Ainsi, il suffit ici de modifier la ligne incriminée par :
-```java
-  public static long  teraByte2 = 1_000_000L*1_000_000;
-```
-    
+Ici, la fonction ne renvoie "rien" : le type de retour est donc `void`. En Java, il est obligatoire de la préciser. La fonction prend un `double` en entrée. On utilise `System.out.prinln` pour écrire quelque chose dans le terminal. Enfin, la racine carrée s'obtient avec `Math.sqrt`.

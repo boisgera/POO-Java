@@ -11,20 +11,11 @@ exécutez dans le terminal la commande :
 Exercice
 --------------------------------------------------------------------------------
 
-Dans le fichier `Main.java` qui contient le programme principal, on fait appel à la fonction `gradeToletter` de la classe `Grade` dont le but est de convertir en lettre une note entre 0 et 20 selon le code suivant :
+Dans le fichier `Main.java` qui contient le programme principal, on fait appel à la fonction `showSequence` de la classe `FizzBuzz` dont le but est d'afficher la séquence des N premières valeurs de la séquence de **FizzBuzz** (voir les règles [ici](https://en.wikipedia.org/wiki/Fizz_buzz)).
 
-  - [20,16] : A
-  - ]16,14] : B
-  - ]14,11] : C
-  - ]11,8]  : D
-  - ]8,5]   : E 
-  - ]5,0]   : F
+Ainsi, l'exécution de `FizzBuzz.showSequence(20);` doit faire apparaître la chaîne suivant dans le terminal (suivi d'un retour à la ligne) : 
+1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, Fizz, 16, 17, Fizz, 19, Buzz
 
-Pouvez-vous compléter le fichier `Grade.java` avec la fonction `gradeToLetter` de sorte à ce qu'on ait le comportement voulu ? 
+Si une valeur négative est fournie en paramètre, rien ne doit s'afficher.
 
-Quelques conseils :
-  - On ne s'intéresse pas au cas où la note en entrée est impromptue. Si le code retourne A pour une note plus grande que 20 et F pour une note en entrée inférieure à zéro, on s'en satisfera.
-  - Ne pas oublier les mots clés "magiques" `public static` avant la signature de la fonction.
-  - On ne vous donne pas le type de retour de la fonction dans l'énoncé... Mais quelques indices sont présents dans le fichier `Main.java` lors de l'utilisation de la fonction...
-
-**Challenge :** il existe une solution qui permet de coder le fonction en une seule ligne de code ! Arriverez-vous à la trouver ?
+On vous demande d'ajouter le fichier manquant sur la base des exercices vus précédemment. 

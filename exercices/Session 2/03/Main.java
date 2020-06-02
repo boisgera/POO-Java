@@ -1,16 +1,19 @@
-import library.ByteConverter;
-
 public class Main{
     public static void main(String[] args){
-        System.out.println("Affichage des constantes");
-        System.out.println(ByteConverter.megaByte);
-        System.out.println(ByteConverter.gigaByte);
-        System.out.println(ByteConverter.teraByte);
 
-        System.out.println("Quelques tests");
-        System.out.println(ByteConverter.megaBytesToBytes(1));
-        System.out.println(ByteConverter.megaBytesToBytes(1_000));
-        System.out.println(ByteConverter.megaBytesToBytes(1_000_000));
-
+        String grade1 = Grade.gradeToLetter(18);
+        String grade2 = Grade.gradeToLetter(16.5);
+        String grade3 = Grade.gradeToLetter(14);
+        String grade4 = Grade.gradeToLetter(12.4);
+        String grade5 = Grade.gradeToLetter(9.5);
+        String grade6 = Grade.gradeToLetter(7);
+        String grade7 = Grade.gradeToLetter(2);
+        System.out.println("Note 1 : "+grade1);
+        System.out.println("Note 2 : "+grade2);
+        System.out.println("Note 3 : "+grade3);
+        System.out.println("Note 4 : "+grade4);
+        System.out.println("Note 5 : "+grade5);
+        System.out.println("Note 6 : "+grade6);
+        System.out.println("Note 6 : "+grade7);
     }   
 }

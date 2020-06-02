@@ -11,26 +11,17 @@ exécutez dans le terminal la commande :
 Exercice
 --------------------------------------------------------------------------------
 
-La compilation du programme `Main` provoque une erreur. Celui-ci devrait normalement afficher le nombre d'octets dans respectivement 1Mo, 1Go et 1To.  
+On a créé une fonction `testEquality(a,b)` dans `library/TestInteger.java` qui teste si deux entiers (de classe `Integer`) ont la même valeur. Il see trouve que le résultat renvoyé n'est pas toujours ce qui est attendu. 
 
-
-Pouvez-vous modifier le fichier `library/ConvertByte.java` pour que le résultat attendu soit correct ?
+Pouvez-vous trouver une façon de modifier `testEquality` qui permette de passer tous les tests ? Indice : on pourra chercher dans la liste des méthodes de la classe `Integer`.
 
 Solution
 --------------------------------------------------------------------------------
+Le test `==` teste si deux **objets** sont identiques. Or, :
+  - ```Integer a = new Integer(3) ;```
+  - ```Integer b = 3 ;```
+créent deux objets différents. À chaque fois qu'on utilise l'opérateur `new`, on crée un objet différent. En revanche, si on avait défini ```Integer b2 = 3```, le test ```b==b2``` serait passé car la construction avec un entier littéral renvoie le même objet (si on utilise le même entier).
 
-Il y a ici deux erreurs :
-  1 - L'entier littéral `1_000_000_000_000` est trop gros et ne peut pas être interprété. Il faut ajouter le suffique `L`
+Pour vérifier que les **valeurs** sont effectivement égales, on peut faire appel à la méthode `equals` de la classe `Integer`. On verra d'ailleurs par la suite que cette méthode est une méthode " spéciale " puisqu'elle est disponible pour tous les objets !
 
-  2 - Une fois ce problème corrigé, le compilateur indique une erreur du fait qu'on essaye de rentrer un nombre littéral trop grand dans une variable de typr `int`. Il faut donc la déclarer en `double`.
-
-Au final : 
-
-Modifier la ligne
-```java
-    public static int teraByte = 1_000_000_000_000;
-```
-du fichier `library/ByteConverter.java` et la remplacer par
-```java
-    public static long teraByte = 1_000_000_000_000L;
-```    
+Note : Une autre façon aurait été de faire appel à la méthode `intValue()` de la classe `Integer` qui renvoie un `int` primitif et de réaliser le test avec `==`. Cette solution est proposée en commentaire.

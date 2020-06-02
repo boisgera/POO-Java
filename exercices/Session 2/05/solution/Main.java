@@ -1,15 +1,11 @@
 public class Main{
     public static void main(String[] args){
-        Integer a ;
-        a = new Integer(3) ;
-        Integer b = 3 ;
-        Integer c = new Integer(4);
-        Integer d = new Integer(1) ;
-
-
-        System.out.println(TestInteger.testEquality(a,b));
-        System.out.println(TestInteger.testEquality(a,c));
-        System.out.println(TestInteger.testEquality(a+d,c));
+        double[] tab1= {1,5,3,4,6,3,5,1};
+        double[] tab2 = new double[0]; // Tableau vide
+        double max1 = TestArray.max(tab1);
+        double max2 = TestArray.max(tab2);
+        System.out.println(max1);
+        System.out.println(max2);
 
     }   
 }

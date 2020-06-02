@@ -1,5 +1,6 @@
 # clean
 rm -rf *.class
+rm -rf library/*.class
 
 # compile
 echo "---- Compilation --------------------------------------------------------"
@@ -10,3 +11,6 @@ javac *.java
 echo "---- Execution ----------------------------------------------------------"
 java Main
 
+# test
+echo "---- Tests ----------------------------------------------------------"
+java Tests

@@ -11,6 +11,8 @@ exécutez dans le terminal la commande :
 Exercice
 --------------------------------------------------------------------------------
 
-Dans le fichier `Main.java` qui contient le programme principal, on fait appel à la fonction `replaceName` de la classe `TestString` dont le but est de substituer les sous-chaînes **NOM** et **PRENOM** dans une chaîne d'entrée afin de personnaliser un message.
+On travaille toiujours sur la fonction `showSequence` de la classe `FizzBuzz` dont le but est d'afficher la séquence des N premières valeurs de la séquence de **FizzBuzz** (voir les règles [ici](https://en.wikipedia.org/wiki/Fizz_buzz)).
 
-Pouvez-vous compléter le fichier `TestString.java` avec la fonction `replaceName` de sorte à ce qu'on ait le comportement voulu ? On pourra s'intéresser à la documentation de la classe `String`. Il y a certainement une méthode qui pourrait nous aider.
+On voudrait cette fois-ci que la fonction `showSequence` indique une anomalie si elle reçoit un argument négatif ou nul. Il va falloir pour cela renvoyer une **exception**.
+
+Pouvez-vous modifier le fichier `FizzBuzz.java` (et éventuellement `Main.java` si cela est nécessaire) de sorte à retourner une exception de votre choix ([existante](https://programming.guide/java/list-of-java-exceptions.html) ou que vous aurez créé) lorsque l'argument n'est pas strictement positif ?

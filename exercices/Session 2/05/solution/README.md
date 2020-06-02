@@ -11,17 +11,19 @@ exécutez dans le terminal la commande :
 Exercice
 --------------------------------------------------------------------------------
 
-On a créé une fonction `testEquality(a,b)` dans `library/TestInteger.java` qui teste si deux entiers (de classe `Integer`) ont la même valeur. Il see trouve que le résultat renvoyé n'est pas toujours ce qui est attendu. 
+Dans le fichier `Main.java` qui contient le programme principal, on fait appel à la fonction `max` de la classe `TestArray` dont le but est de donner la valeur maximale d'un tableau de `double`.
 
-Pouvez-vous trouver une façon de modifier `testEquality` qui permette de passer tous les tests ? Indice : on pourra chercher dans la liste des méthodes de la classe `Integer`.
+On vous demande cette fois-ci d'ajouter le fichier manquant sur la base des premiers exercices vus précédemment. 
+
+Note : si le tableau est de longueur nulle, on renverra "-l'infini". Il s'agit d'une valeur représentable, tout comme l'est "+l'infini". Ces valeurs respectent une arithmétique particulière (ex. inf + inf = inf ; inf + 3 = inf ; inf - inf = "not a number" ; inf*0 = "not a number).
+
+Pour affecter une variable `x` de type `double` à "-l'infini", on écrit :
+```java
+x = Double.NEGATIVE_INFINITY ;
+```
 
 Solution
 --------------------------------------------------------------------------------
-Le test `==` teste si deux **objets** sont identiques. Or, :
-  - ```Integer a = new Integer(3) ;```
-  - ```Integer b = 3 ;```
-créent deux objets différents. À chaque fois qu'on utilise l'opérateur `new`, on crée un objet différent. En revanche, si on avait défini ```Integer b2 = 3```, le test ```b==b2``` serait passé car la construction avec un entier littéral renvoie le même objet (si on utilise le même entier).
+Voir le fichier `TestArray.java` ajouté. On se sert de l'attribut `length` qui permet d'obtenir la longueur du tableau. On initialise la valeur de sortie `M` à `Double.NEGATIVE_INFINITY` puis on parcourt tout le tableau à l'aide d'une boucle `for` en mettant à jour `M` lorsque c'est nécessaire. 
 
-Pour vérifier que les **valeurs** sont effectivement égales, on peut faire appel à la méthode `equals` de la classe `Integer`. On verra d'ailleurs par la suite que cette méthode est une méthode " spéciale " puisqu'elle est disponible pour tous les objets !
-
-Note : Une autre façon aurait été de faire appel à la méthode `intValue()` de la classe `Integer` qui renvoie un `int` primitif et de réaliser le test avec `==`. Cette solution est proposée en commentaire.
+Si le tableau n'a pas d'éléments, sa longueur est nulle et les instructions de la boucle `for` ne sont alors jamais exécutées. La valeur de sortie vaut alors `Double.NEGATIVE_INFINITY`.
