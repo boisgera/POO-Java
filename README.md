@@ -18,8 +18,8 @@ Programmation Orientée Objet avec Java
   - **Premiers pas en Java** ([HTML](https://boisgera.github.io/POO-Java/Java-first-steps.html),
     [PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
 
-  - **Les objets en Java** ([HTML](https://boisgera.github.io/POO-Java/Java-Objects.html),
-    [PDF](https://boisgera.github.io/POO-Java/Java-Objects.pdf))
+  - **Programmation Orientée Objet avancée en Java** ([HTML](https://boisgera.github.io/POO-Java/Java-avance.html),
+    [PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
 
   - **Java aujourd'hui** ([HTML](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html), 
     [PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
