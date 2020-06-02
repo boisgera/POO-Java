@@ -12,3 +12,8 @@ On ne va pas intégrer toutes les fonctionnalités immédiatement. Pour l'instan
   - Une méthode "printAlpha()" qui ne renvoie rien mais affiche dans le terminal la valeur alpha (pour réaliser des tests).
 
 Pouvez-vous coder cette classe ? Si vous appréhendez l'écriture d'une classe complète par vous-même, le dossier `skeleton` vous donne un point de départ.
+
+Solution
+--------------------------------------------------------------------------------
+
+Voir fichier `ColorAlpha.java`
