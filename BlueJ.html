@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>P.O.O. en Java avec BlueJ</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">P.O.O. en Java avec BlueJ</h1>
+</section>
+
+<section><section id="bluej" class="title-slide slide level1"><h1>BlueJ</h1></section><section class="slide level2">
+
+<p><a href="https://www.bluej.org/"><img data-src="images/bluej.png" /></a></p>
+</section><section id="aperçu" class="slide level2">
+<h2>Aperçu</h2>
+<p>BlueJ est un environnement de développement qui permet de développer des programmes rapidement et facilement.</p>
+</section><section class="slide level2">
+
+<h3 id="une-interface-simple">Une interface simple</h3>
+<ul>
+<li>Elle permet aux débutants d’être opérationnels plus rapidement, et sans être dépassés comme avec des environnements de développement professionels (<a href="https://code.visualstudio.com/">Visual Studio Code</a>, <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a>, <a href="https://netbeans.org/">Netbeans</a>, <a href="https://www.eclipse.org/">Eclipse IDE</a>, etc.).</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="conçu-pour-lenseignement">Conçu pour l’enseignement</h3>
+<ul>
+<li>BlueJ a été conçu au <a href="https://www.kcl.ac.uk/">King’s College (London)</a> spécifiquement pour faciliter l’apprentissage de Java et de la programmation orientée objet. Il intègre des bonnes pratiques pédagogiques.</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="interactif">Interactif</h3>
+<ul>
+<li>Il est possible de manipuler les objets, d’inspecter leur valeur, d’appeller leur méthodes, de les passer comme paramètres et plus encore, le tout sans compiler de code, parfois sans en écrire.</li>
+</ul>
+</section><section class="slide level2">
+
+<blockquote>
+<p>“One of my favourite IDEs out there is BlueJ” — James Gosling, creator of Java.</p>
+</blockquote>
+</section></section>
+<section id="la-fenêtre-principale" class="title-slide slide level1"><h1>La Fenêtre Principale</h1></section>
+<section id="lobject-bench" class="title-slide slide level1"><h1>L’“Object Bench”</h1></section>
+<section id="le-code-pad" class="title-slide slide level1"><h1>Le “Code Pad”</h1></section>
+<section id="test-unitaires" class="title-slide slide level1"><h1>Test Unitaires</h1></section>
+<section><section id="architecture-héritage-dépendances-packages" class="title-slide slide level1"><h1>Architecture: Héritage, Dépendances, Packages</h1></section><section class="slide level2">
+
+<style>
+
+.reveal section img {
+  border:0;
+  height:50vh;
+  width:auto;
+
+}
+
+.reveal section img.medium {
+  border:0;
+  max-width:50vh;
+}
+
+.reveal section img.icon {
+  display:inline;
+  border:0;
+  width:1em;
+  margin:0em;
+  box-shadow:none;
+  vertical-align:-10%;
+}
+
+.reveal code {
+  font-family: Inconsolata, monospace;
+}
+
+.reveal pre code {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  /* max-height: 80wh; won't work, overriden */
+}
+
+input {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 42px;
+  line-height: 54.6px;
+}
+
+</style>
+<p><link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"></p>
+<p><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

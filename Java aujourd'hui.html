@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Java Aujourd’hui</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Java Aujourd’hui</h1>
+</section>
+
+<section><section id="contexte" class="title-slide slide level1"><h1>Contexte</h1></section><section class="slide level2">
+
+<p>La plate-forme Java a été développé par:</p>
+<ul>
+<li><p>James Gosling dans les années 1990,</p></li>
+<li><p>pour <a href="https://en.wikipedia.org/wiki/Sun_Microsystems">Sun Microsystems</a><br />
+(OpenOffice, VirtualBox, Solaris, NFS, etc.).</p></li>
+</ul>
+</section><section id="bibliothèques-api-java" class="slide level2">
+<h2>Bibliothèques &amp; API Java</h2>
+<p><strong>Application Programming Interfaces:</strong><br />
+Interfaces des Bibliothèques</p>
+<ul>
+<li><p><strong>Standard Edition (Java SE)</strong><br />
+(bases, interfaces graphiques, …),</p></li>
+<li><p><strong>Enterprise Edition (Java EE)</strong><br />
+(serveurs, …),</p></li>
+<li><p><strong>Micro Edition (Java ME)</strong><br />
+(embarqué, mobile, …).</p></li>
+</ul>
+</section><section id="rachat-de-sun-microsystems" class="slide level2">
+<h2>Rachat de Sun Microsystems</h2>
+<p>En 2010, <strong>Oracle Corporation</strong> rachète Sun Microsystems:</p>
+<ul>
+<li><p><a href="https://www.oracle.com/SUN/" class="uri">https://www.oracle.com/SUN/</a></p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Sun_acquisition_by_Oracle" class="uri">https://en.wikipedia.org/wiki/Sun_acquisition_by_Oracle</a></p></li>
+</ul>
+<p>Oracle est une entreprise “profit-driven” …</p>
+</section></section>
+<section><section id="java-standard-edition" class="title-slide slide level1"><h1>Java Standard Edition</h1></section><section id="java-est-il-encore-gratuit" class="slide level2">
+<h2>Java est-il encore gratuit ?</h2>
+<ul>
+<li><p><strong><a href="https://www.aspera.com/en/blog/oracle-will-charge-for-java-starting-in-2019/">Oracle Will Charge for Java Starting in 2019</a></strong></p>
+<p>“Oracle has announced that, effective January 2019, Java SE 8 public updates will no longer be available for ‘Business, Commercial or Production use’ without a commercial license.”</p>
+<p><a href="https://java.com/en/download/release_notice.jsp%3E">Annonce</a>, <a href="https://www.oracle.com/technetwork/java/javase/overview/oracle-jdk-faqs.html">FAQ</a></p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p><strong><a href="https://medium.com/@javachampions/java-is-still-free-2-0-0-6b9aa8d6d244">Java is Still Free 2.0.3</a></strong></p>
+<p><strong>Short Version:</strong></p>
+<p>You can still get the Oracle OpenJDK builds and OpenJDK <a href="https://www.tomaszezula.com/2018/11/19/openjdk-providers-comparison/"><strong>by other providers</strong></a> for free under an open source license, and the Oracle JDK remains free <strong>in some circumstances</strong>.</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p><a href="https://blog.jetbrains.com/idea/2018/09/using-java-11-in-production-important-things-to-know/"><strong>Using Java 11 In Production:<br />
+Important Things To Know</strong></a></p>
+<p>“If you stay up to date on news from the Java community, you may have heard that Oracle have changed their support model for Java.<br />
+Some news is even suggesting that we now have to pay to use Java – this is not true!”</p></li>
+</ul>
+</section><section id="en-2020" class="slide level2">
+<h2>En 2020</h2>
+<ul>
+<li><p><strong>Java SE 14</strong> publié en mars 2020,</p></li>
+<li><p><strong>Java SE 15</strong> prévu en septembre 2020,</p></li>
+<li><p>…</p></li>
+<li><p><strong>Java SE 8 (LTS)</strong> supporté jusqu’en 2030 !</p></li>
+</ul>
+</section></section>
+<section><section id="java-mobile" class="title-slide slide level1"><h1>Java Mobile</h1></section><section class="slide level2">
+
+<ul>
+<li><p>Oubliez Java “Micro Edition” pour les mobiles …</p></li>
+<li><p>Bienvenue à <a href="https://en.wikipedia.org/wiki/Android_(operating_system)">Android</a> !</p></li>
+</ul>
+</section><section id="android-est-du-java" class="slide level2">
+<h2>Android “est du Java”</h2>
+<ul>
+<li><p>Basé initialement sur “Java-le-language” mais …</p></li>
+<li><p><a href="https://techcrunch.com/2019/05/07/kotlin-is-now-googles-preferred-language-for-android-app-development/">Kotlin est désormais le langage préféré de Google pour Android</a> (mai 2019).</p></li>
+<li><p><a href="https://kotlinlang.org/">Kotlin</a> (2011) “modernise” le langage Java; il est également une option pour programmer avec des bibliothèques Java sur le bureau ou le serveur.</p>
+<pre><code>fun main() {
+  println(&quot;Hello World&quot;)
+}</code></pre></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Android n’est pas basé sur la JVM (Java Virtual Machine, mais sur l’ART (<a href="https://en.wikipedia.org/wiki/Android_Runtime">Android Runtime</a>, et avant sur la <a href="https://en.wikipedia.org/wiki/Dalvik_(software)">VM Dalvik</a>); en particulier, le format de bytecode n’est pas compatible.</p></li>
+<li><p>les bibliothèques standards Android ne sont pas compatibles avec les bibliothèques standards Java (ni Standard Edition, ni Mobile Edition).</p></li>
+</ul>
+</section><section id="oracle-america-inc.-v.-google-inc." class="slide level2">
+<h2>Oracle America, Inc. v. Google, Inc.</h2>
+<p>(<a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc.">sur Wikipedia</a>)</p>
+<ul>
+<li>Google affirme que <strong>les APIs de Java</strong> (une partie de Java SE) ne sont pas soumises au copyright.</li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>En mai 2012 un premier jugement lui donne raison, mais …</p></li>
+<li><p>en mai 2014, le niveau fédéral révoque partiellement cette décision mais …</p></li>
+<li><p>en mai 2016, un nouveau jugement donne raison à Google mais …</p></li>
+<li><p><a href="https://www.wired.com/story/the-case-that-never-ends-oracle-wins-latest-round-vs-google/"><strong>The Case That Never Ends: Oracle Wins Latest Round vs. Google</strong></a> (mars 2018)</p></li>
+</ul>
+</section><section id="en-2020-1" class="slide level2">
+<h2>En 2020</h2>
+<ul>
+<li><p>Appel auprès de la Cour Suprême des Etats-Unis,</p></li>
+<li><p>Traitement repoussé à 2020-2021 (contexte COVID-19).</p></li>
+</ul>
+</section><section id="kotlin-en-2020" class="slide level2">
+<h2>Kotlin en 2020</h2>
+<ul>
+<li><p>Kotlin 26eme popularité parmi les langages (Java 2nd) (TIOBE index mai 2020), … mais en très forte croissance (4eme croissance en 2020) !</p></li>
+<li><p>Langages les plus aimés : Rust, Typescript, Python, <strong>Kotlin</strong>, Go, Julia, … (enquête Stack Overflow 2020). Les plus craints : VBA, Objective-C, Perl, Assembly, C, PHP, Ruby, C++, <strong>Java</strong>, R, …</p></li>
+<li><p>Second language sur la JVM (popularité, enquête JVM annuelle).</p></li>
+</ul>
+</section></section>
+<section><section id="java-enterprise-edition" class="title-slide slide level1"><h1>Java Enterprise Edition</h1></section><section class="slide level2">
+
+<p>(<a href="https://www.baeldung.com/java-enterprise-evolution">J2EE ou Java EE ou Jakarta EE</a> ou <a href="https://projects.eclipse.org/projects/ee4j">EE4J</a>)</p>
+</section><section id="section" class="slide level2">
+<h2>2017</h2>
+<p><a href="https://www.infoworld.com/article/3217347/oracle-doesnt-want-java-ee-any-more.html"><strong>Oracle doesn’t want Java EE any more</strong></a></p>
+<ul>
+<li><p>“Oracle wants someone else to lead enterprise Java, though it says it will stay involved.”</p></li>
+<li><p>“Apache and Eclipse are likely candidates to take over Java EE.”</p></li>
+<li><p><strong>Sept. 2017:</strong> transfert des droits pour Java EE à la fondation Eclipse.</p></li>
+</ul>
+</section><section id="section-1" class="slide level2">
+<h2>2018</h2>
+<ul>
+<li><a href="https://www.techrepublic.com/article/how-the-eclipse-foundation-is-saving-enterprise-java/"><strong>How the Eclipse Foundation is saving enterprise Java.</strong></a> “The Eclipse Foundation is quiet and doesn’t brag about its work on enterprise Java, but this approach just might save the standard.”</li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p><a href="https://www.theregister.co.uk/2018/03/04/java_ee_is_now_jakarta_ee/"><strong>Java EE renamed ‘Jakarta EE’ after Big Red brand spat.</strong></a> “Oracle released the code, but not the name, so now devs have to make sure package names make sense”</p>
+<p>“One important argument for allowing the libre version to keep the Java name was compatibility, but that didn’t sway Oracle. […] while <strong>javax</strong> package names and namespaces would remain for compatibility, new API technologies would need to adopt the new name.”</p></li>
+</ul>
+</section><section id="section-2" class="slide level2">
+<h2>2019</h2>
+<ul>
+<li><p><a href="https://www.infoworld.com/article/3393233/oracle-eclipse-cant-use-java-ee-trademarks.html"><strong>Oracle: Eclipse can’t use Java EE trademarks</strong></a></p>
+<p>“But Oracle ‘remains committed’ to working with the Jakarta EE working group and Jakarta EE specification process.”</p></li>
+<li><p><a href="https://headcrashing.wordpress.com/2019/05/03/negotiations-failed-how-oracle-killed-java-ee/"><strong>Negotiations Failed: How Oracle killed Java EE.</strong></a></p></li>
+<li><p><a href="https://devclass.com/2019/05/07/java-eclipse-oracle-jakarta-name-talks-fail/"><strong>It’s Java just, not as we know it: Oracle-Jakarta name talks fail</strong></a></p></li>
+</ul>
+</section><section id="section-3" class="slide level2">
+<h2>2020</h2>
+<p>Pas de changement majeur :</p>
+<ul>
+<li><p>Existence sous le nom Jakarta EE,</p></li>
+<li><p>Gouvernance du projet par la fondation Eclipse.</p></li>
+</ul>
+<style>
+
+.reveal section img {
+  border:0;
+  height:50vh;
+  width:auto;
+
+}
+
+.reveal section img.medium {
+  border:0;
+  max-width:50vh;
+}
+
+.reveal section img.icon {
+  display:inline;
+  border:0;
+  width:1em;
+  margin:0em;
+  box-shadow:none;
+  vertical-align:-10%;
+}
+
+.reveal code {
+  font-family: Inconsolata, monospace;
+}
+
+.reveal pre code {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  /* max-height: 80wh; won't work, overriden */
+}
+
+input {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 42px;
+  line-height: 54.6px;
+}
+
+</style>
+<p><link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"></p>
+<p><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

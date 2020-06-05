@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Java “Barebones”</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Java “Barebones”</h1>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="objectifs" class="slide level2">
+<h2>Objectifs</h2>
+<p>Une introduction aux phases de</p>
+<ul>
+<li><p>Compilation,</p></li>
+<li><p>Packaging,</p></li>
+<li><p>Execution,</p></li>
+</ul>
+<p><strong>SANS</strong> BlueJ, Visual Studio Code, Eclipse, etc.</p>
+</section></section>
+<section><section id="application-minimale" class="title-slide slide level1"><h1>1 – Application minimale</h1></section><section id="application" class="slide level2">
+<h2>Application</h2>
+<ul>
+<li><p>Une application Java suppose un programme déclarant une méthode avec le prototype:</p>
+<pre><code>public static void main(String[] args)</code></pre></li>
+<li><p>Le tableau <code>args</code> contient les arguments passés à l’application lors de son invocation.</p></li>
+</ul>
+</section><section id="app.java" class="slide level2">
+<h2><i class="far fa-file-code"></i> <code>App.java</code></h2>
+<pre><code>public class App {
+  public static void main(String[] args) {
+    System.out.println(&quot;Hello, World!&quot;);
+  }
+}</code></pre>
+</section><section id="compilation" class="slide level2">
+<h2>Compilation</h2>
+<ul>
+<li><p>nécessite la commande <code>javac</code>.</p></li>
+<li><p>elle est fournie par <a href="https://en.wikipedia.org/wiki/Java_Development_Kit">Java Development Kit (JDK)</a>.</p></li>
+</ul>
+</section><section id="section" class="slide level2">
+<h2><i class="fas fa-terminal"></i></h2>
+<pre><code>    $ javac App.java</code></pre>
+</section><section id="distribution" class="slide level2">
+<h2>Distribution</h2>
+<ul>
+<li>le fichier <code>App.class</code> généré par la compilation.</li>
+</ul>
+</section><section id="execution" class="slide level2">
+<h2><i class="fas fa-cog"></i> Execution</h2>
+<ul>
+<li><p>nécessite la commande <code>java</code>.</p></li>
+<li><p>elle est fournie par <a href="https://en.wikipedia.org/wiki/Java_virtual_machine#Execution_environment">Java Runtime Environment (JRE)</a>.</p></li>
+</ul>
+</section><section id="section-1" class="slide level2">
+<h2><i class="fas fa-terminal"></i></h2>
+<p>Dans le répertoire contenant le fichier <code>App.class</code>:</p>
+<pre><code>$ java App   
+Hello, World!</code></pre>
+</section></section>
+<section><section id="distribuer-une-archive" class="title-slide slide level1"><h1>2 - Distribuer une archive</h1></section><section id="app.java-1" class="slide level2">
+<h2><i class="far fa-file-code"></i> <code>App.java</code></h2>
+<pre><code>public class App {
+  public static void main(String[] args) {
+    Printer.call(&quot;Hello, World!&quot;);
+  }
+}</code></pre>
+</section><section id="printer.java" class="slide level2">
+<h2><i class="far fa-file-code"></i> <code>Printer.java</code></h2>
+<pre><code>public class Printer {
+  public static void call(String text) {
+    System.out.println(text);
+  }
+}</code></pre>
+</section><section id="manifest.txt" class="slide level2">
+<h2><i class="far fa-file-code"></i> <code>Manifest.txt</code></h2>
+<pre><code>Main-Class: App</code></pre>
+</section><section id="archivage" class="slide level2">
+<h2>Archivage</h2>
+<ul>
+<li><p>nécessite la commande <code>jar</code> (Java Archive Tool).</p></li>
+<li><p>elle est fournie par <a href="https://en.wikipedia.org/wiki/Java_Development_Kit">Java Development Kit (JDK)</a>.</p></li>
+</ul>
+</section><section id="section-2" class="slide level2">
+<h2><i class="fas fa-terminal"></i></h2>
+<p>Après compilation, dans le répertoire contenant les fichiers <code>*.class</code>:</p>
+<pre><code>$ jar cfm app.jar Manifest.txt *.class   </code></pre>
+<p>Voir aussi: <a href="https://docs.oracle.com/javase/tutorial/deployment/jar/index.html">Packaging Programs in JAR Files</a></p>
+</section><section id="execution-1" class="slide level2">
+<h2><i class="fas fa-cog"></i> Execution</h2>
+<p>Dans le répertoire contenant le fichier <code>app.jar</code>:</p>
+<pre><code>$ java -jar app.jar   
+Hello, World!</code></pre>
+</section></section>
+<section><section id="distribuer-une-bibliothèque" class="title-slide slide level1"><h1>3 - Distribuer une bibliothèque</h1></section><section id="printerprinter.java" class="slide level2">
+<h2><i class="far fa-file-code"></i> <code>printer/Printer.java</code></h2>
+<pre><code>package printer;
+
+public class Printer {
+  public static void call(String text) {
+    System.out.println(text);
+  }
+}</code></pre>
+</section><section id="section-3" class="slide level2">
+<h2><i class="fas fa-terminal"></i></h2>
+<pre><code>$ javac printer/Printer.java
+$ jar cf printer.jar printer</code></pre>
+</section><section id="class-path" class="slide level2">
+<h2>Class Path</h2>
+<ul>
+<li><p>Pour utiliser la bibliothèque contenue dans l’archive <code>printer.par</code>, il faudra indiquer à <code>java</code> d’explorer ce fichier au moyen de la variable <code>CLASSPATH</code>.</p></li>
+<li><p>Par exemple : ajoutez <code>*</code> au class path pour que java prenne en compte tous les fichiers jar contenus dans le répertoire courant.</p></li>
+<li><p>Voir ausi <a href="https://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html">Setting the class path</a></p></li>
+</ul>
+</section><section class="slide level2">
+
+<pre><code>$ export CLASSPATH=&quot;.:*&quot;</code></pre>
+<p>Alternativement, ajouter des class paths lorsque vous appelez <code>java/javac</code>:</p>
+<pre><code>$ javac -cp &quot;.:*&quot; *.java</code></pre>
+</section><section id="app.java-2" class="slide level2">
+<h2><i class="far fa-file-code"></i> <code>App.java</code></h2>
+<pre><code>import printer.Printer;
+
+public class App {
+  public static void main(String[] args) {
+    Printer.call(&quot;Hello, World!&quot;);
+  }
+}</code></pre>
+</section><section id="section-4" class="slide level2">
+<h2><i class="fas fa-terminal"></i></h2>
+<pre><code>$ javac -cp &quot;.:*&quot; App.java
+$ ls
+App.class  App.java  printer.jar</code></pre>
+</section><section id="execution-2" class="slide level2">
+<h2><i class="fas fa-cog"></i> Execution</h2>
+<pre><code>$ java -cp &quot;.:*&quot; App 
+Hello, World!</code></pre>
+<style>
+
+.reveal section img {
+  border:0;
+  height:50vh;
+  width:auto;
+
+}
+
+.reveal section img.medium {
+  border:0;
+  max-width:50vh;
+}
+
+.reveal section img.icon {
+  display:inline;
+  border:0;
+  width:1em;
+  margin:0em;
+  box-shadow:none;
+  vertical-align:-10%;
+}
+
+.reveal code {
+  font-family: Inconsolata, monospace;
+}
+
+.reveal pre code {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  /* max-height: 80wh; won't work, overriden */
+}
+
+input {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 42px;
+  line-height: 54.6px;
+}
+
+</style>
+<p><link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"></p>
+<!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+ -->
+<p><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p output
+javac printer/Printer.java
+jar cf printer.jar printer
+cp printer.jar output/.

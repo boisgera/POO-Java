@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Programmation Orientée Objet</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Programmation Orientée Objet</h1>
+</section>
+
+<section><section id="contexte" class="title-slide slide level1"><h1>Contexte</h1></section><section class="slide level2">
+
+<p>La programmation <strong>orientée-objet</strong> est un <strong>paradigme</strong> de programmation (un “style” de conception de programmes) au même titre que</p>
+<ul>
+<li><p>la programmation impérative (/structurée/procédurale),</p></li>
+<li><p>la programmation fonctionnelle,</p></li>
+<li><p>la programmation logique,</p></li>
+<li><p>…</p></li>
+</ul>
+</section><section id="exemples" class="slide level2">
+<h2>Exemples</h2>
+<ul>
+<li><p><strong>impératif:</strong> C, Fortran, Assembleur, …</p></li>
+<li><p><strong>fonctionnel:</strong> Haskell, F#, Reason, Scheme, …</p></li>
+<li><p><strong>objet:</strong> Java, C#, Ruby, Smalltalk, …</p></li>
+<li><p><strong>multi-paradigmes:</strong> Scala, C++, OCaml, Python, …</p></li>
+</ul>
+</section><section id="un-unique-paradigme-objet" class="slide level2">
+<h2>Un unique paradigme objet ?</h2>
+<p>Non ! De <strong>multiples</strong> modèles objets déterminés par</p>
+<ul>
+<li><p>une collection de traits distincts,</p></li>
+<li><p>mais des emphases/variantes significatives,</p></li>
+<li><p>et une dimension culturelle/historique forte …</p></li>
+</ul>
+<p><strong>Pas de consensus universel, mais des caractéristiques communes !</strong></p>
+</section><section id="un-peu-dhistoire" class="slide level2">
+<h2>Un peu d’histoire</h2>
+<p>(a propos du système <a href="https://pdfs.semanticscholar.org/d48b/ecdaf5c3d962e2778f804e8c64d292de408b.pdf">Oberon</a>)</p>
+<p>“A lot of the developers and managers at Apple were gathered around watching a presentation from someone about some <em>wonderful</em> new product that would save the world. All through the presentation, he had been stating that the product was <strong>object-oriented</strong> while he blathered on.”</p>
+</section><section class="slide level2">
+
+<p>Finally, someone at the back of the room piped up:</p>
+<ul>
+<li><p>“So, this product doesn’t support <strong>inheritance</strong>, right?”</p></li>
+<li><p>“that’s right”.</p></li>
+<li><p>“And it doesn’t support <strong>polymorphism</strong>, right?”</p></li>
+<li><p>“that’s right”</p></li>
+<li><p>“And it doesn’t support <strong>encapsulation</strong>, right?”</p></li>
+<li><p>“that’s correct”.</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>“So, it doesn’t seem to me like it’s <strong>object-oriented</strong>”.</li>
+</ul>
+<p>To which the presenter huffily responded,</p>
+<ul>
+<li>“Well, who’s to say what’s object-oriented and what’s not?”</li>
+</ul>
+<p>At this point the person replied,</p>
+<ul>
+<li><strong>“I am. I’m Alan Kay and I invented the term.”</strong></li>
+</ul>
+<p>(Source: <a href="http://wiki.c2.com/?HeInventedTheTerm">“He invented the term”</a>)</p>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Alan Kay, créateur du langage <a href="https://en.wikipedia.org/wiki/Smalltalk">Smalltalk</a> (1972).</p></li>
+<li><p>inspiré par le langage <a href="https://en.wikipedia.org/wiki/Simula">Simula</a> (1960s),<br />
+le “premier langage orienté objet”.</p></li>
+<li><p>Bjarne Stroustrup (créateur de C++) et James Gosling (créateur de Java) ont également reconnu l’influence majeure de Simula.</p></li>
+</ul>
+<p>Voir: <a href="https://web.archive.org/web/20080710144930/http://gagne.homedns.org/~tgagne/contrib/EarlyHistoryST.html">The Early History of Smalltalk</a></p>
+</section><section class="slide level2">
+
+<ul>
+<li>“I made up the term ‘object-oriented’,<br />
+and I can tell you I didn’t have C++ in mind.”<br />
+Alan Kay, OOPSLA ‘97</li>
+</ul>
+<p>Source: <a href="https://medium.com/javascript-scene/the-forgotten-history-of-oop-88d71b9b2d9f">The Forgotten History of OOP</a></p>
+</section></section>
+<section><section id="caractéristiques" class="title-slide slide level1"><h1>Caractéristiques</h1></section><section class="slide level2">
+
+<p>“OOP to me means only <strong>messaging</strong>, <strong>local retention and protection and hiding of state-process</strong>, and <strong>extreme late-binding of all things</strong>.”</p>
+<p>Alan Kay.</p>
+</section><section id="bestiaire" class="slide level2">
+<h2>“Bestiaire”</h2>
+<p><strong>Termes fréquents:</strong> envoi de messages, encapsulation, attachement dynamique, classes, instances, champs, méthodes, héritage, polymorphisme, composition, délégation, …</p>
+</section></section>
+<section><section id="les-classes-en-java" class="title-slide slide level1"><h1>Les classes en Java</h1></section><section id="classes-instances" class="slide level2">
+<h2>Classes <i class="fas fa-long-arrow-alt-right" style="margin-right:1em;margin-left:1em;"></i> Instances</h2>
+<p><i class="fas fa-industry fa-3x" style="margin-right:1em;"></i> <i class="fas fa-long-arrow-alt-right fa-3x" style="margin-right:1em;"></i> <i class="fas fa-car fa-3x"></i></p>
+</section><section id="exemple-la-classe-point-2d" class="slide level2">
+<h2>Exemple – La classe <code>Point</code> (2D)</h2>
+<ul>
+<li><p>2 champs : <code>x</code> et <code>y</code> (valeurs numériques)</p></li>
+<li><p>1 méthode “spéciale”: le constructeur</p></li>
+<li><p>1 méthode “normale”: <code>distance</code> (à l’origine)</p></li>
+</ul>
+</section><section id="champs-attributs" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> Champs (attributs)</h2>
+<pre><code>class Point {
+  double x, y;
+  ...
+}</code></pre>
+</section><section id="constructeur" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> Constructeur</h2>
+<pre><code>class Point {
+  ...
+  Point(double x, double y) {
+    this.x = x;
+    this.y = y;
+  }
+  ...
+}</code></pre>
+</section><section id="méthode" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> Méthode</h2>
+<pre><code>class Point {
+  ...
+  double distance() {
+    return Math.sqrt(x*x + y*y);
+  }
+}</code></pre>
+</section><section id="exploitation-boilerplate" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> Exploitation (Boilerplate)</h2>
+<pre><code>class Main {
+    public static void main(String[] args) {
+        ...
+    }
+}</code></pre>
+</section><section id="instanciation" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> Instanciation</h2>
+<pre><code>Point point = new Point(1.0, 2.0); 
+System.out.println(point);</code></pre>
+</section><section id="accès-au-champs" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> Accès au champs</h2>
+<pre><code>System.out.println(point.x);
+System.out.println(point.y);</code></pre>
+</section><section id="appel-de-méthode" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> Appel de méthode</h2>
+<pre><code>double distance = point.distance();
+System.out.println(distance);</code></pre>
+</section><section id="exécution" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> Exécution</h2>
+<pre><code>$ ./run # javac *.java &amp;&amp; java Main
+Point@2f0e140b
+1.0
+2.0
+2.23606797749979</code></pre>
+</section><section id="avec-jshell-java-9" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> Avec JShell (Java 9+)</h2>
+<pre><code>jshell&gt; /open Point.java
+jshell&gt; Point point = new Point(1.0, 2.0)
+point ==&gt; Point@238e0d81
+jshell&gt; point.x
+$1 ==&gt; 1.0
+jshell&gt; point.distance()
+$2 ==&gt; 2.23606797749979</code></pre>
+</section><section id="avec-le-code-pad-de-bluej" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> Avec le “Code Pad” de BlueJ</h2>
+<pre><code>&gt; Point point = new Point(1.0, 2.0);
+&gt; point
+&lt;object reference&gt; (Point)
+&gt; point.distance()
+2.23606797749979 (double)</code></pre>
+</section><section id="avec-jython" class="slide level2">
+<h2><i class="fab fa-java" style="font-weight:normal;"></i> / <i class="fab fa-python" style="font-weight:normal;"></i> Avec Jython</h2>
+<pre><code>&gt;&gt;&gt; import Point
+&gt;&gt;&gt; point = Point(1.0, 2.0)
+&gt;&gt;&gt; point.distance()
+2.23606797749979</code></pre>
+</section></section>
+<section><section id="les-classes-à-travers-les-langages" class="title-slide slide level1"><h1>Les classes à travers les langages</h1></section><section id="python" class="slide level2">
+<h2><i class="fab fa-python" style="font-weight:normal;"></i> Python</h2>
+<pre><code>class Point:
+    def __init__(self, x, y):
+        self.x = x; self.y = y
+    def distance(self):
+        return math.sqrt(self.x**2 + self.y**2)</code></pre>
+</section><section class="slide level2">
+
+<pre><code>&gt;&gt;&gt; point = Point(1.0, 2.0)
+&gt;&gt;&gt; point.x
+1.0
+&gt;&gt;&gt; point.distance()
+2.23606797749979</code></pre>
+</section><section id="ruby" class="slide level2">
+<h2><i class="far fa-gem" style="font-weight:normal;"></i> Ruby</h2>
+<pre><code>class Point
+  def initialize(x, y)
+    @x = x; @y = y
+  end
+  def distance 
+    Math.sqrt(@x**2 + @y**2)
+  end
+end</code></pre>
+</section><section class="slide level2">
+
+<pre><code>irb&gt; point = Point.new 1.0, 2.0
+=&gt; #&lt;Point @x=1.0, @y=2.0&gt;
+irb&gt; point.x
+NoMethodError: undefined method `x&#39; for #&lt;Point:0x00000001223ef8 @x=1.0, @y=2.0&gt;
+irb&gt; point.distance
+=&gt; 2.23606797749979</code></pre>
+</section><section id="javascript-prototype" class="slide level2">
+<h2><i class="fab fa-js" style="font-weight:normal;"></i> Javascript (prototype)</h2>
+<pre><code>function Point(x, y) {
+  this.x = x;
+  this.y = y;
+}
+
+Point.prototype.distance = function () {
+  return Math.sqrt(this.x**2 + this.y**2);
+}</code></pre>
+</section><section class="slide level2">
+
+<pre><code>&gt; point = new Point(1.0, 2.0)
+Point { x: 1, y: 2 }
+&gt; point.x
+1
+&gt; point.distance()
+2.23606797749979</code></pre>
+</section><section id="prototypes" class="slide level2">
+<h2>Prototypes</h2>
+<p><i class="fas fa-car-alt fa-3x" style="margin-right:1em;"></i> <i class="fas fa-long-arrow-alt-right fa-3x" style="margin-right:1em;"></i> <i class="fas fa-car fa-3x"></i></p>
+<p>Usage: Javascript, <a href="https://www.lua.org/">Lua</a>.</p>
+<p>Voir aussi: <a href="https://hackernoon.com/prototypes-in-javascript-5bba2990e04b">Prototypes in JavaScript</a></p>
+</section><section id="coffeescript" class="slide level2">
+<h2><i class="fab fa-js" style="font-weight:normal;"></i> Coffeescript</h2>
+<pre><code>class Point
+  constructor: (@x, @y) -&gt;
+
+  distance: -&gt;
+    Math.sqrt(@x**2 + @y**2)</code></pre>
+</section><section class="slide level2">
+
+<pre><code>coffee&gt; point = new Point 1.0, 2.0
+Point { x: 1, y: 2 }
+coffee&gt; point.x
+1
+coffee&gt; point.distance()
+2.23606797749979</code></pre>
+</section><section id="javascript-classe" class="slide level2">
+<h2><i class="fab fa-js" style="font-weight:normal;"></i> Javascript (classe)</h2>
+<pre><code>class Point {
+  constructor(x, y) {
+    this.x = x; this.y = y;
+  }
+  distance() {
+    return Math.sqrt(this.x**2 + this.y**2);
+  }
+}</code></pre>
+</section><section class="slide level2">
+
+<pre><code>&gt; point = new Point(1.0, 2.0)
+Point { x: 1, y: 2 }
+&gt; point.x
+1
+&gt; point.distance()
+2.23606797749979</code></pre>
+</section></section>
+<section><section id="encapsulation" class="title-slide slide level1"><h1>Encapsulation</h1></section><section id="encapsulation-1" class="slide level2">
+<h2><a href="https://fr.wikipedia.org/wiki/Encapsulation_(programmation)"><i class="fab fa-wikipedia-w"></i> Encapsulation</a></h2>
+<ul>
+<li><p>“désigne le principe de <strong>regrouper des données brutes avec un ensemble de routines</strong> permettant de les lire ou de les manipuler.”</p></li>
+<li><p>“(…) souvent accompagné du <strong>masquage de ces données brutes</strong> afin de s’assurer que l’utilisateur ne contourne pas l’interface qui lui est destinée.”</p></li>
+<li><p>“L’ensemble se considère alors comme une <strong>boîte noire</strong> ayant un comportement et des propriétés spécifiés.”</p></li>
+</ul>
+</section><section id="encapsulation-bénéfices" class="slide level2">
+<h2>Encapsulation – Bénéfices</h2>
+<ul>
+<li><p><strong>Architecture.</strong> Le logiciel est réalisé par assemblage de composants – plus ou moins autonomes – pour réduire la complexité de l’ensemble.</p></li>
+<li><p><strong>Abstraction &amp; Découplage.</strong> Ce que fait un objet (son <strong>interface</strong>) est plus important que comment il le fait (son <strong>implémentation</strong>) ; cette “ignorance sélective” contribue à abaisser la complexité (visible) de chaque composant.</p></li>
+</ul>
+</section><section id="section" class="slide level2">
+<h2><i class="fab fa-java"></i></h2>
+<p>Les mots-clés</p>
+<pre><code>public, protected, private   </code></pre>
+<p>contrôlent l’accès aux attributs et méthodes.</p>
+</section><section id="section-1" class="slide level2">
+<h2><i class="fab fa-java"></i></h2>
+<p>En cas de champ <code>XXX</code> non-public, on peut permettre son accès <strong>contrôlé</strong> à travers de fonctions (accesseurs).</p>
+<p>Par exemple :</p>
+<pre><code>private XXX xxx;
+public XXX getXXX() { ... };
+public void setXXX(XXX xxx) { ... };</code></pre>
+</section><section id="exemple-en-python-fractions" class="slide level2">
+<h2>Exemple en Python : Fractions</h2>
+<p><i class="fab fa-python"></i> Spécification (boîte noire):</p>
+<pre><code>&gt;&gt;&gt; Fraction(7)
+7
+&gt;&gt;&gt; Fraction(2, 3)
+2/3
+&gt;&gt;&gt; Fraction(1, 3) + Fraction(1, 6)
+1/2
+...</code></pre>
+</section><section class="slide level2">
+
+<p><i class="fab fa-python"></i> Constructeur</p>
+<pre><code>class Fraction:
+    def __init__(self, num, den=1):
+        self._num = num
+        self._den = den
+        self._simplify()</code></pre>
+</section><section class="slide level2">
+
+<p><i class="fab fa-python"></i> Méthode utilitaire</p>
+<pre><code>    def _simplify(self):
+        gcd = math.gcd(self._num, self._den)
+        self._num = self._num / gcd
+        self._den = self._den / gcd
+        if self._den &lt; 0:
+            self._num = - self._num
+            self._denom = - self._denom</code></pre>
+</section><section class="slide level2">
+
+<p><i class="fab fa-python"></i> Méthode d’addition</p>
+<pre><code>    def __add__(self, other):
+        num = self._num * other._den + \
+              other._num * self._den
+        den = self._den * other._den
+        return Fraction(num, den)</code></pre>
+</section><section class="slide level2">
+
+<p><i class="fab fa-python"></i> Méthode de représentation</p>
+<pre><code>    def __repr__(self):
+        if self._den == 1:
+            return f&quot;{self._num}&quot;
+        else:
+            return f&quot;{self._num}/{self._den}&quot;</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Les données des fractions sont stockées dans les <strong>attributs</strong> (ou <strong>champs</strong>) <code>_num</code> et <code>_den</code>,</p></li>
+<li><p>Les <strong>méthodes</strong> <code>__init__</code>, <code>simplify</code>, <code>__add__</code>, … permettent de les manipuler.</p></li>
+</ul>
+</section><section class="slide level2">
+
+<p><i class="fab fa-python"></i> En Python :</p>
+<ul>
+<li>Le caractère privé des données ou méthodes est indiqué par une convention : l’identifiant commence par un caractère de soulignement.<br />
+Seules les méthodes de l’objet devraient accéder au champ <code>_num</code> ou appeler la méthode <code>_simplify</code>.</li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>Vous pouvez décider de ne pas vous conformer à cette indication <strong>à vos risque et périls</strong> (<a href="https://python-guide-chinese.readthedocs.io/zh_CN/latest/writing/style.html#we-are-all-consenting-adults">“We are all consenting adults”</a>)</li>
+</ul>
+<p>Par exemple:</p>
+<pre><code>&gt;&gt;&gt; f = Fraction(4, 6)
+&gt;&gt;&gt; f._num = 7
+&gt;&gt;&gt; f 
+???</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li>Selon le langage, l’accès aux données peut être rendu possible – de façon controllée – par des <strong>accesseurs</strong> (méthodes) et/ou des <strong>propriétés.</strong></li>
+</ul>
+</section><section class="slide level2">
+
+<p><i class="fab fa-python"></i> En Python (lecture seule ou “getter”):</p>
+<pre><code>def get_numerator(self):
+    return self._num</code></pre>
+<p>et optionnellement:</p>
+<pre><code>numerator = property(get_numerator)</code></pre>
+</section><section class="slide level2">
+
+<p>Usage:</p>
+<pre><code>&gt;&gt;&gt; f = Fraction(2, 3)
+&gt;&gt;&gt; f.get_numerator()
+2
+&gt;&gt;&gt; f.numerator
+2</code></pre>
+</section></section>
+<section><section id="envoi-de-messages" class="title-slide slide level1"><h1>Envoi de Messages</h1></section><section id="section-2" class="slide level2">
+<h2><i class="far fa-paper-plane"></i></h2>
+<p><strong>Assemblage / Architecture</strong></p>
+<p>Les “objets” communiquent par envoi de messages.</p>
+</section><section id="objet-acteur" class="slide level2">
+<h2>Objet = “Acteur”</h2>
+<p>“(…) considère les <strong>acteurs</strong> comme les seules fonctions primitives nécessaires pour la <strong>programmation concurrente</strong>.<br />
+Les acteurs communiquent par échange de messages. En réponse à un message, un acteur peut effectuer un traitement local, créer d’autres acteurs, ou envoyer d’autres messages.”</p>
+<p><i class="fab fa-wikipedia-w"></i> <a href="https://fr.wikipedia.org/wiki/Mod%C3%A8le_d%27acteur">Modèle Acteur</a></p>
+</section><section class="slide level2">
+
+<p>“Actors systems research was based on the assumption that massively parallel, distributed, computer systems could become prevalent, and therefore a convenient and efficient way to structure a computation was as a large number of <strong>self contained processes</strong>, called <strong>actors</strong>, communicating by sending messages to each other.”</p>
+<p><a href="http://wiki.c2.com/?MessagePassing">Smalltalk wiki</a></p>
+</section><section class="slide level2">
+
+<p>“I realised that Erlang was the only true OO language<br />
+– <strong>the big thing about OO is message passing</strong> –<br />
+Java/C++ are not OO.”</p>
+<p>Joe Armstrong <a href="https://twitter.com/joeerl/status/877609897730256901"><i class="fab fa-twitter"></i></a></p>
+<p>See also <a href="http://harmful.cat-v.org/software/OO_programming/why_oo_sucks">Why OO Sucks</a></p>
+</section><section class="slide level2">
+
+<p>S’inscrivent dans cette philosophie:</p>
+<p>Smalltalk, Erlang, Ruby, Elixir, etc.</p>
+</section><section class="slide level2">
+
+<p><i class="far fa-gem"></i> Ruby</p>
+<pre><code>&gt; 1 + 2
+=&gt; 3</code></pre>
+<p>L’opérateur <code>+</code> calcul la somme des valeurs <code>1</code> et <code>2</code>.</p>
+</section><section class="slide level2">
+
+<p><i class="far fa-gem"></i> Ruby</p>
+<pre><code>&gt; 1.+(2)
+=&gt; 3</code></pre>
+<p>Le calcul est délégué à la méthode <code>+</code> de l’objet <code>1</code>.</p>
+</section><section class="slide level2">
+
+<p><i class="far fa-gem"></i> Ruby</p>
+<pre><code>&gt; 1.send(:+, 2)
+=&gt; 3</code></pre>
+<p>L’addition est la réponse à un message<br />
+– contenant le symbole <code>+</code> et l’objet <code>2</code> –<br />
+adressé à l’objet <code>1</code>.</p>
+</section><section id="références" class="slide level2">
+<h2>Références</h2>
+<ul>
+<li><p><a href="http://brisruby.org/message-oriented-language">Ruby is a Message-Oriented Language</a></p></li>
+<li><p><a href="http://rubylearning.com/blog/2010/11/03/do-you-understand-rubys-objects-messages-and-blocks/">Do your understand Ruby’s Objects, Message and Blocks?</a></p></li>
+</ul>
+</section><section id="interprétation-en-java" class="slide level2">
+<h2><i class="fab fa-java"></i> Interprétation en Java</h2>
+<p>Interpréter <code>oldVal = dict.put(key, val)</code> comme :</p>
+<ul>
+<li><p>l’envoi du message <code>"put"</code>,</p></li>
+<li><p>contenant les données <code>key</code> et <code>value</code> (<em>payload</em>),</p></li>
+<li><p>à l’objet <code>dict</code>,</p></li>
+<li><p>qui répond <code>oldValue</code>.</p></li>
+</ul>
+</section></section>
+<section><section id="héritage-et-polymorphisme" class="title-slide slide level1"><h1>Héritage et Polymorphisme</h1></section><section id="un-concept-fondamental" class="slide level2">
+<h2>Un concept fondamental ?</h2>
+<p>“Unfortunately, <strong>inheritance</strong> – though an incredibly powerful technique – has turned out to be very difficult for novices (and even professionals) to deal with.”<br />
+Alan Kay</p>
+<p>(Smalltalk-72 n’a pas d’héritage)</p>
+<p><a href="https://www.quora.com/What-does-Alan-Kay-think-about-inheritance-in-object-oriented-programming">What does Alan Kay think about inheritance in object-oriented programming?</a></p>
+</section><section id="bénéfices-de-lhéritage" class="slide level2">
+<h2>Bénéfices de l’Héritage</h2>
+<ul>
+<li><p>Compatible avec le modèle objet (aggrégation/encapsulation de données et de code),</p></li>
+<li><p>Réutilisation/Extension (sans <em>modification</em>) de code,</p></li>
+<li><p>Flexibilité (polymorphisme &amp; attachement dynamique).</p></li>
+</ul>
+</section><section id="lhéritage-en-java" class="slide level2">
+<h2><i class="fab fa-java"></i> L’héritage en Java</h2>
+<ul>
+<li><p>Il repose sur les <strong>classes</strong> et les <strong>interfaces</strong>,</p></li>
+<li><p>Les obligations du programmeur sont vérifiées par le compilateur (en partie).</p></li>
+</ul>
+</section><section id="retour-au-point" class="slide level2">
+<h2>Retour au <code>Point</code></h2>
+<pre><code>public class Point {
+  private double x;
+  private double y;
+  public Point(double x, double y) {
+    this.x = x;
+    this.y = y;
+  }
+  ...
+}</code></pre>
+</section><section id="affichage-des-points" class="slide level2">
+<h2>Affichage des points</h2>
+<p>Le code</p>
+<pre><code>Point point = new Point(1.0, 2.0); 
+System.out.println(point); </code></pre>
+<p>affiche</p>
+<pre><code>Point@76ed5528</code></pre>
+<p>D’où cette fonctionnalité “gratuite” vient-elle ?</p>
+</section><section class="slide level2">
+
+<p>Le code est équivalent à</p>
+<pre><code>Point point = new Point(1.0, 2.0);
+String string = point.toString(); 
+System.out.println(string);</code></pre>
+<ul>
+<li><p>Tous les objets Java peuvent être convertis en une chaîne de caractères,</p></li>
+<li><p>Il existe une implémentation par défaut de cette méthode,</p></li>
+<li><p>Elle est <strong>héritée</strong> de la classe <code>Object</code>.</p></li>
+</ul>
+</section><section id="object" class="slide level2">
+<h2><code>Object</code></h2>
+<pre><code>Object object = new Object();
+String string = object.toString();
+System.out.println(string)
+--&gt; java.lang.Object@2c7b84de</code></pre>
+<p>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Documentation <code>Object</code></a>.)</p>
+</section><section id="toute-classe-dérive-dobject" class="slide level2">
+<h2>Toute classe dérive d’<code>Object</code></h2>
+<p>Notre classe <code>Point</code> aurait pu être définie comme</p>
+<pre><code>public class Point extends Object {
+  ...
+}</code></pre>
+<p>Le <code>extends Object</code> est implicite si votre classe n’utilise pas <code>extends</code>.</p>
+<pre><code>Point point = new Point(1.0, 2.0);
+point instanceof Object // --&gt; true</code></pre>
+</section><section class="slide level2">
+
+<p>Les instances de <code>Point</code> disposent donc gratuitement (<em>héritent</em>) des méthodes implémentées par <code>Object</code> :</p>
+<ul>
+<li><p>String toString()</p></li>
+<li><p>boolean equals(Object object)</p></li>
+<li><p>Object clone()</p></li>
+<li><p>…</p></li>
+</ul>
+<p>API : <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" class="uri">https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html</a></p>
+</section><section class="slide level2">
+
+<p>Dans <code>Object</code>, <code>toString</code> est implémentée comme</p>
+<pre><code>String toString() {
+  String className = this.getClass().getName();
+  String hexString = Integer.toHexString();
+  return className + &quot;@&quot; + hexString;
+}</code></pre>
+</section><section id="redéfinir-tostring" class="slide level2">
+<h2>Redéfinir <code>toString</code></h2>
+<pre><code>public class Point extends Object {
+  ...
+  public String toString() {
+    return &quot;Point(&quot; + x + &quot;, &quot; + y + &quot;)&quot;;
+  }
+  ...
+}</code></pre>
+</section><section class="slide level2">
+
+<p><code>System.out</code> est un <code>PrintStream</code>, avec les méthodes :</p>
+<ul>
+<li><p><code>println(String x)</code></p></li>
+<li><p><code>println(Object x)</code></p></li>
+<li><p>…</p></li>
+</ul>
+<p>(<a href="https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html">documentation</a>)</p>
+</section><section class="slide level2">
+
+<p><code>System.out.println</code>:</p>
+<ul>
+<li><p>accepte les instances d’<code>Object</code>, donc accepte toute instance dérivée, donc les <code>Point</code>s (<em>polymorphisme d’héritage</em>).</p></li>
+<li><p>ignore lorsqu’il invoque <code>x.toString()</code> quelle méthode est effectivement exécutée, celle d’<code>Object</code> ou d’une classe dérivée (<em>liaison dynamique</em>).</p></li>
+</ul>
+</section><section class="slide level2">
+
+<p>Les méthodes Java sont <em>virtuelles</em> : à l’exécution, les appels de fonctions sont déléguées aux classes dérivées quand les méthodes sont définies :</p>
+<pre><code>Point point = new Point(1.0, 2.0);
+System.out.println(point);  // --&gt; Point(1.0, 2.0)</code></pre>
+<p>Equivalent à :</p>
+<pre><code>Object point_as_object = point;
+System.out.println(point_as_object); // --&gt; Point(1.0, 2.0)</code></pre>
+</section><section id="contraintes-liées-à-lhéritage" class="slide level2">
+<h2>Contraintes liées à l’héritage</h2>
+<p>Stricto sensu, Java ne permet pas l’héritage multiple : une seule classe parent. Les hiérarchies de classes sont linéaires.</p>
+<p>Mais les <strong>interfaces</strong>, similaires aux classes par certains aspects, permettent de contourner cette limitation.</p>
+</section><section id="interfaces" class="slide level2">
+<h2>Interfaces</h2>
+<p>Les interfaces sont des “contrats”, des engagements que votre classe s’engage à tenir.</p>
+</section><section class="slide level2">
+
+<p>Par exemple, une classe implémentant l’interface</p>
+<pre><code>// fichier XML.java
+interface XML {
+  public String toXMLString();
+}</code></pre>
+<p>s’engage à fournir une méthode <code>toXMLString</code> donnant la représentation de ses instances comme chaîne de caractères XML.</p>
+</section><section class="slide level2">
+
+<p>Le compilateur Java va vérifier que vous remplissez votre contrat : compiler</p>
+<pre><code>public class Point implements XML { 
+  // sans la méthode toXMLSTring
+}</code></pre>
+<p>produit</p>
+<pre><code>error: Point is not abstract and does not override abstract method toXMLString() in XML</code></pre>
+</section><section id="section-3" class="slide level2">
+<h2><i class="fas fa-exclamation-triangle"></i></h2>
+<ul>
+<li><p>Par contre, il ne va pas s’opposer à ce que votre fonction retourne une chaîne de caractères qui ne serait pas du XML !</p></li>
+<li><p>Seule la partie vérifiable du contrat est prise en charge par la compilateur. Attention au “contrat moral” qui peut venir en plus ; <strong>il est important de bien lire la documentation des interfaces !</strong></p></li>
+</ul>
+</section><section class="slide level2">
+
+<pre><code>public class Point implements XML {
+  ...
+  public String toXMLString() {
+    return &quot;&lt;Point &quot; +
+           + &quot;x=&#39;&quot; + x + &quot;&#39; &quot; 
+           + &quot;y=&#39;&quot; + y + &quot;&#39;&quot; 
+           + &quot;&gt;&lt;/Point&gt;&quot;;
+  ...
+}</code></pre>
+</section><section class="slide level2">
+
+<pre><code>System.out.println(point.toXMLString()); 
+//  --&gt; &lt;Point x=&#39;1.0&#39; y=&#39;2.0&#39;&gt;&lt;/Point&gt;</code></pre>
+</section><section id="similarité-des-interfaces-avec-les-classes" class="slide level2">
+<h2>Similarité des interfaces avec les classes</h2>
+<ul>
+<li><p><strong>Hiérarchie</strong> de classes et d’interface avec <code>extends</code> : deux hiérarchies parallèles.</p></li>
+<li><p><strong>Conversions</strong> avec des mécanismes similaires :</p>
+<pre><code>Classe c = instanceClasseDerivée;
+Interface i = instanceInterfaceDerivee
+Interface j = instanceClasseImplementantInterface</code></pre></li>
+</ul>
+</section><section id="conversions" class="slide level2">
+<h2><i class="fas fa-exclamation-triangle"></i> Conversions</h2>
+<p>Si les <strong>upcasts</strong> peuvent être implicites, les <strong>downcasts</strong> doivent être explicites (du type général vers le type spécifique) et peuvent échouer à l’exécution.</p>
+<pre><code>Object object =  &quot;Hello world!&quot;;  
+String string = (String) object; // OK
+object = 1; // Integer
+string = (String) object; // !!! erreur </code></pre>
+</section><section id="différences-et-complémentarité" class="slide level2">
+<h2>Différences et complémentarité</h2>
+<ul>
+<li><p>On n’instancie pas directement une interface :</p>
+<pre><code>Interface x = new Interface(); // non !</code></pre></li>
+<li><p>Il faut créer une classe qui implémente l’interface</p>
+<pre><code>class C implements Interface { ... }
+Interface x = new C();</code></pre></li>
+</ul>
+</section><section id="autres-différences" class="slide level2">
+<h2>Autres différences</h2>
+<ul>
+<li><p>déclaration de méthodes uniquement<br />
+<em>(hors champs <code>public static final</code>)</em></p></li>
+<li><p>les méthodes sont toutes publiques,</p></li>
+<li><p>pas d’implémentation <em>(hors méthodes <code>default</code>)</em></p></li>
+<li><p>héritage/implémentations d’interfaces multiples :</p>
+<pre><code>interface I1 extends I2, I3 { ... }
+class C implements I2, I3 { ... }</code></pre></li>
+</ul>
+</section><section id="classe-ou-interface" class="slide level2">
+<h2>Classe ou Interface ?</h2>
+</section><section class="slide level2">
+
+<p>Hériter de – ou <strong>étendre</strong> – <code>LinkedList</code>, <strong>une classe</strong>:</p>
+<pre><code>import java.util.LinkedList;
+public class MyList extends LinkedList&lt;Integer&gt; {
+  public String toString() {
+      return &quot;&lt;&quot; + super.toString() + &quot;&gt;&quot;;
+  }
+}</code></pre>
+<p>Permet de réutiliser son implémentation.</p>
+</section><section class="slide level2">
+
+<pre><code>class Main {
+  public static void main(String[] arg) {
+    MyList list = new MyList();
+    list.add(1);
+    list.add(2);
+    System.out.println(list);
+  }
+}</code></pre>
+</section><section id="exécution-1" class="slide level2">
+<h2>Exécution</h2>
+<pre><code>$ java Main
+&lt;[1, 2]&gt;</code></pre>
+</section><section id="refactoring" class="slide level2">
+<h2>“Refactoring”</h2>
+<pre><code>class Main {
+  public static void main(String[] arg) {
+    MyList list = new MyList();
+    Main.addOneTwo(list);
+  }
+...</code></pre>
+</section><section class="slide level2">
+
+<pre><code>...
+  public static void addOneTwo(MyList list) {
+    list.add(1);
+    list.add(2);
+    System.out.println(list);
+  }
+}</code></pre>
+</section><section class="slide level2">
+
+<p>Mais la fonction <code>addOneTwo</code> ne peut être utilisée qu’avec les instances de <code>MyList</code> (ou qui en dérivent).</p>
+<p>Son usage est donc (trop) limité …</p>
+</section><section id="alternative-interfaces" class="slide level2">
+<h2>Alternative – Interfaces</h2>
+<ul>
+<li><p>La classe <code>LinkedList</code> <strong>implémente</strong> de nombreuses interfaces (ou “contrats” vérifiés par le compilateur):</p>
+<p><code>Serializable</code>, <code>Cloneable</code>, …, <code>Deque</code>, <strong><code>List</code></strong>, <code>Queue</code></p></li>
+<li><p>En implémentant <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html"><code>List&lt;E&gt;</code></a>, la classe <code>LinkedList&lt;E&gt;</code> garantit qu’elle implémente la méthode <code>add</code>:</p>
+<pre><code>boolean add(E e)</code></pre></li>
+</ul>
+</section><section class="slide level2">
+
+<pre><code>import java.util.List;
+...
+  public static void addOneTwo(List&lt;Integer&gt; list) {
+    list.add(1);
+    list.add(2);
+    System.out.println(list);
+  }
+}</code></pre>
+</section><section id="polymorphisme" class="slide level2">
+<h2>Polymorphisme</h2>
+<p>Toutes les classes implémentant <code>List</code> sont désormais susceptibles d’utiliser <code>addOneTwo</code>:</p>
+<p><code>MyList</code>, <code>LinkedList&lt;Integer&gt;</code>, <code>Vector&lt;Integer&gt;</code>, etc.</p>
+</section></section>
+<section><section id="en-python" class="title-slide slide level1"><h1>En Python</h1></section><section id="la-classe-list" class="slide level2">
+<h2>La classe <code>list</code></h2>
+<p><i class="fab fa-python"></i></p>
+<pre><code>&gt;&gt;&gt; l = [1, 2, 3]
+&gt;&gt;&gt; l
+[1, 2, 3]
+&gt;&gt;&gt; type(l)
+&lt;class &#39;list&#39;&gt;
+&gt;&gt;&gt; sum(l)
+6</code></pre>
+</section><section id="ma-classe-list-usage" class="slide level2">
+<h2>Ma classe <code>List</code> (usage)</h2>
+<pre><code>&gt;&gt;&gt; l = List([1, 2, 3])
+&gt;&gt;&gt; l
+&lt;[1, 2, 3]&gt;
+&gt;&gt;&gt; type(l)
+&lt;class &#39;List&#39;&gt;
+&gt;&gt;&gt; sum(l)
+6</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><p>la représentation de ma liste a changé,</p></li>
+<li><p>ainsi que son type, <code>List</code> et non <code>list</code>,</p></li>
+<li><p>mais pas le reste des fonctionnalités.</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>en héritant de la class <code>list</code>, on peut réutiliser ses fonctionnalités,</p></li>
+<li><p>on peut également enrichir ou modifier (redéfinir) ses comportements.</p></li>
+</ul>
+</section><section id="ma-classe-list-implementation" class="slide level2">
+<h2>Ma classe <code>List</code> (implementation)</h2>
+<pre><code>class List(list):
+    def __repr__(self):
+        return &quot;&lt;&quot; + super().__repr__() + &quot;&gt;&quot;</code></pre>
+</section><section id="polymorphisme-1" class="slide level2">
+<h2>Polymorphisme</h2>
+<pre><code>def display(item):
+    print(&quot;L&#39;objet item est:&quot; + repr(item))</code></pre>
+<p>(<code>repr</code> appelle la méthode <code>__repr__</code> de <code>item</code>)</p>
+</section><section class="slide level2">
+
+<ul>
+<li><p>le code de <code>display</code> ne permet pas de dire quelle implémentation de <code>__repr__</code> va être utilisée (<strong>attachement dynamique/tardif</strong>).</p></li>
+<li><p>le “contrat moral” est d’utiliser comment argument un objet <strong>représentable</strong>.</p></li>
+<li><p>tous les types d’objets respectant cette contrainte peuvent être utilisés comme argument (<strong>polymorphisme</strong>).</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>En l’absence de méthode <code>__repr__</code> spécifique dans votre classe, Python va se tourner vers les classes dont elle hérite (<code>object</code> par défaut).</li>
+</ul>
+</section><section class="slide level2">
+
+<pre><code>&gt;&gt;&gt; class NoRepr:
+...     pass
+&gt;&gt;&gt; nr = NoRepr()
+&gt;&gt;&gt; nr
+&lt;__main__.NoRepr object at 0x7f0a620cb588&gt;</code></pre>
+</section><section class="slide level2">
+
+<pre><code>&gt;&gt;&gt; class List(list):
+...     pass
+&gt;&gt;&gt; l = List()
+&gt;&gt;&gt; l
+[]</code></pre>
+</section><section id="duck-typing" class="slide level2">
+<h2><i class="fas fa-duck"></i> “Duck Typing”</h2>
+<p><img data-src="images/duck.jpg" /></p>
+<p>(<a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=4084391">Link</a>)</p>
+</section><section class="slide level2">
+
+<ul>
+<li><p>L’argument doit passer le <a href="https://en.wikipedia.org/wiki/Duck_test">test du canard</a>:</p>
+<p>“If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.”</p></li>
+<li><p>S’il échoue, une exception se produit (elle peut être gérée par le programme).</p></li>
+</ul>
+</section><section id="alternatives-à-lhéritage-composition" class="slide level2">
+<h2>Alternatives à l’Héritage: Composition</h2>
+<pre><code>class List:
+    def __init__(self, items):
+        self.l = list(items)</code></pre>
+<p>C’est <strong>avoir</strong> une liste (et non pas <strong>être</strong> une liste).</p>
+</section><section id="délegation" class="slide level2">
+<h2>Délegation</h2>
+<p>On peut “être une liste” sans hériter de <code>list</code>:</p>
+<pre><code>class List:
+    def __init__(self, items):
+        self.l = list(items)
+    def __repr__(self):
+        return self.l.__repr__()
+    def __iter__(self):
+        return self.l.__iter__()
+    ...</code></pre>
+<style>
+
+.reveal section img {
+  border:0;
+  height:50vh;
+  width:auto;
+
+}
+
+.reveal section img.medium {
+  border:0;
+  max-width:50vh;
+}
+
+.reveal section img.icon {
+  display:inline;
+  border:0;
+  width:1em;
+  margin:0em;
+  box-shadow:none;
+  vertical-align:-10%;
+}
+
+.reveal code {
+  font-family: Inconsolata, monospace;
+}
+
+.reveal pre code {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  /* max-height: 80wh; won't work, overriden */
+}
+
+input {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 42px;
+  line-height: 54.6px;
+}
+
+</style>
+<p><link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"></p>
+<!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+ -->
+<p><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

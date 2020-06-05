@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Premiers pas en Java</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Premiers pas en Java</h1>
+</section>
+
+<section><section id="contexte-général" class="title-slide slide level1"><h1>Contexte général</h1></section><section id="un-peu-dhistoire" class="slide level2">
+<h2>Un peu d’histoire</h2>
+<p>Java a été développé dans les années 1990 par des ingénieurs de Sun Microsystems insatisfaits du langage C++, pour les systèmes embarqués :</p>
+<ul>
+<li><p>Gestion de la mémoire souvent source d’erreur (pointeurs)</p></li>
+<li><p>Nécessité de nettoyer soi-même la mémoire en désallouant explicitement les objets : pas de ramasse-miettes (garbage collector en anglais)</p></li>
+<li><p>Nom original : oak (chêne)</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>1995 : présentation officielle sous le nom de Java</p></li>
+<li><p>Exécution de code dans des pages web au moyen “d’applets”</p></li>
+<li><p>Nécessité d’avoir du code portable, compatible avec n’importe quel OS</p></li>
+<li><p>Utilisation de la JVM</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Depuis 2000 : sortie d’une version majeure de Java tous les deux ans</p></li>
+<li><p>2009 : rachat de Sun Microsystems par Oracle</p></li>
+<li><p>Employé largement dans le développement des premières App. Android</p></li>
+<li><p>Langage le plus “populaire” selon l’indice Tiobe…</p></li>
+</ul>
+</section><section id="principes-de-java" class="slide level2">
+<h2>Principes de Java</h2>
+<p>Compilation du code une fois pour toute !</p>
+<ul>
+<li><p>Fichiers sources : " *.java "</p></li>
+<li><p>Après compilation : " *.class " :</p>
+<ul>
+<li><p>bytecode <strong>indépendant</strong> du système d’exploitation</p></li>
+<li><p>Destiné à être exécuté par la <strong>JVM</strong> (Java Virtual Machine)</p></li>
+</ul></li>
+<li><p>Une fonction <strong>principale</strong> pour l’exécution : <strong>main</strong></p></li>
+</ul>
+</section><section id="java-les-promesses" class="slide level2">
+<h2>Java : les promesses</h2>
+<ul>
+<li><p>Déploiement <strong>facile</strong> des applications :</p>
+<ul>
+<li><p>Le bytecode généré fonctionne sur tout OS,</p></li>
+<li><p>Une seule compilation / archivage avant la distribution</p></li>
+</ul></li>
+<li><p>Pas de gestion compliquée de la mémoire</p></li>
+<li><p>Paradigme objet facile à appréhender (pas d’héritage multiple)</p></li>
+</ul>
+</section><section id="objectifs-de-cette-session" class="slide level2">
+<h2>Objectifs de cette session :</h2>
+<ul>
+<li><p>Les impératifs dans un fichier Java</p></li>
+<li><p>Introduction aux différents <strong>types</strong> en Java</p></li>
+<li><p>Introduction aux opérations de base</p></li>
+<li><p>Introduction aux instructions de <strong>flow control</strong></p></li>
+<li><p>Introduction à la fonction main</p></li>
+</ul>
+</section></section>
+<section><section id="créer-un-fichier-java" class="title-slide slide level1"><h1>Créer un fichier Java</h1></section><section id="retour-sur-le-hello-world" class="slide level2">
+<h2>Retour sur le “Hello World”</h2>
+<p>Fichier <strong>Main.java</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">import</span><span class="im"> library.Message;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb1-5" title="5">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(Message.<span class="fu">content</span>);</a>
+<a class="sourceLine" id="cb1-6" title="6">  }</a>
+<a class="sourceLine" id="cb1-7" title="7">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Fichier <strong>Main.java</strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">import</span><span class="im"> library.Message;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb2-5" title="5">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(Message.<span class="fu">content</span>);</a>
+<a class="sourceLine" id="cb2-6" title="6">  }</a>
+<a class="sourceLine" id="cb2-7" title="7">}</a></code></pre></div>
+<ul>
+<li><p>Correspondance nom de classe / nom de fichier</p></li>
+<li><p>Premières lignes : les importations de bibliothèques</p></li>
+<li><p><code>public class Main</code>: on crée une classe appelée `Main``</p></li>
+</ul>
+</section><section id="définition-dune-méthode" class="slide level2">
+<h2>Définition d’une méthode</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb3-2" title="2">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(Message.<span class="fu">content</span>);</a>
+<a class="sourceLine" id="cb3-3" title="3">  }</a></code></pre></div>
+<ul>
+<li><p><code>public static</code> : indique certaines propriétés de la méthode</p></li>
+<li><p><code>void</code> : type de retour (obligatoire)</p></li>
+<li><p><code>main</code> : nom de la fonction</p></li>
+<li><p><code>String[] args</code> : type et nom des arguments</p></li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1">TYPE_DE_RETOUR <span class="fu">nom</span>(TYPE1 arg1, TYPE2, arg2,...){</a>
+<a class="sourceLine" id="cb4-2" title="2">  Instruction1 ;</a>
+<a class="sourceLine" id="cb4-3" title="3">  Instruction2 ;</a>
+<a class="sourceLine" id="cb4-4" title="4">  ...</a>
+<a class="sourceLine" id="cb4-5" title="5">}</a></code></pre></div>
+<ul>
+<li><p>Corps de la fonction entre les accolades</p></li>
+<li><p>Une fonction ne peut retourner qu’un seul objet</p></li>
+<li><p>ou rien (type <code>void</code>)</p></li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(Message.<span class="fu">content</span>)</a></code></pre></div>
+<ul>
+<li><p><code>System.out.println</code> : instruction pour afficher quelque chose dans le terminal</p></li>
+<li><p><code>Message.content</code> : argument de la fonction (ici une chaîne de caractères)</p></li>
+<li><p><code>System.out.println</code> peut prendre n’importe quoi comme argument pour l’afficher dans la console !</p></li>
+</ul>
+</section><section id="quelques-règles-sur-les-instructions" class="slide level2">
+<h2>Quelques règles sur les instructions :</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1">  Instruction ; <span class="co">// Ceci est un commentaire</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="co">/*</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="co">  Ceci est un bloc de commentaires</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="co">  Qui peut s&#39;étendre sur plusieurs lignes</span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co">  */</span></a>
+<a class="sourceLine" id="cb6-6" title="6">  Instruction_suivante ;</a></code></pre></div>
+<ul>
+<li><p>Se termine toujours par un point-virgule</p></li>
+<li><p>Les commentaires sont avec les symboles <code>//</code> (commentaire simple) ou <code>/* ...*/</code> (bloc)</p></li>
+</ul>
+</section></section>
+<section><section id="les-types-java" class="title-slide slide level1"><h1>Les types Java</h1></section><section id="types-de-base" class="slide level2">
+<h2>Types de base</h2>
+<p>Java est un langage fortement typé. Presque tous les types sont objets.</p>
+<p>À l’exception de 8 types de base :</p>
+<ul>
+<li><p><strong>byte</strong>, <strong>short</strong>, <strong>int</strong>, <strong>long</strong></p></li>
+<li><p><strong>float</strong>, <strong>double</strong></p></li>
+<li><p><strong>boolean</strong></p></li>
+<li><p><strong>char</strong></p></li>
+</ul>
+</section><section id="les-différents-entiers" class="slide level2">
+<h2>Les différents entiers</h2>
+<ul>
+<li><p><strong>byte</strong> : entier signé sur 8 bits <span class="math inline">[ − 128, 127]</span></p></li>
+<li><p><strong>short</strong> : entier signé sur 16 bits <span class="math inline">[ − 32768, 32767]</span></p></li>
+<li><p><strong>int</strong> : entier signé sur 32 bits <span class="math inline">[ − 2<sup>31</sup>, 2<sup>31</sup> − 1]</span></p></li>
+<li><p><strong>long</strong> : entier signé sur 64 bits <span class="math inline">[ − 2<sup>63</sup>, 2<sup>63</sup> − 1]</span></p></li>
+</ul>
+</section><section id="les-entiers-littéraux" class="slide level2">
+<h2>Les entiers littéraux</h2>
+<ul>
+<li><p>Par défaut des <strong>int</strong> (ex. : 1, 2, 3,…)</p></li>
+<li><p><strong>byte</strong>, <strong>short</strong>, <strong>int</strong> et <strong>long</strong> peuvent être initialisés avec un entier littéral</p></li>
+<li><p>Les <strong>long</strong> avec des valeurs supérieures à <span class="math inline">2<sup>31</sup></span> peuvent être initialisés avec des littéraux finissant par “L” (ex. : 1000000000L)</p></li>
+<li><p>Possibilité d’ajouter des underscores "_" pour la lisibilité (ex. : 1_100)</p></li>
+</ul>
+<!---
+À essayer dans l'interpréteur BlueJ
+------------------------------------
+*Note : sans point-virgule, on récupère directement le résultat* 
+    
+    1_000_000 // On va afficher l'entier 1 million
+    int i = 1_000_000 ; 
+    10_000_000_000 // On essaye d'afficher 10 milliards (> 2^31)
+    10_000_000_000L  
+    int j = 10_000_000_000L // Que passe-t-il ?
+    long k = 10_000_000_000L
+    byte b = 128 ; // On tente d'affecter 128 à un byte
+    byte b2 = 127 ;
+    b2 = b2++ ;  // Que se passe-t-il ?
+    b2
+--->
+</section><section id="les-différentes-bases-dentiers" class="slide level2">
+<h2>Les différentes bases d’entiers</h2>
+<pre><code>// Le nombre 26 en décimal 
+int decVal = 26;
+//  Le nombre 26, en hexadécimal
+int hexVal = 0x1a;
+// Le nombre 26, en binaire
+int binVal = 0b11010;</code></pre>
+</section><section id="les-flottants" class="slide level2">
+<h2>Les flottants</h2>
+<ul>
+<li><strong>float</strong> : Nombres flottants simple précision codés sur 32 bits</li>
+<li><strong>double</strong> : Nombres flottants double précision codés sur 64 bits.</li>
+</ul>
+<p>Exemples :</p>
+<pre><code>double a = 1 ; 
+double b = 1.0 ;
+double c = 1.3e3 ;</code></pre>
+</section><section id="attention-aux-expressions-littérales" class="slide level2">
+<h2>Attention aux expressions littérales</h2>
+<p>À tester dans BlueJ…</p>
+<pre><code>double a = 3 ;
+double b = 2 ;
+double c = a/b ;
+
+double d = 3/2 ; // Que se passe-t-il ?</code></pre>
+<!-----
+Les booléens
+-----------------------------------
+
+  - **boolean** : ne peut valoir que **true** or **false**
+
+  - "*Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.*"
+------>
+</section><section id="les-caractères" class="slide level2">
+<h2>Les caractères</h2>
+<ul>
+<li><p><strong>char</strong> : caractère unicode codé sur 16 bits</p></li>
+<li><p>Va de <em>\u0000</em> à <em>\uFFFF</em></p></li>
+</ul>
+<p>Exemple :</p>
+<pre><code>  char a = 0 ; 
+  char capitalC = &#39;C&#39; ;
+  (int)capitalC  // Conversion de capitalC en entier (code unicode)</code></pre>
+</section><section id="les-objets" class="slide level2">
+<h2>Les objets</h2>
+<ul>
+<li><p>Tous les autres types sont des objets</p></li>
+<li><p>ex. : Chaînes de caractères, tableaux, listes,…</p></li>
+<li><p>Un objet : des attributs et des méthodes : on y accède à l’aide de l’opérateur “<code>.</code>”</p></li>
+<li><p>On crée une nouvelle instance d’un objet grâce au mot clé <code>new</code></p></li>
+</ul>
+</section><section id="le-pendant-objet-des-entiers-et-flottants" class="slide level2">
+<h2>Le pendant Objet des entiers et flottants</h2>
+<p>Il s’agit des classes <strong>Byte</strong>, <strong>Short</strong>, <strong>Integer</strong>, <strong>Long</strong>, <strong>Float</strong>, <strong>Double</strong></p>
+<pre><code>Integer a ;
+a = new Integer(3) ;</code></pre>
+<ul>
+<li><p>On déclare une variable <code>a</code> de type <code>Integer</code></p></li>
+<li><p>On crée une nouvelle instance grâce à <code>new</code> puis le constructeur.</p></li>
+<li><p>Ex. : <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">doc Java Integer</a></p></li>
+</ul>
+<!--------
+Exercice 
+--------------------
+
+  - Essayer de voir avec BlueJ le nom du champ qui contient la valeur d'un entier dans **Integer**.
+  - Essayer de lire cette valeur à l'aide de l'interpréteur
+  - Trouver la méthode permettant de réaliser cette opération.
+-->
+</section><section id="les-tableaux" class="slide level2">
+<h2>Les tableaux</h2>
+<p>Les tableaux (<strong>array</strong>) permettent de stocker un nombre <strong>connu</strong> d’objets en mémoire. Ils peuvent être de n’importe quel type.</p>
+<p>Déclaration :</p>
+<pre><code>TYPE[] tableau ; // TYPE peut être n&#39;importe quoi (int, double ou une classe)</code></pre>
+<p>Initialisation :</p>
+<pre><code>tableau = new TYPE[N] ; // N est un entier</code></pre>
+<p>Accès :</p>
+<pre><code>tableau[i] ; // i &lt; N</code></pre>
+</section><section class="slide level2">
+
+<p>Une autre façon d’initialiser un tableau lorsqu’on connaît les éléments :</p>
+<pre><code>int[] tableauInt= {3,4,5,6} ;</code></pre>
+<p>Les tableaux peuvent être modifiés directement :</p>
+<pre><code>tableauInt[0] = 0 ;</code></pre>
+</section><section class="slide level2">
+
+<p>Comment connaître la taille d’un tableau ?</p>
+<ul>
+<li><p>Rappel : le type d’un tableau d’entier est int[] : la taille n’est pas mentionnée.</p></li>
+<li><p><strong>length</strong> : attribut qui stocke la longueur du tableau. Accessible de façon publique. Il s’agit d’une valeur immuable pour un tableau.</p>
+<pre><code>System.out.println(tableauInt.length) ; // afficher la taille dans le terminal</code></pre></li>
+</ul>
+</section><section class="slide level2">
+
+<p>Il est possible de créer des tableaux sur plusieurs dimensions. Il s’agit alors d’un tableau de tableau.</p>
+<pre><code>int[][] tableau2dim = {{1 , 2 , 3},{4 , 5 , 6}} ;</code></pre>
+<p>Accès aux dimensions :</p>
+<ul>
+<li><p>Première dimension <strong>tableau2dim.length</strong>?</p></li>
+<li><p>Deuxième dimension <strong>tableau2dim[1][0]</strong> ?</p></li>
+</ul>
+</section><section id="la-classe-string" class="slide level2">
+<h2>La classe <strong>String</strong></h2>
+<p>La classe <strong>String</strong> permet de manipuler les chaînes de caractère.</p>
+<pre><code>String chaine = &quot;Hello World&quot;; // Déclaration et initialisation</code></pre>
+</section><section class="slide level2">
+
+<p>Méthodes utiles…</p>
+<ul>
+<li><p><em>int</em> <strong>length</strong>() : donne la longueur de la chaîne</p></li>
+<li><p><em>char</em> <strong>charAt</strong>(<em>int</em> i) : retourne la caractère à l’emplacement i</p></li>
+<li><p><em>String</em> <strong>concat</strong>(<em>String</em> str) : retourne une <strong>nouvelle</strong> chaîne correspondant à la concaténation de l’instance en cours et de l’argument str.</p></li>
+<li><p>Opérateur <strong>+</strong> : permet de concaténer deux chaînes</p></li>
+</ul>
+</section><section class="slide level2">
+
+<p>Les chaînes de caractères Java sont immuables :</p>
+<ul>
+<li><p>Il n’existe aucun moyen de modifier le contenu d’une chaîne.</p></li>
+<li><p>L’opération <strong>chaine = "Hello World bis"</strong> revient à placer une <strong>nouvelle</strong> chaîne de caractères dans la variable chaine.</p></li>
+<li><p>Autre exemple : la méthode <strong>concat</strong> ne modifie pas la chaîne initiale.</p></li>
+</ul>
+</section><section class="slide level2">
+
+<p>Exemples</p>
+<pre><code>String s1 = &quot; Hello &quot; ;
+char c = s1.charAt(0) // C vaut &#39;H&#39;
+
+String s2 = s1.concat(&quot;World&quot;); // Hello World
+
+String s3 = s1 + &quot; World &quot; ;  // Hello World
+
+String s4 =  &quot; World &quot;.replace(&quot;Wor&quot;,&quot;Bo&quot;) ; // Bold</code></pre>
+</section></section>
+<section><section id="les-instructions-de-base-en-java" class="title-slide slide level1"><h1>Les instructions de base en Java</h1></section><section id="déclaration-affectation" class="slide level2">
+<h2>Déclaration / Affectation</h2>
+<ul>
+<li><p>Déclaration : fournir le nom du type et de la variable</p>
+<pre><code>String s ;</code></pre></li>
+<li><p>Affectation : avec le signe <strong>=</strong></p>
+<pre><code>s = &quot;Hello&quot; ;
+s = new String(&quot;Hello&quot;); // Création de l&#39;objet String avec new</code></pre></li>
+<li><p>Combinaison déclaration/affectation :</p>
+<pre><code>String s = &quot;Hello&quot;;</code></pre></li>
+</ul>
+</section><section id="opérations-mathématiques" class="slide level2">
+<h2>Opérations mathématiques</h2>
+<ul>
+<li><p>Opérations mathématiques de base <strong>+ , - , * , /</strong> (avec les priorités mathématiques habituelles)</p></li>
+<li><p>Opérations d’incrémentation/décrémentation <strong>++/--</strong></p>
+<pre><code>i ++ ; // Comparer avec ++ i ;</code></pre></li>
+<li><p>Reste de la division entière <strong>%</strong></p>
+<pre><code>int i = 11 % 3 ; // i vaut 2</code></pre></li>
+</ul>
+</section><section id="tests-et-logique-booléenne" class="slide level2">
+<h2>Tests et logique booléenne</h2>
+<ul>
+<li><p>Test d’égalité <strong>==</strong> ou de non égalité <strong>!=</strong></p>
+<pre><code>if (i==3) ... </code></pre></li>
+<li><p>Tests comparatifs <strong>&lt;=</strong>, <strong>&lt;</strong>, <strong>&gt;=</strong> et <strong>&gt;</strong></p>
+<pre><code>if (i&gt;=3) ...</code></pre></li>
+<li><p>Opération de négation <strong>!</strong></p>
+<pre><code>Boolean a = !true ; // a = false donc...</code></pre></li>
+<li><p>Le ET et OU logique : <strong>&amp;&amp;</strong> et <strong>||</strong></p>
+<pre><code>Boolean b = true &amp;&amp; false ; // false !</code></pre></li>
+</ul>
+</section><section id="opérateur-ternaire" class="slide level2">
+<h2>Opérateur ternaire ?</h2>
+<p>Si la condition vaut <strong>true</strong>, alors on retourne val1, sinon on retourne val2.</p>
+<pre><code>condition ? val1 : val2 ;</code></pre>
+<p>Exemple</p>
+<pre><code>int note = 15 ;
+char grade = (note &gt;= 16) ? &#39;A&#39;:&#39;B&#39;; </code></pre>
+<!-----
+Excercice
+------------------------
+
+Écrire en **une instruction** une fonction qui prend en entrée une note entre 0 et 20 et qui renvoie la lettre associée (**char**) en fonction de la répartition suivante :
+
+  - [20 , 16] : A  \ \ \ \ \ \ \ \    ]16 , 14] : B
+
+  - ]14 , 11] : C  \ \ \ \ \ \ \ \   ]11, 8]   : D
+
+  - ]8 , 5]   : E  \ \ \ \ \ \ \ \ \ \ \ \ \  ]5, 0]    : F
+-->
+</section></section>
+<section><section id="le-contrôle-de-flux-en-java" class="title-slide slide level1"><h1>Le Contrôle de Flux en Java</h1></section><section class="slide level2">
+
+<p>Il s’agit ici de définir l’ordre d’exécution des instructions.</p>
+<p>Par défaut, au sein d’une méthode, les instructions sont exécutées <strong>les une après les autres</strong>.</p>
+</section><section id="le-mot-clé-return" class="slide level2">
+<h2>Le mot-clé <strong>return</strong></h2>
+<p>Le mot-clé <strong>return</strong> permet d’interrompre définitivement l’exécution d’une méthode et de retourner la valeur précisée après le mot clé.</p>
+<pre><code>int renvoie1(){
+  return 1;
+}</code></pre>
+<p>Ce mot clé est obligatoire pour les méthodes qui retournent autre chose que <em>void</em></p>
+</section><section id="les-instructions-ifelse" class="slide level2">
+<h2>Les instructions <strong>if/else</strong></h2>
+<pre><code>instruct1 ;
+if (x == 4)
+{
+  instruct2 ;
+}else
+{
+  instruct3 ;
+}
+instruct4 ;</code></pre>
+<ul>
+<li><p>Si <span class="math inline"><em>x</em> = 4</span>, on aura instruct1 <span class="math inline">→</span> instruct2<span class="math inline">→</span> instruct4</p></li>
+<li><p>Si <span class="math inline"><em>x</em> ≠ 4</span>, on aura instruct1 <span class="math inline">→</span> instruct3 <span class="math inline">→</span> instruct4</p></li>
+<li><p>On peut également avoir <strong>if</strong> sans <strong>else</strong></p></li>
+</ul>
+</section><section id="les-boucles-for" class="slide level2">
+<h2>Les boucles <strong>for</strong></h2>
+<pre><code>for (initialisation ; conditionFin ; increment){
+  instructions;
+}
+instructionsSuivante ;</code></pre>
+<ul>
+<li><p>Réaliser des opérations un nombre défini de fois</p></li>
+<li><p>Parcourir un tableau / une liste</p></li>
+<li><p>Une fois la condition de fin réalisée, <strong>instructionsSuivante</strong> est exécutée</p></li>
+</ul>
+</section><section class="slide level2">
+
+<pre><code>for (int i=0 ; i &lt; = 10 ; i++){
+  System.out.println(&quot;On affiche le nombre &quot;+i);
+}
+System.out.println(&quot;On a compté jusqu&#39;à 10&quot;)
+
+
+for (int i=10 ; i &gt; = 10 ; i--){
+  System.out.println(&quot;On affiche le nombre &quot;+i);
+}
+System.out.println(&quot;Fin du compte à rebours !&quot;)
+
+
+for ( ; ;){
+  // Boucle infinie
+}</code></pre>
+</section><section id="les-boucles-while" class="slide level2">
+<h2>Les boucles <strong>while</strong></h2>
+<pre><code> while (expressionTest) {
+   instructions;
+ }
+ instructionsSuivantes</code></pre>
+<ul>
+<li><p>Réaliser des opérations tant qu’une condition est réalisée</p></li>
+<li><p>Si <strong>expressionTest</strong> vaut <strong>false</strong> lors de sa première évaluation, on passe à <strong>instructionsSuivantes</strong></p></li>
+<li><p><strong>while(true)</strong> <span class="math inline">→</span> boucle infinie</p></li>
+<li><p>Une fois que <strong>expressionTest</strong> est faux, <strong>instructionsSuivantes</strong> est exécutée</p></li>
+</ul>
+</section><section id="les-boucles-do-while" class="slide level2">
+<h2>Les boucles <strong>do while</strong></h2>
+<pre><code> do {
+   instructions;
+ }while (expressionTest);
+ instructionsSuivantes ; </code></pre>
+<ul>
+<li><p>Similaire à <strong>while</strong></p></li>
+<li><p>Mais garantie que le bloc <strong>instructions</strong> est exécuté <strong>au moins une fois</strong>.</p></li>
+<li><p>Une fois que <strong>expressionTest</strong> est faux, <strong>instructionsSuivante</strong> est exécutée</p></li>
+</ul>
+</section><section id="le-mot-clé-break" class="slide level2">
+<h2>Le mot clé <strong>break</strong></h2>
+<p>Permet de sortir d’un bloc d’instruction <strong>for</strong>, <strong>while</strong> ou <strong>do while</strong> prématurément et d’exécuter les instructions suivantes.</p>
+<pre><code>String chaine = &quot;Hello World&quot; ;
+// Recherche de la présence du caractère &#39;W&#39;
+
+boolean wPresent = false ;
+for (int i = 0 ; i&lt; chaine.length() ; i++){
+  if (chaine.charAt(i) == &#39;W&#39;){
+    wPresent = true ;
+    break ; // Il n&#39;est plus utile de continuer le for
+  }
+}</code></pre>
+</section><section id="le-mot-clé-continue" class="slide level2">
+<h2>Le mot clé <strong>continue</strong></h2>
+<p>Permet de “<strong>sauter</strong>” l’itération courante d’un bloc d’instruction <strong>for</strong>, <strong>while</strong> ou <strong>do while</strong>.</p>
+<pre><code>String chaine = &quot;Hello world&quot; ;
+// Comptage du nombre de &#39;l&#39;
+
+int nb = 0 ;
+for (int i = 0 ; i&lt; chaine.length() ; i++){
+    if (chaine.charAt(i)!=&#39;l&#39;)
+      continue ; // On passe à i+1
+
+    // On traite le caractère 
+    nb++;  
+}</code></pre>
+</section><section id="linstruction-switch" class="slide level2">
+<h2>L’instruction <strong>switch</strong></h2>
+<p>Permet de placer le contrôle de flux à un endroit spécifique en fonction de la valeur d’une variable parmi un ensemble donné :</p>
+<pre><code>switch(variable){
+  case valeur1 : instr1 ; instr2 ; //...
+  case valeur2 : instr3 ; instr4 ; //...
+  case valeur3 : instr5 ; instr6 ; //...
+}</code></pre>
+<p>Dès qu’une des conditions est vérifiée, le code exécute <strong>toutes les instructions suivantes</strong></p>
+<p>Si variable = valeur2 alors instr3 <span class="math inline">→</span> instr4 <span class="math inline">→</span> instr5 <span class="math inline">→</span> instr6</p>
+</section><section class="slide level2">
+
+<p>Penser à l’instruction <strong>break</strong> et à l’instruction <strong>default</strong></p>
+<p>switch(variable){ case valeur1 : instr1 ; instr2 ; break //… case valeur2 : instr3 ; instr4 ; break //… case valeur3 : instr5 ; instr6 ; break //… … default: instrDefault; }</p>
+<!---
+Exercice
+-------------
+   Créer une classe TestSwitch implémentant cette la fonction suivante :
+
+  - prototype : *String* **getDay**(*int* i) 
+
+  - Retourne la chaîne de caractères associées au i<sup>ème</sup> jour de la semaine
+  
+  - Robuste à un utilisateur malicieux
+
+
+---------------------------
+
+  Cette version ne compilera pas (dayString potentiellement non initialisée) et est sémantiquement incorrecte (manque **break**)
+
+    public String getDayBAD(int dayNumber){
+      String dayString ;
+      switch(dayNumber){
+        case 1 : dayString = "Monday" ;
+        case 2 : dayString = "Tuesday";
+        case 3 : dayString = "Wednesday";
+        case 4 : dayString = "Thursday";
+        case 5 : dayString = "Friday";
+        case 6 : dayString = "Saturday";
+        case 7 : dayString = "Sunday";
+      }
+      return dayString ;
+    }
+
+------------------------
+
+    public String getDay(int dayNumber){
+       String dayString ; 
+       // Plus besoin d'initialiser grâce au default.
+       switch(dayNumber){
+        case 1 : dayString = "Monday" ; break ;
+        case 2 : dayString = "Tuesday"; break ;
+        case 3 : dayString = "Wednesday"; break ;
+        case 4 : dayString = "Thursday"; break ;
+        case 5 : dayString = "Friday"; break ;
+        case 6 : dayString = "Saturday"; break ;
+        case 7 : dayString = "Sunday"; break ;
+        default: dayString = "I am Groot";
+      }
+      return dayString ;
+    }
+
+  - Penser aux **break** et **default** 
+
+  - Ne fonctionne qu'avec les **int** (et dérivés) et les **String**. Les valeurs testées doivent être constantes
+
+--->
+</section></section>
+<section><section id="les-exceptions" class="title-slide slide level1"><h1>Les exceptions</h1></section><section id="but" class="slide level2">
+<h2>But</h2>
+<ul>
+<li><p>Lors de la compilation, le compilateur vérifie surtout le respects de <strong>contrats</strong> (signature des fonctions).</p>
+<ul>
+<li>ex. : on passe les bons types en arguments</li>
+</ul></li>
+<li><p>Il ne vérifie pas la cohérence des valeurs</p></li>
+<li><p>Le but des exceptions est de “signaler” les problèmes</p></li>
+<li><p>Représente un cas particulier de contrôle de flux.</p></li>
+</ul>
+</section><section id="exemple" class="slide level2">
+<h2>Exemple</h2>
+<pre><code>public class Main {
+  public static void main(String[] args) {
+      System.out.println(1/0);
+  }
+}</code></pre>
+<p>On n’a pas l’affichage voulu mais :</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.ArithmeticException: / by zero at Main.main(Main.java:3)</code></pre>
+</section><section id="que-se-passe-t-il" class="slide level2">
+<h2>Que se passe-t-il ?</h2>
+<ul>
+<li><p>Je réalise une division par zéro avec des entiers</p></li>
+<li><p>Il s’agit d’une erreur arithmétique détectée par la fonction qui encode la division des entiers</p></li>
+<li><p>Cette fonction <strong>lève une exception</strong> et la transmet à la méthode appelante (ici <strong>main</strong>)</p></li>
+<li><p><strong>main</strong> reçoit cette exception. Par défaut, l’exécution de <strong>main</strong> s’arrête et le texte descriptif de l’exception s’affiche dans la console</p></li>
+</ul>
+</section><section id="principe-exceptions" class="slide level2">
+<h2>Principe exceptions ?</h2>
+<ul>
+<li><p>C’est une mesure de protection pour éviter des comportements non prévus</p></li>
+<li><p>Lorsqu’une exception est levée, la méthode appelante la reçoit. Si elle n’est pas traitée, l’exécution de la méthode est interrompue et l’exception remontre à la méthode appelante</p></li>
+<li><p>Si l’exception n’est toujours pas traitée par la méthode principale (<strong>main</strong>), alors le programme s’arrête et le contenu de la pile d’exécution est affichée (on voit toutes les fonctions appelées)</p></li>
+</ul>
+</section><section id="comment-traiter-les-exceptions" class="slide level2">
+<h2>Comment traiter les exceptions ?</h2>
+<p>Il faut essayer !</p>
+<pre><code>public class Main {
+  public static void main(String[] args) {
+      try{
+        System.out.println(1/0);
+      }catch(Exception e){
+        System.out.println(&quot;Ce n&#39;est pas très bien !&quot;);
+      }
+  }
+}</code></pre>
+</section><section class="slide level2">
+
+<pre><code>catch(Exception e)</code></pre>
+<ul>
+<li><p><strong>J’attrappe</strong> l’exception <strong>e</strong></p></li>
+<li><p><strong>Exception</strong> est une classe Java. <strong>e</strong> est donc un objet avec des méthodes et attributs</p></li>
+</ul>
+</section><section class="slide level2">
+
+<p>Attraper une exception spécifique</p>
+<pre><code>public class Main {
+  public static void main(String[] args) {
+      try{
+        System.out.println(1/0);
+      }catch(ArithmeticException e){
+        System.out.println(&quot;Ce n&#39;est pas très bien !&quot;);
+      }
+  }
+}</code></pre>
+<p>On ne traite que les exceptions de type <strong>ArithmeticException</strong></p>
+</section><section class="slide level2">
+
+<p>Traiter plusieurs exceptions</p>
+<pre><code>public class Main {
+  public static void main(String[] args) {
+      try{
+        System.out.println(1/0);
+      }catch(ArithmeticException e){
+        System.out.println(&quot;C&#39;est une exception arithm!&quot;);
+      }catch(Exception e){
+        System.out.println(&quot;C&#39;est une autre exception !&quot;);
+      }
+  }
+}</code></pre>
+</section><section id="deux-méthodes-intéressantes-sur-les-exceptions" class="slide level2">
+<h2>Deux méthodes intéressantes sur les exceptions</h2>
+<ul>
+<li><p><em>String</em> getMessage() : permet de récupérer le message</p></li>
+<li><p><em>void</em> printStackTrace() : permet d’afficher la pile d’exécution</p></li>
+</ul>
+</section><section id="le-mot-clé-throws" class="slide level2">
+<h2>Le mot-clé “throws”</h2>
+<ul>
+<li><p>Par défaut, les exceptions sont vérifiées par le compilateur</p></li>
+<li><p>Si votre méthode est susceptible de ne pas traiter un type d’exception et de le renvoyer, il faut en principe le déclarer dans la signature.</p>
+<pre><code>public static void main(String[] args) throws ArithmeticException {
+  System.out.println(1/0);
+}</code></pre></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Certaines exception étant très communes, les déclarer via <strong>throws</strong> est superflu. C’est le cas de <em>ArithmeticException</em></p></li>
+<li><p>Pour d’autres exceptions (ex. <em>IOException</em>), il faut les déclarer via <strong>throws</strong> sous peine d’erreur de compilation.</p></li>
+<li><p><a href="https://programming.guide/java/list-of-java-exceptions.html">Liste des exceptions par défaut</a></p></li>
+</ul>
+</section><section id="lever-une-exception" class="slide level2">
+<h2>Lever une exception</h2>
+<p>Utiliser le mot clé <strong>throw</strong></p>
+<pre><code>public void printAge(int i){
+  if (i&lt;0){
+    throw(new IllegalArgumentException(&quot;Age &gt;0 !&quot;))
+  }else{
+    System.out.println(&quot;Vous avez &quot;+i+&quot; ans !&quot;);
+  }
+} </code></pre>
+</section><section id="créer-une-exception-personnalisée" class="slide level2">
+<h2>Créer une exception personnalisée</h2>
+<ul>
+<li><p>Exemple : type <strong>SaisieErroneeException</strong></p></li>
+<li><p>Dans le fichier <strong>SaisieErroneeException.java</strong></p>
+<pre><code>public class SaisieErroneeException extends Exception {
+
+  public SaisieErroneeException() {
+    super();
+  }
+
+  public SaisieErroneeException(String s) { 
+    super(s);
+  }
+}</code></pre></li>
+</ul>
+</section><section class="slide level2">
+
+<pre><code>public void printAge(int i) throws SaisieErroneeException{
+  if (i&lt;0){
+    throw(new SaisieErroneeException(&quot;Age &gt;0 !&quot;))
+  }else{
+    System.out.println(&quot;Vous avez &quot;+i+&quot; ans !&quot;);
+  }
+} </code></pre>
+</section></section>
+<section><section id="la-structure-dune-application-java" class="title-slide slide level1"><h1>La structure d’une application Java</h1></section><section id="la-fonction-main" class="slide level2">
+<h2>La fonction Main</h2>
+<p>Il est possible “d’exécuter” une classe si et seulement si celle-ci contient une fonction <strong>main</strong> dont la signature est la suivante :</p>
+<pre><code>public static void main(String[] args) ;</code></pre>
+<!---
+Retour sur le tutoriel BlueJ (slide précédente)
+-------------------
+
+  - Deux fichiers sources .java
+
+  - Les versions compilées sont les .class
+
+  - *Cat.java* décrit le fonctionnement de la classe **Cat**
+
+  - Comment faire pour **créer un programme exécutable** ?
+---->
+</section><section class="slide level2">
+
+<ul>
+<li><p><strong>public</strong> : la méthode est publique (peut être appelée depuis une autre classe)</p></li>
+<li><p><strong>static</strong> : la méthode est statique. C’est une méthode de classe qui ne nécessite pas d’instance de l’objet.</p></li>
+<li><p><strong>void</strong> : la méthode ne retourne rien.</p></li>
+<li><p><strong>String[] args</strong> : l’argument de main est un tableau de String.</p></li>
+</ul>
+</section><section id="pourquoi-string-args" class="slide level2">
+<h2>Pourquoi String[] args?</h2>
+<ul>
+<li><p>Identification des arguments lors d’une commande textuelle dans un terminal</p>
+<pre><code>$ ls -l *.java     (unix)
+$ dir *.java       (windows)</code></pre></li>
+</ul>
+<p>Liste tous les fichiers avec l’extension java et les présente sous forme de liste</p>
+</section><section id="récupérer-les-arguments" class="slide level2">
+<h2>Récupérer les arguments</h2>
+<pre><code>$ ls -l *.java</code></pre>
+<ul>
+<li><p>Exemple avec la ligne de commande unix</p>
+<ul>
+<li><p><strong>ls</strong> : nom de la commande</p></li>
+<li><p><strong>-l</strong> : premier argument</p></li>
+<li><p>*<strong>.java</strong> : deuxième argument</p></li>
+</ul></li>
+<li><p>Du point de vue de Main :</p>
+<ul>
+<li><p>args[0] = "-l"</p></li>
+<li><p>args[1] = "*.java"</p></li>
+</ul></li>
+</ul>
+</section><section id="règle-dusage-pour-main" class="slide level2">
+<h2>Règle d’usage pour Main</h2>
+<p>En général, il est préférable de définir une classe particulière qui contient le Main. Il est rarement approprié de définir cette fonction dans une classe normale.</p>
+</section><section id="pour-exécuter" class="slide level2">
+<h2>Pour exécuter</h2>
+<p>Se mettre dans le répertoire contenant le fichier .class (ex. MainClass.class) issu de la compilation à l’aide de la commande <strong>cd</strong>.</p>
+<pre><code>$ java MainClass argument1 argument2....</code></pre>
+<!---
+Une classe MainClass pour les chats
+-------------------------
+ 
+   - Arguments autorisés : listen, happy?, feed, adopt_another
+
+   - Être robuste à un utilisateur maladroit... 
+
+   - Ajouter une méthode publique **getName()** à **Cat** pour que Main puisse accéder au nom du chat
+
+
+<i class="fas fa-terminal"></i>
+-------------------------
+
+
+      $ java MainClass
+      You adopt a tabby cat named Bob
+      
+      $ java MainClass happy? listen feed listen adopt_another happy? mauvaisArgument feed happy?
+      You adopt a white cat named Cole
+      Cole is not happy
+      Cole meows at you.
+      Cole purrs.
+      You abandon Cole
+      You adopt a white cat named Marmalade
+      Marmalade is not happy 
+      My name is Groot!
+      Marmalade is happy 
+
+ *Note : opérateur new pour initialiser un objet (cf tuto)*
+----->
+<p><link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"></p>
+<!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+ -->
+<p><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
