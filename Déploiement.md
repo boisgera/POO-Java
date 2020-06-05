@@ -160,10 +160,19 @@ Class Path
     il faudra indiquer à `java` d'explorer ce fichier au moyen de la
     variable `CLASSPATH`.
 
-  - Par exemple: ajoutez `*` au class path pour que java prenne en compte 
+  - Par exemple : ajoutez `*` au class path pour que java prenne en compte 
     tous les fichiers jar contenus dans le répertoire courant.
 
   - Voir ausi [Setting the class path](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html)
+
+
+--------------------------------------------------------------------------------
+
+    $ export CLASSPATH=".:*"
+
+Alternativement, ajouter des class paths lorsque vous appelez `java/javac`:
+
+    $ javac -cp ".:*" *.java
 
 
 <i class="far fa-file-code"></i> `App.java`
@@ -180,15 +189,14 @@ Class Path
 <i class="fas fa-terminal"></i>
 --------------------------------------------------------------------------------
 
-    $ javac App.java
+    $ javac -cp ".:*" App.java
     $ ls
     App.class  App.java  printer.jar
 
 <i class="fas fa-cog"></i> Execution
 --------------------------------------------------------------------------------
 
-    $ export CLASSPATH=".:*"
-    $ java App 
+    $ java -cp ".:*" App 
     Hello, World!
 
 <style>
