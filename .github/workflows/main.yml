@@ -10,10 +10,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '12'
-      - run: npm install -g decktape   
+      - run: npm install -g decktape
 
       - uses: actions/checkout@v2
-      - run: ./build #--pdf
+      - run: ./build --pdf
       - run: ls
 
       - name: deploy to gh-pages
