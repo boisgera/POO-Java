@@ -30,6 +30,8 @@ jobs:
 #          force_orphan: true
 
 # Killed gh-pages on github
+
+      - run: rm .gitignore
       - name: deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
