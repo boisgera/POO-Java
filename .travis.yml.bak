@@ -1,0 +1,40 @@
+dist: xenial
+language: bash
+
+env:
+  global:
+    - CONDA=https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+before_install:
+  - curl $CONDA > conda.sh
+  - bash conda.sh -b -p $HOME/conda
+  - export PATH=$HOME/conda/bin:$PATH
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update conda
+  - conda info -a # debugging
+  - conda env create -f environment.yml
+  - source activate POO-Java
+  - conda install -c conda-forge nodejs=12.16.1
+  - npm install -g decktape
+  - sudo apt-get install chromium-browser
+  # - sudo apt-get update
+  # - sudo apt-get install pandoc
+  # - curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
+  # - sudo bash nodesource_setup.sh
+  # - sudo apt-get install nodejs
+  # - sudo npm install --unsafe-perm -g decktape
+  # # easiest way to get the dependencies of chromium right is to (re-)install it
+  # - sudo apt-get install chromium-browser
+
+install:
+  - ./build --pdf # generate slides (HTML & PDF)
+  - mv .gitignore .gitignore.bak # for deployment to gh-pages
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  
+  on:
+    branch: master  
+
