@@ -13,9 +13,10 @@ jobs:
       - run: npm install -g decktape
 
       - uses: actions/checkout@v2
-      - run: ./build #--pdf
+      - run: ./build --pdf
       - run: ls
 
+      - run: rm .gitignore
       - name: deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
