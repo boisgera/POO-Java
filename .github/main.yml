@@ -1,0 +1,12 @@
+name: main
+on: [push]
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: sudo apt-get install pandoc
+
+      - uses: actions/checkout@v2
+      - run: ./build
+      - run: ls
