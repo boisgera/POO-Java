@@ -40,3 +40,4 @@ jobs:
           BRANCH: gh-pages
           FOLDER: "."
           SINGLE_COMMIT: true
+          PRESERVE: false
