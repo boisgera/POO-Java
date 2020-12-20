@@ -5,7 +5,10 @@ Programmation Orientée Objet avec Java
 [![Gitter chat](https://badges.gitter.im/boisgera/python-pandoc.svg)](https://gitter.im/POO-Java/community#)
 [![Run on Repl.it](https://repl.it/badge/github/boisgera/POO-Java)](https://repl.it/github/boisgera/POO-Java)
 
-## Documents [![Build Status](https://travis-ci.org/boisgera/POO-Java.svg?branch=master)](https://travis-ci.org/boisgera/POO-Java)
+## Documents [![Build Status](https://travis-ci.org/boisgera/POO-Java.svg?branch=master)](https://travis-ci.org/boisgera/POO-Java) [![Build Status](https://github.com/boisgera/POO-Java/workflows/main/badge.svg)](https://github.com/boisgera/POO-Java/actions)
+
+
+
 
   - **Environnement de développement** ([HTML](https://boisgera.github.io/POO-Java/Environnement.html), 
     [PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
