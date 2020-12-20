@@ -7,7 +7,10 @@ jobs:
 
       - run: sudo apt-get install pandoc # enhancement: pin down the version (conda ?)
 
-      
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - run: npm install -g decktape   
 
       - uses: actions/checkout@v2
       - run: ./build
