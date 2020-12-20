@@ -31,7 +31,7 @@ jobs:
 
 # Killed gh-pages on github
 
-      - run: rm .gitignore
+      - run: mv .gitignore .gitignore.bak
       - name: deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
