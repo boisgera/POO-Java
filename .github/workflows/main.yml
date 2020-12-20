@@ -17,6 +17,8 @@ jobs:
       - run: ls
 
       - run: git add -f *.html # does it help the deploy ?
+      - run: git config user.email "Sebastien.Boisgerault@gmail.com"
+      - run: git config user.name "Sébastien.Boisgérault"
       - run: git commit -am "add html files"
 
 
