@@ -1,0 +1,18 @@
+# clean
+rm -rf *.class
+rm -rf *.jar
+
+# compile
+echo "---- Compilation --------------------------------------------------------"
+javac *.java
+
+# archive
+echo "---- Archivage ----------------------------------------------------------"
+echo "Main-Class: App" > Manifest.txt
+jar cfm app.jar Manifest.txt *.class
+
+# run
+echo "---- Execution ----------------------------------------------------------"
+java -jar app.jar
+
+

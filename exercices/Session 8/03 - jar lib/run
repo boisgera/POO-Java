@@ -1,0 +1,18 @@
+# clean
+rm -rf *.class
+
+# créer l'archive printer.jar
+echo "---- Génération printer.jar ---------------------------------------------"
+echo "génération printer.jar non implémentée"
+
+# compile
+echo "---- Compilation --------------------------------------------------------"
+echo "commande de compilation incomplète"
+javac App.java
+
+# run
+echo "---- Execution ----------------------------------------------------------"
+echo "commande d'exécution incomplète"
+java -cp .:printer.jar App
+
+

@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Circle
+comment1.params=cx\ cy\ r\ style
+comment1.target=Circle(double,\ double,\ double,\ java.lang.String)
+comment2.params=cx\ cy\ r
+comment2.target=Circle(double,\ double,\ double)
+comment3.params=cx\ cy
+comment3.target=Circle(double,\ double)
+comment4.params=
+comment4.target=Circle()
+comment5.params=x\ y
+comment5.target=void\ moveTo(double,\ double)
+comment6.params=dx\ dy
+comment6.target=void\ translate(double,\ double)
+comment7.params=factor
+comment7.target=void\ scale(double)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+comment9.params=
+comment9.target=java.lang.String\ toXML()
+numComments=10

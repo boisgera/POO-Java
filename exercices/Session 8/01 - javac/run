@@ -1,0 +1,11 @@
+# clean
+rm -rf *.class
+
+# compile
+echo "---- Compilation --------------------------------------------------------"
+echo "compilation non implémentée"
+
+# run
+echo "---- Execution ----------------------------------------------------------"
+java App
+

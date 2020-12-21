@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=SVG
+comment1.params=nodes
+comment1.target=SVG(Node[])
+comment2.params=filename
+comment2.target=void\ export(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ toXML()
+numComments=4

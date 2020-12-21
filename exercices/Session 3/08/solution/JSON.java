@@ -1,0 +1,3 @@
+interface JSON {
+  String toJSONString();
+}

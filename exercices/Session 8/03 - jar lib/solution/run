@@ -1,0 +1,16 @@
+# clean
+rm -rf *.class
+
+# créer l'archive printer.jar
+echo "---- Génération printer.jar ---------------------------------------------"
+cd printer-src && ./build && cp printer.jar .. && cd -
+
+# compile
+echo "---- Compilation --------------------------------------------------------"
+javac -cp .:printer.jar App.java
+
+# run
+echo "---- Execution ----------------------------------------------------------"
+java -cp .:printer.jar App
+
+

@@ -1,0 +1,12 @@
+# clean
+rm -rf *.class
+rm -rf library/*.class
+
+# compile
+echo "---- Compilation --------------------------------------------------------"
+javac *.java
+javac library/*.java
+
+# run
+echo "---- Execution ----------------------------------------------------------"
+java Main

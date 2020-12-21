@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p output
+javac App.java
+jar cfm app.jar Manifest.txt *.class
+cp app.jar output/.

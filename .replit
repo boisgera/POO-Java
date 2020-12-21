@@ -1,0 +1,2 @@
+run = "echo 'bouton Run désactivé ; tapez ./run dans le terminal.'"
+language = "java"

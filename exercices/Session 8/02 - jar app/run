@@ -1,0 +1,17 @@
+# clean
+rm -rf *.class
+rm -rf *.jar
+
+# compile
+echo "---- Compilation --------------------------------------------------------"
+javac *.java
+
+# archive
+echo "---- Archivage ----------------------------------------------------------"
+echo "archivage non implémenté."
+
+# run
+echo "---- Execution ----------------------------------------------------------"
+echo "exécution de app.jar non implémentée"
+
+
