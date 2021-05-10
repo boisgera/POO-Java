@@ -1,4 +1,4 @@
 Projet Scalable Vector Graphics
 ================================================================================
 
-![SVG](images/svg-logo.svg)
+<img src="images/svg-logo.svg" style="display: block; margin-left: auto; margin-right: auto; width: 50%;" />
