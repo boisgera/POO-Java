@@ -10,25 +10,25 @@ Programmation Orientée Objet avec Java
   - :blue_book: Environnement de développement ([HTML](https://boisgera.github.io/POO-Java/Environnement.html), 
     [PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
 
-  - **Introduction à BlueJ** ([HTML](https://boisgera.github.io/POO-Java/BlueJ.html), 
+  - :blue_book: Introduction à BlueJ ([HTML](https://boisgera.github.io/POO-Java/BlueJ.html), 
     [PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
 
-  - **Programmation Orientée Objet** ([HTML](https://boisgera.github.io/POO-Java/POO.html), 
+  - :blue_book: Programmation Orientée Objet ([HTML](https://boisgera.github.io/POO-Java/POO.html), 
     [PDF](https://boisgera.github.io/POO-Java/POO.pdf))
 
-  - **Premiers pas en Java** ([HTML](https://boisgera.github.io/POO-Java/Java-first-steps.html),
+  - :blue_book: Premiers pas en Java ([HTML](https://boisgera.github.io/POO-Java/Java-first-steps.html),
     [PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
 
-  - **Programmation Orientée Objet avancée en Java** ([HTML](https://boisgera.github.io/POO-Java/Java-avance.html),
+  - :blue_book: Programmation Orientée Objet avancée en Java ([HTML](https://boisgera.github.io/POO-Java/Java-avance.html),
     [PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
 
-  - **Java aujourd'hui** ([HTML](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html), 
+  - :blue_book: Java aujourd'hui ([HTML](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html), 
     [PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
 
-  - **Déploiement** ([HTML](https://boisgera.github.io/POO-Java/Déploiement.html), 
+  - :blue_book: Déploiement ([HTML](https://boisgera.github.io/POO-Java/Déploiement.html), 
     [PDF](https://boisgera.github.io/POO-Java/Déploiement.pdf))
 
-  - **Projet** ([HTML](https://boisgera.github.io/POO-Java/Projet.html), 
+  - :blue_book: Projet ([HTML](https://boisgera.github.io/POO-Java/Projet.html), 
     [PDF](https://boisgera.github.io/POO-Java/Projet.pdf))
 
 ## :speech_balloon: Espace de discussion
