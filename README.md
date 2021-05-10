@@ -31,6 +31,10 @@ Programmation Orientée Objet avec Java
   - **Projet** ([HTML](https://boisgera.github.io/POO-Java/Projet.html), 
     [PDF](https://boisgera.github.io/POO-Java/Projet.pdf))
 
+### :speech_balloon: Espace de discussion
+
+  - :speech_balloon: [Rejoindre l'espace de discussion](https://gitter.im/POO-Java/community#) (login GitHub requis)
+ 
 ## Ressources Externes
 
 ### Documentation 
