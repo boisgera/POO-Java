@@ -5,7 +5,7 @@ Programmation Orientée Objet avec Java
 [![Gitter chat](https://badges.gitter.im/boisgera/python-pandoc.svg)](https://gitter.im/POO-Java/community#)
 [![Run on Repl.it](https://repl.it/badge/github/boisgera/POO-Java)](https://repl.it/github/boisgera/POO-Java) [![Build Status](https://github.com/boisgera/POO-Java/workflows/main/badge.svg)](https://github.com/boisgera/POO-Java/actions)
 
-## :books: Documents 
+## :books: Programme & Documents 
  
   - :blue_book: Environnement de développement ([HTML](https://boisgera.github.io/POO-Java/Environnement.html), 
     [PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
@@ -13,8 +13,9 @@ Programmation Orientée Objet avec Java
   - :blue_book: Introduction à BlueJ ([HTML](https://boisgera.github.io/POO-Java/BlueJ.html), 
     [PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
 
-  - :blue_book: Programmation Orientée Objet ([HTML](https://boisgera.github.io/POO-Java/POO.html), 
-    [PDF](https://boisgera.github.io/POO-Java/POO.pdf))
+### Programmation Orientée Objet 
+
+[HTML](https://boisgera.github.io/POO-Java/POO.html), [PDF](https://boisgera.github.io/POO-Java/POO.pdf)
 
   - :blue_book: Premiers pas en Java ([HTML](https://boisgera.github.io/POO-Java/Java-first-steps.html),
     [PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
