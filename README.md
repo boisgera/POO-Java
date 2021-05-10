@@ -15,7 +15,7 @@ Programmation Orientée Objet avec Java
 
 #### Programmation Orientée Objet 
 
-:blue_book: [HTML](https://boisgera.github.io/POO-Java/POO.html), [PDF](https://boisgera.github.io/POO-Java/POO.pdf))
+:blue_book: [HTML](https://boisgera.github.io/POO-Java/POO.html), [PDF](https://boisgera.github.io/POO-Java/POO.pdf)
 
   - :blue_book: Premiers pas en Java ([HTML](https://boisgera.github.io/POO-Java/Java-first-steps.html),
     [PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
