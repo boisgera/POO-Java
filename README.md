@@ -32,7 +32,7 @@ Programmation Orientée Objet avec Java
 
 ## :computer: Projet
 
-[Scalable Vector Graphics](exercises)
+[Projet "Scalable Vector Graphics"](exercices)
 
 ## :speech_balloon: Espace de discussion
 
