@@ -27,8 +27,12 @@ Programmation Orientée Objet avec Java
   - :blue_book: Déploiement ([HTML](https://boisgera.github.io/POO-Java/Déploiement.html), 
     [PDF](https://boisgera.github.io/POO-Java/Déploiement.pdf))
 
-  - :blue_book: Projet ([HTML](https://boisgera.github.io/POO-Java/Projet.html), 
+  - :blue_book: Extension Projet ([HTML](https://boisgera.github.io/POO-Java/Projet.html), 
     [PDF](https://boisgera.github.io/POO-Java/Projet.pdf))
+
+## :computer: Projet
+
+[Scalable Vector Graphics](exercises)
 
 ## :speech_balloon: Espace de discussion
 
