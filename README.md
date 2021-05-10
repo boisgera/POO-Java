@@ -5,9 +5,9 @@ Programmation Orientée Objet avec Java
 [![Gitter chat](https://badges.gitter.im/boisgera/python-pandoc.svg)](https://gitter.im/POO-Java/community#)
 [![Run on Repl.it](https://repl.it/badge/github/boisgera/POO-Java)](https://repl.it/github/boisgera/POO-Java) [![Build Status](https://github.com/boisgera/POO-Java/workflows/main/badge.svg)](https://github.com/boisgera/POO-Java/actions)
 
-## Documents 
+## :books: Documents 
  
-  - **Environnement de développement** ([HTML](https://boisgera.github.io/POO-Java/Environnement.html), 
+  - :blue_book: Environnement de développement ([HTML](https://boisgera.github.io/POO-Java/Environnement.html), 
     [PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
 
   - **Introduction à BlueJ** ([HTML](https://boisgera.github.io/POO-Java/BlueJ.html), 
@@ -31,7 +31,7 @@ Programmation Orientée Objet avec Java
   - **Projet** ([HTML](https://boisgera.github.io/POO-Java/Projet.html), 
     [PDF](https://boisgera.github.io/POO-Java/Projet.pdf))
 
-### :speech_balloon: Espace de discussion
+## :speech_balloon: Espace de discussion
 
   - :speech_balloon: [Rejoindre l'espace de discussion](https://gitter.im/POO-Java/community#) (login GitHub requis)
  
