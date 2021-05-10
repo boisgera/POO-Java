@@ -5,6 +5,7 @@ Contexte
 
 --------------------------------------------------------------------------------
 
+
 La programmation **orientée-objet** est un **paradigme** de programmation
 (un "style" de conception de programmes)
 au même titre que
