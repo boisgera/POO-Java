@@ -36,7 +36,7 @@ Programmation Orientée Objet avec Java
 
 ## :speech_balloon: Espace de discussion
 
-  - :speech_balloon: [Rejoindre l'espace de discussion](https://gitter.im/POO-Java/community#) (login GitHub requis)
+  - :speech_balloon: [Espace de discussion](https://gitter.im/POO-Java/community#) (login GitHub requis)
  
 ## Ressources Externes
 
