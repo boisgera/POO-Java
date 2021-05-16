@@ -5,10 +5,11 @@ L'objectif de cette étape du projet est de construire une première version des
 outils pour produire des fichiers graphiques SVG similaires à celui des 
 ["Premier pas"](https://developer.mozilla.org/fr/docs/Web/SVG/Tutorial/Getting_Started) 
 du [tutoriel SVG de Mozilla](https://developer.mozilla.org/fr/docs/Web/SVG/Tutorial).
-L'emphase sera mise sur les constructions impératives (procédurales) du langage
-Java.
 
 ![SVG](images/demo1.svg)
+
+L'emphase sera mise sur les constructions impératives (procédurales) du langage
+Java.
 
 
 Hello SVG!
