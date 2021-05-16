@@ -8,7 +8,7 @@ du [tutoriel SVG de Mozilla](https://developer.mozilla.org/fr/docs/Web/SVG/Tutor
 L'emphase sera mise sur les constructions impératives (procédurales) du langage
 Java.
 
-![images/demo1.svg]
+![SVG](images/demo1.svg)
 
 
 Hello SVG!
