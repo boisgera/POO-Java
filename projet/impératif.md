@@ -87,7 +87,7 @@ String[][] rectAttributes3 = {
 Tester les trois différents cas. Qu'est-ce qui se passe dans chaque cas ?
 A-t'on une erreur à la compilation, à l'exécution, un résultat invalide ?
 Ici nous considérons que dans les trois cas la spécification des attributs
-est incorrecte que le client du code doit être prévenu par une erreur.
+est incorrecte et que le client du code doit être prévenu par une erreur.
 Faites en sorte que cela soit ce qui se passe !
 
 
