@@ -49,9 +49,9 @@ String[][] rectAttributes = {
 ```
 alors après l'exécution du code
 ```java
-String rect = rect(rectAttributes);
+String rectString = rect(rectAttributes);
 ```
-la variable `rect` est une chaîne de caractère qui désigne le fragment SVG
+la variable `rectString` est une chaîne de caractère qui désigne le fragment SVG
 ```svg
 <rect width="100%" height="100%" fill="red"></rect>
 ```
@@ -96,12 +96,12 @@ Faites en sorte que cela soit ce qui se passe !
 Pour simplifier la vie de l'utilisateur de votre fonction, faites ensuite en 
 sorte que le code
 ```java
-String rect = rect();
+String rectString = rect();
 ```
 soit équivalent au code plus verbeux suivant :
 ```java
 String[][] noAttributes = {};
-String rect = rect(noAttributes);
+String rectString = rect(noAttributes);
 ```
 
 ### Génération de SVG
@@ -175,12 +175,12 @@ String[][] circleAttributes = {
     {"fill", "green"}
 };
 
-String elt = svg(svgAttributes,
+String svgString = svg(svgAttributes,
     rect(rectAttributes),
     circle(circleAttributes),
 );
 ```
-Vérifiez en générant un fichier SVG contenant le contenu `elt` que le résultat 
+Vérifiez en générant un fichier SVG contenant le contenu `svgString` que le résultat 
 est bien valide.
 
 ### Texte
@@ -196,7 +196,7 @@ public static String text(String[][] attributes, String... children)
 permettant de décrire les fragments de SVG de type texte.
 
 Vérifiez le résultat en générant le fichier basé sur la chaîne de caractère
-`elt` obtenue par le code suivant :
+`svgString` obtenue par le code suivant :
 
 ```java
 String[][] svgAttributes = {
@@ -225,7 +225,7 @@ String[][] textAttributes = {
     {"fill", "white"}
 };
 
-String elt = svg(svgAttributes,
+String svgString = svg(svgAttributes,
     rect(rectAttributes),
     circle(circleAttributes),
     text(textAttributes, 
