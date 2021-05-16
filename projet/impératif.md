@@ -258,6 +258,6 @@ Configuration
 Etendez votre programme pour que son utilisateur puisse remplacer le texte
 `"SVG"` par un message de son choix, en faisant :
 
-```bash
-$java SVGTutorial Hello
+```shell
+$ java SVGTutorial Hello
 ```
