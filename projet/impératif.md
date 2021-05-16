@@ -70,7 +70,7 @@ String rect = rect(noAttributes);
 
 ### Génération de SVG
 
-Définir deux constantes nommées `SVGSTART` et `SVGEND`
+Définir deux constantes de l'application `SVGTutorial` nommées `SVGSTART` et `SVGEND`
 désignant les chaînes de caractères 
 ```xml
 <svg version="1.1" baseProfile="full" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
@@ -81,8 +81,65 @@ et
 ```
 Puis, utilisez votre fonction `rect` ainsi que les chaînes de caractères 
 pour générer un fichier `rectangles.svg` contenant des rectangles 
-de formes et positions variées.
-
+de formes et positions variées. 
 On pourra se reporter à [la référence SVG sur les rectangles](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) pour découvrir les attributs des rectangles.
+
+### Autres primitives.
+
+Reproduisez une démarche analogue pour les cercles en introduisant une fonction
+`circle`.
+
+### Généralisation
+
+On souhaiterait se doter de code facilitant l'écriture de fonctions décrivant
+des primitives graphiques supplémentaires (car il y en a beaucoup en SVG !)
+en évitant autant que possible de dupliquer du code.
+
+Introduire une fonction de signature
+
+    public static String element(String name, String[][] attributes) 
+
+renvoyant la chaîne de caractère renvoyant l'élément SVG nommé `name` et 
+d'attributs `attributes`. Puis, changer l'implémentation de vos fonctions 
+`rect` et `circ` pour qu'elles exploitent cette fonction `element`.
+
+
+Elements SVG "conteneurs"
+--------------------------------------------------------------------------------
+
+### Document SVG
+
+Contrairement aux éléments `rect` et `circ`, l'élément `svg` peut avoir des 
+enfants qui sont eux-mêmes des éléments
+
+```java
+public static String svg(String[][] attributes, String... children)
+```
+
+```java
+String[][] svgAttributes = {
+    {"version", "1.1"},
+    {"baseProfile", "full"},
+    {"width", "300"},
+    {"height", "200"},
+    {"xmlns", "http://www.w3.org/2000/svg"}
+};
+String[][] rectAttributes = {
+    {"width", "100%"}, 
+    {"height", "100%"}, 
+    {"fill", "red"}
+};
+String[][] circleAttributes = {
+    {"cx", "150"},
+    {"cy", "100"},
+    {"r", "80"}, 
+    {"fill", "green"}
+};
+
+String elt = svg(svgAttributes,
+    rect(rectAttributes),
+    circle(circleAttributes),
+);
+```
 
 
