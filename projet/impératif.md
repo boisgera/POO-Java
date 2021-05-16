@@ -49,7 +49,10 @@ alors le code
 ```java
 rect(rectAttributes)
 ```
-renvoie la chaîne de caractère "<rect width="100%" height="100%" fill="red"></rect>".
+renvoie la chaîne de caractère 
+```svg
+<rect width="100%" height="100%" fill="red"></rect>
+```
 
 
 
