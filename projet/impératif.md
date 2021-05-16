@@ -62,7 +62,7 @@ Il est très facile à ce stade de "faire planter le programme" en donnant des
 attributs invalides. Trois exemples typiques :
 
 ```java
-String[][] rectAttributes = {
+String[][] rectAttributes1 = {
     {"width"}
     {"100%"}, 
     {"height"}, 
