@@ -63,7 +63,7 @@ attributs invalides. Trois exemples typiques :
 
 ```java
 String[][] rectAttributes1 = {
-    {"width"}
+    {"width"},
     {"100%"}, 
     {"height"}, 
     {"100%"}, 
