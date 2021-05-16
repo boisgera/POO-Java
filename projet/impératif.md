@@ -202,7 +202,7 @@ String elt = svg(svgAttributes,
 
 Les fonctions `svg` et `text` sont similaires. Comme de très nombreux autres
 éléments SVG ont des enfants, on souhaite à nouveau se doter d'une fonction
-simplifiants leur implémentation. Généraliser la fonction `element` déjà
+simplifiant leur implémentation. Généraliser la fonction `element` déjà
 codée pour supporter les éléments avec enfants ; comme certains éléments
 (comme `svg`) se prêtent à du contenu indenté et d'autres (comme `text`) non, 
 on choisira une signature de la forme
@@ -214,5 +214,4 @@ public static String element(
     String... children) 
 ```
 laissant le choix d'indenter ou non le contenu selon la valeur du paramètre `indent`. Réimplémenter les fonctions `svg` et `text` en utilisant cette fonction.
-
-Vérifiez ensuite le résultat !
+Vérifiez ensuite le résultat comme à la question précédente.
