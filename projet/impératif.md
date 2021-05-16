@@ -79,7 +79,7 @@ String[][] rectAttributes2 = {
 ```
 
 ```java
-String[][] rectAttributes3= {
+String[][] rectAttributes3 = {
     {"width", null}, 
 };
 ```
