@@ -56,6 +56,42 @@ la variable `rect` est une chaîne de caractère qui désigne le fragment SVG
 <rect width="100%" height="100%" fill="red"></rect>
 ```
 
+### Des erreurs !
+
+Il est très facile à ce stade de "faire planter le programme" en donnant des
+attributs invalides. Trois exemples typiques :
+
+```java
+String[][] rectAttributes = {
+    {"width"}
+    {"100%"}, 
+    {"height"}, 
+    {"100%"}, 
+    {"fill"}, 
+    {"red"}
+};
+```
+
+```java
+String[][] rectAttributes2 = {
+    {"width", "100%", "Euh, qu'est-ce que je fais là?"}, 
+};
+```
+
+```java
+String[][] rectAttributes3= {
+    {"width", null}, 
+};
+```
+
+Tester les trois différents cas. Qu'est-ce qui se passe dans chaque cas ?
+A-t'on une erreur à la compilation, à l'exécution, un résultat invalide ?
+Ici nous considérons que dans les trois cas la spécification des attributs
+est incorrecte que le client du code doit être prévenu par une erreur.
+Faites en sorte que cela soit ce qui se passe !
+
+
+
 ### Argument optionnel
 Pour simplifier la vie de l'utilisateur de votre fonction, faites ensuite en 
 sorte que le code
@@ -215,3 +251,13 @@ public static String element(
 ```
 laissant le choix d'indenter ou non le contenu selon la valeur du paramètre `indent`. Réimplémenter les fonctions `svg` et `text` en utilisant cette fonction.
 Vérifiez ensuite le résultat comme à la question précédente.
+
+Configuration
+--------------------------------------------------------------------------------
+
+Etendez votre programme pour que son utilisateur puisse remplacer le texte
+`"SVG"` par un message de son choix, en faisant :
+
+```bash
+$java SVGTutorial Hello
+```
