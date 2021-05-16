@@ -31,9 +31,11 @@ Enfin, faites en sorte que ce contenu soit écrit dans le fichier `demo1.svg`.
 Ouvrez ensuite ce fichier avec votre navigateur Web pour vérifier que ce
 fichier décrit l'image vectorielle souhaitée.
 
+
 Primitives graphiques
 --------------------------------------------------------------------------------
 
+### Fondation
 Créez une fonction `rect` permettant de décrire les rectangles. On souhaite
 que cette fonction prenne en arguments les tableaux bi-dimensionnels de chaînes
 de caractères caractérisant les attributs du rectangle, de telle sorte que si
@@ -53,6 +55,8 @@ la variable `rect` est une chaîne de caractère qui désigne le fragment SVG
 ```svg
 <rect width="100%" height="100%" fill="red"></rect>
 ```
+
+### Argument optionnel
 Pour simplifier la vie de l'utilisateur de votre fonction, faites ensuite en 
 sorte que le code
 ```java
@@ -64,5 +68,21 @@ String[][] noAttributes = {};
 String rect = rect(noAttributes);
 ```
 
+### Génération de SVG
+
+Définir deux constantes nommées `SVGSTART` et `SVGEND`
+désignant les chaînes de caractères 
+```xml
+<svg version="1.1" baseProfile="full" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+```
+et 
+```xml
+</svg>
+```
+Puis, utilisez votre fonction `rect` ainsi que les chaînes de caractères 
+pour générer un fichier `rectangles.svg` contenant des rectangles 
+de formes et positions variées.
+
+On pourra se reporter à [la référence SVG sur les rectangles](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) pour découvrir les attributs des rectangles.
 
 
