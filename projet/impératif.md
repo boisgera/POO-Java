@@ -110,12 +110,15 @@ Elements SVG "conteneurs"
 ### Document SVG
 
 Contrairement aux éléments `rect` et `circ`, l'élément `svg` peut avoir des 
-enfants qui sont eux-mêmes des éléments
+enfants qui sont eux-mêmes des éléments SVG.
+Définissez une fonction `svg` permettant de décrire un élément SVG de type
+`svg`, possédant des attributs mais aussi des enfants, décrits comme des
+chaînes de caractères. On souhaite avoir la signature
 
 ```java
 public static String svg(String[][] attributes, String... children)
 ```
-
+et que le schéma d'usage soit le suivant :
 ```java
 String[][] svgAttributes = {
     {"version", "1.1"},
@@ -141,5 +144,75 @@ String elt = svg(svgAttributes,
     circle(circleAttributes),
 );
 ```
+Vérifiez en générant un fichier SVG contenant le contenu `elt` que le résultat 
+est bien valide.
 
+### Texte
 
+L'élément `text` a des attributs et un contenu, qui peut être composé de 
+plusieurs fragments (on peut par exemple considérer le contenu `"Hello SVG!"` 
+comme la collection des fragments `"Hello"`, `" "` et `"SVG!"`).     
+
+Implémentez la fonction
+```java
+public static String text(String[][] attributes, String... children) 
+```
+permettant de décrire les fragments de SVG de type texte.
+
+Vérifiez le résultat en générant le fichier basé sur la chaîne de caractère
+`elt` obtenue par le code suivant :
+
+```java
+String[][] svgAttributes = {
+    {"version", "1.1"},
+    {"baseProfile", "full"},
+    {"width", "300"},
+    {"height", "200"},
+    {"xmlns", "http://www.w3.org/2000/svg"}
+};
+String[][] rectAttributes = {
+    {"width", "100%"}, 
+    {"height", "100%"}, 
+    {"fill", "red"}
+};
+String[][] circleAttributes = {
+    {"cx", "150"},
+    {"cy", "100"},
+    {"r", "80"}, 
+    {"fill", "green"}
+};
+String[][] textAttributes = {
+    {"x", "150"}, 
+    {"y", "125"}, 
+    {"font-size", "60"},
+    {"text-anchor", "middle"},
+    {"fill", "white"}
+};
+
+String elt = svg(svgAttributes,
+    rect(rectAttributes),
+    circle(circleAttributes),
+    text(textAttributes, 
+        "SVG"
+    )
+);
+```
+
+### Généralisation
+
+Les fonctions `svg` et `text` sont similaires. Comme de très nombreux autres
+éléments SVG ont des enfants, on souhaite à nouveau se doter d'une fonction
+simplifiants leur implémentation. Généraliser la fonction `element` déjà
+codée pour supporter les éléments avec enfants ; comme certains éléments
+(comme `svg`) se prêtent à du contenu indenté et d'autres (comme `text`) non, 
+on choisira une signature de la forme
+```java
+public static String element(
+    String name, 
+    String[][] attributes, 
+    boolean indent, 
+    String... children) 
+```
+laissant le choix d'indenter ou non le contenu selon la valeur du paramètre `indent`. Réimplémenter les fonctions `svg` et `text` en utilisant cette fonction.
+
+Vérifiez ensuite le résultat !
