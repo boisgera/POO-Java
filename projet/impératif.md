@@ -3,7 +3,7 @@ SVG en Java impératif
 
 L'objectif de cette étape du projet est de construire une première version des 
 outils pour produire des fichiers graphiques SVG similaires à celui des 
-["Premier pas"](https://developer.mozilla.org/fr/docs/Web/SVG/Tutorial/Getting_Started) 
+[Premier pas](https://developer.mozilla.org/fr/docs/Web/SVG/Tutorial/Getting_Started) 
 du [tutoriel SVG de Mozilla](https://developer.mozilla.org/fr/docs/Web/SVG/Tutorial).
 
 ![SVG](images/demo1.svg)
@@ -28,3 +28,28 @@ Puis, remplacez ce premier message par
     </svg>
 
 Enfin, faites en sorte que ce contenu soit écrit dans le fichier `demo1.svg`.
+Ouvrez ensuite ce fichier avec votre navigateur Web pour vérifier que ce
+fichier décrit l'image vectorielle souhaitée.
+
+Primitives graphiques
+--------------------------------------------------------------------------------
+
+Créez une fonction `rect` permettant de décrire les rectangles. On souhaite
+que cette fonction prenne en arguments les tableaux bi-dimensionnels de chaînes
+de caractères caractérisant les attributs du rectangle, de telle sorte que si
+la variable `rectAttributes` désigne le tableau
+```java
+String[][] rectAttributes = {
+    {"width", "100%"}, 
+    {"height", "100%"}, 
+    {"fill", "red"}
+};
+```
+alors le code
+```java
+rect(rectAttributes)
+```
+renvoie la chaîne de caractère "<rect width="100%" height="100%" fill="red"></rect>".
+
+
+
