@@ -45,13 +45,23 @@ String[][] rectAttributes = {
     {"fill", "red"}
 };
 ```
-alors le code
+alors après l'exécution du code
 ```java
-rect(rectAttributes)
+String rect = rect(rectAttributes);
 ```
-renvoie la chaîne de caractère 
+la variable `rect` est une chaîne de caractère qui désigne le fragment SVG
 ```svg
 <rect width="100%" height="100%" fill="red"></rect>
+```
+Pour simplifier la vie de l'utilisateur de votre fonction, faites ensuite en 
+que le code
+```java
+String rect = rect();
+```
+soit équivalent au code plus verbeux suivant :
+```java
+String[][] noAttributes = {};
+String rect = rect(noAttributes);
 ```
 
 
