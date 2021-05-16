@@ -256,7 +256,7 @@ Configuration
 --------------------------------------------------------------------------------
 
 Etendez votre programme pour que son utilisateur puisse remplacer le texte
-`"SVG"` par un message de son choix, en faisant :
+`"SVG"` par un message de son choix, en faisant par exemple:
 
 ```shell
 $ java SVGTutorial Hello
