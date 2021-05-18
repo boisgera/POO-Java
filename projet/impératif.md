@@ -58,7 +58,7 @@ la variable `rectString` est une chaîne de caractère qui désigne le fragment 
 <rect width="100%" height="100%" fill="red"></rect>
 ```
 
-### Des erreurs !
+### Des erreurs ! (passer en première lecture)
 
 Il est très facile à ce stade de "faire planter le programme" en donnant des
 attributs invalides. Trois exemples typiques :
@@ -94,7 +94,7 @@ Faites en sorte que cela soit ce qui se passe !
 
 Pouvez-vous trouver d'autres cas qui posent problème et les gérer ?
 
-### Moins d'erreurs
+### Moins d'erreurs (passer en première lecture)
 
 Une façon de minimiser le risque d'attributs incorrect est de fournir au
 développeur des fonctions d'assistance à la construction d'attributs qui
