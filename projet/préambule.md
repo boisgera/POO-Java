@@ -7,20 +7,11 @@ Première exécution
 Créez le code source d'une application `Preamble` dont le point d'entrée `main` 
 ... ne fait rien ! Puis La compiler et l'exécuter.
 
-```java
-// File: Preamble.java
-public class Preamble {
-    public static void main(String[] args) {
-        // Nothing is going on here. Yet.
-    }
-}
-```
-
 Utilitaires
 --------------------------------------------------------------------------------
 
 Incluez le fichier `Utils.java` dans un répertoire `utils` à la racine de votre
-projet (où se trouve déjà votre fichier `Preamble.java`). Puis, le compiler.
+projet (où se trouve déjà votre fichier source). Puis, le compiler.
 
 En ajoutant la ligne
 
