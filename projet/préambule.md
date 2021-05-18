@@ -58,8 +58,8 @@ en fait des fonctions similaires pour tous les types primitifs Java :
 `boolean`, `byte`, `char`, `short`, `int`, `long`, `float` and `double`.
 
 Pouvez-vous implémenter des nouvelles variantes `printInt` et `printlnInt` 
-de la fonction dont les arguments sont des entiers ? Puis, utilisez `printlnInt`
-pour afficher l'entier `42`.
+de `print` et `println` dont les arguments sont des entiers et non des chaînes
+de caractères ? Puis, utilisez `printlnInt` pour afficher l'entier `42`.
 
 Lecture et écriture de fichiers
 --------------------------------------------------------------------------------
