@@ -90,6 +90,30 @@ Ici nous considérons que dans les trois cas la spécification des attributs
 est incorrecte et que le client du code doit être prévenu par une erreur.
 Faites en sorte que cela soit ce qui se passe !
 
+Pouvez-vous trouver d'autres cas qui posent problème et les gérer ?
+
+### Moins d'erreurs
+
+Une façon de minimiser le risque d'attributs incorrect est de fournir au
+développeur des fonctions d'assistance à la construction d'attributs qui
+produiront des attributs corrects par construction. Par exemple, implémentez
+une fonction 
+
+```java
+static main String[][] kv(String[][] attributes, String key, String value)
+```
+
+qui renvoie le tableau d'attributs décrits dans `attributes`, augmenté d'une
+nouvelle paire clé-valeur à la fin. Puis profitez-en pour simplifier la vie de 
+l'utilisateur en développant les variantes
+```java
+static main String[][] kv(String[][] attributes, String key, int value)
+```
+et 
+```java
+static main String[][] kv(String[][] attributes, String key, double value)
+```
+qui permettront de spécifier directement des valeurs numériques.
 
 
 ### Argument optionnel
