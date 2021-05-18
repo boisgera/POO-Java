@@ -5,7 +5,7 @@ Première exécution
 --------------------------------------------------------------------------------
 
 Créez le fichier source d'une application `Preamble` dont le point d'entrée `main` 
-... ne fait rien ! Puis La compiler et l'exécuter.
+... ne fait rien ! Puis le compiler et exécuter l'application.
 
 Utilitaires
 --------------------------------------------------------------------------------
