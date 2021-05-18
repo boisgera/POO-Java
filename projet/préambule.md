@@ -87,7 +87,7 @@ Puis testez-là par le code de votre choix !
 Erreurs
 --------------------------------------------------------------------------------
 
-Les utilitaires comporte une fonction pour générer une erreur
+Les utilitaires comportent une fonction pour générer une erreur
 ```java
 public static void error(String message)
 ```
