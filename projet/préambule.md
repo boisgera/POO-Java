@@ -39,7 +39,7 @@ Les utilitaires comportent la fonction
 public static void print(String string)
 ```
 qui affiche une chaîne de caractère dans le terminal. Utilisez-là pour coder
-une application affichant le fameux `"Hello World!"`.
+une application affichant le fameux `"Hello World! 👋"`.
 
 Notez que par défaut, cette fonction ne fait pas de "retour chariot" (elle ne
 crée pas de nouvelle ligne). Développez votre propre fonction `println`,
@@ -76,7 +76,7 @@ public static void write(String filename, String content)
 ```
 
 Les utiliser pour créer un fichier `Hello.txt` contenant la chaîne de 
-caractères `"Hello world!"`, puis vérifier que vous pouvez bien relire son
+caractères `"Hello world! 👋"`, puis vérifier que vous pouvez bien relire son
 contenu et l'afficher.
 
 Si le fichier `filename` existe déjà, la fonction `write` écrase son contenu
