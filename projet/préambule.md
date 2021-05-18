@@ -10,8 +10,9 @@ Créez le fichier source Java d'une application `Preamble` dont le point d'entr�
 Utilitaires
 --------------------------------------------------------------------------------
 
-Incluez le fichier `Utils.java` dans un répertoire `utils` à la racine de votre
-projet (où se trouve déjà votre fichier source). Puis, le compiler.
+Incluez le fichier [`Utils.java`](utils/Utils.java) dans un répertoire `utils` 
+à la racine de votre projet (où se trouve déjà votre fichier source). 
+Puis, le compiler.
 
 En ajoutant la ligne
 
