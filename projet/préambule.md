@@ -91,7 +91,7 @@ Les utilitaires comporte une fonction pour générer une erreur
 ```java
 public static void error(String message)
 ```
-Pour conclure en beauté ce préambule, créez une fonction qui fasse planter
+Pour conclure ce préambule en beauté, créez une fonction qui fasse planter
 votre programme puis invoquez-là.
 Je vous suggère [une fonction `openThePodBayDoors` et le message d'erreur 
 "I am afraid I can't do that Dave."](https://www.youtube.com/watch?v=Mme2Aya_6Bc)).
