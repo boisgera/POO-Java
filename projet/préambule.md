@@ -29,7 +29,7 @@ import static utils.Utils.*;
 ```
 au début de votre fichier `Preamble.java`, vous avez désormais accès à une
 petite collection de fonctions utilitaires qui va simplifier le développement
-d'applications dans le style "Java procédural".
+rapide d'applications dans le style "Java procédural".
 
 Affichage
 --------------------------------------------------------------------------------
