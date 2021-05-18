@@ -5,6 +5,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
 
+      - run: |
+        cp README.md index.md
+        cd projet && cp README.md index.md && cd ..
+
       - run: sudo apt-get install pandoc # enhancement: pin down the version (conda ?)
 
       - uses: actions/setup-node@v2
