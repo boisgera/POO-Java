@@ -4,7 +4,7 @@ Préambule
 Préparatifs
 --------------------------------------------------------------------------------
 
-Créez le fichier source d'une application `Preamble` dont le point d'entrée `main` 
+Créez le fichier source Java d'une application `Preamble` dont le point d'entrée `main` 
 ... ne fait rien ! Puis le compiler et exécuter l'application.
 
 Utilitaires
