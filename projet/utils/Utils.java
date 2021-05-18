@@ -10,8 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-// TODO: simple error handling (RuntimeException only, message)
-
 public class Utils {
 
 // Error Management
@@ -50,8 +48,6 @@ public class Utils {
         return Character.toString(c);
     }
 
-    // quote the stuff instead? Dunno. I'd say no for consistency 
-    // since str(char) is not quoted either.
     public static String str(String s) {
         return s;
     }
