@@ -38,7 +38,7 @@ Les utilitaires comportent la fonction
 ```java
 public static void print(String string)
 ```
-qui affiche une chaîne de caractère dans le terminal. Utiliser-là pour coder
+qui affiche une chaîne de caractère dans le terminal. Utilisez-là pour coder
 une application affichant le fameux `"Hello World!"`.
 
 Notez que par défaut, cette fonction ne fait pas de "retour chariot" (elle ne
