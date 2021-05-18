@@ -4,7 +4,7 @@ Préambule
 Première exécution
 --------------------------------------------------------------------------------
 
-Créez le code source d'une application `Preamble` dont le point d'entrée `main` 
+Créez le fichier source d'une application `Preamble` dont le point d'entrée `main` 
 ... ne fait rien ! Puis La compiler et l'exécuter.
 
 Utilitaires
