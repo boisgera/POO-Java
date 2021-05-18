@@ -65,7 +65,7 @@ Lecture et écriture de fichiers
 --------------------------------------------------------------------------------
 
 Deux fonctions utilitaires permettent de lire et d'écrire des fichiers texte
-(en utilisant unicode et [l'encodage utf-8](https://fr.wikipedia.org/wiki/UTF-8)).
+(en utilisant [Unicode](https://fr.wikipedia.org/wiki/Unicode) et [l'encodage utf-8](https://fr.wikipedia.org/wiki/UTF-8)).
 
 ```java
 public static String read(String filename)
