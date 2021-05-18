@@ -84,7 +84,7 @@ avec `content`. Développez une fonction `append` qui au contraire ajoute
 la chaîne de caractères `content` à la fin du fichier. 
 Puis testez-là par le code de votre choix !
 
-Gestion des erreurs
+Erreurs
 --------------------------------------------------------------------------------
 
 Les utilitaires comporte une fonction pour générer une erreur
