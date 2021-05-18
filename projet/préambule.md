@@ -20,7 +20,7 @@ Utilitaires
 --------------------------------------------------------------------------------
 
 Incluez le fichier `Utils.java` dans un répertoire `utils` à la racine de votre
-projet (ou se trouve déjà votre fichier `Preamble.java`). Puis, le compiler.
+projet (où se trouve déjà votre fichier `Preamble.java`). Puis, le compiler.
 
 En ajoutant la ligne
 
