@@ -1,7 +1,7 @@
 Préambule
 ================================================================================
 
-Première exécution
+Préparatifs
 --------------------------------------------------------------------------------
 
 Créez le fichier source d'une application `Preamble` dont le point d'entrée `main` 
