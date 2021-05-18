@@ -76,7 +76,7 @@ public static void write(String filename, String content)
 ```
 
 Les utiliser pour créer un fichier `Hello.txt` contenant la chaîne de 
-caractères "Hello world!", puis vérifier que vous pouvez bien relire son
+caractères `"Hello world!"`, puis vérifier que vous pouvez bien relire son
 contenu et l'afficher.
 
 Si le fichier `filename` existe déjà, la fonction `write` écrase son contenu
