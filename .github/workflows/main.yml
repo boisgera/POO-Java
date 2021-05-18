@@ -6,8 +6,8 @@ jobs:
     steps:
 
       - run: |
-        cp README.md index.md
-        cd projet && cp README.md index.md && cd ..
+          cp README.md index.md
+          cd projet && cp README.md index.md && cd ..
 
       - run: sudo apt-get install pandoc # enhancement: pin down the version (conda ?)
 
