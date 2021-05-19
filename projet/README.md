@@ -20,6 +20,6 @@ Projet Scalable Vector Graphics
   - 📖 [Scalable Vector Graphics (Wikipedia)](https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics),
 
   - 📖 [Scalable Vector Graphics (documentation MDN)](https://developer.mozilla.org/fr/docs/Web/SVG)
-    (en particulier, le [tutoriel](https://developer.mozilla.org/fr/docs/Web/SVG/Tutoriel)),
+    (en particulier, le [🍼 tutoriel](https://developer.mozilla.org/fr/docs/Web/SVG/Tutoriel)),
   
   - 🖥 Logiciel de dessin vectoriel (SVG) : [🖌 Inkscape](https://inkscape.org/fr).
