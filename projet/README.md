@@ -11,7 +11,7 @@ Projet Scalable Vector Graphics
 
  2. [Java impératif](impératif.md)
 
-## Annexes
+## Références
 
   - 📖 [Scalable Vector Graphics (Wikipedia)](https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics),
 
