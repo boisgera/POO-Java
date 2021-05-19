@@ -36,7 +36,7 @@ Programmation Orientée Objet avec Java
 
 ## 💬 Espace de discussion
 
-  - 💬 [Espace de discussion](https://gitter.im/POO-Java/community#) (login GitHub requis)
+  - 💬 [Gitter](https://gitter.im/POO-Java/community#) (login GitHub requis)
  
 ## Ressources Externes
 
