@@ -13,7 +13,9 @@ Projet Scalable Vector Graphics
 
  3. 🚧 [🍼 Objets : usage](objet-usage.md)
 
- 4. 🚧 *à venir*
+ 4. 🚧 [🎨 Couleurs](couleurs.md)
+
+ 5. 🚧 *à venir*
 
 ## Références
 
