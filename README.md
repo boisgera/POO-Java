@@ -65,12 +65,3 @@ Programmation Orientée Objet avec Java
   - Pour la phase d'apprentissage : [BlueJ](https://www.bluej.org/)
 
   - Pour le développement de projets : [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java)).
-
-### Pour le mini-projet Java / SVG
-
-  - Scalable Vector Graphics sur [Wikipedia](https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics),
-
-  - La [documentation Mozilla](https://developer.mozilla.org/fr/docs/Web/SVG)
-    (en particulier, le [tutoriel](https://developer.mozilla.org/fr/docs/Web/SVG/Tutoriel)).
-  
-  - Logiciel d'édition de SVG : [Inkscape](https://inkscape.org/).
