@@ -11,6 +11,10 @@ Projet Scalable Vector Graphics
 
  2. [☕ Java impératif](impératif.md)
 
+ 3. 🚧 [☕ Java objet : usage](objet-usage.md)
+
+ 4. 🚧 *à venir*
+
 ## Références
 
   - 📖 [Scalable Vector Graphics (Wikipedia)](https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics),
