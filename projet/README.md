@@ -9,7 +9,7 @@ Projet Scalable Vector Graphics
 
  1. [☕ Préambule](préambule.md)
 
- 2. [☕ Java impératif](impératif.md)
+ 2. [🚀 Java impératif](impératif.md)
 
  3. 🚧 [☕ Java objet : usage](objet-usage.md)
 
