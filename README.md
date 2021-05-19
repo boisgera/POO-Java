@@ -32,7 +32,7 @@ Programmation Orientée Objet avec Java
 
 ## 💻 Projet
 
-[Projet "Scalable Vector Graphics"](projet)
+  - 🖌 [Projet "Scalable Vector Graphics"](projet)
 
 ## 💬 Espace de discussion
 
