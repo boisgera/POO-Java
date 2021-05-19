@@ -11,7 +11,7 @@ Projet Scalable Vector Graphics
 
  2. [🚀 SVG (procédural)](impératif.md)
 
- 3. 🚧 [☕ Java objet : usage](objet-usage.md)
+ 3. 🚧 [🍼 Objets : usage](objet-usage.md)
 
  4. 🚧 *à venir*
 
