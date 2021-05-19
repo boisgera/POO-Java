@@ -11,24 +11,24 @@ Programmation Orientée Objet avec Java
     ([📗 PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
 
   - [Introduction à BlueJ](https://boisgera.github.io/POO-Java/BlueJ.html) 
-    [📗 PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
+    ([📗 PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
 
   - [Bases de la Programmation Orientée Objet](https://boisgera.github.io/POO-Java/POO.html) [📗 PDF](https://boisgera.github.io/POO-Java/POO.pdf))
 
   - [Premiers pas en Java](https://boisgera.github.io/POO-Java/Java-first-steps.html)
-    [📗 PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
 
   - [Programmation Orientée Objet avancée en Java](https://boisgera.github.io/POO-Java/Java-avance.html)
-    [📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
 
   - [Java aujourd'hui](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
-    [📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
 
   - [Déploiement](https://boisgera.github.io/POO-Java/Déploiement.html)
-    [📗PDF](https://boisgera.github.io/POO-Java/Déploiement.pdf))
+    ([📗PDF](https://boisgera.github.io/POO-Java/Déploiement.pdf))
 
   - [Extension Projet](https://boisgera.github.io/POO-Java/Projet.html)
-    [📗 PDF](https://boisgera.github.io/POO-Java/Projet.pdf))
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Projet.pdf))
 
 ## 💻 Projet
 
