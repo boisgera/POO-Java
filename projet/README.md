@@ -7,9 +7,9 @@ Projet Scalable Vector Graphics
 
 ## Etapes
 
- 1. [Préambule](préambule.md)
+ 1. [☕ Préambule](préambule.md)
 
- 2. [Java impératif](impératif.md)
+ 2. [☕ Java impératif](impératif.md)
 
 ## Références
 
