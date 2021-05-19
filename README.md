@@ -7,8 +7,8 @@ Programmation Orientée Objet avec Java
 
 ## 📚 Programme & Documents 
  
-  - 📘 Environnement de développement ([HTML](https://boisgera.github.io/POO-Java/Environnement.html), 
-    [PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
+  - [Environnement de développement](https://boisgera.github.io/POO-Java/Environnement.html) 
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Environnement.pdf)),
 
   - 📘 Introduction à BlueJ ([HTML](https://boisgera.github.io/POO-Java/BlueJ.html), 
     [PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
