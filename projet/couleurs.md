@@ -19,7 +19,7 @@ Color red = new Color(255, 0, 0);
 ```
 
 On souhaite que les instances de `Color` exposent publiquement ces
-intensités sous la forme d'attributs `R`, `G` et `B`:
+intensités sous la forme d'attributs entiers `R`, `G` et `B`:
 
 ```java
 int R = color.R;
@@ -27,8 +27,8 @@ int B = color.B;
 int G = color.G;
 ```
 
-Pour simplifier l'usage des couleurs -- et éviter une large classe de bugs
-potentiels -- on souhaite que les instances de `Color` soient immuables : une
+Pour simplifier l'usage des couleurs (et éviter une large classe de bugs
+potentiels) on souhaite que les instances de `Color` soient immuables : une
 fois l'instance initialisée, il ne devra plus être possible de modifier
 leur contenu (c'est la même stratégie qui est adoptée pour les types standard 
 `Integer`, `Double`, `String`, etc.)
