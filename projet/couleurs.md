@@ -5,7 +5,7 @@ L'objectif de cette étape du projet est de développer un support pour la
 représentation des couleurs qui seront exploitées pour décrire un aspect
 des éléments graphiques SVG.
 
-Classe `Couleur`
+Classe `Color`
 --------------------------------------------------------------------------------
 
 ### Constructeur
