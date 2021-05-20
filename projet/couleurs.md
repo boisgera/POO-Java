@@ -95,5 +95,11 @@ Transparence
 
 `ColorAlpha`
 
+**TODO.** Questionner sur l'opportunité de l'héritage ou de la composition.
+
 Couleur nommées
 --------------------------------------------------------------------------------
+
+`NamedColor`
+
+**TODO.** Questionner sur l'opportunité de l'héritage.
