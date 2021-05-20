@@ -146,6 +146,8 @@ sont désignées par leur nom : `white`, `black`, `red`, `green`, `blue`, etc.
 
 La couleur `#663399` <img src="images/rebeccapurple.svg" style="display:inline;width:1em;height:1em"/>: [`rebeccapurple`][rebeccapurple]
 
+<a href="https://medium.com/@valgaze/the-hidden-purple-memorial-in-your-web-browser-7d84813bb416" ><code style="background:#663399">rebeccapurple</code></a>.
+
 [rebeccapurple]: https://medium.com/@valgaze/the-hidden-purple-memorial-in-your-web-browser-7d84813bb416
 
 <p align="center"><figure>
