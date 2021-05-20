@@ -84,21 +84,70 @@ une surcharge de `hashCode` adaptée, propre à `Color`.
 Couleurs et Hexadécimal
 --------------------------------------------------------------------------------
 
-
+Dans le monde du Web, il existe une représentation alternative aux couleurs,
+basée sur l'hexadécimal : le rouge pur `rgb(255, 0, 0)` devient alors 
+`#ff0000` (`255` donne `ff` en hexadécimal, `0` devient `00`).
 
 ### Constructeur auxiliaire
 
+Développer un second constructeur pour la classe `Color` qui accepte les
+chaînes de caractères hexadécimales décrites ci-dessus. Comme pour le
+constructeur principal, on fera en sorte de traiter soigneusement le
+risque de création de couleurs invalides.
+
 ### Représentation
+
+Introduire une méthode
+```java
+public String toHexString()
+```
+renvoyant la représentation hexadécimale d'une couleur.
 
 Transparence
 --------------------------------------------------------------------------------
 
-`ColorAlpha`
+En SVG (comme en HTML), les couleurs sont parfois assorties d'un niveau de 
+transparence, décrit par le canal alpha (`A`) ; `A = 0` correspond à une
+couleur totalement transparente, `A = 255` correspond à une couleur totalement
+opaque.
 
-**TODO.** Questionner sur l'opportunité de l'héritage ou de la composition.
+### Faire ...
+Développer une classe `ColorAlpha` similaire en tout point à la classe `Color`
+mais possédant quatre canaux `R`, `G`, `B` et `A`.
+
+### ... puis améliorer !
+
+On s'efforce en général, pour faciliter la maintenance du code et limiter 
+les risques d'erreurs, d'éviter autant que possible de dupliquer du code.
+
+L'héritage de classe est parfois utilisé à cet effet. Est-ce une bonne idée
+ici de faire dériver `ColorAlpha` de `Color` ? Quels seraient les risques ?
+
+Quelles alternatives éventuelles avez-vous pour remanier votre code afin 
+d'éviter la duplication ?
+
+### Conversions `ColorAlpha` / `Color`.
+
+Pour faciliter les allez-retours entre couleur "normale" et couleur avec 
+transparence :
+
+  - Ajoutez aux champs publics de `ColorAlpha` un champ public constant `color`
+    synchronisé aux contenus `R`, `G`, `B`.
+
+  - Ajoutez aux constructeurs de `ColorAlpha` un constructeur acceptant une
+    instance de `Color` et optionnellement un champ entier `A` (par défaut,
+    on interprétera l'absence de champ alpha comme une couleur opaque).
 
 Couleur nommées
 --------------------------------------------------------------------------------
+
+Dans le contexte du SVG (et plus largement du Web), de nombreuses couleurs
+sont désignées par leur nom : `white`, `black`, `red`, `green`, `blue`, etc.
+
+
+<p align="center">
+<img src="images/rebeccapurple.svg" width="100%" />
+</p>
 
 `NamedColor`
 
