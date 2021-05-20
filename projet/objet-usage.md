@@ -11,4 +11,4 @@ TODO :
 
   - Méthode usuelles : `toString`, `equals`, `clone`, etc.
 
-  - Listes (concrêtes), etc.
+  - Listes, Maps (concrêtes), etc.
