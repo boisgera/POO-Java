@@ -77,7 +77,7 @@ Implémentez une méthode `equals` [dont la signature est conforme à la méthod
 et qui se comporte de façon plus conforme au besoin (deux couleurs sont considérées
 égales si et seulement si les intensités de tous leurs canaux sont égales).
 
-Renseignez-vous également sur le rôle de la méthode [`hashCode` de `Object`] 
+Renseignez-vous également sur le rôle de la méthode `hashCode` de `Object` 
 (et en particulier, ses liens avec la méthode `equals`) et proposez 
 une surcharge de `hashCode` adaptée, propre à `Color`.
 
