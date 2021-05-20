@@ -146,7 +146,7 @@ sont désignées par leur nom : `white`, `black`, `red`, `green`, `blue`, etc.
 
 
 <p align="center">
-<img src="images/rebeccapurple.svg" width="100%" />
+<img src="images/rebeccapurple.svg" width="25%" />
 </p>
 
 `NamedColor`
