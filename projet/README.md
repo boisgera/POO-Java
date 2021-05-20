@@ -9,11 +9,11 @@ Projet Scalable Vector Graphics
 
  1. [🍼 Préambule](préambule.md)
 
- 2. [🚀 SVG (procédural)](impératif.md)
+ 2. [🚀 Documents SVG (procédural)](impératif.md)
 
  3. 🚧 [🍼 Objets : usage](objet-usage.md)
 
- 4. [🎨 Couleurs](couleurs.md)
+ 4. [🎨 Couleurs SVG](couleurs.md)
 
  5. 🚧 *à venir*
 
