@@ -164,6 +164,6 @@ supporte la fonctionnalité décrite ci-dessus.
 ### ... puis améliorer !
 Est-ce que vous pouvez maintenant revenir à l'état de `Color` avant les
 modifications que vous venez de faire, puis atteindre le même objectif
-mais sans modifier le fichier implémentant la class `Color` ? (et donc
+mais sans modifier le fichier implémentant la classe `Color` ? (et donc
 au passage, ainsi mieux séparer le code qui supporte spécifiquement 
 les couleurs nommées du reste du code dédié aux couleurs).
