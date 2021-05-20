@@ -36,7 +36,7 @@ son contenu (c'est la même stratégie qui est adoptée pour les types standard
 ### Paramètres invalides
 
 Sans précaution supplémentaire, il est possible d'initialiser des couleurs qui
-sont invalides. En particulier, il sans doute possible d'utiliser un argument 
+sont invalides. En particulier, il est sans doute possible d'utiliser un argument 
 entier qui n'est pas compris entre 0 et 255. Selon la façon dont vous avez
 construit la class `Color`, il est peut-être également possible d'utiliser
 un argument `null`.
