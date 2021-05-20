@@ -145,12 +145,10 @@ Dans le contexte du SVG (et plus largement du Web), de nombreuses couleurs
 sont désignées par leur nom : `white`, `black`, `red`, `green`, `blue`, etc.
 
 
-<p align="center">
-<figure>
+<p align="center"><figure>
 <img src="images/rebeccapurple.svg" width="25%" />
 <figcaption>La couleur <code>#663399</code>: <a href="https://medium.com/@valgaze/the-hidden-purple-memorial-in-your-web-browser-7d84813bb416" ><code>rebeccapurple</code></a>.</figcaption>
-</figure>
-</p>
+</figure></p>
 
 `NamedColor`
 
