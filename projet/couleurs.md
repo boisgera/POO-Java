@@ -143,8 +143,7 @@ Couleur nommées
 
 Dans le contexte du SVG (et plus largement du Web), de nombreuses couleurs
 sont désignées par leur nom : `white`, `black`, `red`, `green`, `blue`, etc.
-
-La couleur `#663399`, [`rebeccapurple`][rebeccapurple]:
+Ainsi, la  la couleur `#663399` est nommée [`rebeccapurple`][rebeccapurple]:
 
 <p align="center">
 <img src="images/rebeccapurple.svg" width="25%" />
@@ -152,8 +151,19 @@ La couleur `#663399`, [`rebeccapurple`][rebeccapurple]:
 
 [rebeccapurple]: https://medium.com/@valgaze/the-hidden-purple-memorial-in-your-web-browser-7d84813bb416
 
+On souhaiterait pouvoir définir des objets, utilisables partout où nous
+avons utilisé des instances de `Color` jusqu'à présent, mais spécifiés
+à partir de leur nom (on se limitera à reconnaître quelques noms, par 
+exemple ceux cités plus haut).
 
 
-`NamedColor`
+### Faire ...
+Modifier le constructeur `Color` acceptant une chaîne de caractères pour
+supporte la fonctionnalité décrite ci-dessus.
 
-**TODO.** Questionner sur l'opportunité de l'héritage.
+### ... puis améliorer !
+Est-ce que vous pouvez maintenant revenir à l'état de `Color` avant les
+modifications que vous venez de faire, puis atteindre le même objectif
+mais sans modifier le fichier implémentant la class `Color` ? (et donc
+au passage, ainsi mieux séparer le code qui supporte spécifiquement 
+les couleurs nommées du reste du code dédié aux couleurs).
