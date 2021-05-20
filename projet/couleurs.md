@@ -144,16 +144,15 @@ Couleur nommées
 Dans le contexte du SVG (et plus largement du Web), de nombreuses couleurs
 sont désignées par leur nom : `white`, `black`, `red`, `green`, `blue`, etc.
 
-La couleur `#663399` <img src="images/rebeccapurple.svg" style="display:inline;width:1em;height:1em"/>: [`rebeccapurple`][rebeccapurple]
+La couleur `#663399`, [`rebeccapurple`][rebeccapurple]:
 
-<a href="https://medium.com/@valgaze/the-hidden-purple-memorial-in-your-web-browser-7d84813bb416" ><code style="background-color:#663399;">rebeccapurple</code></a>.
+<p align="center">
+<img src="images/rebeccapurple.svg" width="25%" />
+</p>
 
 [rebeccapurple]: https://medium.com/@valgaze/the-hidden-purple-memorial-in-your-web-browser-7d84813bb416
 
-<p align="center"><figure>
-<img src="images/rebeccapurple.svg" width="25%" />
-<figcaption>La couleur <code>#663399</code>: <a href="https://medium.com/@valgaze/the-hidden-purple-memorial-in-your-web-browser-7d84813bb416" ><code>rebeccapurple</code></a>.</figcaption>
-</figure></p>
+
 
 `NamedColor`
 
