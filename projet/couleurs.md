@@ -29,8 +29,8 @@ int G = color.G;
 
 Pour simplifier l'usage des couleurs (et éviter une large classe de bugs
 potentiels) on souhaite que les instances de `Color` soient immuables : une
-fois l'instance initialisée, il ne devra plus être possible de modifier
-leur contenu (c'est la même stratégie qui est adoptée pour les types standard 
+fois une instance de couleur initialisée, il ne devra plus être possible de modifier
+son contenu (c'est la même stratégie qui est adoptée pour les types standard 
 `Integer`, `Double`, `String`, etc.)
 
 ### Paramètres invalides
