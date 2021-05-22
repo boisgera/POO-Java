@@ -5,7 +5,7 @@ Programmation Orientée Objet avec Java
 [![Build Status](https://github.com/boisgera/POO-Java/workflows/main/badge.svg)](https://github.com/boisgera/POO-Java/actions)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/boisgera/POO-Java)
 [![Run on Repl.it](https://repl.it/badge/github/boisgera/POO-Java)](https://repl.it/github/boisgera/POO-Java)
-[![Run on Repl.it](https://img.shields.io/badge/Repl.it-open-blue?logo=repl.it)](https://repl.it/github/boisgera/POO-Java)
+[![Run on Repl.it](https://img.shields.io/badge/Repl.it-open-blue?logo=Repl.it)](https://repl.it/github/boisgera/POO-Java)
 [![Chat on gitter](https://img.shields.io/badge/Gitter-chat-blue?logo=gitter)](https://gitter.im/POO-Java/community#)
 
 
