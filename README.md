@@ -2,10 +2,8 @@
 Programmation Orientée Objet avec Java
 ================================================================================
 
-[![Gitter chat](https://badges.gitter.im/boisgera/python-pandoc.svg)](https://gitter.im/POO-Java/community#)
-[![Run on Repl.it](https://repl.it/badge/github/boisgera/POO-Java)](https://repl.it/github/boisgera/POO-Java) [![Build Status](https://github.com/boisgera/POO-Java/workflows/main/badge.svg)](https://github.com/boisgera/POO-Java/actions)
+[![Build Status](https://github.com/boisgera/POO-Java/workflows/main/badge.svg)](https://github.com/boisgera/POO-Java/actions)
 
-[![Open on Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/boisgera/POO-Java)
 
 ## 📚 Programme & Documents 
  
@@ -35,6 +33,12 @@ Programmation Orientée Objet avec Java
 ## 💻 Projet
 
   - 🖌 [Scalable Vector Graphics (SVG)](projet)
+
+## Développememnt dans le cloud
+
+  - [![Run on Repl.it](https://repl.it/badge/github/boisgera/POO-Java)](https://repl.it/github/boisgera/POO-Java)
+
+  - [![Open on Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/boisgera/POO-Java)
 
 ## 💬 Espace de discussion
 
