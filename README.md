@@ -36,7 +36,8 @@ Programmation Orientée Objet avec Java
 
 ## ☁ Développemement dans le cloud
 
-[![Run on Repl.it](https://repl.it/badge/github/boisgera/POO-Java)](https://repl.it/github/boisgera/POO-Java) [![Open on Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/boisgera/POO-Java)
+[![Open on Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/boisgera/POO-Java) 
+[![Run on Repl.it](https://repl.it/badge/github/boisgera/POO-Java)](https://repl.it/github/boisgera/POO-Java)
 
 ## 💬 Espace de discussion
 
