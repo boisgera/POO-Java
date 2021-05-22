@@ -34,7 +34,7 @@ Programmation Orientée Objet avec Java
 
   - 🖌 [Scalable Vector Graphics (SVG)](projet)
 
-## ☁ Développemement dans le cloud
+## ☁ Programmer dans le cloud
 
   - Gitpod : [![Open on Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/boisgera/POO-Java) 
 
