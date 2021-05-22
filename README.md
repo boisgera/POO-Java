@@ -36,7 +36,7 @@ Programmation Orientée Objet avec Java
 
 ## ☁ Programmer dans le cloud
 
-  - Gitpod : [![Open on Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/boisgera/POO-Java) 
+  - Gitpod : [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-open-blue?logo=gitpod)](https://gitpod.io/#https://github.com/boisgera/POO-Java) 
 
   - Repl.it : [![Run on Repl.it](https://repl.it/badge/github/boisgera/POO-Java)](https://repl.it/github/boisgera/POO-Java)
 
