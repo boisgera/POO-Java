@@ -8,7 +8,6 @@ Programmation Orientée Objet avec Java
 [![Chat on gitter](https://img.shields.io/badge/Gitter-chat-blue.svg?logo=gitter)](https://gitter.im/POO-Java/community#)
 
 
-
 ## 📚 Programme & Documents 
  
   - [Environnement de développement](https://boisgera.github.io/POO-Java/Environnement.html) 
