@@ -7,7 +7,7 @@ on souhaite désormais exploiter le support objet de Java pour incarner les
 différents concepts intervenant dans les documents (attributs, élements, 
 etc.).
 
-## Export XML
+## XML
 
 Définir une interface XML qui permettra de distinguer les objets sachant se
 représenter (comme une chaîne de caractères) sous la forme de (fragment de)
