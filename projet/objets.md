@@ -72,9 +72,9 @@ peuvent être du texte (sans balise), comme dans l'exemple de fragment XML
 
 Introduire pour résoudre cette difficulté un concept de `Node` dans votre 
 programme qui puisse désigner indifférement une instance de `Element` 
-ou de `Text` (classe qu'il nous faut encore implémenter).
-Est-ce qu'il vous semble préférable de faire de `Node` une interface ou
-une class abstraite ?
+ou de `Text` (classe qu'il nous faut encore implémenter) ;
+est-ce qu'il vous semble préférable de faire de `Node` une interface ou
+une classe abstraite ?
 Faites votre choix, puis modifiez en conséquence le constructeur de `Element`.
 Vérifiez que le code que vous aviez écrit qui exploitait ce constructeur 
 marche encore sans modification.
