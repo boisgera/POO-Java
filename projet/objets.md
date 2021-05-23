@@ -32,7 +32,7 @@ Implémenter une fonction `toXML` conforme à l'interface `XML` et déclarer
 que `Element` implémente bien cette interface. Pour le moment, `Element`
 exposera ses attributs `name` et `children` sans restriction. Assurez-vous
 que quel que soit le scénario de construction d'un élément, 
-ces attributs sont bien définis (non `null`).
+ces attributs sont bien définis (différents de `null`).
 
 ### Hiérarchie des Elements
 
