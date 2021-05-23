@@ -95,3 +95,34 @@ XML xml = new SVG(new Rect(), new Circle(), new Text());
 
 ## Attributs
 
+**TODO :**
+
+  - Ajout spécification d'attributs sachant se représenter comme XML à
+    `Element`. `Attributes` pourrait supporter les `String[][]` en entrée
+    et donc réutiliser le code déjà développé pour valider le tableau.
+    Récupérer aussi le code de builder `kv` à cette occasion (?).
+
+    Tester.
+
+    `Attributs` à vocation, contrairement à `String[][]` à ne plus nécessiter
+    de validation! Produire un `String[][]` en sortie ? Histoire de réutiliser
+    le "vieux" code de représentation XML ?
+
+  - Idée de la spécialisation par type d'element des attributs considérés
+    valides (a priori juste le nom ? Mais le principe des valeurs serait
+    le même). C'est bien mais il faut aussi après s'assurer que les clés
+    valeurs ne puissent être modifiées, juste lues. Ou tout filtrer par
+    une tripotée d'accesseurs. Réfléchir en détail au "blindage".
+
+    En gros, c'est immutabilité tout du long ou pas. Et si immutabilité,
+    implémentée avec ou sans accesseurs (intérêt de l'accesseur: ne pas
+    avoir à se prononcer sur les choix internes, par exemple de type conteneur,
+    de façon définitive). Noter qu'on peut aussi opter pour de l'immutabilité
+    publique et de la mutabilité pour les descendants et c'est sans doute ce
+    qui est le plus pratique pour développer la lib.
+
+  - Réfléchir à la mise en commun du code de validation en découpant les
+    attributs par "famille" réutilisables à plusieurs endroits (telles que:
+    `Fill`, `Strike`, etc.). Faire de la validation de valeurs à cette occasion?
+    (par exemple en réutilisant la class `Color` ?)
+
