@@ -13,7 +13,7 @@ Définir une interface XML qui permettra de distinguer les objets sachant se
 représenter (comme une chaîne de caractères) sous la forme de (fragment de)
 document XML. Cette interface déclare la méthode
 ```java
-String toXML()
+public String toXML()
 ```
 
 ## Elements
