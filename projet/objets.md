@@ -85,7 +85,7 @@ et dont le constructeur aura la forme
 public Text(String text)
 ```
 
-Testez votre code en créant un fichier contenant le contenu XML associé à :
+Testez votre code en affichant le contenu XML associé au document
 
 ```java
 XML xml = new SVG(new Rect(), new Circle(), new Text());
