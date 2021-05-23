@@ -43,6 +43,14 @@ des constructeurs de signature adaptée dans chaque cas ; on fera appel dans
 ces constructeurs au constructeur de `Element` pour réutiliser le code déjà
 écrit.
 
+Testez votre code en affichant le contenu XML associé au document
+
+```java
+XML xml = new SVG(new Rect(), new Circle());
+```
+
+### Elements inconnus
+
 La liste des éléments SVG reconnus est disponible dans [la documentation SVG](https://developer.mozilla.org/fr/docs/Web/SVG/Element). Par exemple, il n'existe aucun élement
 appelé `rect1`. Et pourtant à ce stade, rien ne va prévenir le développeur
 de son erreur lorsqu'il écrira le code
@@ -58,22 +66,27 @@ Réfléchissez à l'implémentation de la classe `Text` qui correspond aux élé
 de type `text` en SVG. Est-ce que le constructeur de la classe `Element` est
 adapté ? On rappelle que contrairement à l'élément `svg` par exemple, les
 données "enfants" de `text` ne sont pas (nécessairement) des éléments, mais
-peuvent être du texte (sans balise), comme dans l'exemple `<text>SVG</text>`.
+peuvent être du texte (sans balise), comme dans l'exemple de fragment XML
+`<text>SVG</text>`.
 
-Implémentez une class `Text` qui se déclare conforme à l'interface `XML` et dont
-le constructeur aura la forme
+Introduire pour résoudre cette difficulté un concept de `Node` dans votre 
+programme qui puisse désigner indifférement une instance de `Element` 
+ou de `Text` (classe qu'il nous faut encore implémenter).  
+Modifiez en conséquence le constructeur de `Element`.
+Vérifiez que le code que vous aviez écrit qui exploitait ce constructeur 
+marche encore sans modification.
+
+Implémentez une class `Text` qui se déclare conforme à l'interface `XML` 
+et dont le constructeur aura la forme
 ```java
 public Text(String text)
 ```
 
-Introduir ensuite un concept de `Node` dans votre programme qui puisse désigner 
-indifférement une instance de `Element` ou de `Text`. Modifiez en conséquence
-le constructeur de `Element`.
-
 Testez votre code en créant un fichier contenant le contenu XML associé à :
 
 ```java
-XML xml = new SVG(new Rect(), new Circle, new Text());
+XML xml = new SVG(new Rect(), new Circle(), new Text());
 ```
+
 ## Attributs
 
