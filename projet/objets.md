@@ -2,7 +2,7 @@ Documents SVG
 ================================================================================
 
 Les objectifs de cette étape du projets sont similaires aux précédents :
-permettre de décrire de façon programmatique un documents SVG. Néanmoins,
+permettre de décrire de façon programmatique un document SVG. Néanmoins,
 on souhaite désormais exploiter le support objet de Java pour incarner les
 différents concepts intervenant dans les documents (attributs, élements, 
 etc.).
