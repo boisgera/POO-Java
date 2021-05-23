@@ -45,10 +45,11 @@ ces constructeurs au constructeur de `Element` pour réutiliser le code déjà
 écrit.
 
 Testez votre code en affichant le contenu XML associé au document
-
 ```java
 XML xml = new SVG(new Rect(), new Circle());
 ```
+(créez une application `App` et une fonction `main` associée hébergeant ce
+code).
 
 ### Elements inconnus
 
@@ -59,7 +60,8 @@ de son erreur lorsqu'il écrira le code
 Element rect1 = new Element("rect1");
 ```
 Quel modification est-ce que vous pourriez faire à votre programme pour mieux
-prendre en compte cette situation ?
+prendre en compte cette situation ? Vérifiez que le code d'exemple que vous 
+avez écrit marche encore sans nécessiter de modification.
 
 ### Noeuds
 
