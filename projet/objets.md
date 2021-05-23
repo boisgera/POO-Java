@@ -11,7 +11,8 @@ etc.).
 
 Définir une interface XML qui permettra de distinguer les objets sachant se
 représenter (comme une chaîne de caractères) sous la forme de (fragment de)
-document XML. Cette interface déclare la méthode
+document XML comme les éléments ou les attributs d'un élément. 
+Cette interface déclare la méthode
 ```java
 public String toXML()
 ```
