@@ -58,7 +58,7 @@ Réfléchissez à l'implémentation de la classe `Text` qui correspond aux élé
 de type `text` en SVG. Est-ce que le constructeur de la classe `Element` est
 adapté ? On rappelle que contrairement à l'élément `svg` par exemple, les
 données "enfants" de `text` ne sont pas (nécessairement) des éléments, mais
-peuvent être du texte (sans balise).
+peuvent être du texte (sans balise), comme dans l'exemple `<text>SVG</text>`.
 
 Implémentez une class `Text` qui se déclare conforme à l'interface `XML` et dont
 le constructeur aura la forme
