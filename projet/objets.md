@@ -21,7 +21,7 @@ public String toXML()
 Les éléments XML (et donc SVG) sont les objets décrits par les balises
 ouvrantes et fermantes `<tag ...>`, `</tag>`, tels que `svg`, `rect`,
 `circle`, `text`, etc. Dans un premier temps on s'intéresse à la hiérarchie
-des éléments XML, et pas à leur attributs.
+des éléments XML uniquement, et pas à leur attributs.
 
 Définir une classe `Element` munie d'un constructeur
 ```java
@@ -40,7 +40,8 @@ qui seront des éléments, mais dont les fonctionnalités seront propres au type
 de l'élément considéré. Comment se traduit dans le paradigme objet de Java le
 fait que ces objets sont des éléments ? Implémentez ces trois classes et
 des constructeurs de signature adaptée dans chaque cas ; on fera appel dans
-ces constructeurs au constructeur de `Element`.
+ces constructeurs au constructeur de `Element` pour réutiliser le code déjà
+écrit.
 
 La liste des éléments SVG reconnus est disponible dans [la documentation SVG](https://developer.mozilla.org/fr/docs/Web/SVG/Element). Par exemple, il n'existe aucun élement
 appelé "rect1". Et pourtant à ce stade, rien ne va prévenir le développeur
