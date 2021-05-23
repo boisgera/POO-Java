@@ -90,7 +90,7 @@ public Text(String text)
 Testez votre code en affichant le contenu XML associé au document
 
 ```java
-XML xml = new SVG(new Rect(), new Circle(), new Text());
+XML xml = new SVG(new Rect(), new Circle(), new Text("SVG"));
 ```
 
 ## Attributs
