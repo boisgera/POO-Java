@@ -20,7 +20,7 @@ public String toXML()
 
 Les éléments XML (et donc SVG) sont les objets décrits par les balises
 ouvrantes et fermantes `<tag ...>`, `</tag>`, tels que `svg`, `rect`,
-`circle`, `text`. Dans un premier temps on s'intéresse à la hiérarchie
+`circle`, `text`, etc. Dans un premier temps on s'intéresse à la hiérarchie
 des éléments XML, et pas à leur attributs.
 
 Définir une classe `Element` munie d'un constructeur
