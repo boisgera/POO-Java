@@ -44,7 +44,7 @@ ces constructeurs au constructeur de `Element` pour réutiliser le code déjà
 écrit.
 
 La liste des éléments SVG reconnus est disponible dans [la documentation SVG](https://developer.mozilla.org/fr/docs/Web/SVG/Element). Par exemple, il n'existe aucun élement
-appelé "rect1". Et pourtant à ce stade, rien ne va prévenir le développeur
+appelé `rect1`. Et pourtant à ce stade, rien ne va prévenir le développeur
 de son erreur lorsqu'il écrira le code
 ```java
 Element rect1 = new Element("rect1");
