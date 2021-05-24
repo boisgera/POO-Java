@@ -220,11 +220,13 @@ public void setChildren(List<Node> children)
 
 Les objectifs :
 
-  - Il doit être impossible de changer le nom d'un élement après sa création
-    (pour que le type de la classe et son nom soient toujours en phase).
+  - Il doit être impossible de changer le nom d'un élement après sa création.
+    (Pourquoi ? Quel serait le risque ?)
 
-  - Les attributs d'un élément peuvent être changés (remplacés par une nouvelle 
-    collection d'attributs), mais doivent toujours rester conforme au type de l'élément.
+  - Les attributs d'un élément peuvent être changés 
+    mais doivent toujours rester conforme au type de l'élément.
+    (Mais cela est-il vraiment possible avec des instances d'`Attributes` 
+    qui sont immuables ?)
 
   - Un élément ne doit avoir d'enfants que si son type le permet (ou indiquer
     `null` comme liste d'enfants sinon). 
