@@ -206,6 +206,8 @@ vérifications.
 
 ## Retour aux élements
 
+### Accès controllés
+
 On souhaite pouvoir modifier le contenu des éléments composant le document SVG,
 mais de façon controllée, ce que l'on fera en introduisant des accesseurs
 au signatures suivantes
@@ -231,6 +233,7 @@ Les objectifs :
   - Un élément ne doit avoir d'enfants que si son type le permet (ou indiquer
     `null` comme liste d'enfants sinon). 
 
+### Indentation
 
 En exploitant ces accesseurs, développer une méthode 
 ```java
