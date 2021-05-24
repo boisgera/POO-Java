@@ -232,6 +232,14 @@ Les objectifs :
     `null` comme liste d'enfants sinon). 
 
 
+En exploitant ces accesseurs, développer une méthode 
+```java
+public void indent()
+```
+qui modifie l'élément concerné en ajoutant des noeuds de texte afin
+que `toXML()` génère une représentation du document avec une indentation
+adaptée pour le rendre plus lisible.
+
 
 
 
