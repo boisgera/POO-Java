@@ -242,7 +242,7 @@ public void indent()
 ```
 qui modifie l'élément concerné en ajoutant des noeuds de texte afin
 que `toXML()` génère une représentation du document avec une indentation
-adaptée pour le rendre plus lisible.
+adaptée, pour le rendre plus lisible.
 
 
 
