@@ -9,13 +9,13 @@ Projet Scalable Vector Graphics
 
  1. [🍼 Préambule](préambule.md)
 
- 2. [🚀 Documents SVG (procédural)](impératif.md)
+ 2. [🖌 Documents SVG (procédural)](impératif.md)
 
  3. 🚧 [☕ Objets Java : usage](objet-usage.md) 🚧
 
  4. [🎨 Couleurs SVG](couleurs.md)
 
- 5. 🚧 [🚀 Documents SVG (objet)](objets.md) 🚧
+ 5. 🚧 [🖌 Documents SVG (objet)](objets.md) 🚧
 
 ## Références
 

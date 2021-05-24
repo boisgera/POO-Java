@@ -95,31 +95,81 @@ XML xml = new SVG(new Rect(), new Circle(), new Text("SVG"));
 
 ## Attributs
 
-**TODO :**
+### Attributs génériques
 
-  - Ajout spécification d'attributs sachant se représenter comme XML à
-    `Element`. `Attributes` pourrait supporter les `String[][]` en entrée
-    et donc réutiliser le code déjà développé pour valider le tableau.
-    Récupérer aussi le code de builder `kv` à cette occasion (?).
+Définir une classe attributs comportant un constructeur acceptant 
+un tableau bidimensionnel `String[][]` qui décrivent une collection d'attributs
+[avec les conventions déjà exploitées dans la version procédurale](impératif.md).
 
-    Tester.
+Faire en sorte que le constructeur opère les sur le tableau les validations 
+élémentaires déjà considérées dans [la version procédurale](impératif.md).
 
-    `Attributs` à vocation, contrairement à `String[][]` à ne plus nécessiter
-    de validation! Produire un `String[][]` en sortie ? Histoire de réutiliser
-    le "vieux" code de représentation XML ?
+Pour que cette validation reste valable une fois faite, 
+on souhaite que les instance de la classe `Attributes` soient immuables : 
+une fois initialisée, une collection d'attributs doit être scellée ;
+il ne doit plus y avoir de moyen de changer son contenu.
 
-  - Idée de la spécialisation par type d'element des attributs considérés
-    valides (a priori juste le nom ? Mais le principe des valeurs serait
-    le même). C'est bien mais il faut aussi après s'assurer que les clés
-    valeurs ne puissent être modifiées, juste lues. Ou tout filtrer par
-    une tripotée d'accesseurs. Réfléchir en détail au "blindage".
+Symétriquement, faire en sorte qu'une instance de la classe `Attributes` puisse 
+être convertie en tableau de type `String[][]` au moyen d'une méthode `toArray`.
 
-    En gros, c'est immutabilité tout du long ou pas. Et si immutabilité,
-    implémentée avec ou sans accesseurs (intérêt de l'accesseur: ne pas
-    avoir à se prononcer sur les choix internes, par exemple de type conteneur,
-    de façon définitive). Noter qu'on peut aussi opter pour de l'immutabilité
-    publique et de la mutabilité pour les descendants et c'est sans doute ce
-    qui est le plus pratique pour développer la lib.
+Proposer ensuite un constructeur alternative acceptant un nombre arbitraires
+d'instances de la classe `Attributs` et qui construit la réunion de toutes
+ces collections.
+
+Pour finir, implémenter l'interface `XML` pour la classe `Attributes`.
+
+### Element
+
+Ajouter à `Element` un constructeur acceptant des attributs en plus
+des noeuds enfants. 
+Puis adapter en conséquence les constructeurs des types dérivés 
+pour lesquels c'est nécessaire.
+
+```java
+    String[][] svgAttributesArray = {
+      {"xmlns", "http://www.w3.org/2000/svg"},
+      {"version", "1.1"},
+      {"baseProfile", "full"},
+      {"width", "300"},
+      {"height", "200"},
+      {"viewbox", "0 0 300 200"}
+    };
+    Attributes svgAttributes = new SVGAttributes(svgAttributesArray);
+
+    String[][] rectangleAttributesArray = {
+      {"width", "100%"},
+      {"height", "100%"},
+      {"fill", "red"}
+    };
+    Attributes rectangleAttributes = new RectangleAttributes(rectangleAttributesArray);
+
+    String[][] circleAttributesArray = {
+      {"cx", "150"},
+      {"cy", "100"},
+      {"r", "80"},
+      {"fill", "green"}
+    };
+    Attributes circleAttributes = new CircleAttributes(circleAttributesArray);
+
+    String[][] textAttributesArray = {
+      {"x", "150"},
+      {"y", "125"},
+      {"font-size", "60"},
+      {"text-anchor", "middle"},
+      {"fill", "white"}
+    };
+    Attributes textAttributes = new TextAttributes(textAttributesArray);
+
+ SVG svg = new SVG(svgAttributes,
+        new Rectangle(rectangleAttributes),
+        new Circle(circleAttributes),
+        new Text(textAttributes, new TextNode("SVG"))
+    );
+```
+
+### Attributs spécialisés
+
+
 
   - Réfléchir à la mise en commun du code de validation en découpant les
     attributs par "famille" réutilisables à plusieurs endroits (telles que:
