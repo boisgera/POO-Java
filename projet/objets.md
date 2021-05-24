@@ -28,10 +28,11 @@ Définir une classe `Element` munie d'un constructeur
 ```java
 public class Element(String name, Element... children)
 ```
-Implémenter une fonction `toXML` conforme à l'interface `XML` et déclarer
-que `Element` implémente bien cette interface. Pour le moment, `Element`
-exposera ses attributs `name` et `children` sans restriction. Assurez-vous
-que quel que soit le scénario de construction d'un élément, 
+Implémenter une fonction `toXML` conforme à l'interface `XML` et faire en sorte
+que `Element` implémente bien cette interface (on ne se précoccupera
+pas de l'indentation). 
+`Element` exposera ses attributs `name` et `children` sans restriction. 
+Assurez-vous que quel que soit le scénario de construction d'un élément, 
 ces attributs sont bien définis (différents de `null`).
 
 ### Hiérarchie des élements
@@ -183,6 +184,11 @@ Définir des classes `SVGAttributes`, `RectangleAttributes`, `CircleAttributes`,
 adaptés. Changer les constructeurs de `SVG`, `Rectangle`, `Circle`
 et `Text` acceptant des attributs pour qu'ils n'acceptent plus que les attributs
 qui leur sont dédiés.
+
+Comme le code précédent est plus complexe à écrire quand les instance de la
+classe `Attributs` sont immuables, on adaptera cette classe pour qu'elle puisse
+être modifiée par les instances de ses classes dérivées, tout en restant en
+apparence immuable pour ses autres clients.
 
 ### Validation des nom des attributs
 
