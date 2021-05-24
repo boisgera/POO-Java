@@ -74,7 +74,7 @@ peuvent être du texte (sans balise), comme dans l'exemple de fragment XML
 
 Introduire pour résoudre cette difficulté un concept de `Node` dans votre 
 programme qui puisse désigner indifférement une instance de `Element` 
-ou de `Text` (classe qu'il nous faut encore implémenter) ;
+ou de `TextContent` (classe qu'il nous faut encore implémenter) ;
 est-ce qu'il vous semble préférable de faire de `Node` une interface ou
 une classe abstraite ?
 Faites votre choix, puis modifiez en conséquence le constructeur de `Element`.
@@ -125,6 +125,9 @@ des noeuds enfants.
 Puis adapter en conséquence les constructeurs des types dérivés 
 pour lesquels c'est nécessaire.
 
+Pour vérifier le comportement de votre code, instancier `svg` au moyen du 
+code, puis afficher la représentation `XML` correspondante.
+
 ```java
     String[][] svgAttributesArray = {
       {"xmlns", "http://www.w3.org/2000/svg"},
@@ -169,10 +172,31 @@ pour lesquels c'est nécessaire.
 
 ### Attributs spécialisés
 
+Le schéma précédent présent l'inconvénient de ne pas valider les attributs
+qui sont passés en arguments au différents constructeurs ; on pourrait ainsi
+par erreur passer le tableau contenant un attribut `text-anchor` au constructeur
+de `Rectangle`, ce qui n'a pas de sens ! On souhaiterait que ce type d'erreur
+ne passe pas inaperçue mais génère une exception.
+
+Définir des classes `SVGAttributes`, `RectangleAttributes`, `CircleAttributes`,
+`TextAttributes` dérivant de `Attributes` et leur fournir des constructeurs 
+adaptés. Changer les constructeurs de `SVG`, `Rectangle`, `Circle`
+et `Text` acceptant des attributs pour qu'ils n'acceptent plus que les attributs
+qui leur sont dédiés.
+
+### Validation des nom des attributs
+
+Définir pour chacune des classes spécialisant les attributs 
+un membre statique `keys` qui liste les nom des attributs admissibles pour
+ce type d'éléments. On pourra se reporter à [la référence des éléments SVG](https://developer.mozilla.org/fr/docs/Web/SVG/Element) et se limiter à un sous-ensemble pertinent
+des noms admissibles (qui sont très nombreux).
+
+Faire en sorte qu'à la construction d'une collection d'attributs spécialisée,
+une exception soit générée si elle possède des clés qui n'appartiennent pas
+à cette liste de référence.
+
+Adapter ensuite le code d'exemple initialisant `svg` pour bénéficier de ces
+vérifications.
 
 
-  - Réfléchir à la mise en commun du code de validation en découpant les
-    attributs par "famille" réutilisables à plusieurs endroits (telles que:
-    `Fill`, `Strike`, etc.). Faire de la validation de valeurs à cette occasion?
-    (par exemple en réutilisant la class `Color` ?)
 
