@@ -231,7 +231,8 @@ Les objectifs :
     qui sont immuables ?)
 
   - Un élément ne doit avoir d'enfants que si son type le permet (ou indiquer
-    `null` comme liste d'enfants sinon). 
+    `null` comme liste d'enfants sinon). Il ne doit pas être possible de changer 
+    la liste d'enfants d'un élément sans faire appel explicitement à `setChildren`.
 
 ### Indentation
 
