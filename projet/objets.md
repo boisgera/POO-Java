@@ -204,7 +204,7 @@ une exception soit générée si elle possède des clés qui n'appartiennent pas
 Adapter ensuite le code d'exemple initialisant `svg` pour bénéficier de ces
 vérifications.
 
-## Elements, nouvelle conception
+## Retour aux élements
 
 On souhaite pouvoir modifier le contenu des éléments composant le document SVG,
 mais de façon controllée, ce que l'on fera en introduisant des accesseurs
