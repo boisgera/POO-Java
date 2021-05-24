@@ -47,7 +47,7 @@ ces constructeurs au constructeur de `Element` pour réutiliser le code déjà
 
 Testez votre code en affichant le contenu XML associé au document
 ```java
-XML xml = new SVG(new Rect(), new Circle());
+SVG svg = new SVG(new Rect(), new Circle());
 ```
 (créez une application `App` et une fonction `main` associée hébergeant ce
 code).
@@ -91,7 +91,7 @@ public Text(String text)
 Testez votre code en affichant le contenu XML associé au document
 
 ```java
-XML xml = new SVG(new Rect(), new Circle(), new Text("SVG"));
+SVG svg = new SVG(new Rect(), new Circle(), new Text(new TextContent("SVG")));
 ```
 
 ## Attributs
@@ -203,6 +203,35 @@ une exception soit générée si elle possède des clés qui n'appartiennent pas
 
 Adapter ensuite le code d'exemple initialisant `svg` pour bénéficier de ces
 vérifications.
+
+## Elements, nouvelle conception
+
+On souhaite pouvoir modifier le contenu des éléments composant le document SVG,
+mais de façon controllée, ce que l'on fera en introduisant des accesseurs
+au signatures suivantes
+
+```java
+public String getName()
+public Attributes getAttributes()
+public void setAttributes(Attributes attributes)
+public List<Node> getChildren()
+public void setChildren(List<Node> children)
+```
+
+Les objectifs :
+
+  - Il doit être impossible de changer le nom d'un élement après sa création
+    (pour que le type de la classe et son nom soient toujours en phase).
+
+  - Les attributs d'un élément peuvent être changés (remplacés par une nouvelle 
+    collection d'attributs), mais doivent toujours rester conforme au type de l'élément.
+
+  - Un élément ne doit avoir d'enfants que si son type le permet (ou indiquer
+    `null` comme liste d'enfants sinon). 
+
+
+
+
 
 
 
