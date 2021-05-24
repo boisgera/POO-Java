@@ -15,7 +15,7 @@ Projet Scalable Vector Graphics
 
  4. [🎨 Couleurs SVG](couleurs.md)
 
- 5. 🚧 [🖌 Documents SVG (objet)](objets.md) 🚧
+ 5. [🖌 Documents SVG (objet)](objets.md)
 
 ## Références
 
