@@ -61,9 +61,9 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
 
 ### Documentation officielle (Oracle, en anglais) :
    
-      - [Java Development Kit (version 16)](https://docs.oracle.com/en/java/javase/16/),
+  - [Java Development Kit (version 16)](https://docs.oracle.com/en/java/javase/16/),
 
-      - [The Java tutorials](https://docs.oracle.com/javase/tutorial/).
+  - [The Java tutorials](https://docs.oracle.com/javase/tutorial/).
 
 
 ### Autres documentation (en français)
