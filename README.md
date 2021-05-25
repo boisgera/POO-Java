@@ -29,7 +29,7 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
   - [Java procédural](https://boisgera.github.io/POO-Java/Java-first-steps.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
 
-  - [Programmation Orientée Objet](https://boisgera.github.io/POO-Java/POO.html) ([📗 PDF](https://boisgera.github.io/POO-Java/POO.pdf))
+  - [Programmation orientée objet](https://boisgera.github.io/POO-Java/POO.html) ([📗 PDF](https://boisgera.github.io/POO-Java/POO.pdf))
 
   - [Java objet](https://boisgera.github.io/POO-Java/Java-avance.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
