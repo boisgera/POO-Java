@@ -10,7 +10,7 @@ Programmation Orientée Objet avec Java
  
 ## 🖥 Environnement de développement
 
-  - [Terminal (CLI)](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
+  - [Terminal (ligne de commande)](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
   ([📗 PDF](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.pdf))
 
   - [Repl.it](https://boisgera.github.io/POO-Java/Environnement.html) 
