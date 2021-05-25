@@ -27,8 +27,8 @@ Programmation Orientée Objet avec Java
   - [Java aujourd'hui](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
 
-  - [Déploiement](https://boisgera.github.io/POO-Java/Déploiement.html)
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Déploiement.pdf))
+  - [Compilation, Exécution, Archivage](https://boisgera.github.io/POO-Java/Compilation, Exécution, Archivage.html)
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Compilation, Exécution, Archivage.pdf))
 
   - [Extension Projet](https://boisgera.github.io/POO-Java/Projet.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Projet.pdf))
