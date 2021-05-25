@@ -7,7 +7,14 @@ Programmation orientée objet avec Java
 [![Run on Repl.it](https://img.shields.io/badge/Repl.it-open-blue.svg?logo=repl-dot-it&logoColor=white)](https://repl.it/github/boisgera/POO-Java)
 [![Chat on gitter](https://img.shields.io/badge/Gitter-chat-blue.svg?logo=gitter)](https://gitter.im/POO-Java/community#)
 
- 
+## 🧭 Contexte
+
+  - 🚧 Origine de Java 🚧
+
+  - [Java aujourd'hui](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
+
+
 
 ## 💡 Concepts et langage
 
@@ -18,13 +25,6 @@ Programmation orientée objet avec Java
 
   - [Java objet](https://boisgera.github.io/POO-Java/Java-avance.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
-
-## 🧭 Contexte
-
-  - 🚧 Origine de Java 🚧
-
-  - [Java aujourd'hui](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
 
 
 
