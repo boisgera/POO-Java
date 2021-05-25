@@ -48,11 +48,11 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
 
 ## 💻 Projet
 
-🖌 [Scalable Vector Graphics (SVG)](projet)
+  - 🖌 [Scalable Vector Graphics (SVG)](projet)
 
 ## 💬 Espace de discussion
 
-💬 [Gitter](https://gitter.im/POO-Java/community#) (login GitHub requis)
+  - 💬 [Gitter](https://gitter.im/POO-Java/community#) (login GitHub requis)
  
 
 ## Documentation externe
