@@ -10,25 +10,33 @@ Programmation Orientée Objet avec Java
 
 ## 📚 Programme & Documents 
  
-  - [Environnement de développement](https://boisgera.github.io/POO-Java/Environnement.html) 
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
+  - Environnement de développement:
 
-  - [Introduction à BlueJ](https://boisgera.github.io/POO-Java/BlueJ.html) 
-    ([📗 PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
+    - [Repl.it](https://boisgera.github.io/POO-Java/Environnement.html) 
+      ([📗 PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
 
-  - [Bases de la Programmation Orientée Objet](https://boisgera.github.io/POO-Java/POO.html) ([📗 PDF](https://boisgera.github.io/POO-Java/POO.pdf))
+    - [BlueJ](https://boisgera.github.io/POO-Java/BlueJ.html) 
+      ([📗 PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
 
-  - [Premiers pas en Java](https://boisgera.github.io/POO-Java/Java-first-steps.html)
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
-
-  - [Programmation Orientée Objet avancée en Java](https://boisgera.github.io/POO-Java/Java-avance.html)
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
-
-  - [Java aujourd'hui](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
-
-  - [Compilation, Exécution, Archivage](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
+    - [Compilation, Exécution, Archivage](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.pdf))
+
+  - Language:
+
+    - [Java impératif](https://boisgera.github.io/POO-Java/Java-first-steps.html)
+      ([📗 PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
+
+    - [Programmation Orientée Objet](https://boisgera.github.io/POO-Java/POO.html) ([📗 PDF](https://boisgera.github.io/POO-Java/POO.pdf))
+
+    - [Java objet](https://boisgera.github.io/POO-Java/Java-avance.html)
+      ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
+
+  - Général
+
+    - [Java : contexte](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
+      ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
+
+
 
 <!--
   - [Extension Projet](https://boisgera.github.io/POO-Java/Projet.html)
