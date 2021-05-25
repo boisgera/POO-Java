@@ -28,7 +28,7 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
 
 ### Concepts et Langage
 
-  - [Java impératif](https://boisgera.github.io/POO-Java/Java-first-steps.html)
+  - [Java procédural](https://boisgera.github.io/POO-Java/Java-first-steps.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
 
   - [Programmation Orientée Objet](https://boisgera.github.io/POO-Java/POO.html) ([📗 PDF](https://boisgera.github.io/POO-Java/POO.pdf))
