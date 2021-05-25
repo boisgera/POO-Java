@@ -66,7 +66,7 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
   - [The Java tutorials](https://docs.oracle.com/javase/tutorial/).
 
 
-### Autres documentation (en français)
+### Autre documentation (en français)
   
   - [Développons en Java (J.-M. Doudoux)](http://www.jmdoudoux.fr/java/dej/index.htm)
 ([📗 PDF](http://jmdoudoux.fr/java/dej/dej_2_20.pdf))
