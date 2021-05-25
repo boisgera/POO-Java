@@ -49,7 +49,7 @@ Programmation orientée objet avec Java
 
 Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans](https://netbeans.apache.org/), etc.
 
-## 🖥 Projet
+## 🏗 Projet
 
   - 🖌 [Scalable Vector Graphics (SVG)](projet)
 
