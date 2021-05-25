@@ -10,7 +10,7 @@ Programmation Orientée Objet avec Java
 
 ## 📚 Programme & Documents 
  
-### Environnement de développement:
+### Environnement de développement
 
   - [Terminal (CLI)](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
   ([📗 PDF](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.pdf))
@@ -21,22 +21,20 @@ Programmation Orientée Objet avec Java
   - [BlueJ](https://boisgera.github.io/POO-Java/BlueJ.html) 
     ([📗 PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
 
+### Concepts et Langage
 
+  - [Java impératif](https://boisgera.github.io/POO-Java/Java-first-steps.html)
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
 
-  - Language:
+  - [Programmation Orientée Objet](https://boisgera.github.io/POO-Java/POO.html) ([📗 PDF](https://boisgera.github.io/POO-Java/POO.pdf))
 
-    - [Java impératif](https://boisgera.github.io/POO-Java/Java-first-steps.html)
-      ([📗 PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
+  - [Java objet](https://boisgera.github.io/POO-Java/Java-avance.html)
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
 
-    - [Programmation Orientée Objet](https://boisgera.github.io/POO-Java/POO.html) ([📗 PDF](https://boisgera.github.io/POO-Java/POO.pdf))
+### Général
 
-    - [Java objet](https://boisgera.github.io/POO-Java/Java-avance.html)
-      ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
-
-  - Général
-
-    - [Java : contexte](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
-      ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
+  - [Java : contexte](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
 
 
 
