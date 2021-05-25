@@ -33,7 +33,7 @@ que `Element` implémente bien cette interface (on ne se précoccupera
 pas de l'indentation). 
 `Element` exposera ses attributs `name` et `children` sans restriction. 
 Assurez-vous que quel que soit le scénario de construction d'un élément, 
-ces attributs sont bien définis (différents de `null`).
+ces attributs sont bien définis.
 
 ### Hiérarchie des élements
 
@@ -98,7 +98,7 @@ SVG svg = new SVG(new Rect(), new Circle(), new Text(new TextContent("SVG")));
 
 ### Attributs génériques
 
-Définir une classe attributs comportant un constructeur acceptant 
+Définir une classe `Attributs` comportant un constructeur acceptant 
 un tableau bidimensionnel `String[][]` qui décrivent une collection d'attributs
 [avec les conventions déjà exploitées dans la version procédurale](impératif.md).
 
@@ -113,7 +113,7 @@ il ne doit plus y avoir de moyen de changer son contenu.
 Symétriquement, faire en sorte qu'une instance de la classe `Attributes` puisse 
 être convertie en tableau de type `String[][]` au moyen d'une méthode `toArray`.
 
-Proposer ensuite un constructeur alternative acceptant un nombre arbitraires
+Proposer ensuite un constructeur alternatif acceptant un nombre arbitraires
 d'instances de la classe `Attributs` et qui construit la réunion de toutes
 ces collections.
 
@@ -123,8 +123,9 @@ Pour finir, implémenter l'interface `XML` pour la classe `Attributes`.
 
 Ajouter à `Element` un constructeur acceptant des attributs en plus
 des noeuds enfants. 
-Puis adapter en conséquence les constructeurs des types dérivés 
-pour lesquels c'est nécessaire.
+Puis adapter en conséquence les constructeurs des types dérivés.
+Modifier l'implémentation de la méthode `toXML` des éléments pour prendre
+en compte la présence d'attributs.
 
 Pour vérifier le comportement de votre code, instancier `svg` au moyen du 
 code, puis afficher la représentation `XML` correspondante.
