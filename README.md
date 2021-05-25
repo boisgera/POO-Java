@@ -30,8 +30,10 @@ Programmation Orientée Objet avec Java
   - [Compilation, Exécution, Archivage](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.pdf))
 
+<!--
   - [Extension Projet](https://boisgera.github.io/POO-Java/Projet.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Projet.pdf))
+-->
 
 ## 💻 Projet
 
