@@ -8,21 +8,6 @@ Programmation orientée objet avec Java
 [![Chat on gitter](https://img.shields.io/badge/Gitter-chat-blue.svg?logo=gitter)](https://gitter.im/POO-Java/community#)
 
  
-## 🖥 Environnement de développement
-
-  - [Terminal (ligne de commande)](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
-  ([📗 PDF](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.pdf))
-
-  - [Repl.it](https://boisgera.github.io/POO-Java/Environnement.html) 
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
-
-  - [BlueJ](https://boisgera.github.io/POO-Java/BlueJ.html) 
-    ([📗 PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
-    ([télécharger BlueJ](https://www.bluej.org/))
-
-  - [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java))
-
-Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans](https://netbeans.apache.org/), etc.
 
 ## 💡 Concepts et langage
 
@@ -47,6 +32,23 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
   - [Extension Projet](https://boisgera.github.io/POO-Java/Projet.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Projet.pdf))
 -->
+
+
+## 🖥 Environnement de développement
+
+  - [Terminal (ligne de commande)](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
+  ([📗 PDF](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.pdf))
+
+  - [Repl.it](https://boisgera.github.io/POO-Java/Environnement.html) 
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
+
+  - [BlueJ](https://boisgera.github.io/POO-Java/BlueJ.html) 
+    ([📗 PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
+    ([télécharger BlueJ](https://www.bluej.org/))
+
+  - [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java))
+
+Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans](https://netbeans.apache.org/), etc.
 
 ## 💻 Projet
 
