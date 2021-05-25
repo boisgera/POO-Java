@@ -7,10 +7,8 @@ Programmation Orientée Objet avec Java
 [![Run on Repl.it](https://img.shields.io/badge/Repl.it-open-blue.svg?logo=repl-dot-it&logoColor=white)](https://repl.it/github/boisgera/POO-Java)
 [![Chat on gitter](https://img.shields.io/badge/Gitter-chat-blue.svg?logo=gitter)](https://gitter.im/POO-Java/community#)
 
-
-## 📚 Programme & Documents 
  
-### Environnement de développement
+## 🖥 Environnement de développement
 
   - [Terminal (CLI)](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
   ([📗 PDF](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.pdf))
@@ -26,7 +24,7 @@ Programmation Orientée Objet avec Java
 
 Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans](https://netbeans.apache.org/), etc.
 
-### Concepts et Langage
+## 📚 Concepts et Langage
 
   - [Java procédural](https://boisgera.github.io/POO-Java/Java-first-steps.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
@@ -36,7 +34,7 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
   - [Java objet](https://boisgera.github.io/POO-Java/Java-avance.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
 
-### Contexte
+## 🧭 Contexte
 
   - [Java aujourd'hui](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
