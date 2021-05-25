@@ -57,7 +57,7 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
   - 💬 [Gitter](https://gitter.im/POO-Java/community#) (login GitHub requis)
  
 
-## Documentation externe
+## 📚 Documentation externe
 
 ### Documentation officielle (Oracle, en anglais) :
    
