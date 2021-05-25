@@ -36,9 +36,9 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
   - [Java objet](https://boisgera.github.io/POO-Java/Java-avance.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
 
-### Général
+### Contexte
 
-  - [Java : contexte](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
+  - [Java aujourd'hui](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
 
 
