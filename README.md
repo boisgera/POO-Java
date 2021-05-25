@@ -20,7 +20,7 @@ Programmation Orientée Objet avec Java
 
   - [BlueJ](https://boisgera.github.io/POO-Java/BlueJ.html) 
     ([📗 PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
-    ([télécharger BlueJ]([BlueJ](https://www.bluej.org/)))
+    ([télécharger BlueJ](https://www.bluej.org/))
 
   - [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java))
 
