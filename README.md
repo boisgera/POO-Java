@@ -12,14 +12,16 @@ Programmation Orientée Objet avec Java
  
   - Environnement de développement:
 
+    - [Compilation, Exécution, Archivage](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.pdf))
+
     - [Repl.it](https://boisgera.github.io/POO-Java/Environnement.html) 
       ([📗 PDF](https://boisgera.github.io/POO-Java/Environnement.pdf))
 
     - [BlueJ](https://boisgera.github.io/POO-Java/BlueJ.html) 
       ([📗 PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
 
-    - [Compilation, Exécution, Archivage](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.html)
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Compilation-Exécution-Archivage.pdf))
+
 
   - Language:
 
