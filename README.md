@@ -20,6 +20,9 @@ Programmation Orientée Objet avec Java
 
   - [BlueJ](https://boisgera.github.io/POO-Java/BlueJ.html) 
     ([📗 PDF](https://boisgera.github.io/POO-Java/BlueJ.pdf))
+    ([télécharger BlueJ]([BlueJ](https://www.bluej.org/)))
+
+  - [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java))
 
 ### Concepts et Langage
 
@@ -70,11 +73,3 @@ Programmation Orientée Objet avec Java
 
   - ["Apprenez à programmer en Java"](http://user.oc-static.com/pdf/10601-apprenez-a-programmer-en-java.pdf)  par cysboy (PDF)
   
-
-### Environnements de développement
-
-  - En ligne : [repl.it](https://repl.it) ([documentation](https://docs.repl.it/))
-  
-  - Pour la phase d'apprentissage : [BlueJ](https://www.bluej.org/)
-
-  - Pour le développement de projets : [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java)).
