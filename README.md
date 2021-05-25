@@ -24,7 +24,7 @@ Programmation Orientée Objet avec Java
 
 Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans](https://netbeans.apache.org/), etc.
 
-## 📚 Concepts et Langage
+## 📚 Concepts et langage
 
   - [Java procédural](https://boisgera.github.io/POO-Java/Java-first-steps.html)
     ([📗 PDF](https://boisgera.github.io/POO-Java/Java-first-steps.pdf))
