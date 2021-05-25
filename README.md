@@ -24,7 +24,7 @@ Programmation Orientée Objet avec Java
 
   - [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java))
 
-  - Autres: [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans](https://netbeans.apache.org/), etc.
+Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans](https://netbeans.apache.org/), etc.
 
 ### Concepts et Langage
 
@@ -56,22 +56,20 @@ Programmation Orientée Objet avec Java
 
 💬 [Gitter](https://gitter.im/POO-Java/community#) (login GitHub requis)
  
-## Ressources Externes
 
-### Documentation 
+## Documentation externe
 
-  - Documentation officielle (Oracle, en anglais) :
+### Documentation officielle (Oracle, en anglais) :
    
       - [Java Development Kit (version 16)](https://docs.oracle.com/en/java/javase/16/),
 
       - [The Java tutorials](https://docs.oracle.com/javase/tutorial/).
 
 
-  - "Développons en Java" par J.-M. Doudoux (en français) :
+### Autres documentation (en français)
   
-    - [Lecture en ligne](http://www.jmdoudoux.fr/java/dej/index.htm), 
-    
-    - [Le livre (PDF)](http://jmdoudoux.fr/java/dej/dej_2_20.pdf).
+  - [Développons en Java (J.-M. Doudoux)](http://www.jmdoudoux.fr/java/dej/index.htm)
+([📗 PDF](http://jmdoudoux.fr/java/dej/dej_2_20.pdf))
 
-  - ["Apprenez à programmer en Java"](http://user.oc-static.com/pdf/10601-apprenez-a-programmer-en-java.pdf)  par cysboy (PDF)
+  - Apprenez à programmer en Java (cysboy) ([📗 PDF](http://user.oc-static.com/pdf/10601-apprenez-a-programmer-en-java.pdf))
   
