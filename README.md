@@ -45,11 +45,11 @@ Programmation Orientée Objet avec Java
 
 ## 💻 Projet
 
-  - 🖌 [Scalable Vector Graphics (SVG)](projet)
+🖌 [Scalable Vector Graphics (SVG)](projet)
 
 ## 💬 Espace de discussion
 
-  - 💬 [Gitter](https://gitter.im/POO-Java/community#) (login GitHub requis)
+💬 [Gitter](https://gitter.im/POO-Java/community#) (login GitHub requis)
  
 ## Ressources Externes
 
