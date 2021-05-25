@@ -24,6 +24,8 @@ Programmation Orientée Objet avec Java
 
   - [Visual Studio Code](https://code.visualstudio.com/) + [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) ([documentation](https://code.visualstudio.com/docs/languages/java))
 
+  - Autres: [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans](https://netbeans.apache.org/), etc.
+
 ### Concepts et Langage
 
   - [Java impératif](https://boisgera.github.io/POO-Java/Java-first-steps.html)
