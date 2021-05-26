@@ -11,8 +11,8 @@ Programmation orientée objet avec Java
 
   - 🚧 Origine de Java 🚧
 
-  - 🚧 [Java aujourd'hui](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf)) 🚧
+  - [Java aujourd'hui](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.html) 
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20aujourd'hui.pdf))
 
 
 ## 💡 Concepts et langage
