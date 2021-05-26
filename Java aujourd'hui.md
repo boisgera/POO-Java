@@ -73,61 +73,111 @@ Java est-il encore gratuit ?
     "If you stay up to date on news from the Java community, you may have heard that Oracle have changed their support model for Java.  
     Some news is even suggesting that we now have to pay to use Java – this is not true!"
 
-En 2020
+Versions
 --------------------------------------------------------------------------------
-
-  - **Java SE 14** publié en mars 2020,
-  
-  - **Java SE 15** prévu en septembre 2020,
 
   - ...
 
-  - **Java SE 8 (LTS)** supporté jusqu'en 2030 !
+  - **Java 14** publié en mars 2020,
+  
+  - **Java 15** publié en septembre 2020,
+
+  - **Java 16** publié en mars 2021,
+
+  - **Java 17** prévu en septembre 2021.
+
+--------------------------------------------------------------------------------  
+
+  - **Java 8**, (mars 2014) est une LTS (long term support) :
+    supporté jusqu'en 2030 !
+
+  - **Java 11** (sept. 2018) est une LTS, mais [Java 8 représente encore
+    75% des usages en 2020](https://www.jetbrains.com/lp/devecosystem-2020/java/).
+
+  - **Java 17** sera une LTS.
+
+AdoptOpenJDK
+--------------------------------------------------------------------------------
+
+  - 🔗 [AdoptOpenJDK](https://adoptopenjdk.net/index.html).
+
+  - Distribution builds :
+  
+    - Java OpenJDK 
+    
+    - VM Hotspot ou OpenJ9
+
+  - [AdoptOpenJDK rejoint la fondation Eclipse](https://blog.adoptopenjdk.net/2021/03/transition-to-eclipse-an-update/) (6 mars 2021).
+
+--------------------------------------------------------------------------------
+
+![](images/sdk-man-small-pattern.svg)
+
+
+SDKMAN
+--------------------------------------------------------------------------------
+
+Outil d'installation de distributions Java (Linux).
+
+  - Usage :
+
+        $ sdk install java 11.0.3.hs-adpt
+
+  - 11 fournisseurs différents (AdoptOpenJDK, Amazon, Azul, Microsoft, SAP, etc.) 
+
 
 Java Mobile
 ================================================================================
 
 --------------------------------------------------------------------------------
 
-  - Oubliez Java "Micro Edition" pour les mobiles ...
+Oubliez Java "Micro Edition" pour les mobiles ...
 
-  - Bienvenue à [Android](https://en.wikipedia.org/wiki/Android_(operating_system)) !
+--------------------------------------------------------------------------------
+
+Bienvenue à [Android](https://en.wikipedia.org/wiki/Android_(operating_system)) !
+
+
+![](images/android-logo.svg)
 
 Android "est du Java"
 --------------------------------------------------------------------------------
 
   - Basé initialement sur "Java-le-language" mais ...
 
+--------------------------------------------------------------------------------
+
   - [Kotlin est désormais le langage préféré de Google pour Android](https://techcrunch.com/2019/05/07/kotlin-is-now-googles-preferred-language-for-android-app-development/)
     (mai 2019).
 
-  - [Kotlin](https://kotlinlang.org/) (2011) "modernise" le langage Java;
-    il est également une option pour programmer avec des bibliothèques
-    Java sur le bureau ou le serveur.
 
-        fun main() {
-          println("Hello World")
-        }
 
 --------------------------------------------------------------------------------
 
-  - Android n'est pas basé sur la JVM (Java Virtual Machine, mais sur l'ART ([Android Runtime](https://en.wikipedia.org/wiki/Android_Runtime), et avant sur la [VM Dalvik](https://en.wikipedia.org/wiki/Dalvik_(software))); en particulier, le format de bytecode n'est pas compatible.
+  - Android n'est pas basé sur la JVM (Java Virtual Machine, mais sur l'ART ([Android Runtime](https://en.wikipedia.org/wiki/Android_Runtime), et avant sur la [VM Dalvik](https://en.wikipedia.org/wiki/Dalvik_(software))) ; en particulier, le format de bytecode n'est pas compatible.
 
 
   - les bibliothèques standards Android ne sont pas compatibles avec 
     les bibliothèques standards Java (ni Standard Edition, ni Mobile Edition).
 
 Oracle America, Inc. v. Google, Inc.
+================================================================================
+
 --------------------------------------------------------------------------------
 
-([sur Wikipedia](https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc.))
+  - A propos de l'usage de Java sur Android,
 
   - Google affirme que **les APIs de Java** (une partie de Java SE) 
     ne sont pas soumises au copyright.
 
+Historique sur [🔗 Wikipedia](https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc.)
+
+
+
+Les débuts
 --------------------------------------------------------------------------------
 
-  - En mai 2012 un premier jugement lui donne raison, mais ...
+  - en mai 2012 un premier jugement lui donne raison, mais ...
 
   - en mai 2014, le niveau fédéral révoque partiellement cette décision mais ...
 
@@ -138,22 +188,24 @@ Oracle America, Inc. v. Google, Inc.
 En 2020
 --------------------------------------------------------------------------------
 
-  - Appel auprès de la Cour Suprême des Etats-Unis,
+  - ⚖ Appel auprès de la Cour Suprême des Etats-Unis,
 
-  - Traitement repoussé à 2020-2021 (contexte COVID-19).
+  - 😷 Contexte COVID-19 : repoussé à 2021.
 
-
-Kotlin en 2020
+En 2021
 --------------------------------------------------------------------------------
 
-  - Kotlin 26eme popularité parmi les langages (Java 2nd) (TIOBE index mai 2020),
-    ... mais en très forte croissance (4eme croissance en 2020) !
+⚖ Décision de la cour suprême le 5 avril 2021 : 
 
-  - Langages les plus aimés : Rust, Typescript, Python, **Kotlin**, Go, Julia, ... 
-    (enquête Stack Overflow 2020). Les plus craints : VBA, Objective-C, Perl,
-    Assembly, C, PHP, Ruby, C++, **Java**, R, ...
+  - favorable à Google (6-2),
 
-  - Second language sur la JVM (popularité, enquête JVM annuelle).
+  - mais question du droit d'auteur en suspens.
+
+--------------------------------------------------------------------------------
+
+*Nous sommes parvenus à la conclusion que dans ce cas, où Google a réutilisé une interface utilisateur en ne prenant que ce qui était nécessaire pour permettre aux utilisateurs de mettre à profit le cumul de leurs talents, la copie par Google de l’interface de programmation (API) Sun Java représente un usage légitime de ce contenu sur le plan du droit.*
+
+(doctrine du "fair use")
 
 
 
@@ -204,7 +256,7 @@ Java Enterprise Edition
 
   - [**It’s Java just, not as we know it: Oracle-Jakarta name talks fail**](https://devclass.com/2019/05/07/java-eclipse-oracle-jakarta-name-talks-fail/)
 
-2020
+2020 & 2021
 --------------------------------------------------------------------------------
 
 Pas de changement majeur :
@@ -213,6 +265,143 @@ Pas de changement majeur :
 
   - Gouvernance du projet par la fondation Eclipse.
 
+Java Moderne
+================================================================================
+
+--------------------------------------------------------------------------------
+
+  - Il existe des langages plus récents que Java, 
+
+  - tirant profit des problèmes constatés avec Java,
+  
+  - interopérables avec Java (bibliothèques, runtimes).
+
+  - ... et le langage Java lui-même évolue.
+
+Java 16
+--------------------------------------------------------------------------------
+
+**Types `Record`** 
+
+Classes automatiquement dotées d'accesseurs,
+de constructeurs, de `equals`, `hashCode` et `toString`:
+
+```java
+record Color(int R, int G, int B) { }
+```
+
+--------------------------------------------------------------------------------
+
+**Pattern matching (`instanceof`)**
+
+```java
+if (item instanceOf String string) { 
+    String text = string; 
+}
+```
+
+--------------------------------------------------------------------------------
+
+**Blocs de texte**
+
+```java
+String text = """
+Plusieurs lignes !
+Et la possibilité d'utiliser 
+simplement les "quotes".
+""";
+```
+
+--------------------------------------------------------------------------------
+
+**`switch` comme expression**
+
+```java
+boolean isOn = switch (status) {
+  case ON -> true;
+  case OFF -> false;
+};
+```
+
+Antérieurement
+--------------------------------------------------------------------------------
+
+Quelques exemples :
+
+  - **Java 12 et 11.** Nouvelles méthodes pour `String` :  
+    `repeat`, `isBlank`, `strip`, `lines`, etc.
+
+  - **Java 10.** Inférence de type (variables locales) :
+    ```java
+    var length = str.length();
+    ```
+
+Popularité des langages
+--------------------------------------------------------------------------------
+
+Enquête Stack Overflow 2020.
+
+  - Langages les plus aimés : Rust, Typescript, Python, **Kotlin**, Go, Julia, ...  
+
+  - Langages les plus craints : VBA, Objective-C, Perl, Assembly, C, PHP, Ruby, C++, **Java**, R, ...
+
+Usage des langages
+--------------------------------------------------------------------------------
+
+ [Enquête JVM 2020](https://snyk.io/blog/kotlin-overtakes-scala-and-clojure-to-become-the-2nd-most-popular-language-on-the-jvm/)
+
+  1. Java
+
+  2. Kotlin
+
+  3. Clojure
+
+  4. Scala
+
+
+Kotlin (2011)
+--------------------------------------------------------------------------------
+
+  - Evolution de Java plutôt que révolution,
+
+  - Par JetBrains, l'entreprise derrière l'IDE IntelliJ IDEA,
+
+  - Interopérable avec Java sur le desktop, le serveur (JVM) et Android,
+
+  - Désormais langage préféré pour le développement Android (Google).
+
+
+Clojure (2007)
+--------------------------------------------------------------------------------
+
+[📖 Histoire de Clojure](https://clojure.org/about/history)
+
+Un langage fonctionnel et un dialecte de Lisp :
+```clojure
+(defn factorial [n]
+  (loop [cnt n, acc 1]
+    (if (zero? cnt)
+      acc
+      (recur (dec cnt) (* acc cnt)))))
+```
+
+
+
+Scala (2004)
+--------------------------------------------------------------------------------
+
+  - à la fois fonctionnel et orienté objet,
+
+  - conçu à École Polytechnique Fédérale de Lausanne (EPFL) (en Suisse),
+    notamment par [Martin Odersky](https://en.wikipedia.org/wiki/Martin_Odersky),
+
+  - language très (trop ?) riche : 
+  
+    - currying, immutabilité, évaluation tardive,
+    pattern matching, etc. 
+    
+    - types algébriques,
+    covariance et contravariance, types d'ordre supérieur, etc.
 
 <style>
 
