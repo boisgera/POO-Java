@@ -149,68 +149,71 @@ Exemple -- La classe `Point` (2D)
 <i class="fab fa-java" style="font-weight:normal;"></i> Champs (attributs)
 --------------------------------------------------------------------------------
 
-    class Point {
-      double x, y;
-      ...
-    }
+```java
+class Point {
+  double x, y;
+  ...
+}
+```
 
 <i class="fab fa-java" style="font-weight:normal;"></i> Constructeur
 --------------------------------------------------------------------------------
 
-    class Point {
-      ...
-      Point(double x, double y) {
-        this.x = x;
-        this.y = y;
-      }
-      ...
-    }
+```java
+class Point {
+  ...
+  Point(double x, double y) {
+    this.x = x;
+    this.y = y;
+  }
+  ...
+}
+```
 
 <i class="fab fa-java" style="font-weight:normal;"></i> Méthode
 --------------------------------------------------------------------------------
 
-    class Point {
-      ...
-      double distance() {
-        return Math.sqrt(x*x + y*y);
-      }
-    }
-
-<i class="fab fa-java" style="font-weight:normal;"></i> Exploitation (Boilerplate)
---------------------------------------------------------------------------------
-
-    class Main {
-        public static void main(String[] args) {
-            ...
-        }
-    }
+```java
+class Point {
+  ...
+  double distance() {
+    double x = this.x;
+    double y = this.y;
+    return Math.sqrt(x*x + y*y);
+  }
+}
+```
 
 <i class="fab fa-java" style="font-weight:normal;"></i> Instanciation
 --------------------------------------------------------------------------------
 
-    Point point = new Point(1.0, 2.0); 
-    System.out.println(point);
+```java
+Point point = new Point(1.0, 2.0); 
+```
 
 <i class="fab fa-java" style="font-weight:normal;"></i> Accès au champs
 --------------------------------------------------------------------------------
 
-    System.out.println(point.x);
-    System.out.println(point.y);
+Lecture :
+
+```java
+double x = point.x;
+double y = point.y;
+```
+
+Ecriture :
+
+```java
+point.x = 1.0;
+point.y = 2.0;
+```
 
 <i class="fab fa-java" style="font-weight:normal;"></i> Appel de méthode
 --------------------------------------------------------------------------------
 
-    double distance = point.distance();
-    System.out.println(distance);
-
-<i class="fab fa-java" style="font-weight:normal;"></i> Exécution
---------------------------------------------------------------------------------
-
-    $ ./run # javac *.java && java Main
-    Point@2f0e140b
-    1.0
-    2.0
-    2.23606797749979
+```java
+double distance = point.distance();
+```
 
 <i class="fab fa-java" style="font-weight:normal;"></i> Avec JShell (Java 9+)
 --------------------------------------------------------------------------------
@@ -236,11 +239,12 @@ Exemple -- La classe `Point` (2D)
 <i class="fab fa-java" style="font-weight:normal;"></i> / <i class="fab fa-python" style="font-weight:normal;"></i> Avec Jython
 --------------------------------------------------------------------------------
 
-    >>> import Point
-    >>> point = Point(1.0, 2.0)
-    >>> point.distance()
-    2.23606797749979
-
+```python
+>>> import Point
+>>> point = Point(1.0, 2.0)
+>>> point.distance()
+2.23606797749979
+```
 
 Les classes à travers les langages
 ================================================================================
@@ -282,7 +286,7 @@ Les classes à travers les langages
     irb> point = Point.new 1.0, 2.0
     => #<Point @x=1.0, @y=2.0>
     irb> point.x
-    NoMethodError: undefined method `x' for #<Point:0x00000001223ef8 @x=1.0, @y=2.0>
+    NoMethodError: undefined method 'x' for #<Point:0x00000001223ef8 @x=1.0, @y=2.0>
     irb> point.distance
     => 2.23606797749979
 
@@ -619,13 +623,13 @@ Références
 <i class="fab fa-java"></i> Interprétation en Java
 --------------------------------------------------------------------------------
 
-Interpréter `oldVal = dict.put(key, val)` comme :
+Interpréter `oldVal = map.put(key, val)` comme :
 
   - l'envoi du message `"put"`, 
 
-  - contenant les données `key` et `value` (*payload*),
+  - contenant les données `key` et `val` (*payload*),
 
-  - à l'objet `dict`,
+  - à l'objet `map`,
 
   - qui répond `oldValue`.
 
@@ -667,23 +671,27 @@ Bénéfices de l'Héritage
 Retour au `Point`
 --------------------------------------------------------------------------------
 
-    public class Point {
-      private double x;
-      private double y;
-      public Point(double x, double y) {
-        this.x = x;
-        this.y = y;
-      }
-      ...
-    }
+```java
+public class Point {
+  private double x;
+  private double y;
+  public Point(double x, double y) {
+    this.x = x;
+    this.y = y;
+  }
+  ...
+}
+```
 
 Affichage des points
 --------------------------------------------------------------------------------
 
 Le code
 
-    Point point = new Point(1.0, 2.0); 
-    System.out.println(point); 
+```java
+Point point = new Point(1.0, 2.0); 
+java.lang.System.out.println(point); 
+```
     
 affiche 
 
@@ -693,11 +701,13 @@ D'où cette fonctionnalité "gratuite" vient-elle ?
 
 --------------------------------------------------------------------------------
 
-Le code est équivalent à
+Le code précédent est équivalent à
 
-    Point point = new Point(1.0, 2.0);
-    String string = point.toString(); 
-    System.out.println(string);
+```java
+Point point = new Point(1.0, 2.0);
+String string = point.toString(); 
+java.lang.System.out.println(string);
+```
 
   - Tous les objets Java peuvent être convertis en une chaîne de caractères,
 
@@ -708,10 +718,12 @@ Le code est équivalent à
 `Object`
 --------------------------------------------------------------------------------
 
-    Object object = new Object();
-    String string = object.toString();
-    System.out.println(string)
-    --> java.lang.Object@2c7b84de
+```java
+Object object = new Object();
+String string = object.toString();
+java.lang.System.out.println(string)
+// --> java.lang.Object@2c7b84de
+```
 
 ([Documentation `Object`](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html).)
 
@@ -719,26 +731,27 @@ Toute classe dérive d'`Object`
 --------------------------------------------------------------------------------
 
 Notre classe `Point` aurait pu être définie comme
-
-    public class Point extends Object {
-      ...
-    }
-
-Le `extends Object` est implicite si votre classe n'utilise pas `extends`.
-
-    Point point = new Point(1.0, 2.0);
-    point instanceof Object // --> true
+```java
+public class Point extends Object {
+  ...
+}
+```
+(Le `extends Object` est implicite.)
+```java
+Point point = new Point(1.0, 2.0);
+point instanceof Object // --> true
+```
 
 --------------------------------------------------------------------------------
 
 Les instances de `Point` disposent donc gratuitement (*héritent*) des méthodes
 implémentées par `Object` :
 
-  - String toString()
+  - `String toString()`
 
-  - boolean equals(Object object)
+  - `boolean equals(Object object)`
 
-  - Object clone()
+  - `Object clone()`
 
   - ...
 
@@ -748,22 +761,27 @@ API : <https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>
 
 Dans `Object`, `toString` est implémentée comme
 
-    String toString() {
-      String className = this.getClass().getName();
-      String hexString = Integer.toHexString();
-      return className + "@" + hexString;
-    }
+```java
+String toString() {
+  String className = this.getClass().getName();
+  int hash = this.hashCode();
+  String hexString = Integer.toHexString(hash);
+  return className + "@" + hexString;
+}
+```
 
 Redéfinir `toString`
 --------------------------------------------------------------------------------
 
-    public class Point extends Object {
-      ...
-      public String toString() {
-        return "Point(" + x + ", " + y + ")";
-      }
-      ...
-    }
+```java
+public class Point extends Object {
+  ...
+  public String toString() {
+    return "Point(" + this.x + ", " + this.y + ")";
+  }
+  ...
+}
+```
 
 --------------------------------------------------------------------------------
 
@@ -788,25 +806,33 @@ Redéfinir `toString`
     effectivement exécutée, celle d'`Object` ou d'une classe dérivée
     (*liaison dynamique*).
 
+Méthodes Virtuelles
 --------------------------------------------------------------------------------
 
 Les méthodes Java sont *virtuelles* : à l'exécution, les appels de fonctions 
-sont déléguées aux classes dérivées quand les méthodes sont définies :
+sont déléguées aux classes dérivées quand les méthodes sont définies.
 
-    Point point = new Point(1.0, 2.0);
-    System.out.println(point);  // --> Point(1.0, 2.0)
+--------------------------------------------------------------------------------
 
-Equivalent à :
+```java
+Point point = new Point(1.0, 2.0);
+java.lang.System.out.println(point);  
+// --> Point(1.0, 2.0)
+```
 
-    Object point_as_object = point;
-    System.out.println(point_as_object); // --> Point(1.0, 2.0)
+est équivalent à
 
+```java
+Object pointAsObject = new Point(1.0, 2.0);
+java.lang.System.out.println(pointAsObject); 
+// --> Point(1.0, 2.0)
+```
 
 Contraintes liées à l'héritage
 --------------------------------------------------------------------------------
 
-Stricto sensu, Java ne permet pas l'héritage multiple : une seule classe parent. 
-Les hiérarchies de classes sont linéaires.
+Stricto sensu, Java ne permet pas l'héritage multiple : une seule classe parent
+est autorisée. Les hiérarchies de classes sont donc linéaires.
 
 Mais les **interfaces**, similaires aux classes par certains aspects,
 permettent de contourner cette limitation.
@@ -825,10 +851,10 @@ Par exemple, une classe implémentant l'interface
 
     // fichier XML.java
     interface XML {
-      public String toXMLString();
+      public String toXML();
     }
 
-s'engage à fournir une méthode `toXMLString` donnant la représentation de ses 
+s'engage à fournir une méthode `toXML` donnant la représentation de ses 
 instances comme chaîne de caractères XML.
 
 --------------------------------------------------------------------------------
@@ -836,12 +862,12 @@ instances comme chaîne de caractères XML.
 Le compilateur Java va vérifier que vous remplissez votre contrat : compiler
 
     public class Point implements XML { 
-      // sans la méthode toXMLSTring
+      // sans la méthode toXML
     }
 
 produit
 
-    error: Point is not abstract and does not override abstract method toXMLString() in XML
+    error: Point is not abstract and does not override abstract method toXML() in XML
 
 <i class="fas fa-exclamation-triangle"></i>
 --------------------------------------------------------------------------------
@@ -856,32 +882,38 @@ Attention au "contrat moral" qui peut venir en plus ;
 
 --------------------------------------------------------------------------------
 
-    public class Point implements XML {
-      ...
-      public String toXMLString() {
-        return "<Point " +
-               + "x='" + x + "' " 
-               + "y='" + y + "'" 
-               + "></Point>";
-      ...
-    }
+```java
+public class Point implements XML {
+  ...
+  public String toXML() {
+    return "<Point " +
+            + "x='" + x + "' " 
+            + "y='" + y + "'" 
+            + "></Point>";
+  ...
+}
+```
 
 --------------------------------------------------------------------------------
 
-    System.out.println(point.toXMLString()); 
-    //  --> <Point x='1.0' y='2.0'></Point>
+```java
+java.lang.System.out.println(point.toXML()); 
+//  --> <Point x='1.0' y='2.0'></Point>
+```
 
 Similarité des interfaces avec les classes
 --------------------------------------------------------------------------------
 
-  - **Hiérarchie** de classes et d'interface avec `extends` : 
-    deux hiérarchies parallèles.
+  - **Hiérarchie** de classes et d'interface similaires (on peut étendre
+    une interface en une autre interface). 
 
   - **Conversions** avec des mécanismes similaires :
 
-        Classe c = instanceClasseDerivée;
-        Interface i = instanceInterfaceDerivee
-        Interface j = instanceClasseImplementantInterface
+    ```java
+    Classe c = instanceClasseDerivee;
+    Interface i = instanceInterfaceDerivee;
+    Interface j = instanceClasseImplementantInterface
+    ```
 
 <i class="fas fa-exclamation-triangle"></i> Conversions
 --------------------------------------------------------------------------------
@@ -890,24 +922,30 @@ Si les **upcasts** peuvent être implicites, les **downcasts** doivent
 être explicites (du type général vers le type spécifique) et peuvent 
 échouer à l'exécution.
 
-    Object object =  "Hello world!";  
-    String string = (String) object; // OK
-    object = 1; // Integer
-    string = (String) object; // !!! erreur 
+```java
+Object object =  "Hello world!";  
+String string = (String) object; // OK
+object = 1; // Integer
+string = (String) object; // !!! erreur 
+```
 
-Différences et complémentarité
+<i class="fas fa-exclamation-triangle"></i> Instanciation
 --------------------------------------------------------------------------------
 
   - On n'instancie pas directement une interface :
 
-        Interface x = new Interface(); // non !
+    ```java
+    Interface x = new Interface(); // non !
+    ```
 
   - Il faut créer une classe qui implémente l'interface
 
-        class C implements Interface { ... }
-        Interface x = new C();
+    ```java
+    class C implements Interface { ... }
+    Interface x = new C();
+    ```
 
-Autres différences
+Différences avec les classes
 --------------------------------------------------------------------------------
 
   - déclaration de méthodes uniquement  
@@ -918,7 +956,7 @@ Autres différences
   - pas d'implémentation
     *(hors méthodes `default`)*
 
-  - héritage/implémentations d'interfaces multiples :
+  - héritage/implémentation d'interfaces multiples :
 
         interface I1 extends I2, I3 { ... }
         class C implements I2, I3 { ... }
@@ -928,27 +966,31 @@ Classe ou Interface ?
 
 --------------------------------------------------------------------------------
 
-Hériter de -- ou **étendre** -- `LinkedList`, **une classe**:
+Hériter de -- ou **étendre** -- `LinkedList`, **une classe** :
 
-    import java.util.LinkedList;
-    public class MyList extends LinkedList<Integer> {
-      public String toString() {
-          return "<" + super.toString() + ">";
-      }
-    }
+```java
+import java.util.LinkedList;
+public class MyList extends LinkedList<Integer> {
+  public String toString() {
+      return "<" + super.toString() + ">";
+  }
+}
+```
 
 Permet de réutiliser son implémentation.
 
 --------------------------------------------------------------------------------
 
-    class Main {
-      public static void main(String[] arg) {
-        MyList list = new MyList();
-        list.add(1);
-        list.add(2);
-        System.out.println(list);
-      }
-    }
+```java
+class Main {
+  public static void main(String[] arg) {
+    MyList list = new MyList();
+    list.add(1);
+    list.add(2);
+    java.lang.System.out.println(list);
+  }
+}
+```
 
 Exécution
 --------------------------------------------------------------------------------
@@ -959,22 +1001,26 @@ Exécution
 "Refactoring"
 --------------------------------------------------------------------------------
 
-    class Main {
-      public static void main(String[] arg) {
-        MyList list = new MyList();
-        Main.addOneTwo(list);
-      }
-    ...
+```java
+class Main {
+  public static void main(String[] arg) {
+    MyList list = new MyList();
+    Main.addOneTwo(list);
+  }
+...
+```
 
 --------------------------------------------------------------------------------
 
-    ...
-      public static void addOneTwo(MyList list) {
-        list.add(1);
-        list.add(2);
-        System.out.println(list);
-      }
-    }
+```java
+...
+  public static void addOneTwo(MyList list) {
+    list.add(1);
+    list.add(2);
+    java.lang.System.out.println(list);
+  }
+}
+```
 
 --------------------------------------------------------------------------------
 
@@ -998,20 +1044,22 @@ Alternative -- Interfaces
 
 --------------------------------------------------------------------------------
 
-    import java.util.List;
-    ...
-      public static void addOneTwo(List<Integer> list) {
-        list.add(1);
-        list.add(2);
-        System.out.println(list);
-      }
-    }
+```java
+import java.util.List;
+...
+  public static void addOneTwo(List<Integer> list) {
+    list.add(1);
+    list.add(2);
+    System.out.println(list);
+  }
+}
+```
 
 Polymorphisme
 --------------------------------------------------------------------------------
 
 Toutes les classes implémentant `List` sont désormais susceptibles d'utiliser
-`addOneTwo`:
+`addOneTwo` :
 
 `MyList`, `LinkedList<Integer>`, `Vector<Integer>`, etc.
 
@@ -1064,15 +1112,19 @@ Ma classe `List` (usage)
 Ma classe `List` (implementation)
 --------------------------------------------------------------------------------
 
-    class List(list):
-        def __repr__(self):
-            return "<" + super().__repr__() + ">"
+```python
+class List(list):
+    def __repr__(self):
+        return "<" + super().__repr__() + ">"
+```
 
 Polymorphisme
 --------------------------------------------------------------------------------
 
-    def display(item):
-        print("L'objet item est:" + repr(item))
+```python
+def display(item):
+    print("L'objet item est:" + repr(item))
+```
 
 (`repr` appelle la méthode `__repr__` de `item`)
 
@@ -1096,19 +1148,23 @@ Polymorphisme
 
 --------------------------------------------------------------------------------
 
-    >>> class NoRepr:
-    ...     pass
-    >>> nr = NoRepr()
-    >>> nr
-    <__main__.NoRepr object at 0x7f0a620cb588>
+```python
+>>> class NoRepr:
+...     pass
+>>> nr = NoRepr()
+>>> nr
+<__main__.NoRepr object at 0x7f0a620cb588>
+```
 
 --------------------------------------------------------------------------------
 
-    >>> class List(list):
-    ...     pass
-    >>> l = List()
-    >>> l
-    []
+```python
+>>> class List(list):
+...     pass
+>>> l = List()
+>>> l
+[]
+```
 
 
 <i class="fas fa-duck"></i> "Duck Typing"
@@ -1131,9 +1187,11 @@ Polymorphisme
 Alternatives à l'Héritage: Composition
 --------------------------------------------------------------------------------
 
-    class List:
-        def __init__(self, items):
-            self.l = list(items)
+```python
+class List:
+    def __init__(self, items):
+        self.l = list(items)
+```
 
 C'est **avoir** une liste (et non pas **être** une liste).
 
@@ -1142,15 +1200,16 @@ Délegation
 
 On peut "être une liste" sans hériter de `list`:
 
-    class List:
-        def __init__(self, items):
-            self.l = list(items)
-        def __repr__(self):
-            return self.l.__repr__()
-        def __iter__(self):
-            return self.l.__iter__()
-        ...
-
+```python
+class List:
+    def __init__(self, items):
+        self.l = list(items)
+    def __repr__(self):
+        return self.l.__repr__()
+    def __iter__(self):
+        return self.l.__iter__()
+    ...
+```
 
 <style>
 
