@@ -123,7 +123,7 @@ Outil d'installation de distributions Java (Linux).
 
         $ sdk install java 11.0.3.hs-adpt
 
-  - 11 fournisseurs différents (AdoptOpenJDK, Amazon, Azul, Microsoft, SAP, etc.) 
+  - 11 fournisseurs différents (AdoptOpenJDK, Amazon, Azul, [Microsoft](https://www.microsoft.com/openjdk), SAP, etc.) 
 
 
 Java Mobile
