@@ -102,18 +102,18 @@ produiront des attributs corrects par construction. Par exemple, implémentez
 une fonction 
 
 ```java
-static main String[][] kv(String[][] attributes, String key, String value)
+public static String[][] kv(String[][] attributes, String key, String value)
 ```
 
 qui renvoie le tableau d'attributs décrits dans `attributes`, augmenté d'une
 nouvelle paire clé-valeur à la fin. Puis profitez-en pour simplifier la vie de 
 l'utilisateur en développant les variantes
 ```java
-static main String[][] kv(String[][] attributes, String key, int value)
+public static String[][] kv(String[][] attributes, String key, int value)
 ```
 et 
 ```java
-static main String[][] kv(String[][] attributes, String key, double value)
+public static String[][] kv(String[][] attributes, String key, double value)
 ```
 qui permettront de spécifier directement des valeurs numériques.
 
