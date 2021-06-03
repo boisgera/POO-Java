@@ -93,7 +93,12 @@ qui permet d'afficher dans le terminal la "lecture à voix haute" du nombre. Par
 ```java
 readDouble(3.14);
 ```
-devra afficher `3 virgule 94`. 
+devra afficher `3 virgule 14`. 
+et
+```java
+readDouble(-3.14);
+```
+devra afficher `Moins 3 virgule 14`.
 
 Que se passe-t-il si j'appelle `readDouble(1_000_000d)`? Corriger l'implémentation de `readDouble` si le résultat n'est pas convaincant.
 
@@ -101,12 +106,6 @@ Enfin, on voudrait faire en sorte que le nombre de chiffres après la virgule so
 ```java
 public static void readDouble(Double x,int size)
 ```  
-Remarque : on ne cherchera pas à réaliser d'arrondi, il s'agit de lire les chiffres après la virgule tels qu'ils sont présentés. Ainsi 
-```java 
-readDouble(3.29,1);
-``` 
-doit afficher `3 virgule 2`
-
 Mettez à jour `readDouble` et faites en sorte que le fichier `main` réalise (entre autres) les appels suivants :
 ```java
 readDouble(3.,-2);
