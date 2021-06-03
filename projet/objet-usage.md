@@ -115,6 +115,15 @@ readDouble(1./3.,1);
 readDouble(1.4564e15,10);
 ```
 
+## Utilisation d'une liste
+On voudrait créer une fonction qui retourne la liste des diviseurs d'un entier, sous la forme d'un *container* analogue à un tableau. Créez la fonction
+```java
+public static ???? listDiv(int N)
+```
+qui permet de retourner la liste de tous les diviseurs du nombre `N`. Réalisez un appel de `listDiv` dans la fonction `main` et affichez le résultat dans le terminal. 
+
+
+
 
 TODO :
   - `Integer`, `Double`, `Boolean` etc. APIs, comme prolongement des types
