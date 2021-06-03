@@ -31,7 +31,7 @@ Changez la valeur des variables à 400 au lieu de 3. Quels sont les résultats d
 
 Tous les objets ont en fait une méthode nommée `equals` qui permet de tester l'égalité de deux objets. Reprenez `testInteger` pour que les tests précédents renvoient tous `true`.
 
-### Quelques méthodes de Integer (passer en première lecture)
+### Quelques méthodes de `Integer` (passer en première lecture)
 
 La classe `Integer` a un certain nombres de champs et méthodes dits `static`. Il s'agit soit de variables qui ne dépendent pas de l'instance, soit de **fonctions** également indépendantes de l'instance. On y accède directement grâce au nom de la classe puis un point :
 ```java
