@@ -116,11 +116,11 @@ readDouble(1.4564e15,10);
 ```
 
 ## Utilisation d'une liste
-On voudrait créer une fonction qui retourne la liste des diviseurs d'un entier, sous la forme d'un *container* analogue à un tableau. Créez la fonction
+On voudrait créer une fonction qui retourne la liste des diviseurs d'un entier, sous la forme d'un *container* dynamique (la taille n'est pas connue à l'avance). Créez la fonction
 ```java
-public static ???? listDiv(int N)
+public static List<Integer> listDiv(int N)
 ```
-qui permet de retourner la liste de tous les diviseurs du nombre `N`. Réalisez un appel de `listDiv` dans la fonction `main` et affichez le résultat dans le terminal. 
+qui permet de retourner la liste de tous les diviseurs du nombre `N`. Réalisez un appel de `listDiv` dans la fonction `main` et affichez le nombre de diviseurs et la liste dans le terminal. 
 
 ## La copie d'objets
 On propose dans ce dernier exercice d'étudier la copie d'objets. Nous allons utiliser les tableaux en guise d'exemple. 
