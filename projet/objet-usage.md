@@ -65,9 +65,7 @@ On vous donne un modèle de lettre dans le fichier [`lettre.txt`](./lettre.txt).
 ```java
 static void completeLetter(String name, boolean isFemale)
 ```
-qui permet d'enregistrer la lettre adressée au nom `name` sous le nom de fichier `lettre.txt`
-
-### Compléter le nom
+qui permet d'enregistrer la lettre adressée au nom `name` sous le nom de fichier `lettre.txt`. **N'oubliez pas de mettre à jour `main`**.
 
 On voudrait pouvoir spécifier le nom de fichier de modèle et faire en sorte que le nom de fichier final soit composé du nom du fichier de base, puis un "underscore" puis le nom de la personne, avec enfin l'extension `txt`. On supposera que les fichiers de modèles sont toujours stockés dans un fichier avec l'extension `.txt`. L'utilisateur pourra donner soit le nom complet avec extension, soit le nom sans extension. Mettez à jour `completeLetter` avec le prototype suivant :
 ```java
@@ -82,6 +80,8 @@ ou un appel de
 completeLetter("lettre.txt","Java",True);
 ```
 devront produire le même fichier `lettre_Java.txt`.
+
+
 
 TODO :
   - `Integer`, `Double`, `Boolean` etc. APIs, comme prolongement des types
