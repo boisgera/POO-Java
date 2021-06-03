@@ -122,17 +122,35 @@ public static ???? listDiv(int N)
 ```
 qui permet de retourner la liste de tous les diviseurs du nombre `N`. Réalisez un appel de `listDiv` dans la fonction `main` et affichez le résultat dans le terminal. 
 
+## La copie d'objets
+On propose dans ce dernier exercice d'étudier la copie d'objets. Nous allons utiliser les tableaux en guise d'exemple. 
+### Un tableau d'entiers
+Créez la fonction 
+```java
+public static void testArray()
+```
+qui réalise les opérations suivantes :
+  - Enregistrement du tableau `{1,2,3}` dans la variable `a1`
+  - Déclaration d'un tableau `a2`puis affectation de `a2`à `a1` (`a2=a1`)
+  - Affichage sur une ligne de `a1`, puis `a2` sur une autre ligne
+  - Modification du premier élément de `a1`
+  - Affichage sur une ligne de `a1`, puis `a2` sur une autre ligne
+puis réalisez l'appel de `testArray` dans la fonction `main`. Que se passe-t-il ?
 
+Certains objets ont en fait une méthode `clone` dont le but est de recopier l'objet. C'est effectivement le cas pour les tableaux Java. Reprenez le code de `testArray` pour que le résultat final soit cohérent.
 
+### Un tableau de tableaux
+Créez la fonction 
+```java
+public static void testArray2()
+```
+qui réalise les opérations suivantes :
+  - Enregistrement du tableau `{{1,2,3},{10,20},{100}}` dans la variable `a1`
+  - Déclaration d'un tableau `a2`puis affectation de `a2`à `a1` (de façon "propre")
+  - Modification de `a1[0][0]`
+  - Affichage de `a1[0][0]`, puis `a2[0][0]` 
+puis réalisez l'appel de `testArray` dans la fonction `main`. Que se passe-t-il ?
 
-TODO :
-  - `Integer`, `Double`, `Boolean` etc. APIs, comme prolongement des types
-    primitifs.
-  
-  - `String` API (`length`, `replace`, etc.),
+Essayez d'affecter **directement** le tableau `{30,40}` à la place de `{10,20}`dans `a1`, puis vérifiez que les éléments `10` et `20` sont bien présents au bon endroit dans `a2`. 
 
-  - `System.out` (`PrintStream`), plutôt que la fonction `print`
-
-  - Méthode usuelles : `toString`, `equals`, `clone`, etc.
-
-  - Listes, Maps (concrêtes et interfaces), etc.
+Pouvez-vous expliquer ce qu'il s'est passé lorsqu'on a modifié `a1[0][0]` ?
