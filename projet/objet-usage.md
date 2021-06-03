@@ -35,13 +35,13 @@ Tous les objets ont en fait une méthode nommée `equals` qui permet de tester l
 
 La classe `Integer` a un certain nombres de champs et méthodes dits `static`. Il s'agit soit de variables qui ne dépendent pas de l'instance, soit de **fonctions** également indépendantes de l'instance. On y accède directement grâce au nom de la classe puis un point :
 ```java
-  Integer.BYTES ; // Variable représentant le nombre d'octets pour représenter un int
+Integer.BYTES ; // Variable représentant le nombre d'octets pour représenter un int
 ```
 Compléter `testInteger` pour afficher les valeurs min et max représentables par les entiers.
 
 Enfin, les objets de type `Integer` ont également des méthodes non statiques. Il s'agit de méthodes qui *dépendent de l'objet créé*. Pour rappel, on les appelle avec le nom de l'objet suivi d'un point. Par exemple :
 ```java
-  a.doubeValue(); // Retourne une valeur de type double aussi proche que possible de a
+a.doubeValue(); // Retourne une valeur de type double aussi proche que possible de a
 ```
 L'une de ces méthodes permet par exemple de comparer deux entiers. Trouvez la méthode correspondante et affichez quelques résultats typiques d'usages (lorsque `a` et `b` sont égaux, lorsque `a>b`,...). 
 
@@ -83,7 +83,39 @@ devra produire le même fichier `lettre_Java.txt`.
 
 ### Découper un `String`
 
-Tous les objets viennent avec la méthode `toString()` 
+Tous les objets viennent avec la méthode `toString()` qui permet de représenter l'objet sous la forme d'une chaîne de caractères. C'est notamment cette méthode qui est appelée par `println` pour afficher un objet dans le terminal.
+
+On va s'intéresser ici à la représentation des `Double` : on voudrait séparer la partie qui vient avant la virgule de la partie qui vient après. Écrivez la fonction 
+```java
+public static void readDouble(Double x)
+```
+qui permet d'afficher dans le terminal la "lecture à voix haute" du nombre. Par exemple, un appel à 
+```java
+readDouble(3.14);
+```
+devra afficher `3 virgule 94`. 
+
+Que se passe-t-il si j'appelle `readDouble(1_000_000d)`? Corriger l'implémentation de `readDouble` si le résultat n'est pas convaincant.
+
+Enfin, on voudrait faire en sorte que le nombre de chiffres après la virgule soit connu à l'avance et passé en argument de `readDouble` (si l'argument est inférieur ou égal à zéro, il sera traité comme s'il valait 1). On veut que le prototype de `readDouble` soit désormais
+```java
+public static void readDouble(Double x,int size)
+```  
+Remarque : on ne cherchera pas à réaliser d'arrondi, il s'agit de lire les chiffres après la virgule tels qu'ils sont présentés. Ainsi 
+```java 
+readDouble(3.29,1);
+``` 
+doit afficher `3 virgule 2`
+
+Mettez à jour `readDouble` et faites en sorte que le fichier `main` réalise (entre autres) les appels suivants :
+```java
+readDouble(3.,-2);
+readDouble(3.,2);
+readDouble(3.14159,4);
+readDouble(1./3.,1);
+readDouble(1.4564e15,10);
+```
+
 
 TODO :
   - `Integer`, `Double`, `Boolean` etc. APIs, comme prolongement des types
