@@ -33,7 +33,7 @@ Tous les objets ont en fait une méthode nommée `equals` qui permet de tester l
 
 ### Quelques méthodes de Integer (passer en première lecture)
 
-La classe `Integer` a un certains nombres de champs et méthodes dits `static`. Il s'agit soit de variables qui ne dépendent pas de l'instance, soit de **fonctions** également indépendantes de l'instance. On y accède directement grâce au nom de la classe puis un point :
+La classe `Integer` a un certain nombres de champs et méthodes dits `static`. Il s'agit soit de variables qui ne dépendent pas de l'instance, soit de **fonctions** également indépendantes de l'instance. On y accède directement grâce au nom de la classe puis un point :
 ```java
   Integer.BYTES ; // Variable représentant le nombre d'octets pour représenter un int
 ```
@@ -81,7 +81,9 @@ completeLetter("lettre.txt","Java",True);
 ```
 devront produire le même fichier `lettre_Java.txt`.
 
+### Découper un `String`
 
+Tous les objets viennent avec la méthode `toString()` 
 
 TODO :
   - `Integer`, `Double`, `Boolean` etc. APIs, comme prolongement des types
