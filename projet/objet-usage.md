@@ -57,11 +57,31 @@ et y initialiser quelques `Double` (fini, infini et NaN). Trouvez les méthodes 
 
 ## API String
 
-L'objectif de cette partie est de prendre en main la classe [`String`](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/String.html) qui a de très nombreuses utilités.
+L'objectif de cette partie est de prendre en main la classe [`String`](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/String.html) qui a de très nombreuses utilités. La plupart des exercices suivants se nécessitent que peu de code si on s'appuie sur les bonnes méthodes de la classe `String`
 
-### Prise en main
+### La lettre à compléter
 
+On vous donne un modèle de lettre dans le fichier [`lettre.txt`](./lettre.txt). On voudrait pouvoir générer de manière automatique une lettre adressée à la bonne personne. Ajoutez une fonction dont le prototype est:
+```java
+static void completeLetter(String name, boolean isFemale)
+```
+qui permet d'enregistrer la lettre adressée au nom `name` sous le nom de fichier `lettre.txt`
 
+### Compléter le nom
+
+On voudrait pouvoir spécifier le nom de fichier de modèle et faire en sorte que le nom de fichier final soit composé du nom du fichier de base, puis un "underscore" puis le nom de la personne, avec enfin l'extension `txt`. On supposera que les fichiers de modèles sont toujours stockés dans un fichier avec l'extension `.txt`. L'utilisateur pourra donner soit le nom complet avec extension, soit le nom sans extension. Mettez à jour `completeLetter` avec le prototype suivant :
+```java
+static void completeLetter(String filename,String name, boolean isFemale)
+```
+Un appel de 
+```java
+completeLetter("lettre","Java",True);
+```
+ou un appel de 
+```java
+completeLetter("lettre.txt","Java",True);
+```
+devront produire le même fichier `lettre_Java.txt`.
 
 TODO :
   - `Integer`, `Double`, `Boolean` etc. APIs, comme prolongement des types

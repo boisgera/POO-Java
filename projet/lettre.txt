@@ -1,0 +1,7 @@
+Bonjour $MADAME_MONSIEUR$ $NOM$,
+
+Nous sommes contents que vous soyez bien arrivé$E$ à l'École Militaire et espérons que vous ne serez pas malheureu$X$ lors du cours de Java. 
+
+Bien cordialement,
+
+Les profs de Java 
