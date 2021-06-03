@@ -116,6 +116,11 @@ readDouble(1.4564e15,10);
 ```
 
 ## Utilisation d'une liste
+Pour cette partie, il faut réaliser l'import de `java.util` : rajoutez la ligne suivante dans l'en-tête de votre fichier :
+```java
+import java.util.*;
+```
+
 On voudrait créer une fonction qui retourne la liste des diviseurs d'un entier, sous la forme d'un *container* dynamique (la taille n'est pas connue à l'avance). Créez la fonction
 ```java
 public static List<Integer> listDiv(int N)
