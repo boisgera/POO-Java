@@ -17,7 +17,7 @@ Créer un fichier `tutorialObject.java` exécutable avec une fonction `main`qui 
 Il s'agit ici de prendre en main le type `Integer`, l'équivalent objet du type primitif `int`. On s'intéresse ici à 3 façons différentes d'initialiser un `Integer` :
   - Directement à l'aide d'un littéral
   - À l'aide de l'opérateur `new` (note : cette façon est dépréciée pour Java >9)
-  - À l'aide de la fonction `Integer.valueOf` (regarder dans la liste des méthodes de `Integer` ce que cette fonction fait)
+  - À l'aide de la fonction `Integer.valueOf` (regarder dans la liste des méthodes de [`Integer`](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/Integer.html) ce que cette fonction fait)
 
 Créez une fonction de signature
 ```java
@@ -43,9 +43,24 @@ Enfin, les objets de type `Integer` ont également des méthodes non statiques. 
 ```java
   a.doubeValue(); // Retourne une valeur de type double aussi proche que possible de a
 ```
-L'une de ces méthodes permet par exemple de comparer deux entiers. Trouvez la méthode correspondance et affichez quelques résultats typiques d'usages (lorsque `a` et `b` sont égaux, lorsque `a>b`,...). 
+L'une de ces méthodes permet par exemple de comparer deux entiers. Trouvez la méthode correspondante et affichez quelques résultats typiques d'usages (lorsque `a` et `b` sont égaux, lorsque `a>b`,...). 
 
 ### Découverte de Double
+
+La classe `Double` est quant à elle le pendant Objet du type primitif `double`. Par rapport aux variables de type entières, les variables `Double` peuvent prendre deux valeurs spéciales : l'infini (et -l'infini) et NaN (Not A Number). Un calcul sur les doubles donne l'infini si on divise une valeur positive par 0 ou si on arrive à une valeur trop grande à représenter. Not a number est retourné lorsque certains calculs ne peuvent être résolus (0/0, infini-infini par exemple).
+
+Créez une fonction de signature
+```java
+public static void testDouble()
+```
+et y initialiser quelques `Double` (fini, infini et NaN). Trouvez les méthodes permettant de tester si un double est infini ou NaN, puis faites en sorte que `testDouble` affiche les résultats dans le terminal (n'oubliez pas d'appeler `testDouble` dans `main` !)
+
+## API String
+
+L'objectif de cette partie est de prendre en main la classe [`String`](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/String.html) qui a de très nombreuses utilités.
+
+### Prise en main
+
 
 
 TODO :
