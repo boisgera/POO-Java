@@ -8,7 +8,7 @@ Par ailleurs, à partir de cette partie, on essayera de se détacher autant que 
 
 ## Préparation
 
-Créer un fichier `tutorialObject.java` exécutable avec une fonction `main`qui ne fait rien. 
+Créez un fichier `tutorialObject.java` exécutable avec une fonction `main`qui ne fait rien. 
 
 ## Les extensions des types primitifs 
 
@@ -45,7 +45,7 @@ a.doubeValue(); // Retourne une valeur de type double aussi proche que possible 
 ```
 L'une de ces méthodes permet par exemple de comparer deux entiers. Trouvez la méthode correspondante et affichez quelques résultats typiques d'usages (lorsque `a` et `b` sont égaux, lorsque `a>b`,...). 
 
-### Découverte de Double
+### Découverte de `Double`
 
 La classe `Double` est quant à elle le pendant Objet du type primitif `double`. Par rapport aux variables de type entières, les variables `Double` peuvent prendre deux valeurs spéciales : l'infini (et -l'infini) et NaN (Not A Number). Un calcul sur les doubles donne l'infini si on divise une valeur positive par 0 ou si on arrive à une valeur trop grande à représenter. Not a number est retourné lorsque certains calculs ne peuvent être résolus (0/0, infini-infini par exemple).
 
@@ -55,7 +55,7 @@ public static void testDouble()
 ```
 et y initialiser quelques `Double` (fini, infini et NaN). Trouvez les méthodes permettant de tester si un double est infini ou NaN, puis faites en sorte que `testDouble` affiche les résultats dans le terminal (n'oubliez pas d'appeler `testDouble` dans `main` !)
 
-## API String
+## API de `String`
 
 L'objectif de cette partie est de prendre en main la classe [`String`](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/String.html) qui a de très nombreuses utilités. La plupart des exercices suivants se nécessitent que peu de code si on s'appuie sur les bonnes méthodes de la classe `String`
 
@@ -128,7 +128,7 @@ public static List<Integer> listDiv(int N)
 qui permet de retourner la liste de tous les diviseurs du nombre `N`. Réalisez un appel de `listDiv` dans la fonction `main` et affichez le nombre de diviseurs et la liste dans le terminal. 
 
 ## La copie d'objets
-On propose dans ce dernier exercice d'étudier la copie d'objets. Nous allons utiliser les tableaux en guise d'exemple. 
+On propose dans ce dernier exercice d'étudier la copie d'objets. Nous allons utiliser les tableaux en guise de support. 
 ### Un tableau d'entiers
 Créez la fonction 
 ```java
@@ -142,7 +142,7 @@ qui réalise les opérations suivantes :
   - Affichage sur une ligne de `a1`, puis `a2` sur une autre ligne
 puis réalisez l'appel de `testArray` dans la fonction `main`. Que se passe-t-il ?
 
-Certains objets ont en fait une méthode `clone` dont le but est de recopier l'objet. C'est effectivement le cas pour les tableaux Java. Reprenez le code de `testArray` pour que le résultat final soit cohérent.
+**Certains objets** ont en fait une méthode `clone` dont le but est de recopier l'objet. C'est effectivement le cas pour les tableaux Java. Reprenez le code de `testArray` pour que le résultat final soit cohérent.
 
 ### Un tableau de tableaux
 Créez la fonction 
