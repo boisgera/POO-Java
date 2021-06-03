@@ -73,13 +73,13 @@ static void completeLetter(String filename,String name, boolean isFemale)
 ```
 Un appel de 
 ```java
-completeLetter("lettre","Java",True);
+completeLetter("lettre","Java",true);
 ```
 ou un appel de 
 ```java
-completeLetter("lettre.txt","Java",True);
+completeLetter("lettre.txt","Java",true);
 ```
-devront produire le même fichier `lettre_Java.txt`.
+devra produire le même fichier `lettre_Java.txt`.
 
 ### Découper un `String`
 
