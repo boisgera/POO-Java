@@ -817,8 +817,7 @@ public class Main {
   }
 }
 ```
-
-On n'a pas l'affichage voulu mais :
+Résultat dans le terminal :
 
     Exception in thread "main" java.lang.ArithmeticException: / by zero at Main.main(Main.java:3)
 
@@ -846,57 +845,65 @@ Comment traiter les exceptions ?
 -------------------
 
 Il faut essayer !
-
-    public class Main {
-      public static void main(String[] args) {
-          try{
-            System.out.println(1/0);
-          }catch(Exception e){
-            System.out.println("Ce n'est pas très bien !");
-          }
+```java
+public class Main {
+  public static void main(String[] args) {
+      try{
+        System.out.println(1/0);
+      }catch(Exception e){
+        System.out.println("Ce n'est pas très bien !");
       }
-    }
-
+  }
+}
+```
 ----------------
 
-    catch(Exception e)
+```java
+catch(Exception e)
+```
 
-  - **J'attrappe** l'exception **e** 
+  - **J'attrappe** l'exception **e** (de type **Exception**)
   
+  - Je peux alors réaliser un traitement spécifique adapté à la situation
+
+<!--
   - **Exception** est une classe Java. **e** est donc un objet avec des méthodes et attributs 
+-->
 
 -----------------
 
 Attraper une exception spécifique 
 
-    public class Main {
-      public static void main(String[] args) {
-          try{
-            System.out.println(1/0);
-          }catch(ArithmeticException e){
-            System.out.println("Ce n'est pas très bien !");
-          }
-      }
+```java
+public class Main {
+  public static void main(String[] args) {
+    try{
+      System.out.println(1/0);
+    }catch(ArithmeticException e){
+      System.out.println("Ce n'est pas très bien !");
     }
-
-On ne traite que les exceptions de type **ArithmeticException**
+  }
+}
+```
 
 ---------------
 
 Traiter plusieurs exceptions
 
-    public class Main {
-      public static void main(String[] args) {
-          try{
-            System.out.println(1/0);
-          }catch(ArithmeticException e){
-            System.out.println("C'est une exception arithm!");
-          }catch(Exception e){
-            System.out.println("C'est une autre exception !");
-          }
-      }
+```java
+public class Main {
+  public static void main(String[] args) {
+    try{
+      System.out.println(1/0);
+    }catch(ArithmeticException e){
+      System.out.println("C'est une exception arithm!");
+    }catch(Exception e){
+      System.out.println("C'est une autre exception !");
     }
-
+  }
+}
+```
+<!--
 --------------
 
 Deux méthodes intéressantes sur les exceptions 
@@ -906,6 +913,7 @@ Deux méthodes intéressantes sur les exceptions
 
   - *void* printStackTrace() : permet d'afficher la pile d'exécution 
 
+-->
 
 Le mot-clé "throws"
 --------------------
@@ -913,10 +921,11 @@ Le mot-clé "throws"
   - Par défaut, les exceptions sont vérifiées par le compilateur
 
   - Si votre méthode est susceptible de ne pas traiter un type d'exception et de le renvoyer, il faut en principe le déclarer dans la signature.
-
-        public static void main(String[] args) throws ArithmeticException {
-          System.out.println(1/0);
-        }
+```java
+public static void main(String[] args) throws ArithmeticException {
+  System.out.println(1/0);
+}
+```
         
 ------------------
 
@@ -931,14 +940,16 @@ Lever une exception
 
 Utiliser le mot clé **throw** 
 
-    public void printAge(int i){
-      if (i<0){
-        throw(new IllegalArgumentException("Age >0 !"))
-      }else{
-        System.out.println("Vous avez "+i+" ans !");
-      }
-    } 
-
+```java
+public void printAge(int i){
+  if (i<0){
+    throw(new IllegalArgumentException("Age >0 !"))
+  }else{
+    System.out.println("Vous avez "+i+" ans !");
+  }
+} 
+```
+<!--
 Créer une exception personnalisée
 -------------------
 
@@ -967,6 +978,7 @@ Créer une exception personnalisée
       }
     } 
 
+-->
 
 La structure d'une application Java
 =====================================
@@ -975,9 +987,11 @@ La structure d'une application Java
 La fonction Main
 ---------------------------
 
-Il est possible "d'exécuter" une classe si et seulement si celle-ci contient une fonction **main** dont la signature est la suivante :
+Il est possible "d'exécuter" un fichier *.java* si et seulement si celui-ci contient une fonction **main** dont la signature est la suivante :
 
-    public static void main(String[] args) ;
+```java
+public static void main(String[] args) ;
+```
 
 <!---
 Retour sur le tutoriel BlueJ (slide précédente)
@@ -993,16 +1007,27 @@ Retour sur le tutoriel BlueJ (slide précédente)
 ---->
 
 
-
+<!--
 -------------------------
 
-  - **public** : la méthode est publique (peut être appelée depuis une autre classe)
+  - **public ** : la méthode est publique (peut être appelée depuis une autre classe)
 
   - **static** : la méthode est statique. C'est une méthode de classe qui ne nécessite pas d'instance de l'objet.
 
   - **void** : la méthode ne retourne rien. 
 
   - **String[] args** : l'argument de main est un tableau de String.
+
+-->
+
+-------------------------
+
+  - **public static** : nécessaire pour les fonctions 
+
+  - **void** : la fonction ne retourne rien. 
+
+  - **String[] args** : l'argument de main est un tableau de String.
+
 
 
 Pourquoi String[] args?
@@ -1034,10 +1059,12 @@ Récupérer les arguments
   
     - args[1] = "*.java"
 
+<!--
 Règle d'usage pour Main
 --------------------------
 
 En général, il est préférable de définir une classe particulière qui contient le Main. Il est rarement approprié de définir cette fonction dans une classe normale. 
+-->
 
 Pour exécuter
 ------------------------
