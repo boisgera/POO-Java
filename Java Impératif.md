@@ -459,10 +459,14 @@ joiijiiji
   - Reste de la division entière **\%**
 
   - ijiiji
-  ```java
-  int i = 11 % 3 ; // i vaut 2
-  ```
-
+    ```java
+    int i = 11 % 3 ; // i vaut 2
+    ```
+    
+  - ijiiji
+    ```java
+    int i = 11 % 3 ; // i vaut 2
+    ```
 
 Tests et logique booléenne
 -------------------------------
