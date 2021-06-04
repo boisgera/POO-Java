@@ -91,7 +91,7 @@ Définition d'une fonction
 ---------------------------
 
 ```java
-System.out.println(Message.content)
+      System.out.println("Hello, World!");
 ```
 
   - `System.out.println` : instruction pour afficher quelque chose dans le terminal
@@ -111,7 +111,6 @@ Qui peut s'étendre sur plusieurs lignes
 */
 Instruction_suivante ;
 ```
-
   - Se termine toujours par un point-virgule 
 
   - Les commentaires sont avec les symboles `//` (commentaire simple) ou `/* ...*/` (bloc)
@@ -122,9 +121,9 @@ Les types Java
 
 Types de base
 --------------------------------------
-Java est un langage fortement typé. Presque tous les types sont objets.
+Java est un langage fortement typé. 
 
-À l'exception de 8 types de base : 
+8 types de base : 
 
 
   - **byte**, **short**, **int**, **long**
@@ -186,36 +185,41 @@ int hexVal = 0x1a;
 int binVal = 0b11010;
 ```
 
-Les flottants
+Les nombres flottants
 -----------------------------------
 
   - **float** : Nombres flottants simple précision codés sur 32 bits 
+
   - **double** : Nombres flottants double précision codés sur 64 bits.
 
 Exemples :
 
-    double a = 1 ; 
-    double b = 1.0 ;
-    double c = 1.3e3 ;
+```java
+double a = 1 ; 
+double b = 1.0 ;
+double c = 1.3e3 ;
+```
 
 Attention aux expressions littérales 
 -----------------------------------
-À tester dans BlueJ...
 
-    double a = 3 ;
-    double b = 2 ;
-    double c = a/b ;
+```java
+double a = 3 ;
+double b = 2 ;
+double c = a/b ;
 
-    double d = 3/2 ; // Que se passe-t-il ?
+double d = 3/2 ; // --> Renvoie 1 !!!
+```
 
-<!-----
 Les booléens
 -----------------------------------
 
   - **boolean** : ne peut valoir que **true** or **false**
 
+  - À utiliser dans les tests logiques
+
   - "*Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.*"
------->
+
 
 Les caractères
 -----------------------------------
@@ -224,14 +228,36 @@ Les caractères
 
   - Va de *\\u0000* à *\\uFFFF* 
 
-  Exemple : 
+Exemple : 
+  
+```java
+  char a = 0 ; 
+  char capitalC = 'C' ;
+  (int)capitalC ; // Conversion de capitalC en entier (code unicode)
+```
 
-      char a = 0 ; 
-      char capitalC = 'C' ;
-      (int)capitalC  // Conversion de capitalC en entier (code unicode)
 
+Échapper un symbole
+---------------------------
+
+  - Peut-on utiliser les caractères `"` et `'` ?
+
+  - Les *échapper* avec un backslash `\`
+
+  - Un caractère utile : le retour à la ligne `\n`
+
+```java
+char guillemet = '\"' ;
+char apostrophe = '\'';
+char backslash = '\\' ;
+char retourLigne = '\n';
+```
+
+
+<!-- 
 Les objets
 -----------------------------------
+
 
   - Tous les autres types sont des objets
 
@@ -256,6 +282,8 @@ Il s'agit des classes **Byte**, **Short**, **Integer**, **Long**, **Float**, **D
 
   - Ex. : [doc Java Integer](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html)
 
+-->
+
 
 <!--------
 Exercice 
@@ -266,54 +294,72 @@ Exercice
   - Trouver la méthode permettant de réaliser cette opération.
 -->
 
+
 Les tableaux 
 --------------------
 
-Les tableaux (**array**) permettent de stocker un nombre **connu** d'objets en mémoire. Ils peuvent être de n'importe quel type.
+Les tableaux (**array**) permettent de stocker un nombre **connu** d'objets en mémoire. 
+
+Ils peuvent être de n'importe quel type.
+
+   - `int[]`
+
+   - `double[]`
+
+   - `char[]`
+
+   - ...
+
+---------------
 
  Déclaration :
 
-    TYPE[] tableau ; // TYPE peut être n'importe quoi (int, double ou une classe)
+```java
+int[] tableau ; // Déclaration d'un tableau d'entiers
+```
 
-Initialisation :
+Initialisation avec le mot-clé `new`
+ 
+```java
+tableau = new int[N] ; // N est un entier
+```
 
-    tableau = new TYPE[N] ; // N est un entier
-
-Accès : 
-
+Accès : avec l'opérateur [] 
+```java
     tableau[i] ; // i < N
-
+```
 ---------------------------- 
 
 Une autre façon d'initialiser un tableau lorsqu'on connaît les éléments : 
 
-    int[] tableauInt= {3,4,5,6} ;
+```java
+int[] tableau2= {3,4,5,6} ;
+```
 
 Les tableaux peuvent être modifiés directement :
 
-    tableauInt[0] = 0 ;
-
+```java
+tableau2[0] = 0 ; // tableau2 vaut donc {0,4,5,6}
+```
 ----------------------------
 
 Comment connaître la taille d'un tableau ?
 
   - Rappel : le type d'un tableau d'entier est int[] : la taille n'est pas mentionnée. 
 
-  - **length** : attribut qui stocke la longueur du tableau. Accessible de façon publique. Il s'agit d'une valeur immuable pour un tableau.
-  
-        System.out.println(tableauInt.length) ; // afficher la taille dans le terminal
+  - **.length** après le nom du tableau
 
+```java  
+  int N = tableau.length ; 
+```
 ------------------------
 
 Il est possible de créer des tableaux sur plusieurs dimensions. Il s'agit alors d'un tableau de tableau.
 
-    int[][] tableau2dim = {{1 , 2 , 3},{4 , 5 , 6}} ;
-
-Accès aux dimensions :
-
-  - Première dimension **tableau2dim.length**?
-
-  - Deuxième dimension **tableau2dim[1][0]** ?
+```java
+    int[][] tab1 = {{1 , 2 , 3},{4 , 5 , 6}} ;
+    int[][] tab2 = {{1,2,3}, {4,5}}; // On a toujours un tableau de int[]
+```
 
     
 La classe **String**
@@ -321,20 +367,29 @@ La classe **String**
 
 La classe **String** permet de manipuler les chaînes de caractère.
 
+```java
     String chaine = "Hello World"; // Déclaration et initialisation
+```
 
 ------------------
 
-Méthodes utiles...
+Deux opérations utiles...
 
-  - *int* **length**() : donne la longueur de la chaîne
+  - **length**() : donne la longueur de la chaîne
 
-  - *char* **charAt**(*int* i) : retourne la caractère à l'emplacement i 
-
-  - *String* **concat**(*String* str) : retourne une **nouvelle** chaîne correspondant à la concaténation de l'instance en cours et de l'argument str.
+```java
+  String s1 = "Hello"
+  int N = s1.length(); // Une syntaxe un peu étrange
+```
 
   - Opérateur **+** : permet de concaténer deux chaînes 
 
+```java
+  String s2 = " World";
+  System.out.print(s1+s2); // Affiche Hello World
+```
+
+<!--
 ------------------
 
 Les chaînes de caractères Java sont immuables :
@@ -357,6 +412,8 @@ Exemples
     String s3 = s1 + " World " ;  // Hello World
   
     String s4 =  " World ".replace("Wor","Bo") ; // Bold
+
+-->
 
 Les instructions de base en Java
 ===========================
