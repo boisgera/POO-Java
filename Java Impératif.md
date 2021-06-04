@@ -377,17 +377,17 @@ Deux opérations utiles...
 
   - **length**() : donne la longueur de la chaîne
 
-```java
-  String s1 = "Hello"
-  int N = s1.length(); // Une syntaxe un peu étrange
-```
+    ```java
+      String s1 = "Hello"
+      int N = s1.length(); // Une syntaxe un peu étrange
+    ```
 
-  - Opérateur **+** : permet de concaténer deux chaînes 
+  - Opérateur **+** : permet de concaténer deux chaînes
 
-```java
-  String s2 = " World";
-  System.out.print(s1+s2); // Affiche Hello World
-```
+    ```java
+    String s2 = " World";
+    System.out.print(s1+s2); // Affiche Hello World
+    ```
 
 <!--
 ------------------
@@ -421,23 +421,25 @@ Les instructions de base en Java
 Déclaration / Affectation
 -------------------------
 
-Déclaration : fournir le nom du type et de la variable
+  - Déclaration : fournir le nom du type et de la variable
 
-```java
-int  i ;
-```
-Affectation : avec le signe **=** 
+    ```java
+    int  i ;
+    ```
 
-```java
+  - Affectation : avec le signe **=** 
+
+    ```java
     i = 1 ;
-```
+    ```
+
 ---------
 
+  - Combinaison déclaration/affectation  :
+    ```java
+    int j = 2 ;
+    ```
 
-Combinaison déclaration/affectation  :
-```java
-int j = 2 ;
-```
 Opérations mathématiques 
 --------------------------
 
@@ -454,63 +456,60 @@ i *= 3 ; // Équivalent à i = i*3 ;
 
 ----------------------
 
-joiijiiji
+Reste de la division entière **\%**
 
-  - Reste de la division entière **\%**
-
-  - ijiiji
-    ```java
-    int i = 11 % 3 ; // i vaut 2
-    ```
+```java
+int i = 11 % 3 ; // i vaut 2
+```
     
-  - ijiiji
-    ```java
-    int i = 11 % 3 ; // i vaut 2
-    ```
 
 Tests et logique booléenne
 -------------------------------
 
-Test d'égalité **==** ou de non égalité **!=**
-```java
-        if (i==3){
-          // Instructions si i vaut 3
-        }else{
-          // Instructions sinon
-        }
-```
-Tests comparatifs **<=**, **<**, **>=** et **>**
-```java
-        if (i>=3) ...
-```
+  - Test d'égalité **==** ou de non égalité **!=** ~~~~~     
+    ```java
+    if (i==3){
+      // Instructions si i vaut 3
+    }else{
+      // Instructions sinon
+    }
+    ```
+  - Tests comparatifs **<=**, **<**, **>=** et **>**
+    ```java
+    if (i>=3) ...
+    ```
 
 ---------------- 
 
-Opération de négation **!** 
-```java
-boolean b = !true ; // b = false donc...
-boolean b2 = i!=3 ; // b2 = true ou false en fonction du test
-```
+  - Opération de négation **!**  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+    ```java
+    boolean b = !true ; // b = false donc...
+    boolean b2 = i!=3 ; 
+    //b2 = true ou false en fonction du test
+    ```
 
-Le ET et OU logique : **&&** et **||**
-```java
-boolean b = true && false ; // false !
-```
+  - Le ET et OU logique : **&&** et **||**
+    ```java
+    boolean b = true && false ; // false !
+    boolean b = true || false ; // true !
+    ```
 
-Opérateur ternaire ?
+Opérateur ternaire " ? "
 ----------------------
 
 Si la condition vaut **true**, alors on retourne val1, sinon on retourne val2.
-
-    condition ? val1 : val2 ;
+```java
+condition ? val1 : val2 ;
+````
 
 Exemple
+```java
+int note = 15 ;
+char grade = (note >= 16) ? 'A':'B'; 
+```
 
-    int note = 15 ;
-    char grade = (note >= 16) ? 'A':'B'; 
 
-<!-----
-Excercice
+Exemple
 ------------------------
 
 Écrire en **une instruction** une fonction qui prend en entrée une note entre 0 et 20 et qui renvoie la lettre associée (**char**) en fonction de la répartition suivante :
@@ -520,7 +519,22 @@ Excercice
   - ]14 , 11] : C  \ \ \ \ \ \ \ \   ]11, 8]   : D
 
   - ]8 , 5]   : E  \ \ \ \ \ \ \ \ \ \ \ \ \  ]5, 0]    : F
--->
+
+Exemple
+------------------------
+
+Écrire en **une instruction** une fonction qui prend en entrée une note entre 0 et 20 et qui renvoie la lettre associée (**char**) en fonction de la répartition suivante :
+
+  - [20 , 15] : A  \ \ \ \ \ \ \ \    ]15 , 10] : B
+
+  - ]10 , 5] : C  \ \ \ \ \ \ \ \   ]5, 0]   : D
+
+
+```java
+int n = 7 ; // La note en chiffre
+char l = n>=15 ? 'A':n>=10 ? 'B':n>= 5 ? 'C':'D';
+```
+
 
 
 Le Contrôle de Flux en Java
