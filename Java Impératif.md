@@ -421,19 +421,23 @@ Les instructions de base en Java
 Déclaration / Affectation
 -------------------------
 
-  - Déclaration : fournir le nom du type et de la variable
+Déclaration : fournir le nom du type et de la variable
 
-        String s ;
+```java
+int  i ;
+```
+Affectation : avec le signe **=** 
 
-  - Affectation : avec le signe **=** 
+```java
+    i = 1 ;
+```
+---------
 
-        s = "Hello" ;
-        s = new String("Hello"); // Création de l'objet String avec new
 
-  - Combinaison déclaration/affectation  :
-
-        String s = "Hello";
-
+Combinaison déclaration/affectation  :
+```java
+int j = 2 ;
+```
 Opérations mathématiques 
 --------------------------
 
@@ -441,33 +445,53 @@ Opérations mathématiques
 
   
   - Opérations d'incrémentation/décrémentation  **++/-\-**
+```java
+i ++ ; // Équivalent à i = i + 1 ;
+i -- ; // Équivalent à i = i-1 ;
+i += 3 ; // Équivalent à i = i + 3 ;
+i *= 3 ; // Équivalent à i = i*3 ;
+```  
 
-        i ++ ; // Comparer avec ++ i ;
-  
+----------------------
+
+joiijiiji
+
   - Reste de la division entière **\%**
 
-        int i = 11 % 3 ; // i vaut 2
-  
+  - ijiiji
+  ```java
+  int i = 11 % 3 ; // i vaut 2
+  ```
 
 
 Tests et logique booléenne
 -------------------------------
-  - Test d'égalité **==** ou de non égalité **!=**
 
-        if (i==3) ... 
-  
-  - Tests comparatifs **<=**, **<**, **>=** et **>**
-
+Test d'égalité **==** ou de non égalité **!=**
+```java
+        if (i==3){
+          // Instructions si i vaut 3
+        }else{
+          // Instructions sinon
+        }
+```
+Tests comparatifs **<=**, **<**, **>=** et **>**
+```java
         if (i>=3) ...
+```
 
-  - Opération de négation **!** 
+---------------- 
 
-        Boolean a = !true ; // a = false donc...
+Opération de négation **!** 
+```java
+boolean b = !true ; // b = false donc...
+boolean b2 = i!=3 ; // b2 = true ou false en fonction du test
+```
 
-  - Le ET et OU logique : **&&** et **||**
-
-        Boolean b = true && false ; // false !
-
+Le ET et OU logique : **&&** et **||**
+```java
+boolean b = true && false ; // false !
+```
 
 Opérateur ternaire ?
 ----------------------
@@ -1032,7 +1056,7 @@ Une classe MainClass pour les chats
 }
 
 .reveal code {
-  font-family: Fira Code, monospace;
+  font-family: Inconsolata, monospace;
 }
 
 .reveal pre {
