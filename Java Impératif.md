@@ -553,15 +553,17 @@ Le mot-clé **return**
 
 Le mot-clé **return** permet d'interrompre définitivement l'exécution d'une méthode et de retourner la valeur précisée après le mot clé.
 
-    int renvoie1(){
-      return 1;
-    }
+```java
+int renvoie1(){
+  return 1;
+}
+```
 
-Ce mot clé est obligatoire pour les méthodes qui retournent autre chose que *void*
+Ce mot clé est obligatoire pour les fonctions qui retournent autre chose que *void*
 
 Les instructions **if/else**
 -------------------
-
+```java
     instruct1 ;
     if (x == 4)
     {
@@ -571,22 +573,34 @@ Les instructions **if/else**
       instruct3 ;
     }
     instruct4 ;
+```
+------------
 
   - Si $x=4$, on aura instruct1 $\longrightarrow$ instruct2$\longrightarrow$ instruct4
   
   - Si $x\neq 4$, on aura instruct1 $\longrightarrow$ instruct3 $\longrightarrow$ instruct4
 
-  - On peut également avoir **if** sans **else** 
+------------
 
+On peut également avoir **if** sans **else** 
+```java
+if(x==4){
+  instruct1 ;
+}
+instruct2 ;
+```
+  - Si $x=4$, on aura instruct1 $\longrightarrow$ instruct2
+  
+  - Si $x\neq 4$, on aura instruct2
 
 Les boucles **for**
 -----------------
-
-    for (initialisation ; conditionFin ; increment){
-      instructions;
-    }
-    instructionsSuivante ;
-
+```java
+for (initialisation ; conditionFin ; increment){
+  instructions;
+}
+instructionsSuivante ;
+```
   - Réaliser des opérations un nombre défini de fois
   
   - Parcourir un tableau / une liste
@@ -595,28 +609,43 @@ Les boucles **for**
 
 -----------------
 
-    for (int i=0 ; i < = 10 ; i++){
-      System.out.println("On affiche le nombre "+i);
-    }
-    System.out.println("On a compté jusqu'à 10")
+```java
+for (int i=0 ; i < = 10 ; i++){
+  System.out.print("On affiche le nombre ");
+  System.out.println(i);
+}
+System.out.println("On a compté jusqu'à 10")
+```
+```java
+for (int i=10 ; i > = 10 ; i--){
+  System.out.print("On affiche le nombre ");
+  System.out.println(i);
+}
+System.out.println("Fin du compte à rebours !")
+```
 
-    
-    for (int i=10 ; i > = 10 ; i--){
-      System.out.println("On affiche le nombre "+i);
-    }
-    System.out.println("Fin du compte à rebours !")
+------------------
 
+**for** comme en Python (*foreach*)
 
-    for ( ; ;){
-      // Boucle infinie
-    }
+```java
+int[] tab = {2,3,1,2}
+for (int e:tab){
+  System.out.println(e);
+}
+```
+Attention : le contenu de la boucle ne doit pas modifier le tableau
+
 
 Les boucles **while**
 --------------------
-     while (expressionTest) {
-       instructions;
-     }
-     instructionsSuivantes
+```java
+while (expressionTest) {
+  instructions;
+}
+instructionsSuivantes ;
+```
+-----------
 
   - Réaliser des opérations tant qu'une condition est réalisée
   
@@ -630,62 +659,66 @@ Les boucles **while**
 Les boucles **do while**
 --------------------
 
-     do {
-       instructions;
-     }while (expressionTest);
-     instructionsSuivantes ; 
+```java
+do{
+  instructions;
+}while (expressionTest);
+instructionsSuivantes ; 
+```
+
+---------
 
   - Similaire à **while**
   
-  - Mais garantie que le bloc **instructions** est exécuté **au moins une fois**. 
+  - Mais garantit que le bloc **instructions** est exécuté **au moins une fois**. 
 
-  - Une fois que **expressionTest** est faux, **instructionsSuivante** est exécutée
+  - Une fois que **expressionTest** est faux, **instructionsSuivantes** est exécutée
 
 
 
 Le mot clé **break**
 --------------------
 
-Permet de sortir d'un bloc d'instruction **for**, **while** ou **do while** prématurément et d'exécuter les instructions suivantes.
-    
-    String chaine = "Hello World" ;
-    // Recherche de la présence du caractère 'W'
-
-    boolean wPresent = false ;
-    for (int i = 0 ; i< chaine.length() ; i++){
-      if (chaine.charAt(i) == 'W'){
-        wPresent = true ;
-        break ; // Il n'est plus utile de continuer le for
-      }
-    }
+Permet de sortir d'un bloc d'instruction **for**, **while** ou **do while** prématurément
+```java    
+String chaine = "Hello World" ;
+// Recherche de la présence du caractère 'W'
+boolean wPresent = false ;
+for (int i = 0 ; i< chaine.length() ; i++){
+  if (chaine.charAt(i) == 'W'){
+    wPresent = true ;
+    break ; // Il n'est plus utile de continuer le for
+  }
+}
+```
 
 Le mot clé **continue**
 -----------------------------
 
 Permet de "**sauter**" l'itération courante d'un bloc d'instruction **for**, **while** ou **do while**.
-
+```java
     String chaine = "Hello world" ;
     // Comptage du nombre de 'l'
-
     int nb = 0 ;
     for (int i = 0 ; i< chaine.length() ; i++){
         if (chaine.charAt(i)!='l')
           continue ; // On passe à i+1
-
         // On traite le caractère 
         nb++;  
     }
-
+```
 
 L'instruction **switch**
 --------------------
 Permet de placer le contrôle de flux à un endroit spécifique en fonction de la valeur d'une variable parmi un ensemble donné : 
-
-    switch(variable){
-      case valeur1 : instr1 ; instr2 ; //...
-      case valeur2 : instr3 ; instr4 ; //...
-      case valeur3 : instr5 ; instr6 ; //...
-    }
+```java
+switch(variable){
+  case valeur1 : instr1 ; instr2 ; //...
+  case valeur2 : instr3 ; instr4 ; //...
+  case valeur3 : instr5 ; instr6 ; //...
+}
+```
+-------
 
 Dès qu'une des conditions est vérifiée, le code exécute **toutes les instructions suivantes**
 
@@ -694,14 +727,15 @@ Si variable = valeur2 alors instr3 $\longrightarrow$ instr4 $\longrightarrow$ in
 ----------------
 
 Penser à l'instruction  **break** et à l'instruction **default** 
-
+```java
 switch(variable){
-      case valeur1 : instr1 ; instr2 ; break //...
-      case valeur2 : instr3 ; instr4 ; break //...
-      case valeur3 : instr5 ; instr6 ; break //...
-      ...
-      default: instrDefault;
-    }
+  case valeur1 : instr1 ; instr2 ; break 
+  case valeur2 : instr3 ; instr4 ; break 
+  case valeur3 : instr5 ; instr6 ; break 
+  ...
+  default: instrDefault;
+}
+```
 
 <!---
 Exercice
@@ -776,11 +810,13 @@ But
 Exemple 
 --------------
 
-    public class Main {
-      public static void main(String[] args) {
-          System.out.println(1/0);
-      }
-    }
+```java
+public class Main {
+  public static void main(String[] args) {
+      System.out.println(1/0);
+  }
+}
+```
 
 On n'a pas l'affichage voulu mais :
 
