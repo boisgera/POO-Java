@@ -1,55 +1,72 @@
 % Java Impératif
 
+Introduction 
+==================
+
+Objectifs de cette session 
+-----------------------------------------
+
+Comment utiliser Java comme un langage impératif  ? 
+
+  - **Pas de notion d'objet**
+  
+  - Être capable de développer une application faisant appel à une série d'instructions évaluées les unes après les autres
+
+  - Être capable d'utiliser des **fonctions** issues d'une bibliothèque externe
+
+  - Être capable d'écrire et d'utiliser ses propres **fonctions**
+
+
+Points abordés dans cette session 
+----------------------------------------
+
+  - Les impératifs dans un fichier Java
+
+  - Création de fonctions
+  
+  - Introduction aux différents **types** en Java
+
+  - Introduction aux opérations de base
+
+  - Introduction aux instructions de **flow control**
+
+  - Introduction à la fonction main
+
+
+
+
 Créer un fichier Java
 =======================================
 
 Retour sur le "Hello World" 
 --------------------------------------
 
-Fichier **Main.java**:
+Fichier **App.java**:
 ```java
-import library.Message;
-
-public class Main {
+import java.lang.System;
+public class App {
   public static void main(String[] args) {
-      System.out.println(Message.content);
+    System.out.println("Hello, World!");
   }
 }
 ```
-
---------------------------------------------------------------------------------
-
-Fichier **Main.java**:
-```java
-import library.Message;
-
-public class Main {
-  public static void main(String[] args) {
-      System.out.println(Message.content);
-  }
-}
-```
-
-  - Correspondance nom de classe / nom de fichier
-
   - Premières lignes : les importations de bibliothèques
+  - Correspondance `public class XXX` / nom de fichier
+  - Correspondance `public static void main` : création d'une fonction `main`  
 
-  - ```public class Main```: on crée une classe appelée `Main``
 
-
-
-Définition d'une méthode
+Définition d'une fonction
 ---------------------------
 
 ```java
   public static void main(String[] args) {
-      System.out.println(Message.content);
+      System.out.println("Hello, World!");
   }
 ```
 
-  - `public static` : indique certaines propriétés de la méthode
+  - `public static` : élément à insérer avant la déclaration d'une fonction
 
-  - `void` : type de retour (obligatoire)
+  - `void` : type de retour
 
   - `main` : nom de la fonction
 
@@ -79,9 +96,8 @@ System.out.println(Message.content)
 
   - `System.out.println` : instruction pour afficher quelque chose dans le terminal
 
-  - `Message.content` : argument de la fonction (ici une chaîne de caractères)
+  - `"Hello, World!"` : argument passé à la fonction `println` (ici une chaîne de caractères)
 
-  - `System.out.println` peut prendre n'importe quoi comme argument pour l'afficher dans la console !
 
 
 Quelques règles sur les instructions :
@@ -161,13 +177,14 @@ Les entiers littéraux
 Les différentes bases d'entiers 
 ----------------------------------
 
-    // Le nombre 26 en décimal 
-    int decVal = 26;
-    //  Le nombre 26, en hexadécimal
-    int hexVal = 0x1a;
-    // Le nombre 26, en binaire
-    int binVal = 0b11010;
-
+```java
+// Le nombre 26 en décimal 
+int decVal = 26;
+//  Le nombre 26, en hexadécimal
+int hexVal = 0x1a;
+// Le nombre 26, en binaire
+int binVal = 0b11010;
+```
 
 Les flottants
 -----------------------------------
