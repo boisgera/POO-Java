@@ -66,16 +66,5 @@ Java : les promesses
 
  - Paradigme objet facile à appréhender (pas d'héritage multiple)
 
-Objectifs de cette session : 
------------------------------------------
 
-  - Les impératifs dans un fichier Java
-  
-  - Introduction aux différents **types** en Java
-
-  - Introduction aux opérations de base
-
-  - Introduction aux instructions de **flow control**
-
-  - Introduction à la fonction main
 
