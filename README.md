@@ -18,7 +18,7 @@ Programmation orientée objet avec Java
 ## 💡 Concepts et langage
 
   - [Java procédural](https://boisgera.github.io/POO-Java/Java%20Impératif.html#/title-slide.html)
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20Impératif.html#/title-slide.pdf))
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Java%20Impératif.pdf))
 
   - [Programmation orientée objet](https://boisgera.github.io/POO-Java/POO.html) ([📗 PDF](https://boisgera.github.io/POO-Java/POO.pdf))
 
