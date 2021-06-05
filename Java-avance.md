@@ -125,22 +125,22 @@ Quelques rappels
 
 Retour sur la classe Point
 ----------------
+```java
+public class Point {
+  double x, y;
+  public Point(double x, double y) {
+    this.x = x;
+    this.y = y;
+  } 
+  public Point(){
+    this(0.,0.);
+  }
 
-    public class Point {
-      double x, y;
-      public Point(double x, double y) {
-        this.x = x;
-        this.y = y;
-      } 
-      public Point(){
-        this(0.,0.);
-      }
-
-      public double distance() {
-        return Math.sqrt(x*x + y*y);
-      }
-    }
-
+  public double distance() {
+    return Math.sqrt(x*x + y*y);
+  }
+}
+```
 
 Le constructeur
 ----------------
@@ -165,48 +165,50 @@ Pour référencer à nouveau l'attribut : le mot clé **this**
 ------------------
 
 Voir la différence entre
-
-    public double distance2() {
-        int x = 0 ;
-        int y = x+1 ;
-        return Math.sqrt(x*x + y*y); // Renvoie toujours racine(2)
-    }
-
+```java
+public double distance2() {
+    int x = 0 ;
+    int y = x+1 ;
+    return Math.sqrt(x*x + y*y); // Renvoie toujours racine(2)
+}
+```
 et
-
-    public double distance3(){
-        int x = 0 ;
-        int y = x+1 ;
-        return Math.sqrt(this.x*this.x + this.y*this.y);
-    }
-
+```java
+public double distance3(){
+    int x = 0 ;
+    int y = x+1 ;
+    return Math.sqrt(this.x*this.x + this.y*this.y);
+}
+```
 
 Instancier une classe
 ----------------------------------------
 
 Avec le mot clé **New** et l'appel au constructeur
 
-    Point myPoint = new Point() ;
-
+```java
+Point myPoint = new Point() ;
+```
 ou
-
-    Point myPoint,myPoint2 ;
-    myPoint = new Points(1,0) ;
-    myPoint2 = myPoint ; // Attention, même référence
-
-Ici, *myPoint2* est le même objet que *myPoint* !
+```java
+Point myPoint,myPoint2 ;
+myPoint = new Points(1,0) ;
+myPoint2 = myPoint ; // Attention, même référence
+```
+Ici, `myPoint2` est le même objet que `myPoint` !
 
 
 La surcharge de méthodes
 -----------------------
 
 Il s'agit de définir au sein d'une même classe (ou ses dérivées) une méthode dont le nom existe mais avec une signature différente.
-
-    public double distance(Point p){
-        double dx = this.x - p.x ;
-        double dy = this.y - p.y ;
-        return Math.sqrt(dx*dx + dy*dy);
-    }
+```java
+public double distance(Point p){
+    double dx = this.x - p.x ;
+    double dy = this.y - p.y ;
+    return Math.sqrt(dx*dx + dy*dy);
+}
+```
 
 
 Héritage
@@ -216,29 +218,30 @@ Héritage
 Une classe Disque qui ressemble à Point...
 --------------
 
-
-    public class Disque {
-        double x, y , r;
-        public Disque(double x, double y,double r) {
-            this.x = x;
-            this.y = y;
-            this.r = r;
-        } 
-        public double distance() {
-            return Math.sqrt(x*x + y*y);
-        }
-        public double distance(Disque d) {
-            double dx = x - d.x ;
-            double dy = y - d.y ;
-            return Math.sqrt(x*x + y*y) ;
-        }
-        public double area(){
-            return r*r*Math.PI ;
-        }
-        public double perimeter(){
-            return 2*r*Math.PI ;
-        }
+```java
+public class Disque {
+    double x, y , r;
+    public Disque(double x, double y,double r) {
+        this.x = x;
+        this.y = y;
+        this.r = r;
+    } 
+    public double distance() {
+        return Math.sqrt(x*x + y*y);
     }
+    public double distance(Disque d) {
+        double dx = x - d.x ;
+        double dy = y - d.y ;
+        return Math.sqrt(x*x + y*y) ;
+    }
+    public double area(){
+        return r*r*Math.PI ;
+    }
+    public double perimeter(){
+        return 2*r*Math.PI ;
+    }
+}
+```
 
 Principe de l'héritage
 -----------------------
@@ -254,38 +257,39 @@ Implémentation
 --------------------
 
 Grâce au mot clé **extends**
+```java
+public class Disque extends Point{
+    // Attributs nouveaux
 
-    public class Disque extends Point{
-        // Attributs nouveaux
-
-        public Disque(double x,double y)
-        {
-            // Définir un constructeur
-        }
-        
-        // Méthodes nouvelles
-        
+    public Disque(double x,double y)
+    {
+        // Définir un constructeur
     }
-
+    
+    // Méthodes nouvelles
+    
+}
+```
 ---------------------
 
 **super** permet l'appel du constructeur de la classe parente 
-
-    public class Disque extends Point{
-        double r ;
-        public Disque(double x,double y,double r)
-        {
-            super(x,y);
-            this.r = r ;
-        }
-        public double area(){
-            return r*r*Math.PI ;
-        }
-        public double perimeter(){
-            return 2*r*Math.PI ;
-        }
-        
+```java
+public class Disque extends Point{
+    double r ;
+    public Disque(double x,double y,double r)
+    {
+        super(x,y);
+        this.r = r ;
     }
+    public double area(){
+        return r*r*Math.PI ;
+    }
+    public double perimeter(){
+        return 2*r*Math.PI ;
+    }
+    
+}
+```
 
 Constructeur de classe fille
 --------------------------
@@ -295,20 +299,7 @@ La **première instruction** du constructeur doit être un appel à un autre con
 Cela provoque une erreur de compilation si celui-ci n'existe pas.
 
 
-Retour sur les exceptions personnalisées
-------------------
 
-    public class SaisieErroneeException extends Exception {
-      public SaisieErroneeException() {
-        super();
-      }
-        
-      public SaisieErroneeException(String s) {
-        super(s);
-      }
-    }
-
-**super** permet d'appeler les deux constructeurs de la classe Exception
 
 Propriétés de la classe fille
 ---------------------
@@ -317,7 +308,7 @@ Propriétés de la classe fille
 
   - Hérite des méthodes **public** ou **protected** de la classe mère
 
- - A ses propres attributs et méthodes supplémentaires
+  - A ses propres attributs et méthodes supplémentaires
 
 
 
@@ -345,54 +336,55 @@ Lorsqu'on redéfinit une méthode, celle-ci cache la méthode de la classe mère
 ------------
 
 Rédéfinition de *distance()* pour prendre en compte *r*
-
-    public double distance(){
-      double dPoint = super.distance();
-      if (dPoint < r)
-        return 0;
-      else 
-        return dPoint -r ;
-    }
+```java
+public double distance(){
+  double dPoint = super.distance();
+  if (dPoint < r)
+    return 0;
+  else 
+    return dPoint -r ;
+}
+```
 
 --------------
-
-    public class Main
-    {
-        public static void main(String[] args){
-            Point p = new Point(2,0);
-            Point d = new Disque(2,0,1);
-            Disque d2 = new Disque(2,0,1);
-        
-            System.out.println(p.distance());
-            System.out.println(d.distance());
-            System.out.println(d2.distance());  
-        } 
-    }
-
+```java
+public class Main
+{
+    public static void main(String[] args){
+        Point p = new Point(2,0);
+        Point d = new Disque(2,0,1);
+        Disque d2 = new Disque(2,0,1);
+    
+        System.out.println(p.distance());
+        System.out.println(d.distance());
+        System.out.println(d2.distance());  
+    } 
+}
+```
 Sortie :
 
     2
     1
-    0
+    1
 
 ------------------
 
-**super** permet également d'accéder aux attributs du parent lorsque la classe fille définit un attribut avec le même nom.
+**super** permet également d'accéder aux attributs du parent lorsque la classe fille définit un attribut avec le même nom (règle les problèmes d'intersection de noms).
 
 
 Cast explicite
 ------------------
+```java
+Disque d = new Disque(1,1,1);
+Point d2 = new Disque(2,2,2);
 
-    Disque d = new Disque(1,1,1);
-    Point d2 = new Disque(2,2,2);
-    
-    Point[] tab = new Point[2] ;
-    tab[0] = d ; tab[1] = d2 ;
+Point[] tab = new Point[2] ;
+tab[0] = d ; tab[1] = d2 ;
 
-    for (int i=0 ; i<2 ;i++){
-      tab[i].area();
-    }
-
+for (int i=0 ; i<2 ;i++){
+  tab[i].area();
+}
+```
   Provoque une erreur (*cannot find symbol - method area()*)
 
   Il faut demander à transtyper **tab[i]** en **Disque** !
@@ -402,9 +394,10 @@ Cast explicite
 
 Danger du Cast explicite
 ------------------
-
-    Point p = new Point(1,2) ;
-    ((Disque)p).area() ;
+```java
+Point p = new Point(1,2) ;
+((Disque)p).area() ;
+```
 
 Lève une exception
 
@@ -415,21 +408,44 @@ Mot clé instanceOf
 
 Fonctionne avec classes et interfaces
 
+```java
+Disque d = new Disque(1,1,1);
+Point d2 = new Disque(2,2,2);
+Point p = new Point(1,2);
 
-    Disque d = new Disque(1,1,1);
-    Point d2 = new Disque(2,2,2);
-    Point p = new Point(1,2);
-    
-    Point[] tab = new Point[2] ;
-    tab[0] = d ; tab[1] = d2 ; tab[2] = p ;
+Point[] tab = new Point[2] ;
+tab[0] = d ; tab[1] = d2 ; tab[2] = p ;
 
-    for (int i=0 ; i<3 ;i++){
-      if (tab[i] instanceOf SubClass){
-         ((SubClass)tab[i]).subClassMethod();
+for (int i=0 ; i<3 ;i++){
+  if (tab[i] instanceOf SubClass){
+      ((SubClass)tab[i]).subClassMethod();
+  }
+}
+```
+
+Principe de substitution de Liskov
+-------------------------
+
+* Si $q(x)$ est une propriété démontrable pour tout objet $x$ de $T$, alors $q(y)$ est vrai pour tout objet $y$ de type $S$ tel que $S$ est un sous-type de $T$ 
+
+
+Retour sur les exceptions 
+========================
+
+
+-----------
+
+    public class SaisieErroneeException extends Exception {
+      public SaisieErroneeException() {
+        super();
+      }
+        
+      public SaisieErroneeException(String s) {
+        super(s);
       }
     }
 
-
+**super** permet d'appeler les deux constructeurs de la classe Exception
 
 
 
@@ -477,7 +493,7 @@ Exemple : méthode main d'une classe
 **Une méthode statique ne peut faire appel à des variables d'instances (non statiques)**
 
 
-"Rédéfinir" un méthode de classe"
+"Redéfinir" un méthode de classe"
 ------------
 
 Dans point : 
