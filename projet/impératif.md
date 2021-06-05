@@ -53,7 +53,7 @@ alors après l'exécution du code
 ```java
 String rectString = rect(rectAttributes);
 ```
-la variable `rectString` est une chaîne de caractère qui désigne le fragment SVG
+la variable `rectString` est une chaîne de caractères qui désigne le fragment SVG
 ```xml
 <rect width="100%" height="100%" fill="red"></rect>
 ```
