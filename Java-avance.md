@@ -426,7 +426,46 @@ for (int i=0 ; i<3 ;i++){
 Principe de substitution de Liskov
 -------------------------
 
-* Si $q(x)$ est une propriété démontrable pour tout objet $x$ de $T$, alors $q(y)$ est vrai pour tout objet $y$ de type $S$ tel que $S$ est un sous-type de $T$ 
+*Si $q(x)$ est une propriété démontrable pour tout objet $x$ de $T$, alors $q(y)$ est vrai pour tout objet $y$ de type $S$ tel que $S$ est un sous-type de $T$* 
+
+-------------
+
+  - Si une classe B dérive de la classe A, alors les propriétés de la classe A doivent être conservées par tout objet de la classe B !
+
+  - Si une fonction prend un objet de type A en argument, il est possible qu'elle exploite les propriétés de la classe A. Les spécificités de la classe B ne doivent pas compromettre le résultat.
+
+  - Il s'agit d'une règle sur la **sémantique du code** 
+
+  - Le compilateur ne vérifie pas si cette règle est respectée, il se contente de vérifications formelles sur les types !
+
+-----------
+
+  - Une propriété de la classe `Point` : si `p` est de type `Point`, alors `p.distance()==0` est équivalent à `p` est nul (`p.x==0`et `p.y==0`)
+
+  - Soit `d` de type `Disque`:
+    ```java
+    Disque d2 = new Disque(2,0,3);   
+    ```
+
+  - Alors `d2.distance()==0` mais `d.x!=0`)
+
+------------
+
+```java
+  boolean isOrigin(Point p){
+    return p.distance()==0 ;
+  }
+```
+
+Cette fonction ne se comportera pas comme on aimerait qu'elle se comporte... 
+
+---------
+
+  - Violer le principe de substitution de Liskov peut conduire à des bugs difficiles à identifier et rend la maintenabilité du code délicate.
+
+  - Pourrait-on faire en sorte que `Disque` ne viole pas ce principe ?
+
+  - Autre exemple de violation : utilisation de `instanceOf`
 
 
 Retour sur les exceptions 
