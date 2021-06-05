@@ -1,5 +1,78 @@
 % Programmation orientée objet avancée
 
+
+Retour sur quelques types
+=======================
+
+Le pendant Objet des entiers et flottants
+-----------------------------------
+
+Il s'agit des classes **Byte**, **Short**, **Integer**, **Long**, **Float**, **Double**
+
+    Integer a ;
+    a = new Integer(3) ;
+
+  - On déclare une variable `a` de type `Integer`
+
+  - On crée une nouvelle instance grâce à `new` puis le constructeur.
+
+  - Ex. : [doc Java Integer](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html)
+
+
+
+
+Les tableaux
+-------------
+Rappel de la déclaration :
+
+```java
+int[] tableau ; // Déclaration d'un tableau d'entiers
+```
+
+Initialisation avec le mot-clé `new`
+ 
+```java
+tableau = new int[N] ; // N est un entier
+```
+
+-------------------- 
+
+  - Les tableaux sont des objets
+
+  - Peuvent être initialisés avec `new`
+
+  - le **champ** `length` permet d'obtenir le nombre d'éléments du tableau
+
+    ```java  
+    int N = tableau.length ; 
+    ```
+
+
+
+Les chaînes de caractères
+----------------------
+
+  - **String** est également une classe !
+
+  - La **méthode** `length()` permet d'obtenir leur longueur
+
+  - De nombreuses autres méthodes existent (voir [doc](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/String.html))
+
+    - exemple : `replace`, `charAt`,...
+
+
+------------------
+
+Les chaînes de caractères Java sont **immuables** :
+
+  - Il n'existe aucun moyen de modifier le contenu d'une chaîne.
+
+  - Si on a `chaine = "Hello World"`, l'opération `chaine = "Hello World2` revient à placer une **nouvelle** chaîne de caractères dans la variable `chaine`. `chaine` pointe donc vers un nouvel objet
+
+  - Autre exemple : la méthode **replace** ne modifie pas la chaîne initiale. Elle renvoie une nouvelle chaîne de caractères sur laquelle l'opération de remplacement a été réalisée. 
+
+----------------
+
 Règles de nommage
 ======================
 
