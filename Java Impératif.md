@@ -903,17 +903,7 @@ public class Main {
   }
 }
 ```
-<!--
---------------
 
-Deux méthodes intéressantes sur les exceptions 
------------------
-
-  - *String* getMessage() : permet de récupérer le message
-
-  - *void* printStackTrace() : permet d'afficher la pile d'exécution 
-
--->
 
 Le mot-clé "throws"
 --------------------
