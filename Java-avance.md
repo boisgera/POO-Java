@@ -944,17 +944,17 @@ La méthode peut ou non être implémentée dans une des classes filles.
 Exemple :
 ---------------------------
  
-  - Imaginons une nouvelle classe **Carre** qui serait paramétré par un côté, sa longueur
+  - Imaginons une nouvelle classe **Carre** qui serait paramétré par son point central (`x` et `y`) et la longueur de son côté (`c`)
 
-  - Une interface **Cercle** similaire à **Disque** (mais sans dériver d'une autre classe)
+  - Une classe **Cercle** paramétrée par son centre (`x` et `y`) et son rayon (`r`)
 
-  - Certaines attributs (x,y) sont identiques dans les deux classes
+  - Certaines attributs (`x`,`y`) sont identiques dans les deux classes
 
-  - Certaines fonctions se coderaient de la même façon (getX,...)
+  - Certaines fonctions se coderaient de la même façon (`getX`,...)
 
 -----------------------
 
-  - Certaines méthodes (area()...) existeraient dans les deux mais seraient différentes
+  - Certaines méthodes (`aire`,`perimetre`,...) existeraient dans les deux mais seraient différentes
 
   - Peut-on imaginer une classe **Forme** qui serait parent de **Carre** et **Cercle** ?
 
