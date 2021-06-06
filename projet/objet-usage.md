@@ -89,23 +89,41 @@ On va s'intéresser ici à la représentation des `Double` : on voudrait sépare
 ```java
 public static void readDouble(Double x)
 ```
-qui permet d'afficher dans le terminal la "lecture à voix haute" du nombre. Par exemple, un appel à 
+qui permet d'afficher dans le terminal les partie avant la virgule et la partie après la virgule. Par exemple, un appel à 
 ```java
 readDouble(3.14);
 ```
-devra afficher `3 virgule 14`. 
-et
-```java
-readDouble(-3.14);
-```
-devra afficher `Moins 3 virgule 14`.
+devra afficher 
 
-Que se passe-t-il si j'appelle `readDouble(1_000_000d)`? Corriger l'implémentation de `readDouble` si le résultat n'est pas convaincant.
+    Partie entière   : 3 
+    Partie décimale  : .14 
 
-Enfin, on voudrait faire en sorte que le nombre de chiffres après la virgule soit connu à l'avance et passé en argument de `readDouble` (si l'argument est inférieur ou égal à zéro, il sera traité comme s'il valait 1). On veut que le prototype de `readDouble` soit désormais
+Que se passe-t-il si j'appelle `readDouble(1_000_000d)`? Corriger l'implémentation de `readDouble` pour que le résultat de `readDouble(1_000_000d)` soit convaincant tout en garantissant que le résultat de `readDouble(3.14)` **reste inchangé**.
+
+Enfin, on voudrait faire en sorte que le nombre de chiffres après la virgule puisse être défini par l'utilisateur et passé en argument de `readDouble`. On veut que le prototype de `readDouble` soit désormais
 ```java
 public static void readDouble(Double x,int size)
 ```  
+Par exemple, un appel à 
+```java
+readDouble(3.14,1);
+```
+devra afficher
+
+    Partie entière   : 3 
+    Partie décimale  : .1 
+
+alors qu'un appel à 
+```java
+readDouble(3.14,6);
+```
+devra afficher
+
+    Partie entière   : 3 
+    Partie décimale  : .140000
+  
+Note : si le deuxième argument est inférieur ou égal à 0, alors on le remplacera par 1.
+
 Mettez à jour `readDouble` et faites en sorte que le fichier `main` réalise (entre autres) les appels suivants :
 ```java
 readDouble(3.,-2);
