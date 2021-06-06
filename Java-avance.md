@@ -204,6 +204,107 @@ Règles usuelles:
 Utiliser des fonctions **getter** et **setter** pour accéder et éventuellement modifier les attributs appropriés.
 
 
+Les classes génériques
+======================
+
+-----------------
+
+Principe
+--------
+```java
+public class GenericClass<T>{
+  T val ;
+  public GenericClass(T val){
+    this.val = val ;  
+  }
+  public T getVal(){
+    return val ;
+  }
+} 
+```
+Permet d'avoir des classes qui peuvent contenir des types non connus à l'avance
+
+Utilisation
+------------
+
+```java
+    GenericClass<Integer> gen = new GenericClass<Integer>(5);
+    System.out.println(gen.getVal());
+```
+
+Renvoie
+
+    5
+
+Pas limité à un seul type
+-------------------
+```java
+public class GenericClass<T,U>{
+  T val1 ;
+  U val2 ;
+
+  public GenericClass(T val1,U val2){
+    this.val1 = val1 ;
+    this.val2 = val2 ; 
+  }
+  public T getVal1(){
+    return val1 ;
+  }
+
+  public T getVal2(){
+    return val2 ;
+  }
+} 
+```
+
+Exemples 
+-------------------
+
+Les classes qui implémentent `List` :
+
+  - ArrayList
+
+  - LinkedList
+```java
+import java.util.ArrayList;
+
+...
+
+ArrayList<Integer> array = new ArrayList<Integer>();
+array.add(3);
+array.add(4);
+```
+
+
+--------------- 
+
+Les classes qui implémentent `Map` :
+
+  - HashTable
+
+  - HashMap
+```java
+import java.util.HashMap;
+
+...
+
+HashMap<String,Integer> myMap = new HashMap<String,Integer>();
+myMap.put("Bonjour",0);
+myMap.put("Au revoir",1);
+```
+
+Types fixés pour une instance
+------------------------
+
+Une fois qu'une instance est créée, le type ne peut plus être changé.
+```java
+ArrayList<Integer> array = new ArrayList<Integer>();
+array.add(3);
+array.add(4);
+array = new ArrayList<Double>();
+```
+
+Provoque une erreur de compilation.
 
 
 
@@ -710,107 +811,6 @@ public void methode(final int x,int y){
 Les valeurs de l'argument *x* et la variable *z* ne peuvent pas être modifiées par la méthode. Le compilateur utilise cette information pour optimiser le code.  
 
 
-Les classes génériques
-======================
-
------------------
-
-Principe
---------
-```java
-public class GenericClass<T>{
-  T val ;
-  public GenericClass(T val){
-    this.val = val ;  
-  }
-  public T getVal(){
-    return val ;
-  }
-} 
-```
-Permet d'avoir des classes qui peuvent contenir des types non connus à l'avance
-
-Utilisation
-------------
-
-```java
-    GenericClass<Integer> gen = new GenericClass<Integer>(5);
-    System.out.println(gen.getVal());
-```
-
-Renvoie
-
-    5
-
-Pas limité à un seul type
--------------------
-```java
-public class GenericClass<T,U>{
-  T val1 ;
-  U val2 ;
-
-  public GenericClass(T val1,U val2){
-    this.val1 = val1 ;
-    this.val2 = val2 ; 
-  }
-  public T getVal1(){
-    return val1 ;
-  }
-
-  public T getVal2(){
-    return val2 ;
-  }
-} 
-```
-
-Exemples 
--------------------
-
-Les classes qui implémentent `List` :
-
-  - ArrayList
-
-  - LinkedList
-```java
-import java.util.ArrayList;
-
-...
-
-ArrayList<Integer> array = new ArrayList<Integer>();
-array.add(3);
-array.add(4);
-```
-
-
---------------- 
-
-Les classes qui implémentent `Map` :
-
-  - HashTable
-
-  - HashMap
-```java
-import java.util.HashMap;
-
-...
-
-HashMap<String,Integer> myMap = new HashMap<String,Integer>();
-myMap.put("Bonjour",0);
-myMap.put("Au revoir",1);
-```
-
-Types fixés pour une instance
-------------------------
-
-Une fois qu'une instance est créée, le type ne peut plus être changé.
-```java
-ArrayList<Integer> array = new ArrayList<Integer>();
-array.add(3);
-array.add(4);
-array = new ArrayList<Double>();
-```
-
-Provoque une erreur de compilation.
 
 
 La classe Object
