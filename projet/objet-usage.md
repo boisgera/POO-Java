@@ -1,14 +1,14 @@
 Usage des Objets Standards
 ================================================================================
 
-L'objectif de cette partie est de prendre en main les objets de base, en tant qu'**utilisateur**. Pour l'ensemble de ces exercices, on va travailler dans un fichier unique nommé `tutorialObject.java` qui consistera en une application simple et différentes fonctions qui seront appelées en fonction de l'exercice traité. À ce stade, on ne créera pas encore de *classe* au sens de la *programmation orientée objet*.
+L'objectif de cette partie est de prendre en main les objets de base, en tant qu'**utilisateur**. Pour l'ensemble de ces exercices, on va travailler dans un fichier unique nommé `TutorialObject.java` qui consistera en une application simple et différentes fonctions qui seront appelées en fonction de l'exercice traité. À ce stade, on ne créera pas encore de *classe* au sens de la *programmation orientée objet*.
 
 Par ailleurs, à partir de cette partie, on essayera de se détacher autant que possible des fonctions *helpers* créées dans la bibliothèque `utils`. En particulier, les fonctions `print` et `str` ne seront plus utilisées. On s'autorisera uniquement les fonctions de lecture et écriture dans des fichiers (`read` et `write`).   
 
 
 ## Préparation
 
-Créez un fichier `tutorialObject.java` exécutable avec une fonction `main`qui ne fait rien. 
+Créez un fichier `TutorialObject.java` exécutable avec une fonction `main`qui ne fait rien. 
 
 ## Les extensions des types primitifs 
 
@@ -53,7 +53,7 @@ Créez une fonction de signature
 ```java
 public static void testDouble()
 ```
-et y initialiser quelques `Double` (fini, infini et NaN). Trouvez les méthodes permettant de tester si un double est infini ou NaN, puis faites en sorte que `testDouble` affiche les résultats dans le terminal (n'oubliez pas d'appeler `testDouble` dans `main` !)
+et y initialiser quelques `Double` (fini, infini et NaN). Trouvez les méthodes permettant de tester si un `Double` est infini ou NaN, puis faites en sorte que `testDouble` affiche les résultats dans le terminal (n'oubliez pas d'appeler `testDouble` dans `main` !)
 
 ## API de `String`
 
