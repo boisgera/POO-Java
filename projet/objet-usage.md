@@ -145,8 +145,8 @@ public static List<Integer> listDiv(int N)
 ```
 qui permet de retourner la liste de tous les diviseurs du nombre `N`. Réalisez un appel de `listDiv` dans la fonction `main` et affichez le nombre de diviseurs et la liste dans le terminal. 
 
-## La copie d'objets
-On propose dans ce dernier exercice d'étudier la copie d'objets. Nous allons utiliser les tableaux en guise de support. 
+## La duplication d'objets
+On propose dans ce dernier exercice d'étudier la duplication d'objets. En particulier, nous voudrions qu'un objet dupliqué ne soit pas lié à sa copie. Nous allons utiliser les tableaux en guise de support. 
 ### Un tableau d'entiers
 Créez la fonction 
 ```java
@@ -154,13 +154,13 @@ public static void testArray()
 ```
 qui réalise les opérations suivantes :
   - Enregistrement du tableau `{1,2,3}` dans la variable `a1`
-  - Déclaration d'un tableau `a2`puis affectation de `a2`à `a1` (`a2=a1`)
+  - Déclaration d'un tableau `a2`puis copie de `a2`à `a1` (avec `a2=a1`)
   - Affichage sur une ligne de `a1`, puis `a2` sur une autre ligne
   - Modification du premier élément de `a1`
   - Affichage sur une ligne de `a1`, puis `a2` sur une autre ligne
 puis réalisez l'appel de `testArray` dans la fonction `main`. Que se passe-t-il ?
 
-**Certains objets** ont en fait une méthode `clone` dont le but est de recopier l'objet. C'est effectivement le cas pour les tableaux Java. Reprenez le code de `testArray` pour que le résultat final soit cohérent.
+**Certains objets** ont en fait une méthode `clone` dont le but est de recopier l'objet. C'est effectivement le cas pour les tableaux Java. Reprenez le code de `testArray` pour que le tableau `a1` soit indépendant de sa copie.
 
 ### Un tableau de tableaux
 Créez la fonction 
