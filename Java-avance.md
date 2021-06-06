@@ -492,10 +492,10 @@ Cette fonction ne se comportera pas comme on aimerait qu'elle se comporte...
 *If it looks like a duck, quacks like a duck, but needs batteries – you probably have the wrong abstraction*
 
 
-Héritage multiple ?
+Rappel : Héritage multiple ?
 -----------------------
 
-  - Jave ne permet pas d'héritage multiple
+  - Java ne permet pas d'héritage multiple
 
   - En remplacement, Java propose les **Interfaces** : propose une liste de méthodes *non implémentées* 
 
