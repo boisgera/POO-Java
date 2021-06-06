@@ -190,6 +190,8 @@ qui produira le résultat suivant avec `div8` comme argument :
     Le diviseur 4 est de multiplicité 1
     Le diviseur 8 est de multiplicité 1
 
+Indice : la méthode `keySet` pourrait être utile...
+
 Testez la fonction avec d'autres arguments (nombre plus grands, négatifs,...)
 
 ## La duplication d'objets
