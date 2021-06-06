@@ -177,7 +177,7 @@ devra produire
     4 est diviseur de multiplicité 1
     2 est diviseur de multiplicité 3
     9 n'est pas diviseur
-``
+
 Enfin, on voudrait pouvoir afficher la liste de tous les diviseurs avec leur multiplicité, mais d'une manière plus "littéraire" que la méthode `toString()`. Écrivez la fonction
 ```java
 public static void printDiv(Map<Integer,Integer> map)
@@ -190,7 +190,7 @@ qui produira le résultat suivant avec `div8` comme argument :
     Le diviseur 4 est de multiplicité 1
     Le diviseur 8 est de multiplicité 1
 
-
+Testez la fonction avec d'autres arguments (nombre plus grands, négatifs,...)
 
 ## La duplication d'objets
 On propose dans ce dernier exercice d'étudier la duplication d'objets. En particulier, nous voudrions qu'un objet dupliqué ne soit pas lié à sa copie. Nous allons utiliser les tableaux en guise de support. 
