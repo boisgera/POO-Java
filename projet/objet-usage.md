@@ -122,7 +122,15 @@ devra afficher
     Partie entière   : 3 
     Partie décimale  : .140000
   
-Note : si le deuxième argument est inférieur ou égal à 0, alors on le remplacera par 1.
+Note : si le deuxième argument est inférieur ou égal à 0, alors on retournera le nombre de chiffres après la virgule par défaut. Ainsi, un appel à 
+```java
+readDouble(3.14,-1);
+```
+devra afficher 
+
+    Partie entière   : 3 
+    Partie décimale  : .14
+
 
 Mettez à jour `readDouble` et faites en sorte que le fichier `main` réalise (entre autres) les appels suivants :
 ```java
