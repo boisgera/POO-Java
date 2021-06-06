@@ -68,57 +68,6 @@ Les chaînes de caractères Java sont **immuables** :
 
   - Autre exemple : la méthode **replace** ne modifie pas la chaîne initiale. Elle renvoie une nouvelle chaîne de caractères sur laquelle l'opération de remplacement a été réalisée. 
 
-
-----------------
-
-
-Règles de nommage
-======================
-
---------------------
-
-  - **variables** : commencent par une minuscule puis une majuscule sur les mots suivants accolés
-    - ex. : x, hexString,...
-
-  - **constantes** : en capitales avec underscore si différents mots
-    - ex. : PI, ARRAY_SIZE,...
-
-----------------------
-
-  - **methodes** : commencent par une minuscule puis une majuscule sur les mots suivants accolés
-    - ex.: getArea(), toString(),...
-
-
-  - **classes** : commencent par une majuscules puis une majuscule sur les mots suivants accolés
-    - ex. : Point, MainClass,...
-
-
-
-Visibilité des attributs et méthodes
-==================
-
----------------------
-
-Devant un attribut ou une méthode :
-
-  - **private** : accessible uniquement par la classe
-
-  - **protected** : accessible par tout descendant de la classe et les classes appartenant au même *package*
-
-  - **sans mot clé** : accessible par la classe et les classes appartenant au même *package*
-
-  - **public** : accessible par toute les classes
-
-
-Règles usuelles:
-----------------
-
-Éviter autant que possible l'utilisation de **public**, en particulier sur les variables internes.
-
-Utiliser des fonctions **getter** et **setter** pour accéder et éventuellement modifier les attributs appropriés.
-
-
-
 Quelques rappels
 =================
 
@@ -209,8 +158,57 @@ public double distance(Point p){
 }
 ```
 
+Règles de nommage
+======================
 
-Héritage
+--------------------
+
+  - **variables** : commencent par une minuscule puis une majuscule sur les mots suivants accolés
+    - ex. : x, hexString,...
+
+  - **constantes** : en capitales avec underscore si différents mots
+    - ex. : PI, ARRAY_SIZE,...
+
+----------------------
+
+  - **methodes** : commencent par une minuscule puis une majuscule sur les mots suivants accolés
+    - ex.: getArea(), toString(),...
+
+
+  - **classes** : commencent par une majuscules puis une majuscule sur les mots suivants accolés
+    - ex. : Point, MainClass,...
+
+
+
+Visibilité des attributs et méthodes
+==================
+
+---------------------
+
+Devant un attribut ou une méthode :
+
+  - **private** : accessible uniquement par la classe
+
+  - **protected** : accessible par tout descendant de la classe et les classes appartenant au même *package*
+
+  - **sans mot clé** : accessible par la classe et les classes appartenant au même *package*
+
+  - **public** : accessible par toute les classes
+
+
+Règles usuelles:
+----------------
+
+Éviter autant que possible l'utilisation de **public**, en particulier sur les variables internes.
+
+Utiliser des fonctions **getter** et **setter** pour accéder et éventuellement modifier les attributs appropriés.
+
+
+
+
+
+
+Héritage en Java
 ======================
 
 
@@ -471,6 +469,20 @@ Cette fonction ne se comportera pas comme on aimerait qu'elle se comporte...
 **Le contre-exemple du canard** 
 
 *If it looks like a duck, quacks like a duck, but needs batteries – you probably have the wrong abstraction*
+
+
+Héritage multiple ?
+-----------------------
+
+  - Jave ne permet pas d'héritage multiple
+
+  - En remplacement, Java propose les **Interfaces** : propose une liste de méthodes *non implémentées* 
+
+  - On dit qu'une classe **implémente** une interface : elle doit implémenter toutes les méthodes de l'interface. 
+
+  - Une interface peut être utilisée comme un type : le polymorphisme s'applique donc ici
+
+
 
 
 Retour sur les exceptions 
