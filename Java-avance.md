@@ -503,8 +503,17 @@ for (int i=0 ; i<2 ;i++){
   Il faut demander à transtyper **d2** en **Disque** !
 
 ```java
-((Disque)d2).aire();
+Disque d = new Disque(1,1,1);
+Point d2 = new Disque(2,2,2);
+
+Point[] tab = new Point[2] ;
+tab[0] = d ; tab[1] = d2 ;
+
+for (int i=0 ; i<2 ;i++){
+  ((Disque)tab[i]).aire();
+}
 ```
+mais ce n'est pas tout...
 
   -------------------
 
