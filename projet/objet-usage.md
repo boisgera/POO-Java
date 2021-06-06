@@ -153,6 +153,45 @@ public static List<Integer> listDiv(int N)
 ```
 qui permet de retourner la liste de tous les diviseurs du nombre `N`. Réalisez un appel de `listDiv` dans la fonction `main` et affichez le nombre de diviseurs et la liste dans le terminal. 
 
+## Utilisation d'une Map
+
+On voudrait cette fois avoir la liste des diviseurs d'un entier, mais accompagnée de la multiplicité du diviseur (ie. combien de fois je peux diviser ce nombre avec un diviseur donné). Pour cela, on propose d'utiliser l'interface [**Map**](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Map.html). Ce type d'objet permet de stocker des informations sous la forme de paires (Clé,Valeur). Créez la fonction
+```java
+public static Map<Integer,Integer> listDivMap(int N)
+```
+qui permet de retourner l'objet voulu (par convention, `1` est de multiplicité 1). À vous de choisir quel élément doit être la clé, et quel élément doit être la valeur...
+
+On veut ensuite pouvoir afficher si oui ou non un nombre donné appartient à un diviseur enregistré dans une **Map**. Créez la fonction
+```java
+public static void isInside(Integer intToTest, Map<Integer,Integer> map)
+```
+qui permet de dire si `intToTest` a été enregistré parmi les diviseur dans `map`, et le cas échéant sa multiplicité. Par exemple, le code suivant
+```java
+Map<Integer,Integer> div8 = listDivMap(8);
+isInside(4,div8);
+isInside(2,div8);
+isInside(9,div8);
+```
+devra produire
+
+    4 est diviseur de multiplicité 1
+    2 est diviseur de multiplicité 3
+    9 n'est pas diviseur
+``
+Enfin, on voudrait pouvoir afficher la liste de tous les diviseurs avec leur multiplicité, mais d'une manière plus "littéraire" que la méthode `toString()`. Écrivez la fonction
+```java
+public static void printDiv(Map<Integer,Integer> map)
+```
+qui produira le résultat suivant avec `div8` comme argument :
+
+    Nombre de diviseurs : 4
+    Le diviseur 1 est de multiplicité 1
+    Le diviseur 2 est de multiplicité 3
+    Le diviseur 4 est de multiplicité 1
+    Le diviseur 8 est de multiplicité 1
+
+
+
 ## La duplication d'objets
 On propose dans ce dernier exercice d'étudier la duplication d'objets. En particulier, nous voudrions qu'un objet dupliqué ne soit pas lié à sa copie. Nous allons utiliser les tableaux en guise de support. 
 ### Un tableau d'entiers
