@@ -267,6 +267,8 @@ public class Disque extends Point{
     
 }
 ```
+
+Mot-clé super
 ---------------------
 
 **super** permet l'appel du constructeur de la classe parente 
@@ -367,6 +369,18 @@ Sortie :
 
 **super** permet également d'accéder aux attributs du parent lorsque la classe fille définit un attribut avec le même nom (règle les problèmes d'intersection de noms).
 
+Rappel : polymorphisme
+-----------------
+
+  - Un objet de type `Disque` est utilisable partout où un `Disque` ou un `Point est requis``
+
+  - On peut déclarer un objet de type `Point` et en utilisant un constructeur de `Disque`
+    ```java
+    Point pointDisque = new Disque(1,1,1);
+    ```
+    Dans ce cas, `PointDisque` n'est pas utilisable là où un `Disque` est demandé 
+
+
 
 Cast explicite
 ------------------
@@ -383,9 +397,14 @@ for (int i=0 ; i<2 ;i++){
 ```
   Provoque une erreur (*cannot find symbol - method area()*)
 
-  Il faut demander à transtyper **tab[i]** en **Disque** !
+--------- 
 
-    ((Disque)tab[i]).area();
+  Il faut demander à transtyper **d2** en **Disque** !
+
+```java
+((Disque)d2).area();
+```
+
   -------------------
 
 Danger du Cast explicite
@@ -402,7 +421,7 @@ Lève une exception
 Mot clé instanceOf
 -------------------
 
-Fonctionne avec classes et interfaces
+Permet de vérifier si un objet est bien une instance d'une classe fille 
 
 ```java
 Disque d = new Disque(1,1,1);
@@ -413,8 +432,8 @@ Point[] tab = new Point[2] ;
 tab[0] = d ; tab[1] = d2 ; tab[2] = p ;
 
 for (int i=0 ; i<3 ;i++){
-  if (tab[i] instanceOf SubClass){
-      ((SubClass)tab[i]).subClassMethod();
+  if (tab[i] instanceOf Disque){
+      ((SubClass)tab[i]).area();
   }
 }
 ```
@@ -480,7 +499,7 @@ Héritage multiple ?
 
   - On dit qu'une classe **implémente** une interface : elle doit implémenter toutes les méthodes de l'interface. 
 
-  - Une interface peut être utilisée comme un type : le polymorphisme s'applique donc ici
+  - Une interface peut être utilisée comme un type : le polymorphisme s'applique également ici
 
 
 
