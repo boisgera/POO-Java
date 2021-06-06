@@ -22,8 +22,8 @@ Programmation orientée objet avec Java
 
   - [Programmation orientée objet](https://boisgera.github.io/POO-Java/POO.html) ([📗 PDF](https://boisgera.github.io/POO-Java/POO.pdf))
 
-  - 🚧 [Java objet](https://boisgera.github.io/POO-Java/Java-avance.html)
-    ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf)) 🚧
+  - [Java objet](https://boisgera.github.io/POO-Java/Java-avance.html)
+    ([📗 PDF](https://boisgera.github.io/POO-Java/Java-avance.pdf))
 
 
 
