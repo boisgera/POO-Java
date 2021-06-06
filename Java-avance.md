@@ -1,8 +1,8 @@
 % Programmation orientée objet avancée
 
-
 Retour sur quelques types
 =======================
+
 
 Le pendant Objet des entiers et flottants
 -----------------------------------
@@ -71,7 +71,9 @@ Les chaînes de caractères Java sont **immuables** :
 
   - Autre exemple : la méthode **replace** ne modifie pas la chaîne initiale. Elle renvoie une nouvelle chaîne de caractères sur laquelle l'opération de remplacement a été réalisée. 
 
+
 ----------------
+
 
 Règles de nommage
 ======================
@@ -300,7 +302,6 @@ Cela provoque une erreur de compilation si celui-ci n'existe pas.
 
 
 
-
 Propriétés de la classe fille
 ---------------------
 
@@ -471,19 +472,44 @@ Cette fonction ne se comportera pas comme on aimerait qu'elle se comporte...
 Retour sur les exceptions 
 ========================
 
+Une exception est un objet !
+-------------
 
------------
-
-    public class SaisieErroneeException extends Exception {
-      public SaisieErroneeException() {
-        super();
-      }
-        
-      public SaisieErroneeException(String s) {
-        super(s);
-      }
+```java
+public class Main {
+  public static void main(String[] args) {
+    try{
+      System.out.println(1/0);
+    }catch(ArithmeticException e){
+      System.out.println("Ce n'est pas très bien !");
     }
+  }
+}
+```
 
+`ArithmeticException` est une classe qui dérive de la classe `Exception` 
+
+Deux méthodes intéressantes sur les exceptions 
+-----------------
+
+  - *String* getMessage() : permet de récupérer le message
+
+  - *void* printStackTrace() : permet d'afficher la pile d'exécution 
+
+
+Exceptions personnalisées
+-----------
+```java
+public class SaisieErroneeException extends Exception {
+  public SaisieErroneeException() {
+    super();
+  }
+    
+  public SaisieErroneeException(String s) {
+    super(s);
+  }
+}
+```
 **super** permet d'appeler les deux constructeurs de la classe Exception
 
 
@@ -511,16 +537,16 @@ On peut y faire appel directement en accolant le nom à la classe :
 -----------------
 
 Exemple : compteur de nombre d'instances. 
-
-    public class TestStatic
-    {
-        public static int i= 0 ;
-        
-        TestStatic(){
-          i++;
-        } 
-    }
-
+```java
+public class TestStatic
+{
+    public static int i= 0 ;
+    
+    TestStatic(){
+      i++;
+    } 
+}
+```
 
 ------------------
 
@@ -675,6 +701,23 @@ Les classes qui implémentent `List` :
         ArrayList<Integer> array = new ArrayList<Integer>();
         array.add(3);
         array.add(4);
+
+--------------- 
+
+Les classes qui implémentent `Map` :
+
+  - ArrayList
+
+  - LinkedList
+
+        import java.util.ArrayList;
+
+        ...
+
+        ArrayList<Integer> array = new ArrayList<Integer>();
+        array.add(3);
+        array.add(4);
+
 
 Types fixés pour une instance
 ------------------------
