@@ -7,15 +7,13 @@ Retour sur quelques types
 Le pendant Objet des entiers et flottants
 -----------------------------------
 
-Il s'agit des classes **Byte**, **Short**, **Integer**, **Long**, **Float**, **Double**
-
-    Integer a ;
-    a = new Integer(3) ;
-
+Classes **Byte**, **Short**, **Integer**, **Long**, **Float**, **Double**
+```java
+Integer a ;
+a = new Integer(3) ;
+```
   - On déclare une variable `a` de type `Integer`
-
   - On crée une nouvelle instance grâce à `new` puis le constructeur.
-
   - Ex. : [doc Java Integer](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html)
 
 
@@ -61,7 +59,6 @@ Les chaînes de caractères
     - exemple : `replace`, `charAt`,...
 
 
-------------------
 
 Les chaînes de caractères Java sont **immuables** :
 
@@ -93,7 +90,7 @@ Règles de nommage
 
 
   - **classes** : commencent par une majuscules puis une majuscule sur les mots suivants accolés
-    - ex. : Cat, Point, MainClass,...
+    - ex. : Point, MainClass,...
 
 
 
@@ -289,7 +286,6 @@ public class Disque extends Point{
     public double perimeter(){
         return 2*r*Math.PI ;
     }
-    
 }
 ```
 
@@ -336,7 +332,7 @@ Lorsqu'on redéfinit une méthode, celle-ci cache la méthode de la classe mère
 
 ------------
 
-Rédéfinition de *distance()* pour prendre en compte *r*
+Redéfinition de *distance()* pour prendre en compte *r*
 ```java
 public double distance(){
   double dPoint = super.distance();
@@ -348,6 +344,7 @@ public double distance(){
 ```
 
 --------------
+
 ```java
 public class Main
 {
@@ -467,6 +464,13 @@ Cette fonction ne se comportera pas comme on aimerait qu'elle se comporte...
   - Pourrait-on faire en sorte que `Disque` ne viole pas ce principe ?
 
   - Autre exemple de violation : utilisation de `instanceOf`
+
+
+--------
+
+**Le contre-exemple du canard** 
+
+*If it looks like a duck, quacks like a duck, but needs batteries – you probably have the wrong abstraction*
 
 
 Retour sur les exceptions 
@@ -709,15 +713,15 @@ Les classes qui implémentent `List` :
   - ArrayList
 
   - LinkedList
-    ```java
-    import java.util.ArrayList;
+```java
+import java.util.ArrayList;
 
-    ...
-    
-    ArrayList<Integer> array = new ArrayList<Integer>();
-    array.add(3);
-    array.add(4);
-    ```
+...
+
+ArrayList<Integer> array = new ArrayList<Integer>();
+array.add(3);
+array.add(4);
+```
 
 
 --------------- 
@@ -727,15 +731,15 @@ Les classes qui implémentent `Map` :
   - HashTable
 
   - HashMap
-    ```java
-    import java.util.HashMap;
+```java
+import java.util.HashMap;
 
-    ...
+...
 
-    HashMap<String,Integer> myMap = new HashMap<String,Integer>();
-    myMap.put("Bonjour",0);
-    myMap.put("Au revoir",1);
-    ```
+HashMap<String,Integer> myMap = new HashMap<String,Integer>();
+myMap.put("Bonjour",0);
+myMap.put("Au revoir",1);
+```
 
 Types fixés pour une instance
 ------------------------
@@ -802,7 +806,7 @@ Renvoie :
 
 Quelques règles pour redéfinir `equals` (voir [ici](https://jmdoudoux.developpez.com/cours/developpons/java/chap-techniques_java.php))
 
-  - reflexivité : `x.equals(x)` devrait valoir toujour true
+  - reflexivité : `x.equals(x)` devrait valoir toujours true
 
   - symmétrique : si `x.equals(y)` vaut true, alors y.equals(x) aussi.  
 
