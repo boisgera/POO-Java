@@ -675,6 +675,108 @@ public class SaisieErroneeException extends Exception {
 ```
 **super** permet d'appeler les deux constructeurs de la classe Exception
 
+La classe Object
+================
+
+----------
+
+En Java, tous les objets **dérivent de la classe Object**
+
+Ils ont héritent donc d'un certain nombre de méthodes dont certaines sont intéressantes à surcharger ou redéfinir.
+
+
+toString()
+-----------
+
+Il s'agit de la méthode retournant une représentation de l'instance sous forme d'une chaîne de caractère.
+
+Ainsi, pour tout objet **obj**,
+```java
+System.out.prinlnt(obj) ;
+```
+renvoie
+
+    System.out.println(obj.toString());
+
+
+equals(Object obj)
+---------------
+Permet de tester l'égalité entre deux objets. 
+
+Différent de l'opérateur **==** qui vaut **true** lorsque deux objets pointent vers la même référence
+
+*Attention : **redéfinir** equals() pour des classes personnalisées implique de redéfinir la méthode **hashCode()*** 
+
+--------------
+
+Exemples :
+```java
+String s1 = new String("Hello World");
+String s2 = new String("Hello World");
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+```
+
+Renvoie :
+
+    false
+    true
+
+----------------
+
+Quelques règles pour redéfinir `equals` (voir [ici](https://jmdoudoux.developpez.com/cours/developpons/java/chap-techniques_java.php))
+
+  - reflexivité : `x.equals(x)` devrait valoir toujours true
+
+  - symmétrique : si `x.equals(y)` vaut true, alors y.equals(x) aussi.  
+
+  - jamais égal à null : x.equals(null) devrait être toujours faux
+
+  - si `x.equals(y)` vaut true, alors `x.hashCode() == y.hashCode()`
+
+
+clone()
+----------------
+Méthode **protected** permet de cloner un objet. 
+
+La classe doit **implémenter l'interface Cloneable** 
+```java
+public class Test implements Cloneable{
+  double x,y,z
+  // Constructeur(s) + autres méthodes
+  public Test clone() throws 
+  CloneNotSupportedException{
+      return (Test)(super.clone());
+  }
+}
+```
+----------------
+
+```java
+public class Test implements Cloneable{
+  double x,y,z
+  // Constructeur(s) + autres méthodes
+  public Test clone(){ 
+    try{
+      return (Test)(super.clone());
+    }catch(Exception CloneNotSupportedException){
+      System.out.println("Warning");
+      return new Test() ; 
+    }
+  }
+}
+```
+
+-----------------
+
+  - De cette façon, on accède à l'implémentation par défaut de **clone** qui réalise une **copie de surface**.
+
+  - Peut être suffisant dans certains cas (les attributs sont des types primitifs)
+
+  - Dangereux lorsque certains attributs sont des objets non immuables...
+
+  - Dans ce cas, redéfinir **clone** pour s'assurer de cloner les objets membres
+
 
 
 
@@ -812,108 +914,6 @@ Les valeurs de l'argument *x* et la variable *z* ne peuvent pas être modifiées
 
 
 
-
-La classe Object
-================
-
-----------
-
-En Java, tous les objets **dérivent de la classe Object**
-
-Ils ont héritent donc d'un certain nombre de méthodes dont certaines sont intéressantes à surcharger ou redéfinir.
-
-
-toString()
------------
-
-Il s'agit de la méthode retournant une représentation de l'instance sous forme d'une chaîne de caractère.
-
-Ainsi, pour tout objet **obj**,
-```java
-System.out.prinlnt(obj) ;
-```
-renvoie
-
-    System.out.println(obj.toString());
-
-
-equals(Object obj)
----------------
-Permet de tester l'égalité entre deux objets. 
-
-Différent de l'opérateur **==** qui vaut **true** lorsque deux objets pointent vers la même référence
-
-*Attention : **redéfinir** equals() pour des classes personnalisées implique de redéfinir la méthode **hashCode()*** 
-
---------------
-
-Exemples :
-```java
-String s1 = new String("Hello World");
-String s2 = new String("Hello World");
-System.out.println(s1==s2);
-System.out.println(s1.equals(s2));
-```
-
-Renvoie :
-
-    false
-    true
-
-----------------
-
-Quelques règles pour redéfinir `equals` (voir [ici](https://jmdoudoux.developpez.com/cours/developpons/java/chap-techniques_java.php))
-
-  - reflexivité : `x.equals(x)` devrait valoir toujours true
-
-  - symmétrique : si `x.equals(y)` vaut true, alors y.equals(x) aussi.  
-
-  - jamais égal à null : x.equals(null) devrait être toujours faux
-
-  - si `x.equals(y)` vaut true, alors `x.hashCode() == y.hashCode()`
-
-
-clone()
-----------------
-Méthode **protected** permet de cloner un objet. 
-
-La classe doit **implémenter l'interface Cloneable** 
-```java
-public class Test implements Cloneable{
-  double x,y,z
-  // Constructeur(s) + autres méthodes
-  public Test clone() throws 
-  CloneNotSupportedException{
-      return (Test)(super.clone());
-  }
-}
-```
-----------------
-
-```java
-public class Test implements Cloneable{
-  double x,y,z
-  // Constructeur(s) + autres méthodes
-  public Test clone(){ 
-    try{
-      return (Test)(super.clone());
-    }catch(Exception CloneNotSupportedException){
-      System.out.println("Warning");
-      return new Test() ; 
-    }
-  }
-}
-```
-
------------------
-
-  - De cette façon, on accède à l'implémentation par défaut de **clone** qui réalise une **copie de surface**.
-
-  - Peut être suffisant dans certains cas (les attributs sont des types primitifs)
-
-  - Dangereux lorsque certains attributs sont des objets non immuables...
-
-  - Dans ce cas, redéfinir **clone** pour s'assurer de cloner les objets membres
 
 
 Classes abstraites
