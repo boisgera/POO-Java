@@ -1,4 +1,4 @@
-% Programmation orientée objet avancée
+% Programmation orientée objet avec Java
 
 Retour sur quelques types
 =======================
