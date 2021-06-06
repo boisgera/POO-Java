@@ -231,10 +231,10 @@ public class Disque {
         double dy = y - d.y ;
         return Math.sqrt(x*x + y*y) ;
     }
-    public double area(){
+    public double aire(){
         return r*r*Math.PI ;
     }
-    public double perimeter(){
+    public double perimetre(){
         return 2*r*Math.PI ;
     }
 }
@@ -280,10 +280,10 @@ public class Disque extends Point{
         super(x,y);
         this.r = r ;
     }
-    public double area(){
+    public double aire(){
         return r*r*Math.PI ;
     }
-    public double perimeter(){
+    public double perimetre(){
         return 2*r*Math.PI ;
     }
 }
@@ -392,17 +392,17 @@ Point[] tab = new Point[2] ;
 tab[0] = d ; tab[1] = d2 ;
 
 for (int i=0 ; i<2 ;i++){
-  tab[i].area();
+  tab[i].aire();
 }
 ```
-  Provoque une erreur (*cannot find symbol - method area()*)
+  Provoque une erreur (*cannot find symbol - method aire()*)
 
 --------- 
 
   Il faut demander à transtyper **d2** en **Disque** !
 
 ```java
-((Disque)d2).area();
+((Disque)d2).aire();
 ```
 
   -------------------
@@ -411,7 +411,7 @@ Danger du Cast explicite
 ------------------
 ```java
 Point p = new Point(1,2) ;
-((Disque)p).area() ;
+((Disque)p).aire() ;
 ```
 
 Lève une exception
@@ -433,7 +433,7 @@ tab[0] = d ; tab[1] = d2 ; tab[2] = p ;
 
 for (int i=0 ; i<3 ;i++){
   if (tab[i] instanceOf Disque){
-      ((SubClass)tab[i]).area();
+      ((Disque)tab[i]).aire();
   }
 }
 ```
@@ -479,6 +479,8 @@ Cette fonction ne se comportera pas comme on aimerait qu'elle se comporte...
   - Violer le principe de substitution de Liskov peut conduire à des bugs difficiles à identifier et rend la maintenabilité du code délicate.
 
   - Pourrait-on faire en sorte que `Disque` ne viole pas ce principe ?
+    - Renoncer à l'héritage dans ce cas
+    - Ou ne pas redéfinir `distance` mais utiliser redéfinir une autre fonction
 
   - Autre exemple de violation : utilisation de `instanceOf`
 
@@ -502,6 +504,31 @@ Héritage multiple ?
   - Une interface peut être utilisée comme un type : le polymorphisme s'applique également ici
 
 
+Création d'une interface
+-------------
+
+Comme un fichier de classe, mais pas d'attribut !
+```java
+public interface formePleine(){
+  // Pas d'attributs !
+  
+  // Liste des méthodes à implémenter
+  double aire();
+  double perimetre();
+}
+```
+
+Utilisation d'une interface
+-------------
+Grâce au mot-clé `implements`
+```java
+public class Disque extends Point implements formePleine{
+   ...
+}
+```
+Une objet de type `Disque` peut alors également être utilisé partout où une `formePleine` est demandée.
+
+Le mot-clé `instanceOf` fonctionne également avec les interfaces 
 
 
 Retour sur les exceptions 
