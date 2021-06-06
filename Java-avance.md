@@ -525,13 +525,13 @@ Il s'agit de variables et méthodes qui sont partagées par toutes les instances
 Utilisation du mot clé **static**
 
 On peut y faire appel directement en accolant le nom à la classe :
-    
-    static int variableStatique = 3 ;
-    static void methodeStatique();
+```java
+static int variableStatique = 3 ;
+static void methodeStatique();
 
-    NomClasse.variableStatique ;
-    NomClasse.methodeStatique() ;
-
+NomClasse.variableStatique ;
+NomClasse.methodeStatique() ;
+```
 
 
 -----------------
@@ -551,9 +551,9 @@ public class TestStatic
 ------------------
 
 Exemple : méthode main d'une classe
-
-    public static void main()
-
+```java
+public static void main()
+```
 
 **Une méthode statique ne peut faire appel à des variables d'instances (non statiques)**
 
@@ -562,29 +562,31 @@ Exemple : méthode main d'une classe
 ------------
 
 Dans point : 
-
-    static void whoAmI(){
-      System.out.println("Un point");
-    }
-
+```java
+static void whoAmI(){
+  System.out.println("Un point");
+}
+```
 Dans disque : 
-
-    static void whoAmI(){
-      System.out.println("Un disque");
-    }
+```java
+static void whoAmI(){
+  System.out.println("Un disque");
+}
+```
 
 ----------------------
 
-    Disque d = new Disque(1,1,1);
-    Point d2 = new Disque(3,3,1);
-    d.whoAmI();
-    d2.whoAmI();
-    ((Disque)d2).whoAmI();
-
+```java
+Disque d = new Disque(1,1,1);
+Point d2 = new Disque(3,3,1);
+d.whoAmI();
+d2.whoAmI();
+((Disque)d2).whoAmI();
+```
 Renvoie...
 
     Un Disque
-    Un Cercle
+    Un Point
     Un Disque
 
 -------------------
@@ -594,9 +596,10 @@ Renvoie...
   - Étant des méthodes de classe, le choix de la méthode est réalisé directement au moment de la compilation en fonction du type déclaré
 
   - **Éviter d'appeler des méthodes de classe depuis des instances**, utiliser directement la classe 
-
-          Disque.whoAmI();
-          Point.whoAmI();
+    ```java
+    Disque.whoAmI();
+    Point.whoAmI();
+    ```
 
 Le mot clé final
 ==================
@@ -604,7 +607,9 @@ Le mot clé final
 Accolé à un attribut d'une classe 
 --------------
 
-    public final double x ;
+```java
+public final double x ;
+```
 
 Indique que la variable *x* ne peut pas être modifiée. Elle ne peut être assignée qu'une seule fois lors de l'appel du constructeur.
 
@@ -613,8 +618,9 @@ Permet de créer des classes immuables.
 Accolé à une méthode
 --------------
 
-    public final void methodeFinal();
-
+```java
+public final void methodeFinal();
+```
 La méthode *methodeFinal* ne peut pas être redéfinie dans une classe dérivée. 
 
 Par extension, les méthodes *private* sont implicitement *final*. 
@@ -622,20 +628,25 @@ Par extension, les méthodes *private* sont implicitement *final*.
 Accolé à une classe
 ---------------
 
+```java
     public final class ClassFinal
+```
 
 La classe *ClassFinal* ne peut pas être dérivée.
 
 Autres utilisations
 ----------------
 
-    public void methode(final int x,int y){
-      final int z = 2*y ;
-      ...
-      ...
-    }
+```java
+public void methode(final int x,int y){
+  final int z = 2*y ;
+  ...
+  ...
+}
+```
 
-    Les valeurs de l'argument *x* et la variable *z* ne peuvent pas être modifiées par la méthode. Le compilateur utilise cette information pour optimiser le code.  
+Les valeurs de l'argument *x* et la variable *z* ne peuvent pas être modifiées par la méthode. Le compilateur utilise cette information pour optimiser le code.  
+
 
 Les classes génériques
 ======================
@@ -644,23 +655,26 @@ Les classes génériques
 
 Principe
 --------
-
-    public class GenericClass<T>{
-      T val ;
-      public GenericClass(T val){
-        this.val = val ;  
-      }
-      public T getVal(){
-        return val ;
-      }
-    } 
-
+```java
+public class GenericClass<T>{
+  T val ;
+  public GenericClass(T val){
+    this.val = val ;  
+  }
+  public T getVal(){
+    return val ;
+  }
+} 
+```
 Permet d'avoir des classes qui peuvent contenir des types non connus à l'avance
 
+Utilisation
 ------------
 
+```java
     GenericClass<Integer> gen = new GenericClass<Integer>(5);
     System.out.println(gen.getVal());
+```
 
 Renvoie
 
@@ -668,22 +682,24 @@ Renvoie
 
 Pas limité à un seul type
 -------------------
-    public class GenericClass<T,U>{
-      T val1 ;
-      U val2 ;
+```java
+public class GenericClass<T,U>{
+  T val1 ;
+  U val2 ;
 
-      public GenericClass(T val1,U val2){
-        this.val1 = val1 ;
-        this.val2 = val2 ; 
-      }
-      public T getVal1(){
-        return val1 ;
-      }
+  public GenericClass(T val1,U val2){
+    this.val1 = val1 ;
+    this.val2 = val2 ; 
+  }
+  public T getVal1(){
+    return val1 ;
+  }
 
-      public T getVal2(){
-        return val2 ;
-      }
-    } 
+  public T getVal2(){
+    return val2 ;
+  }
+} 
+```
 
 Exemples 
 -------------------
@@ -693,41 +709,44 @@ Les classes qui implémentent `List` :
   - ArrayList
 
   - LinkedList
+    ```java
+    import java.util.ArrayList;
 
-        import java.util.ArrayList;
+    ...
+    
+    ArrayList<Integer> array = new ArrayList<Integer>();
+    array.add(3);
+    array.add(4);
+    ```
 
-        ...
-
-        ArrayList<Integer> array = new ArrayList<Integer>();
-        array.add(3);
-        array.add(4);
 
 --------------- 
 
 Les classes qui implémentent `Map` :
 
-  - ArrayList
+  - HashTable
 
-  - LinkedList
+  - HashMap
+    ```java
+    import java.util.HashMap;
 
-        import java.util.ArrayList;
+    ...
 
-        ...
-
-        ArrayList<Integer> array = new ArrayList<Integer>();
-        array.add(3);
-        array.add(4);
-
+    HashMap<String,Integer> myMap = new HashMap<String,Integer>();
+    myMap.put("Bonjour",0);
+    myMap.put("Au revoir",1);
+    ```
 
 Types fixés pour une instance
 ------------------------
 
 Une fois qu'une instance est créée, le type ne peut plus être changé.
-
-    ArrayList<Integer> array = new ArrayList<Integer>();
-    array.add(3);
-    array.add(4);
-    array = new ArrayList<Double>();
+```java
+ArrayList<Integer> array = new ArrayList<Integer>();
+array.add(3);
+array.add(4);
+array = new ArrayList<Double>();
+```
 
 Provoque une erreur de compilation.
 
@@ -748,9 +767,9 @@ toString()
 Il s'agit de la méthode retournant une représentation de l'instance sous forme d'une chaîne de caractère.
 
 Ainsi, pour tout objet **obj**,
-
-    System.out.prinlnt(obj) ;
-
+```java
+System.out.prinlnt(obj) ;
+```
 renvoie
 
     System.out.println(obj.toString());
@@ -767,11 +786,12 @@ Différent de l'opérateur **==** qui vaut **true** lorsque deux objets pointent
 --------------
 
 Exemples :
-
-    String s1 = new String("Hello World");
-    String s2 = new String("Hello World");
-    System.out.println(s1==s2);
-    System.out.println(s1.equals(s2));
+```java
+String s1 = new String("Hello World");
+String s2 = new String("Hello World");
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+```
 
 Renvoie :
 
@@ -796,30 +816,32 @@ clone()
 Méthode **protected** permet de cloner un objet. 
 
 La classe doit **implémenter l'interface Cloneable** 
-
-    public class Test implements Cloneable{
-      double x,y,z
-      // Constructeur(s) + autres méthodes
-      public Test clone() throws 
-      CloneNotSupportedException{
-          return (Test)(super.clone());
-      }
-    }
-
+```java
+public class Test implements Cloneable{
+  double x,y,z
+  // Constructeur(s) + autres méthodes
+  public Test clone() throws 
+  CloneNotSupportedException{
+      return (Test)(super.clone());
+  }
+}
+```
 ----------------
 
-    public class Test implements Cloneable{
-      double x,y,z
-      // Constructeur(s) + autres méthodes
-      public Test clone(){ 
-        try{
-          return (Test)(super.clone());
-        }catch(Exception CloneNotSupportedException){
-          System.out.println("Warning");
-          return new Test() ; 
-        }
-      }
+```java
+public class Test implements Cloneable{
+  double x,y,z
+  // Constructeur(s) + autres méthodes
+  public Test clone(){ 
+    try{
+      return (Test)(super.clone());
+    }catch(Exception CloneNotSupportedException){
+      System.out.println("Warning");
+      return new Test() ; 
     }
+  }
+}
+```
 
 -----------------
 
@@ -847,8 +869,9 @@ Elle est déclarée grâce au mot-clé **abstract**
 --------------------
 
 Une méthode abstraite est une méthode dont on ne donne pas d'implémentation. Seul son **prototype est fourni** :
-
-    abstract protected String methodeAbstraite(int i) ;
+```java
+abstract protected String methodeAbstraite(int i) ;
+```
 
 La méthode peut ou non être implémentée dans une des classes filles.
 
@@ -878,12 +901,13 @@ Rapport avec les interfaces
 --------------------------
 
 Une interface est **similaire à une classe abstraite** à l'exception qu'elle ne **contient que des méthodes abstraites**
-
-    public Interface MonInterface{
-      void methode1() ;
-      String methode2(int i) ;
-      //....
-    }
+```java
+public Interface MonInterface{
+  void methode1() ;
+  String methode2(int i) ;
+  //....
+}
+```
 
 On peut néanmoins définir des implémentations par défaut grâce au mot clé **default**
 
