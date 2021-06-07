@@ -319,7 +319,7 @@ Prototypes
 <i class="fas fa-long-arrow-alt-right fa-3x" style="margin-right:1em;"></i>
 <i class="fas fa-car fa-3x"></i>
 
-Usage: Javascript, [Lua](https://www.lua.org/).
+Usage: [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [Lua](https://www.lua.org/), [Self](https://selflanguage.org/).
 
 Voir aussi: [Prototypes in JavaScript](https://hackernoon.com/prototypes-in-javascript-5bba2990e04b)
 
