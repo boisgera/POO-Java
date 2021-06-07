@@ -466,7 +466,7 @@ int i = 11 % 3 ; // i vaut 2
 Tests et logique booléenne
 -------------------------------
 
-  - Test d'égalité **==** ou de non égalité **!=** ~~~~~     
+  - Test d'égalité **==** ou de non égalité **!=**
     ```java
     if (i==3){
       // Instructions si i vaut 3
