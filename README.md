@@ -70,7 +70,7 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
 
 ### Autre documentation
 
-  - [Java programming cheat sheet](https://introcs.cs.princeton.edu/java/11cheatsheet/)
+  - [Java programming cheat sheet](https://introcs.cs.princeton.edu/java/11cheatsheet/) ("Programming in Java", Princeton)
   
   - [Développons en Java (J.-M. Doudoux)](http://www.jmdoudoux.fr/java/dej/index.htm)
 ([📗 PDF](http://jmdoudoux.fr/java/dej/dej_2_20.pdf))
