@@ -617,7 +617,7 @@ for (int i=0 ; i < = 10 ; i++){
 System.out.println("On a compté jusqu'à 10")
 ```
 ```java
-for (int i=10 ; i > = 10 ; i--){
+for (int i=10 ; i > = 0 ; i--){
   System.out.print("On affiche le nombre ");
   System.out.println(i);
 }
