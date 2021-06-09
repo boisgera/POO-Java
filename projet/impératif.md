@@ -165,7 +165,7 @@ public static String element(String name, String[][] attributes)
 
 renvoyant la chaîne de caractère renvoyant l'élément SVG nommé `name` et 
 d'attributs `attributes`. Puis, changer l'implémentation de vos fonctions 
-`rect` et `circ` pour qu'elles exploitent cette fonction `element`.
+`rect` et `circle` pour qu'elles exploitent cette fonction `element`.
 
 
 Elements SVG "conteneurs"
@@ -173,7 +173,7 @@ Elements SVG "conteneurs"
 
 ### Document SVG
 
-Contrairement aux éléments `rect` et `circ`, l'élément `svg` peut avoir des 
+Contrairement aux éléments `rect` et `circle`, l'élément `svg` peut avoir des 
 enfants qui sont eux-mêmes des éléments SVG.
 Définissez une fonction `svg` permettant de décrire un élément SVG de type
 `svg`, possédant des attributs mais aussi des enfants, décrits comme des
