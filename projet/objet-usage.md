@@ -41,7 +41,7 @@ Compléter `testInteger` pour afficher les valeurs min et max représentables pa
 
 Enfin, les objets de type `Integer` ont également des méthodes non statiques. Il s'agit de méthodes qui *dépendent de l'objet créé*. Pour rappel, on les appelle avec le nom de l'objet suivi d'un point. Par exemple :
 ```java
-a.doubeValue(); // Retourne une valeur de type double aussi proche que possible de a
+a.doubleValue(); // Retourne une valeur de type double aussi proche que possible de a
 ```
 L'une de ces méthodes permet par exemple de comparer deux entiers. Trouvez la méthode correspondante et affichez quelques résultats typiques d'usages (lorsque `a` et `b` sont égaux, lorsque `a>b`,...). 
 
