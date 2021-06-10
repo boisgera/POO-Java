@@ -132,7 +132,7 @@ public double distance3(){
 Instancier une classe
 ----------------------------------------
 
-Avec le mot clé **New** et l'appel au constructeur
+Avec le mot clé **`new`** et l'appel au constructeur
 
 ```java
 Point myPoint = new Point() ;
@@ -140,7 +140,7 @@ Point myPoint = new Point() ;
 ou
 ```java
 Point myPoint,myPoint2 ;
-myPoint = new Points(1,0) ;
+myPoint = new Point(1,0) ;
 myPoint2 = myPoint ; // Attention, même référence
 ```
 Ici, `myPoint2` est le même objet que `myPoint` !
