@@ -73,7 +73,7 @@ Créez deux instances de "rouge" et testez leur égalités avec l'opérateur `==
 Quel est le résultat ? Pouvez-vous l'expliquer ?
 
 Implémentez une méthode `equals` [dont la signature est conforme à la méthode
-`equals` de `Object`](https://docs.oracle.com/javase/8/docs/api/java/util/Objects.html)
+`equals` de `Object`](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)
 et qui se comporte de façon plus conforme au besoin (deux couleurs sont considérées
 égales si et seulement si les intensités de tous leurs canaux sont égales).
 
