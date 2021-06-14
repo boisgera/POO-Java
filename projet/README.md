@@ -23,6 +23,8 @@ Projet Scalable Vector Graphics
 
   - [☕ SVGTutorial.java](https://gist.github.com/boisgera/b9efb9fce08b6297f87bd042e565cbd2)
 
+  - 🚧 *Session en cours ! * 🚧
+
 
 ## Références
 
