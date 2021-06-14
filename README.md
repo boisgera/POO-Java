@@ -54,12 +54,6 @@ Autres IDEs : [IntelliJ IDEA](https://www.jetbrains.com/idea/), [Apache Netbeans
 
   - 🖌 [Scalable Vector Graphics (SVG)](projet)
 
-## 📰 Code récent
-
-  - [☕ SVGTutorial.java](https://gist.github.com/boisgera/b9efb9fce08b6297f87bd042e565cbd2)
-
-  - [☕ Preamble.java](https://gist.github.com/boisgera/b48008b03443fd223edb3373c402442e)
-
 ## 💬 Espace de discussion
 
   - 💬 [Gitter](https://gitter.im/POO-Java/community#) (login GitHub requis)
