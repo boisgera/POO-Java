@@ -205,7 +205,7 @@ String[][] circleAttributes = {
 
 String svgString = svg(svgAttributes,
     rect(rectAttributes),
-    circle(circleAttributes),
+    circle(circleAttributes)
 );
 ```
 Vérifiez en générant un fichier SVG contenant le contenu `svgString` que le résultat 
