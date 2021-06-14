@@ -17,7 +17,7 @@ Projet Scalable Vector Graphics
 
  5. [🖌 Documents SVG (objet)](objets.md)
 
-## 📰 Solution (fragments)
+## Solution (fragments)
 
   - [☕ Preamble.java](https://gist.github.com/boisgera/b48008b03443fd223edb3373c402442e)
 
