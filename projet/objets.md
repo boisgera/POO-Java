@@ -82,10 +82,10 @@ Faites votre choix, puis modifiez en conséquence le constructeur de `Element`.
 Vérifiez que le code que vous aviez écrit qui exploitait ce constructeur 
 marche encore sans modification.
 
-Implémentez une class `Text` qui se déclare conforme à l'interface `XML` 
+Implémentez une class `TexContent` qui se déclare conforme à l'interface `XML` 
 et dont le constructeur aura la forme
 ```java
-public Text(String text)
+public TextContent(String text)
 ```
 
 Testez votre code en affichant le contenu XML associé au document
