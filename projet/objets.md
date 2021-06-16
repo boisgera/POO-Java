@@ -37,7 +37,7 @@ ces attributs sont bien définis.
 
 ### Hiérarchie des élements
 
-On souhaite introduire des classes telles que `SVG`, `Rectangle`, `Circle`, etc.
+On souhaite introduire des classes telles que `SVG`, `Rect`, `Circle`, etc.
 qui seront des éléments, mais dont les fonctionnalités seront propres au type
 de l'élément considéré. Comment se traduit dans le paradigme objet de Java le
 fait que ces objets sont des éléments ? Implémentez ces trois classes et
