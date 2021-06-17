@@ -166,9 +166,9 @@ code, puis afficher la représentation `XML` correspondante.
     Attributes textAttributes = new TextAttributes(textAttributesArray);
 
  SVG svg = new SVG(svgAttributes,
-        new Rectangle(rectangleAttributes),
+        new Rect(rectangleAttributes),
         new Circle(circleAttributes),
-        new Text(textAttributes, new TextNode("SVG"))
+        new Text(textAttributes, new TextContent("SVG"))
     );
 ```
 
