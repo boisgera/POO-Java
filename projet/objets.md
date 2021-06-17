@@ -139,14 +139,14 @@ code, puis afficher la représentation `XML` correspondante.
       {"height", "200"},
       {"viewbox", "0 0 300 200"}
     };
-    Attributes svgAttributes = new SVGAttributes(svgAttributesArray);
+    Attributes svgAttributes = new Attributes(svgAttributesArray);
 
     String[][] rectangleAttributesArray = {
       {"width", "100%"},
       {"height", "100%"},
       {"fill", "red"}
     };
-    Attributes rectangleAttributes = new RectangleAttributes(rectangleAttributesArray);
+    Attributes rectangleAttributes = new Attributes(rectangleAttributesArray);
 
     String[][] circleAttributesArray = {
       {"cx", "150"},
@@ -154,7 +154,7 @@ code, puis afficher la représentation `XML` correspondante.
       {"r", "80"},
       {"fill", "green"}
     };
-    Attributes circleAttributes = new CircleAttributes(circleAttributesArray);
+    Attributes circleAttributes = new Attributes(circleAttributesArray);
 
     String[][] textAttributesArray = {
       {"x", "150"},
@@ -163,7 +163,7 @@ code, puis afficher la représentation `XML` correspondante.
       {"text-anchor", "middle"},
       {"fill", "white"}
     };
-    Attributes textAttributes = new TextAttributes(textAttributesArray);
+    Attributes textAttributes = new Attributes(textAttributesArray);
 
  SVG svg = new SVG(svgAttributes,
         new Rect(rectangleAttributes),
@@ -202,8 +202,7 @@ Faire en sorte qu'à la construction d'une collection d'attributs spécialisée,
 une exception soit générée si elle possède des clés qui n'appartiennent pas
 à cette liste de référence.
 
-Adapter ensuite le code d'exemple initialisant `svg` pour bénéficier de ces
-vérifications.
+Adapter ensuite le code d'exemple initialisant `svg` pour bénéficier de ces vérifications.
 
 ## Retour aux élements
 
