@@ -98,7 +98,7 @@ SVG svg = new SVG(new Rect(), new Circle(), new Text(new TextContent("SVG")));
 
 ### Attributs génériques
 
-Définir une classe `Attributs` comportant un constructeur acceptant 
+Définir une classe `Attributes` comportant un constructeur acceptant 
 un tableau bidimensionnel `String[][]` qui décrivent une collection d'attributs
 [avec les conventions déjà exploitées dans la version procédurale](impératif.md).
 
