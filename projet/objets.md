@@ -177,12 +177,12 @@ code, puis afficher la représentation `XML` correspondante.
 Le schéma précédent présent l'inconvénient de ne pas valider les attributs
 qui sont passés en arguments au différents constructeurs ; on pourrait ainsi
 par erreur passer le tableau contenant un attribut `text-anchor` au constructeur
-de `Rectangle`, ce qui n'a pas de sens ! On souhaiterait que ce type d'erreur
+de `Rect`, ce qui n'a pas de sens ! On souhaiterait que ce type d'erreur
 ne passe pas inaperçue mais génère une exception.
 
 Définir des classes `SVGAttributes`, `RectangleAttributes`, `CircleAttributes`,
 `TextAttributes` dérivant de `Attributes` et leur fournir des constructeurs 
-adaptés. Changer les constructeurs de `SVG`, `Rectangle`, `Circle`
+adaptés. Changer les constructeurs de `SVG`, `Rect`, `Circle`
 et `Text` acceptant des attributs pour qu'ils n'acceptent plus que les attributs
 qui leur sont dédiés.
 
