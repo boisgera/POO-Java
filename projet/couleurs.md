@@ -22,9 +22,9 @@ On souhaite que les instances de `Color` exposent publiquement ces
 intensités sous la forme d'attributs entiers `R`, `G` et `B`:
 
 ```java
-int R = color.R;
-int B = color.B;
-int G = color.G;
+int R = red.R;
+int B = red.B;
+int G = red.G;
 ```
 
 Pour simplifier l'usage des couleurs (et éviter une large classe de bugs
