@@ -98,7 +98,7 @@ devra afficher
     Partie entière   : 3 
     Partie décimale  : .14 
 
-Que se passe-t-il si j'appelle `readDouble(1_000_000d)`? Corriger l'implémentation de `readDouble` pour que le résultat de `readDouble(1_000_000d)` soit convaincant tout en garantissant que le résultat de `readDouble(3.14)` **reste inchangé**.
+Que se passe-t-il si j'appelle `readDouble(1_000_000_000d)`? Corriger l'implémentation de `readDouble` pour que le résultat de `readDouble(1_000_000_000d)` soit convaincant tout en garantissant que le résultat de `readDouble(3.14)` **reste inchangé**.
 
 Enfin, on voudrait faire en sorte que le nombre de chiffres après la virgule puisse être défini par l'utilisateur et passé en argument de `readDouble`. On veut que le prototype de `readDouble` soit désormais
 ```java
