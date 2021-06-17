@@ -26,7 +26,7 @@ des éléments XML uniquement, et pas à leur attributs.
 
 Définir une classe `Element` munie d'un constructeur
 ```java
-public class Element(String name, Element... children)
+public Element(String name, Element... children)
 ```
 Implémenter une fonction `toXML` conforme à l'interface `XML` et faire en sorte
 que `Element` implémente bien cette interface (on ne se précoccupera
