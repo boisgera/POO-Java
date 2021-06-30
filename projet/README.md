@@ -25,7 +25,7 @@ Projet Scalable Vector Graphics
 
   - [☕ Main.java et Point.java](https://gist.github.com/boisgera/263ba8ea420d212a1cd12c3c8bd4ff04)
 
-  - 🚧 *Session en cours* 🚧
+  - [☕ dépôt github POO-Java-extra](https://github.com/boisgera/POO-Java-extra)
 
 
 ## Références
