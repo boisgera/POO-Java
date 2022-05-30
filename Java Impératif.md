@@ -369,6 +369,13 @@ La classe **String** permet de manipuler les chaînes de caractère.
 
 ```java
     String chaine = "Hello World"; // Déclaration et initialisation
+
+    String chaineSurPlusieurLignes = 
+    """
+      "Hello" avec des guillemets !!!
+      World
+    """;
+
 ```
 
 ------------------
@@ -388,6 +395,9 @@ Deux opérations utiles...
     String s2 = " World";
     System.out.print(s1+s2); // Affiche Hello World
     ```
+
+
+
 
 <!--
 ------------------
