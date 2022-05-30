@@ -32,7 +32,6 @@ insatisfaits du langage C++, pour les systèmes embarqués :
 
   - Employé largement dans le développement des premières App. Android
 
-  - Langage le plus "populaire" selon l'indice Tiobe...
 
 Principes de Java 
 --------------------------------------------------------------------------------
