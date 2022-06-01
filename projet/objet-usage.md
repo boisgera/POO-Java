@@ -57,7 +57,7 @@ et y initialiser quelques `Double` (fini, infini et NaN). Trouvez les méthodes 
 
 ## API de `String`
 
-L'objectif de cette partie est de prendre en main la classe [`String`](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/String.html) qui a de très nombreuses utilités. La plupart des exercices suivants se nécessitent que peu de code si on s'appuie sur les bonnes méthodes de la classe `String`
+L'objectif de cette partie est de prendre en main la classe [`String`](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/String.html) qui a de très nombreuses utilités. La plupart des exercices suivants ne nécessitent que peu de code si on s'appuie sur les bonnes méthodes de la classe `String`
 
 ### La lettre à compléter
 
