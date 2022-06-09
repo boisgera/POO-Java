@@ -76,7 +76,7 @@ String[][] rectAttributes1 = {
 
 ```java
 String[][] rectAttributes2 = {
-    {"width", "100%", "Euh, qu'est-ce que je fais là?"}, 
+    {"width", "100%", "Euh, qu'est-ce que je fais là ?"}, 
 };
 ```
 
