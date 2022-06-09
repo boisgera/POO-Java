@@ -96,7 +96,7 @@ Pouvez-vous trouver d'autres cas qui posent problème et les gérer ?
 
 ### Moins d'erreurs (passer en première lecture)
 
-Une façon de minimiser le risque d'attributs incorrect est de fournir au
+Une façon de minimiser le risque d'attributs incorrects est de fournir au
 développeur des fonctions d'assistance à la construction d'attributs qui
 produiront des attributs corrects par construction. Par exemple, implémentez
 une fonction 
