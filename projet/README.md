@@ -27,6 +27,8 @@ Projet Scalable Vector Graphics
 
   - [☕ Point.java et TestPoint.java (version 2022)](https://gist.github.com/c-joly/77638e35c9a2052afe5b2dbbf52359b8)
 
+  - [☕ Héritage, classes et interfaces](https://gist.github.com/boisgera/6e2876713ccf1adbe6cc0e79849c85f4)
+
   - [Dépôt github POO-Java-extra](https://github.com/boisgera/POO-Java-extra)
 
 
