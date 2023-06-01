@@ -1,5 +1,5 @@
 
-Programmation orientée objet avec Java
+Programmation orientée objet avec Java 
 ================================================================================
 
 [![Build Status](https://github.com/boisgera/POO-Java/workflows/main/badge.svg)](https://github.com/boisgera/POO-Java/actions)
