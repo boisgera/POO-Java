@@ -76,7 +76,7 @@ Définition d'une fonction
 
 
   ```java
-  TYPE_DE_RETOUR nom(TYPE1 arg1, TYPE2 arg2,...){
+  public static TYPE_RETOUR nom(TYPE1 arg1, ...){
     Instruction1 ;
     Instruction2 ;
     ...
