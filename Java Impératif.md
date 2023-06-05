@@ -1042,7 +1042,7 @@ Récupérer les arguments
    
    - ***.java** : deuxième argument
 
-  - Du point de vue de Main : 
+  - Du point de vue de la fonction `main` : 
   
     - args[0] = \"-l\"  
   
