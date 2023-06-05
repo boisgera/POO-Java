@@ -524,17 +524,6 @@ Exemple
 
 Écrire en **une instruction** une fonction qui prend en entrée une note entre 0 et 20 et qui renvoie la lettre associée (**char**) en fonction de la répartition suivante :
 
-  - [20 , 16] : A  \ \ \ \ \ \ \ \    ]16 , 14] : B
-
-  - ]14 , 11] : C  \ \ \ \ \ \ \ \   ]11, 8]   : D
-
-  - ]8 , 5]   : E  \ \ \ \ \ \ \ \ \ \ \ \ \  ]5, 0]    : F
-
-Exemple
-------------------------
-
-Écrire en **une instruction** une fonction qui prend en entrée une note entre 0 et 20 et qui renvoie la lettre associée (**char**) en fonction de la répartition suivante :
-
   - [20 , 15] : A  \ \ \ \ \ \ \ \    ]15 , 10] : B
 
   - ]10 , 5] : C  \ \ \ \ \ \ \ \   ]5, 0]   : D
