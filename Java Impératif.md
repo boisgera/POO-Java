@@ -446,6 +446,7 @@ Déclaration / Affectation
 ---------
 
   - Combinaison déclaration/affectation  :
+
     ```java
     int j = 2 ;
     ```
@@ -477,6 +478,7 @@ Tests et logique booléenne
 -------------------------------
 
   - Test d'égalité **==** ou de non égalité **!=**
+
     ```java
     if (i==3){
       // Instructions si i vaut 3
@@ -484,7 +486,9 @@ Tests et logique booléenne
       // Instructions sinon
     }
     ```
+
   - Tests comparatifs **<=**, **<**, **>=** et **>**
+
     ```java
     if (i>=3) ...
     ```
@@ -492,6 +496,7 @@ Tests et logique booléenne
 ---------------- 
 
   - Opération de négation **!**  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+
     ```java
     boolean b = !true ; // b = false donc...
     boolean b2 = i!=3 ; 
@@ -499,6 +504,7 @@ Tests et logique booléenne
     ```
 
   - Le ET et OU logique : **&&** et **||**
+  
     ```java
     boolean b = true && false ; // false !
     boolean b = true || false ; // true !
