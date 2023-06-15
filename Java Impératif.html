@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Java Impératif</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Java Impératif</h1>
+</section>
+
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="objectifs-de-cette-session" class="slide level2">
+<h2>Objectifs de cette session</h2>
+<p>Comment utiliser Java comme un langage impératif ?</p>
+<ul>
+<li><p><strong>Pas de notion d’objet</strong></p></li>
+<li><p>Être capable de développer une application faisant appel à une série d’instructions évaluées les unes après les autres</p></li>
+<li><p>Être capable d’utiliser des <strong>fonctions</strong> issues d’une bibliothèque externe</p></li>
+<li><p>Être capable d’écrire et d’utiliser ses propres <strong>fonctions</strong></p></li>
+</ul>
+</section><section id="points-abordés-dans-cette-session" class="slide level2">
+<h2>Points abordés dans cette session</h2>
+<ul>
+<li><p>Les impératifs dans un fichier Java</p></li>
+<li><p>Création de fonctions</p></li>
+<li><p>Introduction aux différents <strong>types</strong> en Java</p></li>
+<li><p>Introduction aux opérations de base</p></li>
+<li><p>Introduction aux instructions de <strong>flow control</strong></p></li>
+<li><p>Introduction à la fonction main</p></li>
+</ul>
+</section></section>
+<section><section id="créer-un-fichier-java" class="title-slide slide level1"><h1>Créer un fichier Java</h1></section><section id="retour-sur-le-hello-world" class="slide level2">
+<h2>Retour sur le “Hello World”</h2>
+<p>Fichier <strong>App.java</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">import</span><span class="im"> java.lang.System;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">public</span> <span class="kw">class</span> App {</a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello, World!&quot;</span>);</a>
+<a class="sourceLine" id="cb1-5" title="5">  }</a>
+<a class="sourceLine" id="cb1-6" title="6">}</a></code></pre></div>
+<ul>
+<li>Premières lignes : les importations de bibliothèques</li>
+<li>Correspondance <code>public class XXX</code> / nom de fichier</li>
+<li>Correspondance <code>public static void main</code> : création d’une fonction <code>main</code></li>
+</ul>
+</section><section id="définition-dune-fonction" class="slide level2">
+<h2>Définition d’une fonction</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb2-2" title="2">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello, World!&quot;</span>);</a>
+<a class="sourceLine" id="cb2-3" title="3">  }</a></code></pre></div>
+<ul>
+<li><p><code>public static</code> : élément à insérer avant la déclaration d’une fonction</p></li>
+<li><p><code>void</code> : type de retour</p></li>
+<li><p><code>main</code> : nom de la fonction</p></li>
+<li><p><code>String[] args</code> : type et nom des arguments</p></li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">public</span> <span class="dt">static</span> TYPE_RETOUR <span class="fu">nom</span>(TYPE1 arg1, ...){</a>
+<a class="sourceLine" id="cb3-2" title="2">  Instruction1 ;</a>
+<a class="sourceLine" id="cb3-3" title="3">  Instruction2 ;</a>
+<a class="sourceLine" id="cb3-4" title="4">  ...</a>
+<a class="sourceLine" id="cb3-5" title="5">}</a></code></pre></div>
+<ul>
+<li><p>Corps de la fonction entre les accolades</p></li>
+<li><p>Une fonction ne peut retourner qu’un seul objet</p></li>
+<li><p>ou rien (type <code>void</code>)</p></li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello, World!&quot;</span>);</a></code></pre></div>
+<ul>
+<li><p><code>System.out.println</code> : instruction pour afficher quelque chose dans le terminal</p></li>
+<li><p><code>"Hello, World!"</code> : argument passé à la fonction <code>println</code> (ici une chaîne de caractères)</p></li>
+</ul>
+</section><section id="quelques-règles-sur-les-instructions" class="slide level2">
+<h2>Quelques règles sur les instructions :</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1">Instruction ; <span class="co">// Ceci est un commentaire</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co">/*</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">Ceci est un bloc de commentaires</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">Qui peut s&#39;étendre sur plusieurs lignes</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">*/</span></a>
+<a class="sourceLine" id="cb5-6" title="6">Instruction_suivante ;</a></code></pre></div>
+<ul>
+<li><p>Se termine toujours par un point-virgule</p></li>
+<li><p>Les commentaires sont avec les symboles <code>//</code> (commentaire simple) ou <code>/* ...*/</code> (bloc)</p></li>
+</ul>
+</section></section>
+<section><section id="les-types-java" class="title-slide slide level1"><h1>Les types Java</h1></section><section id="types-de-base" class="slide level2">
+<h2>Types de base</h2>
+<p>Java est un langage fortement typé.</p>
+<p>8 types de base :</p>
+<ul>
+<li><p><strong>byte</strong>, <strong>short</strong>, <strong>int</strong>, <strong>long</strong></p></li>
+<li><p><strong>float</strong>, <strong>double</strong></p></li>
+<li><p><strong>boolean</strong></p></li>
+<li><p><strong>char</strong></p></li>
+</ul>
+</section><section id="les-différents-entiers" class="slide level2">
+<h2>Les différents entiers</h2>
+<ul>
+<li><p><strong>byte</strong> : entier signé sur 8 bits <span class="math inline">[ − 128, 127]</span></p></li>
+<li><p><strong>short</strong> : entier signé sur 16 bits <span class="math inline">[ − 32768, 32767]</span></p></li>
+<li><p><strong>int</strong> : entier signé sur 32 bits <span class="math inline">[ − 2<sup>31</sup>, 2<sup>31</sup> − 1]</span></p></li>
+<li><p><strong>long</strong> : entier signé sur 64 bits <span class="math inline">[ − 2<sup>63</sup>, 2<sup>63</sup> − 1]</span></p></li>
+</ul>
+</section><section id="les-entiers-littéraux" class="slide level2">
+<h2>Les entiers littéraux</h2>
+<ul>
+<li><p>Par défaut des <strong>int</strong> (ex. : 1, 2, 3,…)</p></li>
+<li><p><strong>byte</strong>, <strong>short</strong>, <strong>int</strong> et <strong>long</strong> peuvent être initialisés avec un entier littéral</p></li>
+<li><p>Les <strong>long</strong> avec des valeurs supérieures à <span class="math inline">2<sup>31</sup></span> peuvent être initialisés avec des littéraux finissant par “L” (ex. : 1000000000L)</p></li>
+<li><p>Possibilité d’ajouter des underscores "_" pour la lisibilité (ex. : 1_100)</p></li>
+</ul>
+<!---
+À essayer dans l'interpréteur BlueJ
+------------------------------------
+*Note : sans point-virgule, on récupère directement le résultat* 
+    
+    1_000_000 // On va afficher l'entier 1 million
+    int i = 1_000_000 ; 
+    10_000_000_000 // On essaye d'afficher 10 milliards (> 2^31)
+    10_000_000_000L  
+    int j = 10_000_000_000L // Que passe-t-il ?
+    long k = 10_000_000_000L
+    byte b = 128 ; // On tente d'affecter 128 à un byte
+    byte b2 = 127 ;
+    b2 = b2++ ;  // Que se passe-t-il ?
+    b2
+--->
+</section><section id="les-différentes-bases-dentiers" class="slide level2">
+<h2>Les différentes bases d’entiers</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// Le nombre 26 en décimal </span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="dt">int</span> decVal = <span class="dv">26</span>;</a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="co">//  Le nombre 26, en hexadécimal</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="dt">int</span> hexVal = <span class="bn">0x1a</span>;</a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co">// Le nombre 26, en binaire</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="dt">int</span> binVal = <span class="bn">0b11010</span>;</a></code></pre></div>
+</section><section id="les-nombres-flottants" class="slide level2">
+<h2>Les nombres flottants</h2>
+<ul>
+<li><p><strong>float</strong> : Nombres flottants simple précision codés sur 32 bits</p></li>
+<li><p><strong>double</strong> : Nombres flottants double précision codés sur 64 bits.</p></li>
+</ul>
+<p>Exemples :</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1"><span class="dt">double</span> a = <span class="dv">1</span> ; </a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="dt">double</span> b = <span class="fl">1.</span><span class="dv">0</span> ;</a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="dt">double</span> c = <span class="fl">1.3e3</span> ;</a></code></pre></div>
+</section><section id="attention-aux-expressions-littérales" class="slide level2">
+<h2>Attention aux expressions littérales</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="dt">double</span> a = <span class="dv">3</span> ;</a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="dt">double</span> b = <span class="dv">2</span> ;</a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="dt">double</span> c = a/b ;</a>
+<a class="sourceLine" id="cb8-4" title="4"></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="dt">double</span> d = <span class="dv">3</span>/<span class="dv">2</span> ; <span class="co">// --&gt; Renvoie 1 !!!</span></a></code></pre></div>
+</section><section id="les-booléens" class="slide level2">
+<h2>Les booléens</h2>
+<ul>
+<li><p><strong>boolean</strong> : ne peut valoir que <strong>true</strong> or <strong>false</strong></p></li>
+<li><p>À utiliser dans les tests logiques</p></li>
+<li><p>“<em>Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn’t something that’s precisely defined.</em>”</p></li>
+</ul>
+</section><section id="les-caractères" class="slide level2">
+<h2>Les caractères</h2>
+<ul>
+<li><p><strong>char</strong> : caractère unicode codé sur 16 bits</p></li>
+<li><p>Va de <em>\u0000</em> à <em>\uFFFF</em></p></li>
+</ul>
+<p>Exemple :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1">  <span class="dt">char</span> a = <span class="dv">0</span> ; </a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="dt">char</span> capitalC = <span class="ch">&#39;C&#39;</span> ;</a>
+<a class="sourceLine" id="cb9-3" title="3">  (<span class="dt">int</span>)capitalC ; <span class="co">// Conversion de capitalC en entier (code unicode)</span></a></code></pre></div>
+</section><section id="échapper-un-symbole" class="slide level2">
+<h2>Échapper un symbole</h2>
+<ul>
+<li><p>Peut-on utiliser les caractères <code>"</code> et <code>'</code> ?</p></li>
+<li><p>Les <em>échapper</em> avec un backslash <code>\</code></p></li>
+<li><p>Un caractère utile : le retour à la ligne <code>\n</code></p></li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1"><span class="dt">char</span> guillemet = <span class="ch">&#39;\&quot;&#39;</span> ;</a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="dt">char</span> apostrophe = <span class="ch">&#39;\&#39;&#39;</span>;</a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="dt">char</span> backslash = <span class="ch">&#39;\\&#39;</span> ;</a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="dt">char</span> retourLigne = <span class="ch">&#39;\n&#39;</span>;</a></code></pre></div>
+<!-- 
+Les objets
+-----------------------------------
+
+
+  - Tous les autres types sont des objets
+
+  - ex. : Chaînes de caractères, tableaux, listes,...
+
+  - Un objet : des attributs et des méthodes : on y accède à l'aide de l'opérateur "`.`" 
+
+  - On crée une nouvelle instance d'un objet grâce au mot clé `new` 
+
+
+Le pendant Objet des entiers et flottants
+-----------------------------------
+
+Il s'agit des classes **Byte**, **Short**, **Integer**, **Long**, **Float**, **Double**
+
+    Integer a ;
+    a = new Integer(3) ;
+
+  - On déclare une variable `a` de type `Integer`
+
+  - On crée une nouvelle instance grâce à `new` puis le constructeur.
+
+  - Ex. : [doc Java Integer](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html)
+
+-->
+<!--------
+Exercice 
+--------------------
+
+  - Essayer de voir avec BlueJ le nom du champ qui contient la valeur d'un entier dans **Integer**.
+  - Essayer de lire cette valeur à l'aide de l'interpréteur
+  - Trouver la méthode permettant de réaliser cette opération.
+-->
+</section><section id="les-tableaux" class="slide level2">
+<h2>Les tableaux</h2>
+<p>Les tableaux (<strong>array</strong>) permettent de stocker un nombre <strong>connu</strong> d’objets en mémoire.</p>
+<p>Ils peuvent être de n’importe quel type.</p>
+<ul>
+<li><p><code>int[]</code></p></li>
+<li><p><code>double[]</code></p></li>
+<li><p><code>char[]</code></p></li>
+<li><p>…</p></li>
+</ul>
+</section><section class="slide level2">
+
+<p>Déclaration :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1"><span class="dt">int</span>[] tableau ; <span class="co">// Déclaration d&#39;un tableau d&#39;entiers</span></a></code></pre></div>
+<p>Initialisation avec le mot-clé <code>new</code></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1">tableau = <span class="kw">new</span> <span class="dt">int</span>[N] ; <span class="co">// N est un entier</span></a></code></pre></div>
+<p>Accès : avec l’opérateur []</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb13-1" title="1">    tableau[i] ; <span class="co">// i &lt; N</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Une autre façon d’initialiser un tableau lorsqu’on connaît les éléments :</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="dt">int</span>[] tableau2= {<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>} ;</a></code></pre></div>
+<p>Les tableaux peuvent être modifiés directement :</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1">tableau2[<span class="dv">0</span>] = <span class="dv">0</span> ; <span class="co">// tableau2 vaut donc {0,4,5,6}</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Comment connaître la taille d’un tableau ?</p>
+<ul>
+<li><p>Rappel : le type d’un tableau d’entier est int[] : la taille n’est pas mentionnée.</p></li>
+<li><p><strong>.length</strong> après le nom du tableau</p></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb16-1" title="1">  <span class="dt">int</span> N = tableau.<span class="fu">length</span> ; </a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Il est possible de créer des tableaux sur plusieurs dimensions. Il s’agit alors d’un tableau de tableau.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb17-1" title="1">    <span class="dt">int</span>[][] tab1 = {{<span class="dv">1</span> , <span class="dv">2</span> , <span class="dv">3</span>},{<span class="dv">4</span> , <span class="dv">5</span> , <span class="dv">6</span>}} ;</a>
+<a class="sourceLine" id="cb17-2" title="2">    <span class="dt">int</span>[][] tab2 = {{<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>}, {<span class="dv">4</span>,<span class="dv">5</span>}}; <span class="co">// On a toujours un tableau de int[]</span></a></code></pre></div>
+</section><section id="la-classe-string" class="slide level2">
+<h2>La classe <strong>String</strong></h2>
+<p>La classe <strong>String</strong> permet de manipuler les chaînes de caractère.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb18-1" title="1">    <span class="bu">String</span> chaine = <span class="st">&quot;Hello World&quot;</span>; <span class="co">// Déclaration et initialisation</span></a>
+<a class="sourceLine" id="cb18-2" title="2"></a>
+<a class="sourceLine" id="cb18-3" title="3">    <span class="bu">String</span> chaineSurPlusieurLignes = </a>
+<a class="sourceLine" id="cb18-4" title="4">    <span class="st">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb18-5" title="5">      <span class="st">&quot;Hello&quot;</span> avec des guillemets !!!</a>
+<a class="sourceLine" id="cb18-6" title="6">      World</a>
+<a class="sourceLine" id="cb18-7" title="7">    <span class="st">&quot;&quot;&quot;;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Deux opérations utiles…</p>
+<ul>
+<li><p><strong>length</strong>() : donne la longueur de la chaîne</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1">  <span class="bu">String</span> s1 = <span class="st">&quot;Hello&quot;</span></a>
+<a class="sourceLine" id="cb19-2" title="2">  <span class="dt">int</span> N = s1.<span class="fu">length</span>(); <span class="co">// Une syntaxe un peu étrange</span></a></code></pre></div></li>
+<li><p>Opérateur <strong>+</strong> : permet de concaténer deux chaînes</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="bu">String</span> s2 = <span class="st">&quot; World&quot;</span>;</a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(s1+s2); <span class="co">// Affiche Hello World</span></a></code></pre></div></li>
+</ul>
+<!--
+------------------
+
+Les chaînes de caractères Java sont immuables :
+
+  - Il n'existe aucun moyen de modifier le contenu d'une chaîne.
+
+  - L'opération **chaine = \"Hello World bis\"** revient à placer une **nouvelle** chaîne de caractères dans la variable chaine.
+
+  - Autre exemple : la méthode **concat** ne modifie pas la chaîne initiale. 
+
+----------------
+
+Exemples
+
+    String s1 = " Hello " ;
+    char c = s1.charAt(0) // C vaut 'H'
+
+    String s2 = s1.concat("World"); // Hello World
+
+    String s3 = s1 + " World " ;  // Hello World
+  
+    String s4 =  " World ".replace("Wor","Bo") ; // Bold
+
+-->
+</section></section>
+<section><section id="les-instructions-de-base-en-java" class="title-slide slide level1"><h1>Les instructions de base en Java</h1></section><section id="déclaration-affectation" class="slide level2">
+<h2>Déclaration / Affectation</h2>
+<ul>
+<li><p>Déclaration : fournir le nom du type et de la variable</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1"><span class="dt">int</span>  i ;</a></code></pre></div></li>
+<li><p>Affectation : avec le signe <strong>=</strong></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" title="1">i = <span class="dv">1</span> ;</a></code></pre></div></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Combinaison déclaration/affectation :</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb23-1" title="1"><span class="dt">int</span> j = <span class="dv">2</span> ;</a></code></pre></div></li>
+</ul>
+</section><section id="opérations-mathématiques" class="slide level2">
+<h2>Opérations mathématiques</h2>
+<ul>
+<li><p>Opérations mathématiques de base <strong>+ , - , * , /</strong> (avec les priorités mathématiques habituelles)</p></li>
+<li>Opérations d’incrémentation/décrémentation <strong>++/--</strong></li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb24-1" title="1">i ++ ; <span class="co">// Équivalent à i = i + 1 ;</span></a>
+<a class="sourceLine" id="cb24-2" title="2">i -- ; <span class="co">// Équivalent à i = i-1 ;</span></a>
+<a class="sourceLine" id="cb24-3" title="3">i += <span class="dv">3</span> ; <span class="co">// Équivalent à i = i + 3 ;</span></a>
+<a class="sourceLine" id="cb24-4" title="4">i *= <span class="dv">3</span> ; <span class="co">// Équivalent à i = i*3 ;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Reste de la division entière <strong>%</strong></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb25-1" title="1"><span class="dt">int</span> i = <span class="dv">11</span> % <span class="dv">3</span> ; <span class="co">// i vaut 2</span></a></code></pre></div>
+</section><section id="tests-et-logique-booléenne" class="slide level2">
+<h2>Tests et logique booléenne</h2>
+<ul>
+<li><p>Test d’égalité <strong>==</strong> ou de non égalité <strong>!=</strong></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">if</span> (i==<span class="dv">3</span>){</a>
+<a class="sourceLine" id="cb26-2" title="2">  <span class="co">// Instructions si i vaut 3</span></a>
+<a class="sourceLine" id="cb26-3" title="3">}<span class="kw">else</span>{</a>
+<a class="sourceLine" id="cb26-4" title="4">  <span class="co">// Instructions sinon</span></a>
+<a class="sourceLine" id="cb26-5" title="5">}</a></code></pre></div></li>
+<li><p>Tests comparatifs <strong>&lt;=</strong>, <strong>&lt;</strong>, <strong>&gt;=</strong> et <strong>&gt;</strong></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">if</span> (i&gt;=<span class="dv">3</span>) ...</a></code></pre></div></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Opération de négation <strong>!</strong>                                              </p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb28-1" title="1"><span class="dt">boolean</span> b = !<span class="kw">true</span> ; <span class="co">// b = false donc...</span></a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="dt">boolean</span> b2 = i!=<span class="dv">3</span> ; </a>
+<a class="sourceLine" id="cb28-3" title="3"><span class="co">//b2 = true ou false en fonction du test</span></a></code></pre></div></li>
+<li><p>Le ET et OU logique : <strong>&amp;&amp;</strong> et <strong>||</strong></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb29-1" title="1"><span class="dt">boolean</span> b = <span class="kw">true</span> &amp;&amp; <span class="kw">false</span> ; <span class="co">// false !</span></a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="dt">boolean</span> b = <span class="kw">true</span> || <span class="kw">false</span> ; <span class="co">// true !</span></a></code></pre></div></li>
+</ul>
+</section><section id="opérateur-ternaire" class="slide level2">
+<h2>Opérateur ternaire " ? "</h2>
+<p>Si la condition vaut <strong>true</strong>, alors on retourne val1, sinon on retourne val2.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb30-1" title="1">condition ? val1 : val2 ;</a></code></pre></div>
+<p>Exemple</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb31-1" title="1"><span class="dt">int</span> note = <span class="dv">15</span> ;</a>
+<a class="sourceLine" id="cb31-2" title="2"><span class="dt">char</span> grade = (note &gt;= <span class="dv">16</span>) ? <span class="ch">&#39;A&#39;</span>:<span class="ch">&#39;B&#39;</span>; </a></code></pre></div>
+</section><section id="exemple" class="slide level2">
+<h2>Exemple</h2>
+<p>Écrire en <strong>une instruction</strong> une fonction qui prend en entrée une note entre 0 et 20 et qui renvoie la lettre associée (<strong>char</strong>) en fonction de la répartition suivante :</p>
+<ul>
+<li><p>[20 , 15] : A          ]15 , 10] : B</p></li>
+<li><p>]10 , 5] : C          ]5, 0] : D</p></li>
+</ul>
+<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb32-1" title="1"><span class="dt">int</span> n = <span class="dv">7</span> ; <span class="co">// La note en chiffre</span></a>
+<a class="sourceLine" id="cb32-2" title="2"><span class="dt">char</span> l = n&gt;=<span class="dv">15</span> ? <span class="ch">&#39;A&#39;</span>:n&gt;=<span class="dv">10</span> ? <span class="ch">&#39;B&#39;</span>:n&gt;= <span class="dv">5</span> ? <span class="ch">&#39;C&#39;</span>:<span class="ch">&#39;D&#39;</span>;</a></code></pre></div>
+</section></section>
+<section><section id="le-contrôle-de-flux-en-java" class="title-slide slide level1"><h1>Le Contrôle de Flux en Java</h1></section><section class="slide level2">
+
+<p>Il s’agit ici de définir l’ordre d’exécution des instructions.</p>
+<p>Par défaut, au sein d’une méthode, les instructions sont exécutées <strong>les une après les autres</strong>.</p>
+</section><section id="le-mot-clé-return" class="slide level2">
+<h2>Le mot-clé <strong>return</strong></h2>
+<p>Le mot-clé <strong>return</strong> permet d’interrompre définitivement l’exécution d’une méthode et de retourner la valeur précisée après le mot clé.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb33-1" title="1"><span class="dt">int</span> <span class="fu">renvoie1</span>(){</a>
+<a class="sourceLine" id="cb33-2" title="2">  <span class="kw">return</span> <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb33-3" title="3">}</a></code></pre></div>
+<p>Ce mot clé est obligatoire pour les fonctions qui retournent autre chose que <em>void</em></p>
+</section><section id="les-instructions-ifelse" class="slide level2">
+<h2>Les instructions <strong>if/else</strong></h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb34-1" title="1">    instruct1 ;</a>
+<a class="sourceLine" id="cb34-2" title="2">    <span class="kw">if</span> (x == <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb34-3" title="3">    {</a>
+<a class="sourceLine" id="cb34-4" title="4">      instruct2 ;</a>
+<a class="sourceLine" id="cb34-5" title="5">    }<span class="kw">else</span></a>
+<a class="sourceLine" id="cb34-6" title="6">    {</a>
+<a class="sourceLine" id="cb34-7" title="7">      instruct3 ;</a>
+<a class="sourceLine" id="cb34-8" title="8">    }</a>
+<a class="sourceLine" id="cb34-9" title="9">    instruct4 ;</a></code></pre></div>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Si <span class="math inline"><em>x</em> = 4</span>, on aura instruct1 <span class="math inline">→</span> instruct2<span class="math inline">→</span> instruct4</p></li>
+<li><p>Si <span class="math inline"><em>x</em> ≠ 4</span>, on aura instruct1 <span class="math inline">→</span> instruct3 <span class="math inline">→</span> instruct4</p></li>
+</ul>
+</section><section class="slide level2">
+
+<p>On peut également avoir <strong>if</strong> sans <strong>else</strong></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">if</span>(x==<span class="dv">4</span>){</a>
+<a class="sourceLine" id="cb35-2" title="2">  instruct1 ;</a>
+<a class="sourceLine" id="cb35-3" title="3">}</a>
+<a class="sourceLine" id="cb35-4" title="4">instruct2 ;</a></code></pre></div>
+<ul>
+<li><p>Si <span class="math inline"><em>x</em> = 4</span>, on aura instruct1 <span class="math inline">→</span> instruct2</p></li>
+<li><p>Si <span class="math inline"><em>x</em> ≠ 4</span>, on aura instruct2</p></li>
+</ul>
+</section><section id="les-boucles-for" class="slide level2">
+<h2>Les boucles <strong>for</strong></h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">for</span> (initialisation ; conditionFin ; increment){</a>
+<a class="sourceLine" id="cb36-2" title="2">  instructions;</a>
+<a class="sourceLine" id="cb36-3" title="3">}</a>
+<a class="sourceLine" id="cb36-4" title="4">instructionsSuivante ;</a></code></pre></div>
+<ul>
+<li><p>Réaliser des opérations un nombre défini de fois</p></li>
+<li><p>Parcourir un tableau / une liste</p></li>
+<li><p>Une fois la condition de fin réalisée, <strong>instructionsSuivante</strong> est exécutée</p></li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb37"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i=<span class="dv">0</span> ; i &lt; = <span class="dv">10</span> ; i++){</a>
+<a class="sourceLine" id="cb37-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="st">&quot;On affiche le nombre &quot;</span>);</a>
+<a class="sourceLine" id="cb37-3" title="3">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i);</a>
+<a class="sourceLine" id="cb37-4" title="4">}</a>
+<a class="sourceLine" id="cb37-5" title="5"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;On a compté jusqu&#39;à 10&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">for</span> (<span class="dt">int</span> i=<span class="dv">10</span> ; i &gt; = <span class="dv">0</span> ; i--){</a>
+<a class="sourceLine" id="cb38-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">print</span>(<span class="st">&quot;On affiche le nombre &quot;</span>);</a>
+<a class="sourceLine" id="cb38-3" title="3">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i);</a>
+<a class="sourceLine" id="cb38-4" title="4">}</a>
+<a class="sourceLine" id="cb38-5" title="5"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Fin du compte à rebours !&quot;</span>)</a></code></pre></div>
+</section><section class="slide level2">
+
+<p><strong>for</strong> comme en Python (<em>foreach</em>)</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb39-1" title="1"><span class="dt">int</span>[] tab = {<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>}</a>
+<a class="sourceLine" id="cb39-2" title="2"><span class="kw">for</span> (<span class="dt">int</span> e:tab){</a>
+<a class="sourceLine" id="cb39-3" title="3">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(e);</a>
+<a class="sourceLine" id="cb39-4" title="4">}</a></code></pre></div>
+<p>Attention : le contenu de la boucle ne doit pas modifier le tableau</p>
+</section><section id="les-boucles-while" class="slide level2">
+<h2>Les boucles <strong>while</strong></h2>
+<div class="sourceCode" id="cb40"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">while</span> (expressionTest) {</a>
+<a class="sourceLine" id="cb40-2" title="2">  instructions;</a>
+<a class="sourceLine" id="cb40-3" title="3">}</a>
+<a class="sourceLine" id="cb40-4" title="4">instructionsSuivantes ;</a></code></pre></div>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Réaliser des opérations tant qu’une condition est réalisée</p></li>
+<li><p>Si <strong>expressionTest</strong> vaut <strong>false</strong> lors de sa première évaluation, on passe à <strong>instructionsSuivantes</strong></p></li>
+<li><p><strong>while(true)</strong> <span class="math inline">→</span> boucle infinie</p></li>
+<li><p>Une fois que <strong>expressionTest</strong> est faux, <strong>instructionsSuivantes</strong> est exécutée</p></li>
+</ul>
+</section><section id="les-boucles-do-while" class="slide level2">
+<h2>Les boucles <strong>do while</strong></h2>
+<div class="sourceCode" id="cb41"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">do</span>{</a>
+<a class="sourceLine" id="cb41-2" title="2">  instructions;</a>
+<a class="sourceLine" id="cb41-3" title="3">}<span class="kw">while</span> (expressionTest);</a>
+<a class="sourceLine" id="cb41-4" title="4">instructionsSuivantes ; </a></code></pre></div>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Similaire à <strong>while</strong></p></li>
+<li><p>Mais garantit que le bloc <strong>instructions</strong> est exécuté <strong>au moins une fois</strong>.</p></li>
+<li><p>Une fois que <strong>expressionTest</strong> est faux, <strong>instructionsSuivantes</strong> est exécutée</p></li>
+</ul>
+</section><section id="le-mot-clé-break" class="slide level2">
+<h2>Le mot clé <strong>break</strong></h2>
+<p>Permet de sortir d’un bloc d’instruction <strong>for</strong>, <strong>while</strong> ou <strong>do while</strong> prématurément</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb42-1" title="1"><span class="bu">String</span> chaine = <span class="st">&quot;Hello World&quot;</span> ;</a>
+<a class="sourceLine" id="cb42-2" title="2"><span class="co">// Recherche de la présence du caractère &#39;W&#39;</span></a>
+<a class="sourceLine" id="cb42-3" title="3"><span class="dt">boolean</span> wPresent = <span class="kw">false</span> ;</a>
+<a class="sourceLine" id="cb42-4" title="4"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span> ; i&lt; chaine.<span class="fu">length</span>() ; i++){</a>
+<a class="sourceLine" id="cb42-5" title="5">  <span class="kw">if</span> (chaine.<span class="fu">charAt</span>(i) == <span class="ch">&#39;W&#39;</span>){</a>
+<a class="sourceLine" id="cb42-6" title="6">    wPresent = <span class="kw">true</span> ;</a>
+<a class="sourceLine" id="cb42-7" title="7">    <span class="kw">break</span> ; <span class="co">// Il n&#39;est plus utile de continuer le for</span></a>
+<a class="sourceLine" id="cb42-8" title="8">  }</a>
+<a class="sourceLine" id="cb42-9" title="9">}</a></code></pre></div>
+</section><section id="le-mot-clé-continue" class="slide level2">
+<h2>Le mot clé <strong>continue</strong></h2>
+<p>Permet de “<strong>sauter</strong>” l’itération courante d’un bloc d’instruction <strong>for</strong>, <strong>while</strong> ou <strong>do while</strong>.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb43-1" title="1">    <span class="bu">String</span> chaine = <span class="st">&quot;Hello world&quot;</span> ;</a>
+<a class="sourceLine" id="cb43-2" title="2">    <span class="co">// Comptage du nombre de &#39;l&#39;</span></a>
+<a class="sourceLine" id="cb43-3" title="3">    <span class="dt">int</span> nb = <span class="dv">0</span> ;</a>
+<a class="sourceLine" id="cb43-4" title="4">    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span> ; i&lt; chaine.<span class="fu">length</span>() ; i++){</a>
+<a class="sourceLine" id="cb43-5" title="5">        <span class="kw">if</span> (chaine.<span class="fu">charAt</span>(i)!=<span class="ch">&#39;l&#39;</span>)</a>
+<a class="sourceLine" id="cb43-6" title="6">          <span class="kw">continue</span> ; <span class="co">// On passe à i+1</span></a>
+<a class="sourceLine" id="cb43-7" title="7">        <span class="co">// On traite le caractère </span></a>
+<a class="sourceLine" id="cb43-8" title="8">        nb++;  </a>
+<a class="sourceLine" id="cb43-9" title="9">    }</a></code></pre></div>
+</section><section id="linstruction-switch" class="slide level2">
+<h2>L’instruction <strong>switch</strong></h2>
+<p>Permet de placer le contrôle de flux à un endroit spécifique en fonction de la valeur d’une variable parmi un ensemble donné :</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb44-1" title="1"><span class="kw">switch</span>(variable){</a>
+<a class="sourceLine" id="cb44-2" title="2">  <span class="kw">case</span> valeur1 : instr1 ; instr2 ; <span class="co">//...</span></a>
+<a class="sourceLine" id="cb44-3" title="3">  <span class="kw">case</span> valeur2 : instr3 ; instr4 ; <span class="co">//...</span></a>
+<a class="sourceLine" id="cb44-4" title="4">  <span class="kw">case</span> valeur3 : instr5 ; instr6 ; <span class="co">//...</span></a>
+<a class="sourceLine" id="cb44-5" title="5">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Dès qu’une des conditions est vérifiée, le code exécute <strong>toutes les instructions suivantes</strong></p>
+<p>Si variable = valeur2 alors instr3 <span class="math inline">→</span> instr4 <span class="math inline">→</span> instr5 <span class="math inline">→</span> instr6</p>
+</section><section class="slide level2">
+
+<p>Penser à l’instruction <strong>break</strong> et à l’instruction <strong>default</strong></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb45-1" title="1"><span class="kw">switch</span>(variable){</a>
+<a class="sourceLine" id="cb45-2" title="2">  <span class="kw">case</span> valeur1 : instr1 ; instr2 ; <span class="kw">break</span> </a>
+<a class="sourceLine" id="cb45-3" title="3">  <span class="kw">case</span> valeur2 : instr3 ; instr4 ; <span class="kw">break</span> </a>
+<a class="sourceLine" id="cb45-4" title="4">  <span class="kw">case</span> valeur3 : instr5 ; instr6 ; <span class="kw">break</span> </a>
+<a class="sourceLine" id="cb45-5" title="5">  ...</a>
+<a class="sourceLine" id="cb45-6" title="6">  <span class="kw">default</span>: instrDefault;</a>
+<a class="sourceLine" id="cb45-7" title="7">}</a></code></pre></div>
+<!---
+Exercice
+-------------
+   Créer une classe TestSwitch implémentant cette la fonction suivante :
+
+  - prototype : *String* **getDay**(*int* i) 
+
+  - Retourne la chaîne de caractères associées au i<sup>ème</sup> jour de la semaine
+  
+  - Robuste à un utilisateur malicieux
+
+
+---------------------------
+
+  Cette version ne compilera pas (dayString potentiellement non initialisée) et est sémantiquement incorrecte (manque **break**)
+
+    public String getDayBAD(int dayNumber){
+      String dayString ;
+      switch(dayNumber){
+        case 1 : dayString = "Monday" ;
+        case 2 : dayString = "Tuesday";
+        case 3 : dayString = "Wednesday";
+        case 4 : dayString = "Thursday";
+        case 5 : dayString = "Friday";
+        case 6 : dayString = "Saturday";
+        case 7 : dayString = "Sunday";
+      }
+      return dayString ;
+    }
+
+------------------------
+
+    public String getDay(int dayNumber){
+       String dayString ; 
+       // Plus besoin d'initialiser grâce au default.
+       switch(dayNumber){
+        case 1 : dayString = "Monday" ; break ;
+        case 2 : dayString = "Tuesday"; break ;
+        case 3 : dayString = "Wednesday"; break ;
+        case 4 : dayString = "Thursday"; break ;
+        case 5 : dayString = "Friday"; break ;
+        case 6 : dayString = "Saturday"; break ;
+        case 7 : dayString = "Sunday"; break ;
+        default: dayString = "I am Groot";
+      }
+      return dayString ;
+    }
+
+  - Penser aux **break** et **default** 
+
+  - Ne fonctionne qu'avec les **int** (et dérivés) et les **String**. Les valeurs testées doivent être constantes
+
+--->
+</section></section>
+<section><section id="les-exceptions" class="title-slide slide level1"><h1>Les exceptions</h1></section><section id="but" class="slide level2">
+<h2>But</h2>
+<ul>
+<li>Lors de la compilation, le compilateur vérifie surtout le respects de <strong>contrats</strong> (signature des fonctions).
+<ul>
+<li>ex. : on passe les bons types en arguments</li>
+</ul></li>
+<li><p>Il ne vérifie pas la cohérence des valeurs</p></li>
+<li><p>Le but des exceptions est de “signaler” les problèmes</p></li>
+<li><p>Représente un cas particulier de contrôle de flux.</p></li>
+</ul>
+</section><section id="exemple-1" class="slide level2">
+<h2>Exemple</h2>
+<div class="sourceCode" id="cb46"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb46-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb46-3" title="3">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">1</span>/<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb46-4" title="4">  }</a>
+<a class="sourceLine" id="cb46-5" title="5">}</a></code></pre></div>
+<p>Résultat dans le terminal :</p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.ArithmeticException: / by zero at Main.main(Main.java:3)</code></pre>
+</section><section id="que-se-passe-t-il" class="slide level2">
+<h2>Que se passe-t-il ?</h2>
+<ul>
+<li><p>Je réalise une division par zéro avec des entiers</p></li>
+<li><p>Il s’agit d’une erreur arithmétique détectée par la fonction qui encode la division des entiers</p></li>
+<li><p>Cette fonction <strong>lève une exception</strong> et la transmet à la méthode appelante (ici <strong>main</strong>)</p></li>
+<li><p><strong>main</strong> reçoit cette exception. Par défaut, l’exécution de <strong>main</strong> s’arrête et le texte descriptif de l’exception s’affiche dans la console</p></li>
+</ul>
+</section><section id="principe-exceptions" class="slide level2">
+<h2>Principe exceptions ?</h2>
+<ul>
+<li><p>C’est une mesure de protection pour éviter des comportements non prévus</p></li>
+<li><p>Lorsqu’une exception est levée, la méthode appelante la reçoit. Si elle n’est pas traitée, l’exécution de la méthode est interrompue et l’exception remontre à la méthode appelante</p></li>
+<li><p>Si l’exception n’est toujours pas traitée par la méthode principale (<strong>main</strong>), alors le programme s’arrête et le contenu de la pile d’exécution est affichée (on voit toutes les fonctions appelées)</p></li>
+</ul>
+</section><section id="comment-traiter-les-exceptions" class="slide level2">
+<h2>Comment traiter les exceptions ?</h2>
+<p>Il faut essayer !</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb48-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb48-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb48-3" title="3">      <span class="kw">try</span>{</a>
+<a class="sourceLine" id="cb48-4" title="4">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">1</span>/<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb48-5" title="5">      }<span class="kw">catch</span>(<span class="bu">Exception</span> e){</a>
+<a class="sourceLine" id="cb48-6" title="6">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Ce n&#39;est pas très bien !&quot;</span>);</a>
+<a class="sourceLine" id="cb48-7" title="7">      }</a>
+<a class="sourceLine" id="cb48-8" title="8">  }</a>
+<a class="sourceLine" id="cb48-9" title="9">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb49"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb49-1" title="1"><span class="kw">catch</span>(<span class="bu">Exception</span> e)</a></code></pre></div>
+<ul>
+<li><p><strong>J’attrappe</strong> l’exception <strong>e</strong> (de type <strong>Exception</strong>)</p></li>
+<li><p>Je peux alors réaliser un traitement spécifique adapté à la situation</p></li>
+</ul>
+<!--
+  - **Exception** est une classe Java. **e** est donc un objet avec des méthodes et attributs 
+-->
+</section><section class="slide level2">
+
+<p>Attraper une exception spécifique</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb50-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb50-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb50-3" title="3">    <span class="kw">try</span>{</a>
+<a class="sourceLine" id="cb50-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">1</span>/<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb50-5" title="5">    }<span class="kw">catch</span>(<span class="bu">ArithmeticException</span> e){</a>
+<a class="sourceLine" id="cb50-6" title="6">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Ce n&#39;est pas très bien !&quot;</span>);</a>
+<a class="sourceLine" id="cb50-7" title="7">    }</a>
+<a class="sourceLine" id="cb50-8" title="8">  }</a>
+<a class="sourceLine" id="cb50-9" title="9">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Traiter plusieurs exceptions</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb51-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb51-3" title="3">    <span class="kw">try</span>{</a>
+<a class="sourceLine" id="cb51-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">1</span>/<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb51-5" title="5">    }<span class="kw">catch</span>(<span class="bu">ArithmeticException</span> e){</a>
+<a class="sourceLine" id="cb51-6" title="6">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;C&#39;est une exception arithm!&quot;</span>);</a>
+<a class="sourceLine" id="cb51-7" title="7">    }<span class="kw">catch</span>(<span class="bu">Exception</span> e){</a>
+<a class="sourceLine" id="cb51-8" title="8">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;C&#39;est une autre exception !&quot;</span>);</a>
+<a class="sourceLine" id="cb51-9" title="9">    }</a>
+<a class="sourceLine" id="cb51-10" title="10">  }</a>
+<a class="sourceLine" id="cb51-11" title="11">}</a></code></pre></div>
+</section><section id="le-mot-clé-throws" class="slide level2">
+<h2>Le mot-clé “throws”</h2>
+<ul>
+<li><p>Par défaut, les exceptions sont vérifiées par le compilateur</p></li>
+<li>Si votre méthode est susceptible de ne pas traiter un type d’exception et de le renvoyer, il faut en principe le déclarer dans la signature.</li>
+</ul>
+<div class="sourceCode" id="cb52"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb52-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) <span class="kw">throws</span> <span class="bu">ArithmeticException</span> {</a>
+<a class="sourceLine" id="cb52-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">1</span>/<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb52-3" title="3">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Certaines exception étant très communes, les déclarer via <strong>throws</strong> est superflu. C’est le cas de <em>ArithmeticException</em></p></li>
+<li><p>Pour d’autres exceptions (ex. <em>IOException</em>), il faut les déclarer via <strong>throws</strong> sous peine d’erreur de compilation.</p></li>
+<li><p><a href="https://programming.guide/java/list-of-java-exceptions.html">Liste des exceptions par défaut</a></p></li>
+</ul>
+</section><section id="lever-une-exception" class="slide level2">
+<h2>Lever une exception</h2>
+<p>Utiliser le mot clé <strong>throw</strong></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb53-1" title="1"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">printAge</span>(<span class="dt">int</span> i){</a>
+<a class="sourceLine" id="cb53-2" title="2">  <span class="kw">if</span> (i&lt;<span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb53-3" title="3">    <span class="kw">throw</span>(<span class="kw">new</span> <span class="bu">IllegalArgumentException</span>(<span class="st">&quot;Age &gt;0 !&quot;</span>))</a>
+<a class="sourceLine" id="cb53-4" title="4">  }<span class="kw">else</span>{</a>
+<a class="sourceLine" id="cb53-5" title="5">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Vous avez &quot;</span>+i+<span class="st">&quot; ans !&quot;</span>);</a>
+<a class="sourceLine" id="cb53-6" title="6">  }</a>
+<a class="sourceLine" id="cb53-7" title="7">} </a></code></pre></div>
+<!--
+Créer une exception personnalisée
+-------------------
+
+  - Exemple : type **SaisieErroneeException**
+
+  - Dans le fichier **SaisieErroneeException.java**
+
+        public class SaisieErroneeException extends Exception {
+
+          public SaisieErroneeException() {
+            super();
+          }
+        
+          public SaisieErroneeException(String s) { 
+            super(s);
+          }
+        }
+
+-------------------
+
+    public void printAge(int i) throws SaisieErroneeException{
+      if (i<0){
+        throw(new SaisieErroneeException("Age >0 !"))
+      }else{
+        System.out.println("Vous avez "+i+" ans !");
+      }
+    } 
+
+-->
+</section></section>
+<section><section id="la-structure-dune-application-java" class="title-slide slide level1"><h1>La structure d’une application Java</h1></section><section id="la-fonction-main" class="slide level2">
+<h2>La fonction Main</h2>
+<p>Il est possible “d’exécuter” un fichier <em>.java</em> si et seulement si celui-ci contient une fonction <strong>main</strong> dont la signature est la suivante :</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb54-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) ;</a></code></pre></div>
+<!---
+Retour sur le tutoriel BlueJ (slide précédente)
+-------------------
+
+  - Deux fichiers sources .java
+
+  - Les versions compilées sont les .class
+
+  - *Cat.java* décrit le fonctionnement de la classe **Cat**
+
+  - Comment faire pour **créer un programme exécutable** ?
+---->
+</section><section id="section" class="slide level2">
+<h2><!--
+-------------------------
+
+  - **public ** : la méthode est publique (peut être appelée depuis une autre classe)
+
+  - **static** : la méthode est statique. C'est une méthode de classe qui ne nécessite pas d'instance de l'objet.
+
+  - **void** : la méthode ne retourne rien. 
+
+  - **String[] args** : l'argument de main est un tableau de String.
+
+--></h2>
+<ul>
+<li><p><strong>public static</strong> : nécessaire pour les fonctions</p></li>
+<li><p><strong>void</strong> : la fonction ne retourne rien.</p></li>
+<li><p><strong>String[] args</strong> : l’argument de main est un tableau de String.</p></li>
+</ul>
+</section><section id="pourquoi-string-args" class="slide level2">
+<h2>Pourquoi String[] args?</h2>
+<ul>
+<li><p>Identification des arguments lors d’une commande textuelle dans un terminal</p>
+<pre><code>$ ls -l *.java     (unix)
+$ dir *.java       (windows)</code></pre></li>
+</ul>
+<p>Liste tous les fichiers avec l’extension java et les présente sous forme de liste</p>
+</section><section id="récupérer-les-arguments" class="slide level2">
+<h2>Récupérer les arguments</h2>
+<pre><code>$ ls -l *.java</code></pre>
+<ul>
+<li><p>Exemple avec la ligne de commande unix</p>
+<ul>
+<li><p><strong>ls</strong> : nom de la commande</p></li>
+<li><p><strong>-l</strong> : premier argument</p></li>
+<li><p>*<strong>.java</strong> : deuxième argument</p></li>
+</ul></li>
+<li><p>Du point de vue de la fonction <code>main</code> :</p>
+<ul>
+<li><p>args[0] = "-l"</p></li>
+<li><p>args[1] = "*.java"</p></li>
+</ul></li>
+</ul>
+<!--
+Règle d'usage pour Main
+--------------------------
+
+En général, il est préférable de définir une classe particulière qui contient le Main. Il est rarement approprié de définir cette fonction dans une classe normale. 
+-->
+</section><section id="pour-exécuter" class="slide level2">
+<h2>Pour exécuter</h2>
+<p>Se mettre dans le répertoire contenant le fichier .class (ex. MainClass.class) issu de la compilation à l’aide de la commande <strong>cd</strong>.</p>
+<pre><code>$ java MainClass argument1 argument2....</code></pre>
+<!---
+Une classe MainClass pour les chats
+-------------------------
+ 
+   - Arguments autorisés : listen, happy?, feed, adopt_another
+
+   - Être robuste à un utilisateur maladroit... 
+
+   - Ajouter une méthode publique **getName()** à **Cat** pour que Main puisse accéder au nom du chat
+
+
+<i class="fas fa-terminal"></i>
+-------------------------
+
+
+      $ java MainClass
+      You adopt a tabby cat named Bob
+      
+      $ java MainClass happy? listen feed listen adopt_another happy? mauvaisArgument feed happy?
+      You adopt a white cat named Cole
+      Cole is not happy
+      Cole meows at you.
+      Cole purrs.
+      You abandon Cole
+      You adopt a white cat named Marmalade
+      Marmalade is not happy 
+      My name is Groot!
+      Marmalade is happy 
+
+ *Note : opérateur new pour initialiser un objet (cf tuto)*
+----->
+<!--
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"> 
+-->
+<p><link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet"></p>
+<style>
+
+.reveal section img {
+  border:0;
+  height:50vh;
+  width:auto;
+
+}
+
+.reveal section img.medium {
+  border:0;
+  max-width:50vh;
+}
+
+.reveal section img.icon {
+  display:inline;
+  border:0;
+  width:1em;
+  margin:0em;
+  box-shadow:none;
+  vertical-align:-10%;
+}
+
+.reveal code {
+  font-family: Inconsolata, monospace;
+}
+
+.reveal pre {
+}
+
+.reveal pre code {
+  font-size: 1.25em;
+  line-height: 1.5em;
+  /* max-height: 80wh; won't work, overriden */
+}
+
+input {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 42px;
+  line-height: 54.6px;
+}
+
+</style>
+<!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+ -->
+<p><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

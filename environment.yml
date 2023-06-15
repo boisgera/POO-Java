@@ -1,0 +1,7 @@
+name: POO-Java
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pandoc=2.7.2
+  - black

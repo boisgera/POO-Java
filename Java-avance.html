@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Programmation orientée objet avec Java</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Programmation orientée objet avec Java</h1>
+</section>
+
+<section><section id="retour-sur-quelques-types" class="title-slide slide level1"><h1>Retour sur quelques types</h1></section><section id="le-pendant-objet-des-entiers-et-flottants" class="slide level2">
+<h2>Le pendant Objet des entiers et flottants</h2>
+<p>Classes <strong>Byte</strong>, <strong>Short</strong>, <strong>Integer</strong>, <strong>Long</strong>, <strong>Float</strong>, <strong>Double</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">Integer</span> a ;</a>
+<a class="sourceLine" id="cb1-2" title="2">a = <span class="kw">new</span> <span class="bu">Integer</span>(<span class="dv">3</span>) ;</a></code></pre></div>
+<ul>
+<li>On déclare une variable <code>a</code> de type <code>Integer</code></li>
+<li>On crée une nouvelle instance grâce à <code>new</code> puis le constructeur.</li>
+<li>Ex. : <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">doc Java Integer</a></li>
+</ul>
+</section><section id="les-tableaux" class="slide level2">
+<h2>Les tableaux</h2>
+<p>Rappel de la déclaration :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="dt">int</span>[] tableau ; <span class="co">// Déclaration d&#39;un tableau d&#39;entiers</span></a></code></pre></div>
+<p>Initialisation avec le mot-clé <code>new</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb3-1" title="1">tableau = <span class="kw">new</span> <span class="dt">int</span>[N] ; <span class="co">// N est un entier</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Les tableaux sont des objets</p></li>
+<li><p>Peuvent être initialisés avec <code>new</code></p></li>
+<li><p>le <strong>champ</strong> <code>length</code> permet d’obtenir le nombre d’éléments du tableau</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1"><span class="dt">int</span> N = tableau.<span class="fu">length</span> ; </a></code></pre></div></li>
+</ul>
+</section><section id="les-chaînes-de-caractères" class="slide level2">
+<h2>Les chaînes de caractères</h2>
+<ul>
+<li><p><strong>String</strong> est également une classe !</p></li>
+<li><p>La <strong>méthode</strong> <code>length()</code> permet d’obtenir leur longueur</p></li>
+<li><p>De nombreuses autres méthodes existent (voir <a href="https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/String.html">doc</a>)</p>
+<ul>
+<li>exemple : <code>replace</code>, <code>charAt</code>,…</li>
+</ul></li>
+</ul>
+<p>Les chaînes de caractères Java sont <strong>immuables</strong> :</p>
+<ul>
+<li><p>Il n’existe aucun moyen de modifier le contenu d’une chaîne.</p></li>
+<li><p>Si on a <code>chaine = "Hello World"</code>, l’opération <code>chaine = "Hello World2</code> revient à placer une <strong>nouvelle</strong> chaîne de caractères dans la variable <code>chaine</code>. <code>chaine</code> pointe donc vers un nouvel objet</p></li>
+<li><p>Autre exemple : la méthode <strong>replace</strong> ne modifie pas la chaîne initiale. Elle renvoie une nouvelle chaîne de caractères sur laquelle l’opération de remplacement a été réalisée.</p></li>
+</ul>
+</section></section>
+<section><section id="quelques-rappels" class="title-slide slide level1"><h1>Quelques rappels</h1></section><section id="retour-sur-la-classe-point" class="slide level2">
+<h2>Retour sur la classe Point</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">public</span> <span class="kw">class</span> <span class="bu">Point</span> {</a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="dt">double</span> x, y;</a>
+<a class="sourceLine" id="cb5-3" title="3">  <span class="kw">public</span> <span class="bu">Point</span>(<span class="dt">double</span> x, <span class="dt">double</span> y) {</a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="kw">this</span>.<span class="fu">x</span> = x;</a>
+<a class="sourceLine" id="cb5-5" title="5">    <span class="kw">this</span>.<span class="fu">y</span> = y;</a>
+<a class="sourceLine" id="cb5-6" title="6">  } </a>
+<a class="sourceLine" id="cb5-7" title="7">  <span class="kw">public</span> <span class="bu">Point</span>(){</a>
+<a class="sourceLine" id="cb5-8" title="8">    <span class="kw">this</span>(<span class="fl">0.</span>,<span class="fl">0.</span>);</a>
+<a class="sourceLine" id="cb5-9" title="9">  }</a>
+<a class="sourceLine" id="cb5-10" title="10"></a>
+<a class="sourceLine" id="cb5-11" title="11">  <span class="kw">public</span> <span class="dt">double</span> <span class="fu">distance</span>() {</a>
+<a class="sourceLine" id="cb5-12" title="12">    <span class="kw">return</span> <span class="bu">Math</span>.<span class="fu">sqrt</span>(x*x + y*y);</a>
+<a class="sourceLine" id="cb5-13" title="13">  }</a>
+<a class="sourceLine" id="cb5-14" title="14">}</a></code></pre></div>
+</section><section id="le-constructeur" class="slide level2">
+<h2>Le constructeur</h2>
+<ul>
+<li><p>Il porte toujours le nom de la classe et n’a pas de type de retour</p></li>
+<li><p>On peut en avoir plusieurs avec des signatures différentes : surcharge</p></li>
+<li><p>Un <strong>constructeur par défaut</strong> ne prend pas d’arguments</p></li>
+</ul>
+</section><section id="mot-clé-this" class="slide level2">
+<h2>Mot-clé this</h2>
+<p>Au sein d’une classe, les attributs peuvent être utilisés directement et font référence à l’instance courante (en général)</p>
+<p>Si au sein d’une méthode, une variable est définie avec un nom identique, c’est la nouvelle variable qui sera associée à ce nom localement.</p>
+<p>Pour référencer à nouveau l’attribut : le mot clé <strong>this</strong></p>
+</section><section class="slide level2">
+
+<p>Voir la différence entre</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">public</span> <span class="dt">double</span> <span class="fu">distance2</span>() {</a>
+<a class="sourceLine" id="cb6-2" title="2">    <span class="dt">int</span> x = <span class="dv">0</span> ;</a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="dt">int</span> y = x+<span class="dv">1</span> ;</a>
+<a class="sourceLine" id="cb6-4" title="4">    <span class="kw">return</span> <span class="bu">Math</span>.<span class="fu">sqrt</span>(x*x + y*y); <span class="co">// Renvoie toujours racine(2)</span></a>
+<a class="sourceLine" id="cb6-5" title="5">}</a></code></pre></div>
+<p>et</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">public</span> <span class="dt">double</span> <span class="fu">distance3</span>(){</a>
+<a class="sourceLine" id="cb7-2" title="2">    <span class="dt">int</span> x = <span class="dv">0</span> ;</a>
+<a class="sourceLine" id="cb7-3" title="3">    <span class="dt">int</span> y = x+<span class="dv">1</span> ;</a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="kw">return</span> <span class="bu">Math</span>.<span class="fu">sqrt</span>(<span class="kw">this</span>.<span class="fu">x</span>*<span class="kw">this</span>.<span class="fu">x</span> + <span class="kw">this</span>.<span class="fu">y</span>*<span class="kw">this</span>.<span class="fu">y</span>);</a>
+<a class="sourceLine" id="cb7-5" title="5">}</a></code></pre></div>
+</section><section id="instancier-une-classe" class="slide level2">
+<h2>Instancier une classe</h2>
+<p>Avec le mot clé <strong><code>new</code></strong> et l’appel au constructeur</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="bu">Point</span> myPoint = <span class="kw">new</span> <span class="bu">Point</span>() ;</a></code></pre></div>
+<p>ou</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1"><span class="bu">Point</span> myPoint,myPoint2 ;</a>
+<a class="sourceLine" id="cb9-2" title="2">myPoint = <span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">1</span>,<span class="dv">0</span>) ;</a>
+<a class="sourceLine" id="cb9-3" title="3">myPoint2 = myPoint ; <span class="co">// Attention, même référence</span></a></code></pre></div>
+<p>Ici, <code>myPoint2</code> est le même objet que <code>myPoint</code> !</p>
+</section><section id="la-surcharge-de-méthodes" class="slide level2">
+<h2>La surcharge de méthodes</h2>
+<p>Il s’agit de définir au sein d’une même classe (ou ses dérivées) une méthode dont le nom existe mais avec une signature différente.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">public</span> <span class="dt">double</span> <span class="fu">distance</span>(<span class="bu">Point</span> p){</a>
+<a class="sourceLine" id="cb10-2" title="2">    <span class="dt">double</span> dx = <span class="kw">this</span>.<span class="fu">x</span> - p.<span class="fu">x</span> ;</a>
+<a class="sourceLine" id="cb10-3" title="3">    <span class="dt">double</span> dy = <span class="kw">this</span>.<span class="fu">y</span> - p.<span class="fu">y</span> ;</a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="kw">return</span> <span class="bu">Math</span>.<span class="fu">sqrt</span>(dx*dx + dy*dy);</a>
+<a class="sourceLine" id="cb10-5" title="5">}</a></code></pre></div>
+</section></section>
+<section><section id="règles-de-nommage" class="title-slide slide level1"><h1>Règles de nommage</h1></section><section class="slide level2">
+
+<ul>
+<li><strong>variables</strong> : commencent par une minuscule puis une majuscule sur les mots suivants accolés
+<ul>
+<li>ex. : x, hexString,…</li>
+</ul></li>
+<li><strong>constantes</strong> : en capitales avec underscore si différents mots
+<ul>
+<li>ex. : PI, ARRAY_SIZE,…</li>
+</ul></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><strong>methodes</strong> : commencent par une minuscule puis une majuscule sur les mots suivants accolés
+<ul>
+<li>ex.: getArea(), toString(),…</li>
+</ul></li>
+<li><strong>classes</strong> : commencent par une majuscules puis une majuscule sur les mots suivants accolés
+<ul>
+<li>ex. : Point, MainClass,…</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="visibilité-des-attributs-et-méthodes" class="title-slide slide level1"><h1>Visibilité des attributs et méthodes</h1></section><section class="slide level2">
+
+<p>Devant un attribut ou une méthode :</p>
+<ul>
+<li><p><strong>private</strong> : accessible uniquement par la classe</p></li>
+<li><p><strong>protected</strong> : accessible par tout descendant de la classe et les classes appartenant au même <em>package</em></p></li>
+<li><p><strong>sans mot clé</strong> : accessible par la classe et les classes appartenant au même <em>package</em></p></li>
+<li><p><strong>public</strong> : accessible par toute les classes</p></li>
+</ul>
+</section><section id="règles-usuelles" class="slide level2">
+<h2>Règles usuelles:</h2>
+<p>Éviter autant que possible l’utilisation de <strong>public</strong>, en particulier sur les variables internes.</p>
+<p>Utiliser des fonctions <strong>getter</strong> et <strong>setter</strong> pour accéder et éventuellement modifier les attributs appropriés.</p>
+</section></section>
+<section><section id="les-classes-génériques" class="title-slide slide level1"><h1>Les classes génériques</h1></section><section id="principe" class="slide level2">
+<h2>Principe</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">public</span> <span class="kw">class</span> GenericClass&lt;T&gt;{</a>
+<a class="sourceLine" id="cb11-2" title="2">  T val ;</a>
+<a class="sourceLine" id="cb11-3" title="3">  <span class="kw">public</span> <span class="fu">GenericClass</span>(T val){</a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="kw">this</span>.<span class="fu">val</span> = val ;  </a>
+<a class="sourceLine" id="cb11-5" title="5">  }</a>
+<a class="sourceLine" id="cb11-6" title="6">  <span class="kw">public</span> T <span class="fu">getVal</span>(){</a>
+<a class="sourceLine" id="cb11-7" title="7">    <span class="kw">return</span> val ;</a>
+<a class="sourceLine" id="cb11-8" title="8">  }</a>
+<a class="sourceLine" id="cb11-9" title="9">} </a></code></pre></div>
+<p>Permet d’avoir des classes qui peuvent contenir des types non connus à l’avance</p>
+</section><section id="utilisation" class="slide level2">
+<h2>Utilisation</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1">    GenericClass&lt;<span class="bu">Integer</span>&gt; gen = <span class="kw">new</span> GenericClass&lt;<span class="bu">Integer</span>&gt;(<span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb12-2" title="2">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(gen.<span class="fu">getVal</span>());</a></code></pre></div>
+<p>Renvoie</p>
+<pre><code>5</code></pre>
+</section><section id="pas-limité-à-un-seul-type" class="slide level2">
+<h2>Pas limité à un seul type</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">public</span> <span class="kw">class</span> GenericClass&lt;T,U&gt;{</a>
+<a class="sourceLine" id="cb14-2" title="2">  T val1 ;</a>
+<a class="sourceLine" id="cb14-3" title="3">  U val2 ;</a>
+<a class="sourceLine" id="cb14-4" title="4"></a>
+<a class="sourceLine" id="cb14-5" title="5">  <span class="kw">public</span> <span class="fu">GenericClass</span>(T val1,U val2){</a>
+<a class="sourceLine" id="cb14-6" title="6">    <span class="kw">this</span>.<span class="fu">val1</span> = val1 ;</a>
+<a class="sourceLine" id="cb14-7" title="7">    <span class="kw">this</span>.<span class="fu">val2</span> = val2 ; </a>
+<a class="sourceLine" id="cb14-8" title="8">  }</a>
+<a class="sourceLine" id="cb14-9" title="9">  <span class="kw">public</span> T <span class="fu">getVal1</span>(){</a>
+<a class="sourceLine" id="cb14-10" title="10">    <span class="kw">return</span> val1 ;</a>
+<a class="sourceLine" id="cb14-11" title="11">  }</a>
+<a class="sourceLine" id="cb14-12" title="12"></a>
+<a class="sourceLine" id="cb14-13" title="13">  <span class="kw">public</span> T <span class="fu">getVal2</span>(){</a>
+<a class="sourceLine" id="cb14-14" title="14">    <span class="kw">return</span> val2 ;</a>
+<a class="sourceLine" id="cb14-15" title="15">  }</a>
+<a class="sourceLine" id="cb14-16" title="16">} </a></code></pre></div>
+</section><section id="exemples" class="slide level2">
+<h2>Exemples</h2>
+<p>Les classes qui implémentent <code>List</code> :</p>
+<ul>
+<li><p>ArrayList</p></li>
+<li>LinkedList</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">import</span><span class="im"> java.util.ArrayList;</span></a>
+<a class="sourceLine" id="cb15-2" title="2"></a>
+<a class="sourceLine" id="cb15-3" title="3">...</a>
+<a class="sourceLine" id="cb15-4" title="4"></a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; array = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt;();</a>
+<a class="sourceLine" id="cb15-6" title="6">array.<span class="fu">add</span>(<span class="dv">3</span>);</a>
+<a class="sourceLine" id="cb15-7" title="7">array.<span class="fu">add</span>(<span class="dv">4</span>);</a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Les classes qui implémentent <code>Map</code> :</p>
+<ul>
+<li><p>HashTable</p></li>
+<li>HashMap</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">import</span><span class="im"> java.util.HashMap;</span></a>
+<a class="sourceLine" id="cb16-2" title="2"></a>
+<a class="sourceLine" id="cb16-3" title="3">...</a>
+<a class="sourceLine" id="cb16-4" title="4"></a>
+<a class="sourceLine" id="cb16-5" title="5"><span class="bu">HashMap</span>&lt;<span class="bu">String</span>,<span class="bu">Integer</span>&gt; myMap = <span class="kw">new</span> <span class="bu">HashMap</span>&lt;<span class="bu">String</span>,<span class="bu">Integer</span>&gt;();</a>
+<a class="sourceLine" id="cb16-6" title="6">myMap.<span class="fu">put</span>(<span class="st">&quot;Bonjour&quot;</span>,<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb16-7" title="7">myMap.<span class="fu">put</span>(<span class="st">&quot;Au revoir&quot;</span>,<span class="dv">1</span>);</a></code></pre></div>
+</section><section id="types-fixés-pour-une-instance" class="slide level2">
+<h2>Types fixés pour une instance</h2>
+<p>Une fois qu’une instance est créée, le type ne peut plus être changé.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb17-1" title="1"><span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt; array = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;<span class="bu">Integer</span>&gt;();</a>
+<a class="sourceLine" id="cb17-2" title="2">array.<span class="fu">add</span>(<span class="dv">3</span>);</a>
+<a class="sourceLine" id="cb17-3" title="3">array.<span class="fu">add</span>(<span class="dv">4</span>);</a>
+<a class="sourceLine" id="cb17-4" title="4">array = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;<span class="bu">Double</span>&gt;();</a></code></pre></div>
+<p>Provoque une erreur de compilation.</p>
+</section></section>
+<section><section id="héritage-en-java" class="title-slide slide level1"><h1>Héritage en Java</h1></section><section id="une-classe-disque-qui-ressemble-à-point" class="slide level2">
+<h2>Une classe Disque qui ressemble à Point…</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Disque {</a>
+<a class="sourceLine" id="cb18-2" title="2">    <span class="dt">double</span> x, y , r;</a>
+<a class="sourceLine" id="cb18-3" title="3">    <span class="kw">public</span> <span class="fu">Disque</span>(<span class="dt">double</span> x, <span class="dt">double</span> y,<span class="dt">double</span> r) {</a>
+<a class="sourceLine" id="cb18-4" title="4">        <span class="kw">this</span>.<span class="fu">x</span> = x;</a>
+<a class="sourceLine" id="cb18-5" title="5">        <span class="kw">this</span>.<span class="fu">y</span> = y;</a>
+<a class="sourceLine" id="cb18-6" title="6">        <span class="kw">this</span>.<span class="fu">r</span> = r;</a>
+<a class="sourceLine" id="cb18-7" title="7">    } </a>
+<a class="sourceLine" id="cb18-8" title="8">    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">distance</span>() {</a>
+<a class="sourceLine" id="cb18-9" title="9">        <span class="kw">return</span> <span class="bu">Math</span>.<span class="fu">sqrt</span>(x*x + y*y);</a>
+<a class="sourceLine" id="cb18-10" title="10">    }</a>
+<a class="sourceLine" id="cb18-11" title="11">    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">distance</span>(Disque d) {</a>
+<a class="sourceLine" id="cb18-12" title="12">        <span class="dt">double</span> dx = x - d.<span class="fu">x</span> ;</a>
+<a class="sourceLine" id="cb18-13" title="13">        <span class="dt">double</span> dy = y - d.<span class="fu">y</span> ;</a>
+<a class="sourceLine" id="cb18-14" title="14">        <span class="kw">return</span> <span class="bu">Math</span>.<span class="fu">sqrt</span>(x*x + y*y) ;</a>
+<a class="sourceLine" id="cb18-15" title="15">    }</a>
+<a class="sourceLine" id="cb18-16" title="16">    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">aire</span>(){</a>
+<a class="sourceLine" id="cb18-17" title="17">        <span class="kw">return</span> r*r*<span class="bu">Math</span>.<span class="fu">PI</span> ;</a>
+<a class="sourceLine" id="cb18-18" title="18">    }</a>
+<a class="sourceLine" id="cb18-19" title="19">    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">perimetre</span>(){</a>
+<a class="sourceLine" id="cb18-20" title="20">        <span class="kw">return</span> <span class="dv">2</span>*r*<span class="bu">Math</span>.<span class="fu">PI</span> ;</a>
+<a class="sourceLine" id="cb18-21" title="21">    }</a>
+<a class="sourceLine" id="cb18-22" title="22">}</a></code></pre></div>
+</section><section id="principe-de-lhéritage" class="slide level2">
+<h2>Principe de l’héritage</h2>
+<p>Trouver un lien naturel entre deux classes :</p>
+<ul>
+<li><p>Permet du factoriser le code</p></li>
+<li><p>On n’implémente que les nouvelles fonctionnalités</p></li>
+</ul>
+</section><section id="implémentation" class="slide level2">
+<h2>Implémentation</h2>
+<p>Grâce au mot clé <strong>extends</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Disque <span class="kw">extends</span> <span class="bu">Point</span>{</a>
+<a class="sourceLine" id="cb19-2" title="2">    <span class="co">// Attributs nouveaux</span></a>
+<a class="sourceLine" id="cb19-3" title="3"></a>
+<a class="sourceLine" id="cb19-4" title="4">    <span class="kw">public</span> <span class="fu">Disque</span>(<span class="dt">double</span> x,<span class="dt">double</span> y)</a>
+<a class="sourceLine" id="cb19-5" title="5">    {</a>
+<a class="sourceLine" id="cb19-6" title="6">        <span class="co">// Définir un constructeur</span></a>
+<a class="sourceLine" id="cb19-7" title="7">    }</a>
+<a class="sourceLine" id="cb19-8" title="8">    </a>
+<a class="sourceLine" id="cb19-9" title="9">    <span class="co">// Méthodes nouvelles</span></a>
+<a class="sourceLine" id="cb19-10" title="10">    </a>
+<a class="sourceLine" id="cb19-11" title="11">}</a></code></pre></div>
+</section><section id="mot-clé-super" class="slide level2">
+<h2>Mot-clé super</h2>
+<p><strong>super</strong> permet l’appel du constructeur de la classe parente</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Disque <span class="kw">extends</span> <span class="bu">Point</span>{</a>
+<a class="sourceLine" id="cb20-2" title="2">    <span class="dt">double</span> r ;</a>
+<a class="sourceLine" id="cb20-3" title="3">    <span class="kw">public</span> <span class="fu">Disque</span>(<span class="dt">double</span> x,<span class="dt">double</span> y,<span class="dt">double</span> r)</a>
+<a class="sourceLine" id="cb20-4" title="4">    {</a>
+<a class="sourceLine" id="cb20-5" title="5">        <span class="kw">super</span>(x,y);</a>
+<a class="sourceLine" id="cb20-6" title="6">        <span class="kw">this</span>.<span class="fu">r</span> = r ;</a>
+<a class="sourceLine" id="cb20-7" title="7">    }</a>
+<a class="sourceLine" id="cb20-8" title="8">    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">aire</span>(){</a>
+<a class="sourceLine" id="cb20-9" title="9">        <span class="kw">return</span> r*r*<span class="bu">Math</span>.<span class="fu">PI</span> ;</a>
+<a class="sourceLine" id="cb20-10" title="10">    }</a>
+<a class="sourceLine" id="cb20-11" title="11">    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">perimetre</span>(){</a>
+<a class="sourceLine" id="cb20-12" title="12">        <span class="kw">return</span> <span class="dv">2</span>*r*<span class="bu">Math</span>.<span class="fu">PI</span> ;</a>
+<a class="sourceLine" id="cb20-13" title="13">    }</a>
+<a class="sourceLine" id="cb20-14" title="14">}</a></code></pre></div>
+</section><section id="constructeur-de-classe-fille" class="slide level2">
+<h2>Constructeur de classe fille</h2>
+<p>La <strong>première instruction</strong> du constructeur doit être un appel à un autre constructeur de la classe ou de la classe parente. Sinon, le compilateur appelle le constructeur par défaut de la classe parente.</p>
+<p>Cela provoque une erreur de compilation si celui-ci n’existe pas.</p>
+</section><section id="propriétés-de-la-classe-fille" class="slide level2">
+<h2>Propriétés de la classe fille</h2>
+<ul>
+<li><p>Possède tous les attributs de la classe mère (certains attributs peuvent ne pas être accessibles directement)</p></li>
+<li><p>Hérite des méthodes <strong>public</strong> ou <strong>protected</strong> de la classe mère</p></li>
+<li><p>A ses propres attributs et méthodes supplémentaires</p></li>
+</ul>
+</section><section id="redéfinition-de-méthode-override" class="slide level2">
+<h2>Redéfinition de méthode (override)</h2>
+<ul>
+<li><p>Une classe fille peut également <strong>redéfinir une méthode</strong>.</p></li>
+<li><p>Dans ce cas, elle a <strong>le même prototype</strong> que la méthode de la classe parente.</p></li>
+<li><p>C’est ce que l’on fait en redéfinissant <strong>toString</strong> de Object</p></li>
+<li><p>Lorsque l’objet est instancié, il n’est pas possible d’invoquer la méthode du parent</p></li>
+</ul>
+</section><section id="autre-utilité-de-super" class="slide level2">
+<h2>Autre utilité de super</h2>
+<p>Lorsqu’on redéfinit une méthode, celle-ci cache la méthode de la classe mère avec la même signature. Dans certain cas, on pourrait en avoir besoin dans le code de la classe fille.</p>
+<p><strong>super</strong> permet également l’appel à une méthode de la classe mère.</p>
+</section><section class="slide level2">
+
+<p>Redéfinition de <em>distance()</em> pour prendre en compte <em>r</em></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">public</span> <span class="dt">double</span> <span class="fu">distance</span>(){</a>
+<a class="sourceLine" id="cb21-2" title="2">  <span class="dt">double</span> dPoint = <span class="kw">super</span>.<span class="fu">distance</span>();</a>
+<a class="sourceLine" id="cb21-3" title="3">  <span class="kw">if</span> (dPoint &lt; r)</a>
+<a class="sourceLine" id="cb21-4" title="4">    <span class="kw">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb21-5" title="5">  <span class="kw">else</span> </a>
+<a class="sourceLine" id="cb21-6" title="6">    <span class="kw">return</span> dPoint -r ;</a>
+<a class="sourceLine" id="cb21-7" title="7">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main</a>
+<a class="sourceLine" id="cb22-2" title="2">{</a>
+<a class="sourceLine" id="cb22-3" title="3">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</a>
+<a class="sourceLine" id="cb22-4" title="4">        <span class="bu">Point</span> p = <span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">2</span>,<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb22-5" title="5">        <span class="bu">Point</span> d = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb22-6" title="6">        Disque d2 = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb22-7" title="7">    </a>
+<a class="sourceLine" id="cb22-8" title="8">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(p.<span class="fu">distance</span>());</a>
+<a class="sourceLine" id="cb22-9" title="9">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(d.<span class="fu">distance</span>());</a>
+<a class="sourceLine" id="cb22-10" title="10">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(d2.<span class="fu">distance</span>());  </a>
+<a class="sourceLine" id="cb22-11" title="11">    } </a>
+<a class="sourceLine" id="cb22-12" title="12">}</a></code></pre></div>
+<p>Sortie :</p>
+<pre><code>2
+1
+1</code></pre>
+</section><section class="slide level2">
+
+<p><strong>super</strong> permet également d’accéder aux attributs du parent lorsque la classe fille définit un attribut avec le même nom (règle les problèmes d’intersection de noms).</p>
+</section><section id="rappel-polymorphisme" class="slide level2">
+<h2>Rappel : polymorphisme</h2>
+<ul>
+<li><p>Un objet de type <code>Disque</code> est utilisable partout où un <code>Disque</code> ou un `Point est requis``</p></li>
+<li><p>On peut déclarer un objet de type <code>Point</code> et en utilisant un constructeur de <code>Disque</code></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb24-1" title="1"><span class="bu">Point</span> pointDisque = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>);</a></code></pre></div>
+<p>Dans ce cas, <code>PointDisque</code> n’est pas utilisable là où un <code>Disque</code> est demandé</p></li>
+</ul>
+</section><section id="cast-explicite" class="slide level2">
+<h2>Cast explicite</h2>
+<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb25-1" title="1">Disque d = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="bu">Point</span> d2 = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb25-3" title="3"></a>
+<a class="sourceLine" id="cb25-4" title="4"><span class="bu">Point</span>[] tab = <span class="kw">new</span> <span class="bu">Point</span>[<span class="dv">2</span>] ;</a>
+<a class="sourceLine" id="cb25-5" title="5">tab[<span class="dv">0</span>] = d ; tab[<span class="dv">1</span>] = d2 ;</a>
+<a class="sourceLine" id="cb25-6" title="6"></a>
+<a class="sourceLine" id="cb25-7" title="7"><span class="kw">for</span> (<span class="dt">int</span> i=<span class="dv">0</span> ; i&lt;<span class="dv">2</span> ;i++){</a>
+<a class="sourceLine" id="cb25-8" title="8">  tab[i].<span class="fu">aire</span>();</a>
+<a class="sourceLine" id="cb25-9" title="9">}</a></code></pre></div>
+<p>Provoque une erreur (<em>cannot find symbol - method aire()</em>)</p>
+</section><section class="slide level2">
+
+<p>Il faut demander à transtyper <strong>d2</strong> en <strong>Disque</strong> !</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb26-1" title="1">Disque d = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb26-2" title="2"><span class="bu">Point</span> d2 = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb26-3" title="3"></a>
+<a class="sourceLine" id="cb26-4" title="4"><span class="bu">Point</span>[] tab = <span class="kw">new</span> <span class="bu">Point</span>[<span class="dv">2</span>] ;</a>
+<a class="sourceLine" id="cb26-5" title="5">tab[<span class="dv">0</span>] = d ; tab[<span class="dv">1</span>] = d2 ;</a>
+<a class="sourceLine" id="cb26-6" title="6"></a>
+<a class="sourceLine" id="cb26-7" title="7"><span class="kw">for</span> (<span class="dt">int</span> i=<span class="dv">0</span> ; i&lt;<span class="dv">2</span> ;i++){</a>
+<a class="sourceLine" id="cb26-8" title="8">  ((Disque)tab[i]).<span class="fu">aire</span>();</a>
+<a class="sourceLine" id="cb26-9" title="9">}</a></code></pre></div>
+<p>mais ce n’est pas tout…</p>
+</section><section id="danger-du-cast-explicite" class="slide level2">
+<h2>Danger du Cast explicite</h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb27-1" title="1"><span class="bu">Point</span> p = <span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">1</span>,<span class="dv">2</span>) ;</a>
+<a class="sourceLine" id="cb27-2" title="2">((Disque)p).<span class="fu">aire</span>() ;</a></code></pre></div>
+<p>Lève une exception</p>
+<pre><code>java.lang.ClassCastException: class Point cannot be cast to class Disque</code></pre>
+</section><section id="mot-clé-instanceof" class="slide level2">
+<h2>Mot clé instanceOf</h2>
+<p>Permet de vérifier si un objet est bien une instance d’une classe fille</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb29-1" title="1">Disque d = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="bu">Point</span> d2 = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb29-3" title="3"><span class="bu">Point</span> p = <span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">1</span>,<span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb29-4" title="4"></a>
+<a class="sourceLine" id="cb29-5" title="5"><span class="bu">Point</span>[] tab = <span class="kw">new</span> <span class="bu">Point</span>[<span class="dv">2</span>] ;</a>
+<a class="sourceLine" id="cb29-6" title="6">tab[<span class="dv">0</span>] = d ; tab[<span class="dv">1</span>] = d2 ; tab[<span class="dv">2</span>] = p ;</a>
+<a class="sourceLine" id="cb29-7" title="7"></a>
+<a class="sourceLine" id="cb29-8" title="8"><span class="kw">for</span> (<span class="dt">int</span> i=<span class="dv">0</span> ; i&lt;<span class="dv">3</span> ;i++){</a>
+<a class="sourceLine" id="cb29-9" title="9">  <span class="kw">if</span> (tab[i] instanceOf Disque){</a>
+<a class="sourceLine" id="cb29-10" title="10">      ((Disque)tab[i]).<span class="fu">aire</span>();</a>
+<a class="sourceLine" id="cb29-11" title="11">  }</a>
+<a class="sourceLine" id="cb29-12" title="12">}</a></code></pre></div>
+</section><section id="principe-de-substitution-de-liskov" class="slide level2">
+<h2>Principe de substitution de Liskov</h2>
+<p><em>Si <span class="math inline"><em>q</em>(<em>x</em>)</span> est une propriété démontrable pour tout objet <span class="math inline"><em>x</em></span> de <span class="math inline"><em>T</em></span>, alors <span class="math inline"><em>q</em>(<em>y</em>)</span> est vrai pour tout objet <span class="math inline"><em>y</em></span> de type <span class="math inline"><em>S</em></span> tel que <span class="math inline"><em>S</em></span> est un sous-type de <span class="math inline"><em>T</em></span></em></p>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Si une classe B dérive de la classe A, alors les propriétés de la classe A doivent être conservées par tout objet de la classe B !</p></li>
+<li><p>Si une fonction prend un objet de type A en argument, il est possible qu’elle exploite les propriétés de la classe A. Les spécificités de la classe B ne doivent pas compromettre le résultat.</p></li>
+<li><p>Il s’agit d’une règle sur la <strong>sémantique du code</strong></p></li>
+<li><p>Le compilateur ne vérifie pas si cette règle est respectée, il se contente de vérifications formelles sur les types !</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Une propriété de la classe <code>Point</code> : si <code>p</code> est de type <code>Point</code>, alors <code>p.distance()==0</code> est équivalent à <code>p</code> est nul (<code>p.x==0</code>et <code>p.y==0</code>)</p></li>
+<li><p>Soit <code>d</code> de type <code>Disque</code>:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb30-1" title="1">Disque d2 = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">3</span>);   </a></code></pre></div></li>
+<li><p>Alors <code>d2.distance()==0</code> mais <code>d.x!=0</code>)</p></li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb31-1" title="1">  <span class="dt">boolean</span> <span class="fu">isOrigin</span>(<span class="bu">Point</span> p){</a>
+<a class="sourceLine" id="cb31-2" title="2">    <span class="kw">return</span> p.<span class="fu">distance</span>()==<span class="dv">0</span> ;</a>
+<a class="sourceLine" id="cb31-3" title="3">  }</a></code></pre></div>
+<p>Cette fonction ne se comportera pas comme on aimerait qu’elle se comporte…</p>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Violer le principe de substitution de Liskov peut conduire à des bugs difficiles à identifier et rend la maintenabilité du code délicate.</p></li>
+<li>Pourrait-on faire en sorte que <code>Disque</code> ne viole pas ce principe ?
+<ul>
+<li>Renoncer à l’héritage dans ce cas</li>
+<li>Ou ne pas redéfinir <code>distance</code> mais utiliser redéfinir une autre fonction</li>
+</ul></li>
+<li><p>Autre exemple de violation : utilisation de <code>instanceOf</code></p></li>
+</ul>
+</section><section class="slide level2">
+
+<p><strong>Le contre-exemple du canard</strong></p>
+<p><em>If it looks like a duck, quacks like a duck, but needs batteries – you probably have the wrong abstraction</em></p>
+</section><section id="rappel-héritage-multiple" class="slide level2">
+<h2>Rappel : Héritage multiple ?</h2>
+<ul>
+<li><p>Java ne permet pas d’héritage multiple</p></li>
+<li><p>En remplacement, Java propose les <strong>Interfaces</strong> : propose une liste de méthodes <em>non implémentées</em></p></li>
+<li><p>On dit qu’une classe <strong>implémente</strong> une interface : elle doit implémenter toutes les méthodes de l’interface.</p></li>
+<li><p>Une interface peut être utilisée comme un type : le polymorphisme s’applique également ici</p></li>
+</ul>
+</section><section id="création-dune-interface" class="slide level2">
+<h2>Création d’une interface</h2>
+<p>Comme un fichier de classe, mais pas d’attribut !</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">public</span> <span class="kw">interface</span> <span class="fu">formePleine</span>(){</a>
+<a class="sourceLine" id="cb32-2" title="2">  <span class="co">// Pas d&#39;attributs !</span></a>
+<a class="sourceLine" id="cb32-3" title="3">  </a>
+<a class="sourceLine" id="cb32-4" title="4">  <span class="co">// Liste des méthodes à implémenter</span></a>
+<a class="sourceLine" id="cb32-5" title="5">  <span class="dt">double</span> <span class="fu">aire</span>();</a>
+<a class="sourceLine" id="cb32-6" title="6">  <span class="dt">double</span> <span class="fu">perimetre</span>();</a>
+<a class="sourceLine" id="cb32-7" title="7">}</a></code></pre></div>
+</section><section id="utilisation-dune-interface" class="slide level2">
+<h2>Utilisation d’une interface</h2>
+<p>Grâce au mot-clé <code>implements</code></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Disque <span class="kw">extends</span> <span class="bu">Point</span> <span class="kw">implements</span> formePleine{</a>
+<a class="sourceLine" id="cb33-2" title="2">   ...</a>
+<a class="sourceLine" id="cb33-3" title="3">}</a></code></pre></div>
+<p>Une objet de type <code>Disque</code> peut alors également être utilisé partout où une <code>formePleine</code> est demandée.</p>
+<p>Le mot-clé <code>instanceOf</code> fonctionne également avec les interfaces</p>
+</section></section>
+<section><section id="retour-sur-les-exceptions" class="title-slide slide level1"><h1>Retour sur les exceptions</h1></section><section id="une-exception-est-un-objet" class="slide level2">
+<h2>Une exception est un objet !</h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb34-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Main {</a>
+<a class="sourceLine" id="cb34-2" title="2">  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</a>
+<a class="sourceLine" id="cb34-3" title="3">    <span class="kw">try</span>{</a>
+<a class="sourceLine" id="cb34-4" title="4">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="dv">1</span>/<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb34-5" title="5">    }<span class="kw">catch</span>(<span class="bu">ArithmeticException</span> e){</a>
+<a class="sourceLine" id="cb34-6" title="6">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Ce n&#39;est pas très bien !&quot;</span>);</a>
+<a class="sourceLine" id="cb34-7" title="7">    }</a>
+<a class="sourceLine" id="cb34-8" title="8">  }</a>
+<a class="sourceLine" id="cb34-9" title="9">}</a></code></pre></div>
+<p><code>ArithmeticException</code> est une classe qui dérive de la classe <code>Exception</code></p>
+</section><section id="deux-méthodes-intéressantes-sur-les-exceptions" class="slide level2">
+<h2>Deux méthodes intéressantes sur les exceptions</h2>
+<ul>
+<li><p><em>String</em> getMessage() : permet de récupérer le message</p></li>
+<li><p><em>void</em> printStackTrace() : permet d’afficher la pile d’exécution</p></li>
+</ul>
+</section><section id="exceptions-personnalisées" class="slide level2">
+<h2>Exceptions personnalisées</h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">public</span> <span class="kw">class</span> SaisieErroneeException <span class="kw">extends</span> <span class="bu">Exception</span> {</a>
+<a class="sourceLine" id="cb35-2" title="2">  <span class="kw">public</span> <span class="fu">SaisieErroneeException</span>() {</a>
+<a class="sourceLine" id="cb35-3" title="3">    <span class="kw">super</span>();</a>
+<a class="sourceLine" id="cb35-4" title="4">  }</a>
+<a class="sourceLine" id="cb35-5" title="5">    </a>
+<a class="sourceLine" id="cb35-6" title="6">  <span class="kw">public</span> <span class="fu">SaisieErroneeException</span>(<span class="bu">String</span> s) {</a>
+<a class="sourceLine" id="cb35-7" title="7">    <span class="kw">super</span>(s);</a>
+<a class="sourceLine" id="cb35-8" title="8">  }</a>
+<a class="sourceLine" id="cb35-9" title="9">}</a></code></pre></div>
+<p><strong>super</strong> permet d’appeler les deux constructeurs de la classe Exception</p>
+</section></section>
+<section><section id="la-classe-object" class="title-slide slide level1"><h1>La classe Object</h1></section><section class="slide level2">
+
+<p>En Java, tous les objets <strong>dérivent de la classe Object</strong></p>
+<p>Ils ont héritent donc d’un certain nombre de méthodes dont certaines sont intéressantes à surcharger ou redéfinir.</p>
+</section><section id="tostring" class="slide level2">
+<h2>toString()</h2>
+<p>Il s’agit de la méthode retournant une représentation de l’instance sous forme d’une chaîne de caractère.</p>
+<p>Ainsi, pour tout objet <strong>obj</strong>,</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb36-1" title="1"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">prinlnt</span>(obj) ;</a></code></pre></div>
+<p>renvoie</p>
+<pre><code>System.out.println(obj.toString());</code></pre>
+</section><section id="equalsobject-obj" class="slide level2">
+<h2>equals(Object obj)</h2>
+<p>Permet de tester l’égalité entre deux objets.</p>
+<p>Différent de l’opérateur <strong>==</strong> qui vaut <strong>true</strong> lorsque deux objets pointent vers la même référence</p>
+<p><em>Attention : <strong>redéfinir</strong> equals() pour des classes personnalisées implique de redéfinir la méthode <strong>hashCode()</strong></em></p>
+</section><section class="slide level2">
+
+<p>Exemples :</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb38-1" title="1"><span class="bu">String</span> s1 = <span class="kw">new</span> <span class="bu">String</span>(<span class="st">&quot;Hello World&quot;</span>);</a>
+<a class="sourceLine" id="cb38-2" title="2"><span class="bu">String</span> s2 = <span class="kw">new</span> <span class="bu">String</span>(<span class="st">&quot;Hello World&quot;</span>);</a>
+<a class="sourceLine" id="cb38-3" title="3"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(s1==s2);</a>
+<a class="sourceLine" id="cb38-4" title="4"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(s1.<span class="fu">equals</span>(s2));</a></code></pre></div>
+<p>Renvoie :</p>
+<pre><code>false
+true</code></pre>
+</section><section class="slide level2">
+
+<p>Quelques règles pour redéfinir <code>equals</code> (voir <a href="https://jmdoudoux.developpez.com/cours/developpons/java/chap-techniques_java.php">ici</a>)</p>
+<ul>
+<li><p>reflexivité : <code>x.equals(x)</code> devrait valoir toujours true</p></li>
+<li><p>symmétrique : si <code>x.equals(y)</code> vaut true, alors y.equals(x) aussi.</p></li>
+<li><p>jamais égal à null : x.equals(null) devrait être toujours faux</p></li>
+<li><p>si <code>x.equals(y)</code> vaut true, alors <code>x.hashCode() == y.hashCode()</code></p></li>
+</ul>
+</section><section id="clone" class="slide level2">
+<h2>clone()</h2>
+<p>Méthode <strong>protected</strong> permet de cloner un objet.</p>
+<p>La classe doit <strong>implémenter l’interface Cloneable</strong></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Test <span class="kw">implements</span> <span class="bu">Cloneable</span>{</a>
+<a class="sourceLine" id="cb40-2" title="2">  <span class="dt">double</span> x,y,z</a>
+<a class="sourceLine" id="cb40-3" title="3">  <span class="co">// Constructeur(s) + autres méthodes</span></a>
+<a class="sourceLine" id="cb40-4" title="4">  <span class="kw">public</span> Test <span class="fu">clone</span>() <span class="kw">throws</span> </a>
+<a class="sourceLine" id="cb40-5" title="5">  <span class="bu">CloneNotSupportedException</span>{</a>
+<a class="sourceLine" id="cb40-6" title="6">      <span class="kw">return</span> (Test)(<span class="kw">super</span>.<span class="fu">clone</span>());</a>
+<a class="sourceLine" id="cb40-7" title="7">  }</a>
+<a class="sourceLine" id="cb40-8" title="8">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb41"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">public</span> <span class="kw">class</span> Test <span class="kw">implements</span> <span class="bu">Cloneable</span>{</a>
+<a class="sourceLine" id="cb41-2" title="2">  <span class="dt">double</span> x,y,z</a>
+<a class="sourceLine" id="cb41-3" title="3">  <span class="co">// Constructeur(s) + autres méthodes</span></a>
+<a class="sourceLine" id="cb41-4" title="4">  <span class="kw">public</span> Test <span class="fu">clone</span>(){ </a>
+<a class="sourceLine" id="cb41-5" title="5">    <span class="kw">try</span>{</a>
+<a class="sourceLine" id="cb41-6" title="6">      <span class="kw">return</span> (Test)(<span class="kw">super</span>.<span class="fu">clone</span>());</a>
+<a class="sourceLine" id="cb41-7" title="7">    }<span class="kw">catch</span>(<span class="bu">Exception</span> <span class="bu">CloneNotSupportedException</span>){</a>
+<a class="sourceLine" id="cb41-8" title="8">      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Warning&quot;</span>);</a>
+<a class="sourceLine" id="cb41-9" title="9">      <span class="kw">return</span> <span class="kw">new</span> <span class="fu">Test</span>() ; </a>
+<a class="sourceLine" id="cb41-10" title="10">    }</a>
+<a class="sourceLine" id="cb41-11" title="11">  }</a>
+<a class="sourceLine" id="cb41-12" title="12">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<ul>
+<li><p>De cette façon, on accède à l’implémentation par défaut de <strong>clone</strong> qui réalise une <strong>copie de surface</strong>.</p></li>
+<li><p>Peut être suffisant dans certains cas (les attributs sont des types primitifs)</p></li>
+<li><p>Dangereux lorsque certains attributs sont des objets non immuables…</p></li>
+<li><p>Dans ce cas, redéfinir <strong>clone</strong> pour s’assurer de cloner les objets membres</p></li>
+</ul>
+</section></section>
+<section><section id="variables-et-méthodes-de-classe" class="title-slide slide level1"><h1>Variables et méthodes de classe</h1></section><section class="slide level2">
+
+<p>Il s’agit de variables et méthodes qui sont partagées par toutes les instances de la classe.</p>
+<p>Utilisation du mot clé <strong>static</strong></p>
+<p>On peut y faire appel directement en accolant le nom à la classe :</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb42-1" title="1"><span class="dt">static</span> <span class="dt">int</span> variableStatique = <span class="dv">3</span> ;</a>
+<a class="sourceLine" id="cb42-2" title="2"><span class="dt">static</span> <span class="dt">void</span> <span class="fu">methodeStatique</span>();</a>
+<a class="sourceLine" id="cb42-3" title="3"></a>
+<a class="sourceLine" id="cb42-4" title="4">NomClasse.<span class="fu">variableStatique</span> ;</a>
+<a class="sourceLine" id="cb42-5" title="5">NomClasse.<span class="fu">methodeStatique</span>() ;</a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Exemple : compteur de nombre d’instances.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">public</span> <span class="kw">class</span> TestStatic</a>
+<a class="sourceLine" id="cb43-2" title="2">{</a>
+<a class="sourceLine" id="cb43-3" title="3">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> i= <span class="dv">0</span> ;</a>
+<a class="sourceLine" id="cb43-4" title="4">    </a>
+<a class="sourceLine" id="cb43-5" title="5">    <span class="fu">TestStatic</span>(){</a>
+<a class="sourceLine" id="cb43-6" title="6">      i++;</a>
+<a class="sourceLine" id="cb43-7" title="7">    } </a>
+<a class="sourceLine" id="cb43-8" title="8">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Exemple : méthode main d’une classe</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb44-1" title="1"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>()</a></code></pre></div>
+<p><strong>Une méthode statique ne peut faire appel à des variables d’instances (non statiques)</strong></p>
+</section><section id="redéfinir-un-méthode-de-classe" class="slide level2">
+<h2>“Redéfinir” un méthode de classe"</h2>
+<p>Dans point :</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb45-1" title="1"><span class="dt">static</span> <span class="dt">void</span> <span class="fu">whoAmI</span>(){</a>
+<a class="sourceLine" id="cb45-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Un point&quot;</span>);</a>
+<a class="sourceLine" id="cb45-3" title="3">}</a></code></pre></div>
+<p>Dans disque :</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb46-1" title="1"><span class="dt">static</span> <span class="dt">void</span> <span class="fu">whoAmI</span>(){</a>
+<a class="sourceLine" id="cb46-2" title="2">  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Un disque&quot;</span>);</a>
+<a class="sourceLine" id="cb46-3" title="3">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb47"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb47-1" title="1">Disque d = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb47-2" title="2"><span class="bu">Point</span> d2 = <span class="kw">new</span> <span class="fu">Disque</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb47-3" title="3">d.<span class="fu">whoAmI</span>();</a>
+<a class="sourceLine" id="cb47-4" title="4">d2.<span class="fu">whoAmI</span>();</a>
+<a class="sourceLine" id="cb47-5" title="5">((Disque)d2).<span class="fu">whoAmI</span>();</a></code></pre></div>
+<p>Renvoie…</p>
+<pre><code>Un Disque
+Un Point
+Un Disque</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Les méthodes statiques ne sont pas redéfinies au sens “override”.</p></li>
+<li><p>Étant des méthodes de classe, le choix de la méthode est réalisé directement au moment de la compilation en fonction du type déclaré</p></li>
+<li><p><strong>Éviter d’appeler des méthodes de classe depuis des instances</strong>, utiliser directement la classe</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb49-1" title="1">Disque.<span class="fu">whoAmI</span>();</a>
+<a class="sourceLine" id="cb49-2" title="2"><span class="bu">Point</span>.<span class="fu">whoAmI</span>();</a></code></pre></div></li>
+</ul>
+</section></section>
+<section><section id="le-mot-clé-final" class="title-slide slide level1"><h1>Le mot clé final</h1></section><section id="accolé-à-un-attribut-dune-classe" class="slide level2">
+<h2>Accolé à un attribut d’une classe</h2>
+<div class="sourceCode" id="cb50"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb50-1" title="1"><span class="kw">public</span> <span class="dt">final</span> <span class="dt">double</span> x ;</a></code></pre></div>
+<p>Indique que la variable <em>x</em> ne peut pas être modifiée. Elle ne peut être assignée qu’une seule fois lors de l’appel du constructeur.</p>
+<p>Permet de créer des classes immuables.</p>
+</section><section id="accolé-à-une-méthode" class="slide level2">
+<h2>Accolé à une méthode</h2>
+<div class="sourceCode" id="cb51"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">public</span> <span class="dt">final</span> <span class="dt">void</span> <span class="fu">methodeFinal</span>();</a></code></pre></div>
+<p>La méthode <em>methodeFinal</em> ne peut pas être redéfinie dans une classe dérivée.</p>
+<p>Par extension, les méthodes <em>private</em> sont implicitement <em>final</em>.</p>
+</section><section id="accolé-à-une-classe" class="slide level2">
+<h2>Accolé à une classe</h2>
+<div class="sourceCode" id="cb52"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb52-1" title="1">    <span class="kw">public</span> <span class="dt">final</span> <span class="kw">class</span> ClassFinal</a></code></pre></div>
+<p>La classe <em>ClassFinal</em> ne peut pas être dérivée.</p>
+</section><section id="autres-utilisations" class="slide level2">
+<h2>Autres utilisations</h2>
+<div class="sourceCode" id="cb53"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb53-1" title="1"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">methode</span>(<span class="dt">final</span> <span class="dt">int</span> x,<span class="dt">int</span> y){</a>
+<a class="sourceLine" id="cb53-2" title="2">  <span class="dt">final</span> <span class="dt">int</span> z = <span class="dv">2</span>*y ;</a>
+<a class="sourceLine" id="cb53-3" title="3">  ...</a>
+<a class="sourceLine" id="cb53-4" title="4">  ...</a>
+<a class="sourceLine" id="cb53-5" title="5">}</a></code></pre></div>
+<p>Les valeurs de l’argument <em>x</em> et la variable <em>z</em> ne peuvent pas être modifiées par la méthode. Le compilateur utilise cette information pour optimiser le code.</p>
+</section></section>
+<section><section id="classes-abstraites" class="title-slide slide level1"><h1>Classes abstraites</h1></section><section id="classes-abstraite" class="slide level2">
+<h2>Classes abstraite</h2>
+<p>Une classe abstraite est une classe dont on <strong>interdit la création d’une instance</strong></p>
+<p>Ses classes dérivées peuvent en revanche créer des instances</p>
+<p>Elle est déclarée grâce au mot-clé <strong>abstract</strong></p>
+</section><section class="slide level2">
+
+<p>Une méthode abstraite est une méthode dont on ne donne pas d’implémentation. Seul son <strong>prototype est fourni</strong> :</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb54-1" title="1"><span class="kw">abstract</span> <span class="kw">protected</span> <span class="bu">String</span> <span class="fu">methodeAbstraite</span>(<span class="dt">int</span> i) ;</a></code></pre></div>
+<p>La méthode peut ou non être implémentée dans une des classes filles.</p>
+<p><strong>Une classe qui contient au moins une méthode abstraite est forcément abstraite.</strong></p>
+</section><section id="exemple" class="slide level2">
+<h2>Exemple :</h2>
+<ul>
+<li><p>Imaginons une nouvelle classe <strong>Carre</strong> qui serait paramétré par son point central (<code>x</code> et <code>y</code>) et la longueur de son côté (<code>c</code>)</p></li>
+<li><p>Une classe <strong>Cercle</strong> paramétrée par son centre (<code>x</code> et <code>y</code>) et son rayon (<code>r</code>)</p></li>
+<li><p>Certaines attributs (<code>x</code>,<code>y</code>) sont identiques dans les deux classes</p></li>
+<li><p>Certaines fonctions se coderaient de la même façon (<code>getX</code>,…)</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Certaines méthodes (<code>aire</code>,<code>perimetre</code>,…) existeraient dans les deux mais seraient différentes</p></li>
+<li><p>Peut-on imaginer une classe <strong>Forme</strong> qui serait parent de <strong>Carre</strong> et <strong>Cercle</strong> ?</p></li>
+</ul>
+</section><section id="rapport-avec-les-interfaces" class="slide level2">
+<h2>Rapport avec les interfaces</h2>
+<p>Une interface est <strong>similaire à une classe abstraite</strong> à l’exception qu’elle ne <strong>contient que des méthodes abstraites</strong></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb55-1" title="1"><span class="kw">public</span> Interface MonInterface{</a>
+<a class="sourceLine" id="cb55-2" title="2">  <span class="dt">void</span> <span class="fu">methode1</span>() ;</a>
+<a class="sourceLine" id="cb55-3" title="3">  <span class="bu">String</span> <span class="fu">methode2</span>(<span class="dt">int</span> i) ;</a>
+<a class="sourceLine" id="cb55-4" title="4">  <span class="co">//....</span></a>
+<a class="sourceLine" id="cb55-5" title="5">}</a></code></pre></div>
+<p>On peut néanmoins définir des implémentations par défaut grâce au mot clé <strong>default</strong></p>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Une interface n’a pas d’attributs</p></li>
+<li><p>Un classe abstraite peut en avoir</p></li>
+<li><p>Une classe abstraite devrait implémenter le maximum possible de méthodes</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p><strong>Classe abstraite</strong> : classe partiellement implémentée, en raison d’un manque de spécialisation</p></li>
+<li><p>Une classe fille ne peut dériver que d’une seule classe (abstraite ou non)</p></li>
+<li><p><strong>Interface</strong> : “contrat” d’implémentation : garanti que certaines fonctionnalités seront présentes</p></li>
+<li><p>Une classe peut implémenter plusieurs interfaces</p></li>
+<li><p>Une classe qui n’implémente pas complètement une interface est forcément abstraite.</p></li>
+</ul>
+<p><link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"></p>
+<!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+ -->
+<p><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

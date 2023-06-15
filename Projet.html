@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Projet : générer des fichiers SVG</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Projet : générer des fichiers SVG</h1>
+</section>
+
+<section><section id="objectifs-progressifs" class="title-slide slide level1"><h1>Objectifs progressifs</h1></section><section id="objectifs" class="slide level2">
+<h2>Objectifs</h2>
+<ol type="1">
+<li><p>Créer différentes classes pour les primitives de base (rectangle, cercle/ellipse) permettant de générer un SVG avec des attributs simples (position, couleur, éventuellement bordure)</p></li>
+<li><p>Générer un SVG avec plusieurs primitives graphiques</p></li>
+<li><p>Avoir la possibilité de réaliser des opérations complexes (mettre en noir et blanc, inverser les couleurs, optimiser la zone d’affichage, …)</p></li>
+<li><p>Utiliser des primitives plus complexes (groupes, …)</p></li>
+</ol>
+</section><section id="y-aller-étape-par-étape" class="slide level2">
+<h2>Y aller étape par étape !</h2>
+<ul>
+<li><p>Commencer par un rectangle ou un cercle uniquement</p></li>
+<li><p>Créer un fichier de classe, y mettre les attributs strictement nécessaires</p></li>
+<li><p>Définir <strong>toXML()</strong> qui permet de renvoyer la chaîne de caractères XML</p></li>
+<li><p>Quand ça marche, complexifier un peu la classe</p></li>
+</ul>
+</section><section id="des-méthodes-utiles-à-envisager" class="slide level2">
+<h2>Des méthodes utiles à envisager :</h2>
+<ul>
+<li><p>Une méthode pour définir la position et une pour translater</p></li>
+<li><p>Une méthode pour gérer la rotation</p></li>
+<li><p>Méthodes pour changer certains paramètres (<strong>couleur</strong>, bordures…)</p></li>
+</ul>
+</section><section id="ressources-fichiers-ici" class="slide level2">
+<h2>Ressources (fichiers <a href="https://github.com/boisgera/POO-Java/tree/master/ressources_projet">ici</a>)</h2>
+<ul>
+<li><p>Un squelette de fonction <strong>main</strong> à personnaliser (<em>App.java</em>)</p></li>
+<li><p>Une classe <strong>File</strong> pour l’écriture dans les fichiers</p></li>
+<li><p>Un script <strong>run</strong></p></li>
+<li><p>Une librairie <strong>XML</strong> pour ceux qui ont un <strong>niveau avancé</strong> (<em>XML.java</em> et <em>Element.java</em>)</p></li>
+</ul>
+</section><section id="script-run" class="slide level2">
+<h2>Script run</h2>
+<p>Si le script ne s’exécute pas en raison d’un problème de droits d’exécution</p>
+<pre><code>sudo chmod u+x run</code></pre>
+</section></section>
+<section><section id="conseils" class="title-slide slide level1"><h1>Conseils</h1></section><section id="entraînez-vous-à-manipuler-le-svg" class="slide level2">
+<h2>Entraînez-vous à manipuler le SVG</h2>
+<ul>
+<li><p>Avant d’implémenter une nouvelle fonction dans votre classe, testez là “manuellement”</p></li>
+<li><p>Créez un fichier “.xml”, mettez-y le code de votre figure, renommez en SVG pour visualiser le résultat</p></li>
+<li><p>Inspirez-vous du <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Tutoriel">tutoriel Mozilla</a></p></li>
+</ul>
+</section><section id="écrivez-du-xml-simple" class="slide level2">
+<h2>Écrivez du XML “simple”</h2>
+<ul>
+<li><p>Ne pas se préoccuper des indentations</p></li>
+<li><p>En cas de doute, inspectez votre sortie avec un navigateur Web</p></li>
+</ul>
+</section><section id="attributs-viewbox-width-et-height-de-svg" class="slide level2">
+<h2>Attributs ViewBox, Width et Height de SVG</h2>
+<p>Si vos dessins ont des problèmes de mise à l’échelle automatique dans Repl.it :</p>
+<ul>
+<li><p>Vérifier en ouvrant le fichier dans le navigateur</p></li>
+<li><p>Ajuster ViewBox, width et height (attributs du noeud svg) pour contrôler finement les échelles et unités (voir <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Tutoriel/Positionnement">cette page du tutoriel</a>)</p></li>
+</ul>
+<p><link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"></p>
+<!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+ -->
+<p><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

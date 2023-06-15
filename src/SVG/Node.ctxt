@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Node
+comment1.params=x\ y
+comment1.target=void\ moveTo(double,\ double)
+comment2.params=dx\ dy
+comment2.target=void\ translate(double,\ double)
+comment3.params=factor
+comment3.target=void\ scale(double)
+numComments=4

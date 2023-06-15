@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Java Aujourd’hui</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Java Aujourd’hui</h1>
+</section>
+
+<section><section id="contexte" class="title-slide slide level1"><h1>Contexte</h1></section><section class="slide level2">
+
+<p>La plate-forme Java a été développé par:</p>
+<ul>
+<li><p>James Gosling dans les années 1990,</p></li>
+<li><p>pour <a href="https://en.wikipedia.org/wiki/Sun_Microsystems">Sun Microsystems</a><br />
+(OpenOffice, VirtualBox, Solaris, NFS, etc.).</p></li>
+</ul>
+</section><section id="bibliothèques-api-java" class="slide level2">
+<h2>Bibliothèques &amp; API Java</h2>
+<p><strong>Application Programming Interfaces:</strong><br />
+Interfaces des Bibliothèques</p>
+<ul>
+<li><p><strong>Standard Edition (Java SE)</strong><br />
+(bases, interfaces graphiques, …),</p></li>
+<li><p><strong>Enterprise Edition (Java EE)</strong><br />
+(serveurs, …),</p></li>
+<li><p><strong>Micro Edition (Java ME)</strong><br />
+(embarqué, mobile, …).</p></li>
+</ul>
+</section><section id="rachat-de-sun-microsystems" class="slide level2">
+<h2>Rachat de Sun Microsystems</h2>
+<p>En 2010, <strong>Oracle Corporation</strong> rachète Sun Microsystems:</p>
+<ul>
+<li><p><a href="https://www.oracle.com/SUN/" class="uri">https://www.oracle.com/SUN/</a></p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Sun_acquisition_by_Oracle" class="uri">https://en.wikipedia.org/wiki/Sun_acquisition_by_Oracle</a></p></li>
+</ul>
+<p>Oracle est une entreprise “profit-driven” …</p>
+</section></section>
+<section><section id="java-standard-edition" class="title-slide slide level1"><h1>Java Standard Edition</h1></section><section id="java-est-il-encore-gratuit" class="slide level2">
+<h2>Java est-il encore gratuit ?</h2>
+<ul>
+<li><p><strong><a href="https://www.aspera.com/en/blog/oracle-will-charge-for-java-starting-in-2019/">Oracle Will Charge for Java Starting in 2019</a></strong></p>
+<p>“Oracle has announced that, effective January 2019, Java SE 8 public updates will no longer be available for ‘Business, Commercial or Production use’ without a commercial license.”</p>
+<p><a href="https://java.com/en/download/release_notice.jsp%3E">Annonce</a>, <a href="https://www.oracle.com/technetwork/java/javase/overview/oracle-jdk-faqs.html">FAQ</a></p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p><strong><a href="https://medium.com/@javachampions/java-is-still-free-2-0-0-6b9aa8d6d244">Java is Still Free 2.0.3</a></strong></p>
+<p><strong>Short Version:</strong></p>
+<p>You can still get the Oracle OpenJDK builds and OpenJDK <a href="https://www.tomaszezula.com/2018/11/19/openjdk-providers-comparison/"><strong>by other providers</strong></a> for free under an open source license, and the Oracle JDK remains free <strong>in some circumstances</strong>.</p></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p><a href="https://blog.jetbrains.com/idea/2018/09/using-java-11-in-production-important-things-to-know/"><strong>Using Java 11 In Production:<br />
+Important Things To Know</strong></a></p>
+<p>“If you stay up to date on news from the Java community, you may have heard that Oracle have changed their support model for Java.<br />
+Some news is even suggesting that we now have to pay to use Java – this is not true!”</p></li>
+</ul>
+</section><section id="versions" class="slide level2">
+<h2>Versions</h2>
+<p>Cycle de releases de 6 mois:</p>
+<ul>
+<li><p><strong>Java 14</strong> publié en mars 2020,</p></li>
+<li><p><strong>Java 15</strong> publié en septembre 2020,</p></li>
+<li><p><strong>Java 16</strong> publié en mars 2021,</p></li>
+<li><p>…</p></li>
+<li><p><strong>Java 21</strong> prévu en septembre 2023.</p></li>
+</ul>
+</section><section id="java-21-calendrier" class="slide level2">
+<h2>Java 21 Calendrier</h2>
+<p><a href="https://openjdk.org/projects/jdk/21/" class="uri">https://openjdk.org/projects/jdk/21/</a>:</p>
+<ul>
+<li><p>2023/06/08. Rampdown Phase One (fork from main line)</p></li>
+<li><p>2023/07/20. Rampdown Phase Two</p></li>
+<li><p>2023/08/10. Initial Release Candidate</p></li>
+<li><p>2023/08/24. Final Release Candidate</p></li>
+<li><p>2023/09/19. General Availability</p></li>
+</ul>
+</section><section id="long-term-support" class="slide level2">
+<h2>Long-Term Support</h2>
+<ul>
+<li><p><strong>Java 8</strong>, (mars 2014) est une LTS : supporté jusqu’en 2030 !</p></li>
+<li><p><strong>Java 11</strong> (sept. 2018) est une LTS, mais <a href="https://www.jetbrains.com/lp/devecosystem-2020/java/">Java 8 représente encore 75% des usages en 2020</a>.</p></li>
+<li><p><strong>Java 17</strong> (sept 2021) est une LTS.</p></li>
+<li><p><strong>Java 21</strong> (sept 2023) sera une LTS.</p></li>
+</ul>
+</section><section id="adoptium" class="slide level2">
+<h2>Adoptium</h2>
+<ul>
+<li><p>🔗 <a href="https://adoptium.net/">Site Web Adoptium</a></p></li>
+<li><p>Projet de la fondation Eclipse (ex-AdoptOpenJDK)</p></li>
+<li><p><strong>“Prebuilt OpenJDK Binaries for Free!”</strong></p></li>
+</ul>
+</section><section class="slide level2">
+
+<p><img data-src="images/sdk-man-small-pattern.svg" /></p>
+</section><section id="sdkman" class="slide level2">
+<h2>SDKMAN</h2>
+<p>Installez votre SDK Java (ou Kotlin, Scala, Grovy, etc.):</p>
+<pre><code>$ sdk install java                          
+Downloading: java 17.0.7-tem
+In progress...
+############################## 100.0%
+Installing: java 17.0.7-tem
+Done installing!</code></pre>
+<p>De nombreux fournisseurs différents (Eclipse, Amazon, Azul, <a href="https://www.microsoft.com/openjdk">Microsoft</a>, SAP, etc.)</p>
+</section></section>
+<section><section id="java-mobile" class="title-slide slide level1"><h1>Java Mobile</h1></section><section class="slide level2">
+
+<p>Oubliez Java “Micro Edition” pour les mobiles …</p>
+</section><section class="slide level2">
+
+<p>Bienvenue à <a href="https://en.wikipedia.org/wiki/Android_(operating_system)">Android</a> !</p>
+<p><img data-src="images/android-logo.svg" /></p>
+</section><section id="android-est-du-java" class="slide level2">
+<h2>Android “est du Java”</h2>
+<ul>
+<li>Basé initialement sur “Java-le-language” mais …</li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><a href="https://techcrunch.com/2019/05/07/kotlin-is-now-googles-preferred-language-for-android-app-development/">Kotlin est désormais le langage préféré de Google pour Android</a> (mai 2019).</li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p>Android n’est pas basé sur la JVM (Java Virtual Machine, mais sur l’ART (<a href="https://en.wikipedia.org/wiki/Android_Runtime">Android Runtime</a>, et avant sur la <a href="https://en.wikipedia.org/wiki/Dalvik_(software)">VM Dalvik</a>) ; en particulier, le format de bytecode n’est pas compatible.</p></li>
+<li><p>les bibliothèques standards Android ne sont pas compatibles avec les bibliothèques standards Java (ni Standard Edition, ni Mobile Edition).</p></li>
+</ul>
+</section></section>
+<section><section id="oracle-america-inc.-v.-google-inc." class="title-slide slide level1"><h1>Oracle America, Inc. v. Google, Inc.</h1></section><section class="slide level2">
+
+<ul>
+<li><p>A propos de l’usage de Java sur Android,</p></li>
+<li><p>Google affirme que <strong>les APIs de Java</strong> (une partie de Java SE) ne sont pas soumises au copyright.</p></li>
+</ul>
+<p>Historique sur <a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc.">🔗 Wikipedia</a></p>
+</section><section id="les-débuts" class="slide level2">
+<h2>Les débuts</h2>
+<ul>
+<li><p>en mai 2012 un premier jugement lui donne raison, mais …</p></li>
+<li><p>en mai 2014, le niveau fédéral révoque partiellement cette décision mais …</p></li>
+<li><p>en mai 2016, un nouveau jugement donne raison à Google mais …</p></li>
+<li><p><a href="https://www.wired.com/story/the-case-that-never-ends-oracle-wins-latest-round-vs-google/"><strong>The Case That Never Ends: Oracle Wins Latest Round vs. Google</strong></a> (mars 2018)</p></li>
+</ul>
+</section><section id="en-2020" class="slide level2">
+<h2>En 2020</h2>
+<ul>
+<li><p>⚖ Appel auprès de la Cour Suprême des Etats-Unis,</p></li>
+<li><p>😷 Contexte COVID-19 : repoussé à 2021.</p></li>
+</ul>
+</section><section id="en-2021" class="slide level2">
+<h2>En 2021</h2>
+<p>⚖ Décision de la cour suprême le 5 avril 2021 :</p>
+<ul>
+<li><p>favorable à Google (6-2),</p></li>
+<li><p>mais question du droit d’auteur en suspens.</p></li>
+</ul>
+</section><section class="slide level2">
+
+<p><em>Nous sommes parvenus à la conclusion que dans ce cas, où Google a réutilisé une interface utilisateur en ne prenant que ce qui était nécessaire pour permettre aux utilisateurs de mettre à profit le cumul de leurs talents, la copie par Google de l’interface de programmation (API) Sun Java représente un usage légitime de ce contenu sur le plan du droit.</em></p>
+<p>(doctrine du “fair use”)</p>
+</section></section>
+<section><section id="java-enterprise-edition" class="title-slide slide level1"><h1>Java Enterprise Edition</h1></section><section class="slide level2">
+
+<p>(<a href="https://www.baeldung.com/java-enterprise-evolution">J2EE ou Java EE ou Jakarta EE</a> ou <a href="https://projects.eclipse.org/projects/ee4j">EE4J</a>)</p>
+</section><section id="section" class="slide level2">
+<h2>2017</h2>
+<p><a href="https://www.infoworld.com/article/3217347/oracle-doesnt-want-java-ee-any-more.html"><strong>Oracle doesn’t want Java EE any more</strong></a></p>
+<ul>
+<li><p>“Oracle wants someone else to lead enterprise Java, though it says it will stay involved.”</p></li>
+<li><p>“Apache and Eclipse are likely candidates to take over Java EE.”</p></li>
+<li><p><strong>Sept. 2017:</strong> transfert des droits pour Java EE à la fondation Eclipse.</p></li>
+</ul>
+</section><section id="section-1" class="slide level2">
+<h2>2018</h2>
+<ul>
+<li><a href="https://www.techrepublic.com/article/how-the-eclipse-foundation-is-saving-enterprise-java/"><strong>How the Eclipse Foundation is saving enterprise Java.</strong></a> “The Eclipse Foundation is quiet and doesn’t brag about its work on enterprise Java, but this approach just might save the standard.”</li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p><a href="https://www.theregister.co.uk/2018/03/04/java_ee_is_now_jakarta_ee/"><strong>Java EE renamed ‘Jakarta EE’ after Big Red brand spat.</strong></a> “Oracle released the code, but not the name, so now devs have to make sure package names make sense”</p>
+<p>“One important argument for allowing the libre version to keep the Java name was compatibility, but that didn’t sway Oracle. […] while <strong>javax</strong> package names and namespaces would remain for compatibility, new API technologies would need to adopt the new name.”</p></li>
+</ul>
+</section><section id="section-2" class="slide level2">
+<h2>2019</h2>
+<ul>
+<li><p><a href="https://www.infoworld.com/article/3393233/oracle-eclipse-cant-use-java-ee-trademarks.html"><strong>Oracle: Eclipse can’t use Java EE trademarks</strong></a></p>
+<p>“But Oracle ‘remains committed’ to working with the Jakarta EE working group and Jakarta EE specification process.”</p></li>
+<li><p><a href="https://headcrashing.wordpress.com/2019/05/03/negotiations-failed-how-oracle-killed-java-ee/"><strong>Negotiations Failed: How Oracle killed Java EE.</strong></a></p></li>
+<li><p><a href="https://devclass.com/2019/05/07/java-eclipse-oracle-jakarta-name-talks-fail/"><strong>It’s Java just, not as we know it: Oracle-Jakarta name talks fail</strong></a></p></li>
+</ul>
+</section><section id="section-3" class="slide level2">
+<h2>2020–2023</h2>
+<p>Pas de changement majeur :</p>
+<ul>
+<li><p>Existence sous le nom Jakarta EE,</p></li>
+<li><p>Gouvernance du projet par la fondation Eclipse.</p></li>
+</ul>
+</section></section>
+<section><section id="java-moderne" class="title-slide slide level1"><h1>Java Moderne</h1></section><section class="slide level2">
+
+<ul>
+<li><p>Il existe des langages plus récents que Java,</p></li>
+<li><p>tirant profit des problèmes constatés avec Java,</p></li>
+<li><p>interopérables avec Java (bibliothèques, runtimes).</p></li>
+<li><p>… et le langage Java lui-même évolue.</p></li>
+</ul>
+</section><section id="java-21" class="slide level2">
+<h2>Java 21</h2>
+<p><strong>JEP 430: String Templates (Preview)</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="bu">String</span> text  = <span class="st">&quot;Hello, world&quot;</span>;</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="bu">String</span> html = STR.<span class="st">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">        &lt;html&gt;</a>
+<a class="sourceLine" id="cb2-4" title="4">          &lt;body&gt;</a>
+<a class="sourceLine" id="cb2-5" title="5">            &lt;p&gt;\{text}&lt;/p&gt;</a>
+<a class="sourceLine" id="cb2-6" title="6">          &lt;/body&gt;</a>
+<a class="sourceLine" id="cb2-7" title="7">        &lt;/html&gt;</a>
+<a class="sourceLine" id="cb2-8" title="8">        <span class="st">&quot;&quot;&quot;;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="kw">&lt;p&gt;</span>Hello, world<span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb3-4" title="4">  <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<p><strong>JEP 444: Virtual Threads</strong></p>
+<p>Threads “légers” (!= threads de l’OS).</p>
+<p>Facilitent le développement d’applications <strong>concurrentes</strong>.</p>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb4-1" title="1">var executor = <span class="bu">Executors</span>.<span class="fu">newVirtualThreadPerTaskExecutor</span>();</a>
+<a class="sourceLine" id="cb4-2" title="2">var future1 = executor.<span class="fu">submit</span>(() -&gt; <span class="fu">fetchURL</span>(url1));</a>
+<a class="sourceLine" id="cb4-3" title="3">var future2 = executor.<span class="fu">submit</span>(() -&gt; <span class="fu">fetchURL</span>(url2));</a>
+<a class="sourceLine" id="cb4-4" title="4">var text = future1.<span class="fu">get</span>() + future2.<span class="fu">get</span>();</a></code></pre></div>
+</section><section class="slide level2">
+
+<p><strong>JEP 445: Unnamed Classes and Instance Main Methods (Preview)</strong></p>
+<p>Avant :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">public</span> <span class="kw">class</span> HelloWorld { </a>
+<a class="sourceLine" id="cb5-2" title="2">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) { </a>
+<a class="sourceLine" id="cb5-3" title="3">        <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello, World!&quot;</span>);</a>
+<a class="sourceLine" id="cb5-4" title="4">    }</a>
+<a class="sourceLine" id="cb5-5" title="5">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Après :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb6-1" title="1"><span class="dt">void</span> <span class="fu">main</span>() {</a>
+<a class="sourceLine" id="cb6-2" title="2">    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="fu">greeting</span>());</a>
+<a class="sourceLine" id="cb6-3" title="3">}</a></code></pre></div>
+</section><section id="java-16" class="slide level2">
+<h2>Java 16</h2>
+<p><strong>Types <code>Record</code></strong></p>
+<p>Classes automatiquement dotées d’accesseurs, de constructeurs, de <code>equals</code>, <code>hashCode</code> et <code>toString</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb7-1" title="1">record <span class="bu">Color</span>(<span class="dt">int</span> R, <span class="dt">int</span> G, <span class="dt">int</span> B) { }</a></code></pre></div>
+</section><section class="slide level2">
+
+<p><strong>Pattern matching (<code>instanceof</code>)</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">if</span> (item instanceOf <span class="bu">String</span> string) { </a>
+<a class="sourceLine" id="cb8-2" title="2">    <span class="bu">String</span> text = string; </a>
+<a class="sourceLine" id="cb8-3" title="3">}</a></code></pre></div>
+</section><section class="slide level2">
+
+<p><strong>Blocs de texte</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb9-1" title="1"><span class="bu">String</span> text = <span class="st">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">Plusieurs lignes !</a>
+<a class="sourceLine" id="cb9-3" title="3">Et la possibilité d&#39;utiliser </a>
+<a class="sourceLine" id="cb9-4" title="4">simplement les <span class="st">&quot;quotes&quot;</span>.</a>
+<a class="sourceLine" id="cb9-5" title="5"><span class="st">&quot;&quot;&quot;;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<p><strong><code>switch</code> comme expression</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb10-1" title="1"><span class="dt">boolean</span> isOn = <span class="kw">switch</span> (status) {</a>
+<a class="sourceLine" id="cb10-2" title="2">  <span class="kw">case</span> ON -&gt; <span class="kw">true</span>;</a>
+<a class="sourceLine" id="cb10-3" title="3">  <span class="kw">case</span> OFF -&gt; <span class="kw">false</span>;</a>
+<a class="sourceLine" id="cb10-4" title="4">};</a></code></pre></div>
+</section><section id="antérieurement" class="slide level2">
+<h2>Antérieurement</h2>
+<p>Quelques exemples :</p>
+<ul>
+<li><p><strong>Java 12 et 11.</strong> Nouvelles méthodes pour <code>String</code> :<br />
+<code>repeat</code>, <code>isBlank</code>, <code>strip</code>, <code>lines</code>, etc.</p></li>
+<li><p><strong>Java 10.</strong> Inférence de type (variables locales) :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" title="1">var length = str.<span class="fu">length</span>();</a></code></pre></div></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li><p><strong>Java 8.</strong> Expressions lambda</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb12-1" title="1">(<span class="dt">int</span> x) -&gt; x + x</a>
+<a class="sourceLine" id="cb12-2" title="2">x -&gt; x % x</a>
+<a class="sourceLine" id="cb12-3" title="3">() -&gt; <span class="dv">7</span></a>
+<a class="sourceLine" id="cb12-4" title="4">(<span class="dt">int</span> arg1, <span class="dt">int</span> arg2) -&gt; (arg1 + arg2) / (arg1 – arg2)</a></code></pre></div></li>
+</ul>
+</section><section id="popularité-des-langages" class="slide level2">
+<h2>Popularité des langages</h2>
+<p>Enquête Stack Overflow 2020.</p>
+<ul>
+<li><p>Langages les plus aimés : Rust, Typescript, Python, <strong>Kotlin</strong>, Go, Julia, …</p></li>
+<li><p>Langages les plus craints : VBA, Objective-C, Perl, Assembly, C, PHP, Ruby, C++, <strong>Java</strong>, R, …</p></li>
+</ul>
+</section><section id="usage-des-langages" class="slide level2">
+<h2>Usage des langages</h2>
+<p><a href="https://snyk.io/blog/kotlin-overtakes-scala-and-clojure-to-become-the-2nd-most-popular-language-on-the-jvm/">Enquête JVM 2020</a></p>
+<ol type="1">
+<li><p>Java</p></li>
+<li><p>Kotlin</p></li>
+<li><p>Clojure</p></li>
+<li><p>Scala</p></li>
+</ol>
+</section><section id="kotlin-2011" class="slide level2">
+<h2>Kotlin (2011)</h2>
+<ul>
+<li><p>Evolution de Java plutôt que révolution,</p></li>
+<li><p>Par JetBrains, l’entreprise derrière l’IDE IntelliJ IDEA,</p></li>
+<li><p>Interopérable avec Java sur le desktop, le serveur (JVM) et Android,</p></li>
+<li><p>Désormais langage préféré pour le développement Android (Google).</p></li>
+</ul>
+</section><section id="clojure-2007" class="slide level2">
+<h2>Clojure (2007)</h2>
+<p><a href="https://clojure.org/about/history">📖 Histoire de Clojure</a></p>
+<p>Un langage fonctionnel et un dialecte de Lisp :</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode clojure"><code class="sourceCode clojure"><a class="sourceLine" id="cb13-1" title="1">(<span class="bu">defn</span><span class="fu"> factorial </span>[n]</a>
+<a class="sourceLine" id="cb13-2" title="2">  (<span class="kw">loop</span> [cnt n, acc <span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb13-3" title="3">    (<span class="kw">if</span> (<span class="kw">zero?</span> cnt)</a>
+<a class="sourceLine" id="cb13-4" title="4">      acc</a>
+<a class="sourceLine" id="cb13-5" title="5">      (<span class="kw">recur</span> (<span class="kw">dec</span> cnt) (<span class="kw">*</span> acc cnt)))))</a></code></pre></div>
+</section><section id="scala-2004" class="slide level2">
+<h2>Scala (2004)</h2>
+<ul>
+<li><p>à la fois fonctionnel et orienté objet,</p></li>
+<li><p>conçu à École Polytechnique Fédérale de Lausanne (EPFL) (en Suisse), notamment par <a href="https://en.wikipedia.org/wiki/Martin_Odersky">Martin Odersky</a>,</p></li>
+<li><p>language très (trop ?) riche :</p>
+<ul>
+<li><p>currying, immutabilité, évaluation tardive, pattern matching, etc.</p></li>
+<li><p>types algébriques, covariance et contravariance, types d’ordre supérieur, etc.</p></li>
+</ul></li>
+</ul>
+<style>
+
+.reveal section img {
+  border:0;
+  height:50vh;
+  width:auto;
+
+}
+
+.reveal section img.medium {
+  border:0;
+  max-width:50vh;
+}
+
+.reveal section img.icon {
+  display:inline;
+  border:0;
+  width:1em;
+  margin:0em;
+  box-shadow:none;
+  vertical-align:-10%;
+}
+
+.reveal code {
+  font-family: Inconsolata, monospace;
+}
+
+.reveal pre code {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  /* max-height: 80wh; won't work, overriden */
+}
+
+input {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 42px;
+  line-height: 54.6px;
+}
+
+</style>
+<p><link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"></p>
+<p><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

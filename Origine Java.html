@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Origine de Java</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Origine de Java</h1>
+</section>
+
+<section id="un-peu-dhistoire" class="slide level2">
+<h2>Un peu d’histoire</h2>
+<p>Java a été développé dans les années 1990 par des ingénieurs de Sun Microsystems insatisfaits du langage C++, pour les systèmes embarqués :</p>
+<ul>
+<li><p>Gestion de la mémoire souvent source d’erreur (pointeurs)</p></li>
+<li><p>Nécessité de nettoyer soi-même la mémoire en désallouant explicitement les objets : pas de ramasse-miettes (garbage collector en anglais)</p></li>
+<li><p>Nom original : oak (chêne)</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>1995 : présentation officielle sous le nom de Java</p></li>
+<li><p>Exécution de code dans des pages web au moyen “d’applets”</p></li>
+<li><p>Nécessité d’avoir du code portable, compatible avec n’importe quel OS</p></li>
+<li><p>Utilisation de la JVM</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>Depuis 2000 : sortie d’une version majeure de Java tous les deux ans</p></li>
+<li><p>2009 : rachat de Sun Microsystems par Oracle</p></li>
+<li><p>Employé largement dans le développement des premières App. Android</p></li>
+</ul>
+</section>
+<section id="principes-de-java" class="slide level2">
+<h2>Principes de Java</h2>
+<p>Compilation du code une fois pour toute !</p>
+<ul>
+<li><p>Fichiers sources : " *.java"</p></li>
+<li><p>Après compilation : " *.class" :</p>
+<ul>
+<li><p>bytecode <strong>indépendant</strong> du système d’exploitation</p></li>
+<li><p>Destiné à être exécuté par la <strong>JVM</strong> (Java Virtual Machine)</p></li>
+</ul></li>
+<li><p>Une fonction <strong>principale</strong> pour l’exécution : <strong>main</strong></p></li>
+</ul>
+</section>
+<section id="java-les-promesses" class="slide level2">
+<h2>Java : les promesses</h2>
+<ul>
+<li><p>Déploiement <strong>facile</strong> des applications :</p>
+<ul>
+<li><p>Le bytecode généré fonctionne sur tout OS,</p></li>
+<li><p>Une seule compilation / archivage avant la distribution</p></li>
+</ul></li>
+<li><p>Pas de gestion compliquée de la mémoire</p></li>
+<li><p>Paradigme objet facile à appréhender (pas d’héritage multiple)</p></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
