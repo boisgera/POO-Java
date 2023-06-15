@@ -76,7 +76,7 @@ Java est-il encore gratuit ?
 Versions
 --------------------------------------------------------------------------------
 
-  - ...
+Cycle de releases de 6 mois:
 
   - **Java 14** publié en mars 2020,
   
@@ -84,30 +84,48 @@ Versions
 
   - **Java 16** publié en mars 2021,
 
-  - **Java 17** prévu en septembre 2021.
+  - ...
 
+  - **Java 21** prévu en septembre 2023.
+
+
+Java 21 Calendrier
 --------------------------------------------------------------------------------  
 
-  - **Java 8**, (mars 2014) est une LTS (long term support) :
+<https://openjdk.org/projects/jdk/21/>:
+
+  - 2023/06/08. Rampdown Phase One (fork from main line)
+    
+  - 2023/07/20. Rampdown Phase Two
+    
+  - 2023/08/10. Initial Release Candidate
+    
+  - 2023/08/24. Final Release Candidate
+    
+  - 2023/09/19. General Availability
+
+
+Long-Term Support
+--------------------------------------------------------------------------------
+
+  - **Java 8**, (mars 2014) est une LTS :
     supporté jusqu'en 2030 !
 
   - **Java 11** (sept. 2018) est une LTS, mais [Java 8 représente encore
     75% des usages en 2020](https://www.jetbrains.com/lp/devecosystem-2020/java/).
 
-  - **Java 17** sera une LTS.
+  - **Java 17** (sept 2021) est une LTS.
 
-AdoptOpenJDK
+  - **Java 21** (sept 2023) sera une LTS.
+
+Adoptium
 --------------------------------------------------------------------------------
 
-  - 🔗 [AdoptOpenJDK](https://adoptopenjdk.net/index.html).
+  - 🔗 [Site Web Adoptium](https://adoptium.net/)
 
-  - Distribution builds :
-  
-    - Java OpenJDK 
-    
-    - VM Hotspot ou OpenJ9
+  - Projet de la fondation Eclipse (ex-AdoptOpenJDK)
 
-  - [AdoptOpenJDK rejoint la fondation Eclipse](https://blog.adoptopenjdk.net/2021/03/transition-to-eclipse-an-update/) (6 mars 2021).
+  - **"Prebuilt OpenJDK Binaries for Free!"**
 
 --------------------------------------------------------------------------------
 
@@ -117,13 +135,16 @@ AdoptOpenJDK
 SDKMAN
 --------------------------------------------------------------------------------
 
-Outil d'installation de distributions Java (Linux).
+Installez votre SDK Java (ou Kotlin, Scala, Grovy, etc.):
 
-  - Usage :
+    $ sdk install java                          
+    Downloading: java 17.0.7-tem
+    In progress...
+    ############################## 100.0%
+    Installing: java 17.0.7-tem
+    Done installing!
 
-        $ sdk install java 11.0.3.hs-adpt
-
-  - 11 fournisseurs différents (AdoptOpenJDK, Amazon, Azul, [Microsoft](https://www.microsoft.com/openjdk), SAP, etc.) 
+  De nombreux fournisseurs différents (Eclipse, Amazon, Azul, [Microsoft](https://www.microsoft.com/openjdk), SAP, etc.) 
 
 
 Java Mobile
@@ -256,7 +277,7 @@ Java Enterprise Edition
 
   - [**It’s Java just, not as we know it: Oracle-Jakarta name talks fail**](https://devclass.com/2019/05/07/java-eclipse-oracle-jakarta-name-talks-fail/)
 
-2020 & 2021
+2020--2023
 --------------------------------------------------------------------------------
 
 Pas de changement majeur :
@@ -277,6 +298,74 @@ Java Moderne
   - interopérables avec Java (bibliothèques, runtimes).
 
   - ... et le langage Java lui-même évolue.
+
+Java 21
+--------------------------------------------------------------------------------
+
+**JEP 430: String Templates (Preview)**
+
+```java
+String text  = "Hello, world";
+String html = STR."""
+        <html>
+          <body>
+            <p>\{text}</p>
+          </body>
+        </html>
+        """;
+```
+
+--------------------------------------------------------------------------------
+
+```html
+<html>
+  <body>
+    <p>Hello, world</p>
+  </body>
+</html>
+```
+
+--------------------------------------------------------------------------------
+
+
+**JEP 444: Virtual Threads**
+
+Threads "légers" (!= threads de l'OS).
+
+Facilitent le développement d'applications **concurrentes**.
+
+--------------------------------------------------------------------------------
+
+```java
+var executor = Executors.newVirtualThreadPerTaskExecutor();
+var future1 = executor.submit(() -> fetchURL(url1));
+var future2 = executor.submit(() -> fetchURL(url2));
+var text = future1.get() + future2.get();
+```
+
+--------------------------------------------------------------------------------
+
+**JEP 445: Unnamed Classes and Instance Main Methods (Preview)**
+
+Avant :
+
+```java
+public class HelloWorld { 
+    public static void main(String[] args) { 
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+--------------------------------------------------------------------------------
+
+Après :
+
+```java
+void main() {
+    System.out.println(greeting());
+}
+```
 
 Java 16
 --------------------------------------------------------------------------------
@@ -332,9 +421,21 @@ Quelques exemples :
     `repeat`, `isBlank`, `strip`, `lines`, etc.
 
   - **Java 10.** Inférence de type (variables locales) :
+    
     ```java
     var length = str.length();
     ```
+
+--------------------------------------------------------------------------------
+
+  - **Java 8.** Expressions lambda
+
+    ```java
+    (int x) -> x + x
+    x -> x % x
+    () -> 7
+    (int arg1, int arg2) -> (arg1 + arg2) / (arg1 – arg2)
+    ``` 
 
 Popularité des langages
 --------------------------------------------------------------------------------
